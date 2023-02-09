@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Berkshire+Swash&display=swap");
+
+body {
+  font-family: "segoe", "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: white;
+  color: black;
+}
