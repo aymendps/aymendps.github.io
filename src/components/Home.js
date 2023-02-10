@@ -1,23 +1,42 @@
 import { CircularProgress, Typography } from "@mui/material";
-import React from "react";
+import { useRef, useState } from "react";
 
 function Home() {
+  const [isLoadingSmallVideo, setIsLoadingSmallVideo] = useState(true);
+
+  const smallVideoRef = useRef();
+
   return (
     <>
       <div className="h-[85vh] w-full mt-[35px] bg-gray-900 flex justify-center items-center">
         <div className="w-full h-[85vh] absolute top-0 left-0 z-20">
-          <video loop muted autoPlay className="w-full h-full">
+          <video
+            ref={smallVideoRef}
+            loop
+            muted
+            className={
+              isLoadingSmallVideo ? "w-full h-full hidden" : "w-full h-full"
+            }
+            onLoadedData={() => {
+              if (smallVideoRef.current.readyState === 4) {
+                setIsLoadingSmallVideo(false);
+                smallVideoRef.current.play();
+              }
+            }}
+          >
             <source src="/test.webm" />
           </video>
         </div>
-        <video
-          loop
-          muted
-          autoPlay
-          className="w-full absolute blur-lg left-0 top-0 z-0"
-        >
-          <source src="/test.webm" />
-        </video>
+        {!isLoadingSmallVideo && (
+          <video
+            loop
+            muted
+            autoPlay
+            className="w-full absolute blur-lg left-0 top-0 z-0"
+          >
+            <source src="/test.webm" />
+          </video>
+        )}
         <CircularProgress size={60} />
       </div>
       <div className="w-full bg-darkblue translate-y-[-35px] py-4">
