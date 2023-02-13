@@ -1,55 +1,94 @@
-import { CircularProgress, Typography } from "@mui/material";
+import { CircularProgress, IconButton, Typography } from "@mui/material";
 import { useRef, useState } from "react";
+import GoDownIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
 
 function Home() {
-  const [isLoadingSmallVideo, setIsLoadingSmallVideo] = useState(true);
+  const [isLoadingVideo, setIsLoadingVideo] = useState(true);
 
-  const smallVideoRef = useRef();
+  const goDownRef = useRef();
 
   return (
     <>
-      <div className="h-[85vh] w-full mt-[35px] bg-gray-900 flex justify-center items-center">
-        <div className="w-full h-[85vh] absolute top-0 left-0 z-20">
+      <div className="relative h-[85vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center">
+        <div className="w-[90%] h-[90%] z-10 bg-[rgb(0,20,40)] border border-gray-500">
           <video
-            ref={smallVideoRef}
+            key="small-video"
             loop
             muted
-            className={
-              isLoadingSmallVideo ? "w-full h-full hidden" : "w-full h-full"
-            }
-            onLoadedData={() => {
-              if (smallVideoRef.current.readyState === 4) {
-                setIsLoadingSmallVideo(false);
-                smallVideoRef.current.play();
-              }
+            autoPlay
+            className="w-full h-full object-cover object-center"
+            onPlay={() => {
+              setIsLoadingVideo(false);
             }}
           >
             <source src="/test.webm" />
           </video>
         </div>
-        {!isLoadingSmallVideo && (
+        <div className="absolute z-0 w-full h-[90%] top-0 left-0">
           <video
+            key="big-video"
             loop
             muted
             autoPlay
-            className="w-full absolute blur-lg left-0 top-0 z-0"
+            className="w-full h-full object-cover object-center blur"
           >
             <source src="/test.webm" />
           </video>
-        )}
-        <CircularProgress size={60} />
+        </div>
+        {isLoadingVideo ? (
+          <div className="absolute z-20 w-full h-full top-0 left-0 flex justify-center items-center">
+            <CircularProgress size={60} className="text-white" />
+          </div>
+        ) : null}
       </div>
-      <div className="w-full bg-darkblue translate-y-[-35px] py-4">
-        <div className="m-auto w-[70%]">
-          <Typography variant="h2" className="text-center text-white pb-4 ">
+      <div className="w-full bg-darkblue py-4 z-10 translate-y-[-10vh] pt-[5vh]">
+        <div className="h-[10vh] flex justify-center items-center">
+          <div
+            ref={goDownRef}
+            className="w-fit h-fit hover:scale-110 duration-200"
+          >
+            <IconButton
+              onClick={() => {
+                goDownRef.current.scrollIntoView({
+                  alignToTop: true,
+                  behavior: "smooth",
+                });
+              }}
+            >
+              <GoDownIcon fontSize="large" className="text-white" />
+            </IconButton>
+          </div>
+        </div>
+        <div className="m-auto w-[70%] py-4">
+          <Typography variant="h2" className="text-center text-white pb-4">
             Welcome to my portfolio!
           </Typography>
-          <Typography className="text-white text-center">
-            Hey! Thank you for taking the time to visit my portfolio! I'm{" "}
-            <b>Aymen</b>, a software engineering student from Tunisia.
-            <br />
-            I've been making games and apps since I was in high school, and
-            there are many reasons as to why I enjoy it so much:
+          <Typography className="text-white whitespace-pre-line">
+            {`a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            a
+            `}
           </Typography>
         </div>
       </div>
