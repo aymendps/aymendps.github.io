@@ -6,7 +6,9 @@ import ResumeIcon from "@mui/icons-material/AttachFile";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import HomeIcon from "@mui/icons-material/Home";
+import GithubIcon from "@mui/icons-material/GitHub";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function NavBar() {
   const navBarItems = [
@@ -16,17 +18,17 @@ function NavBar() {
       icon: (
         <HomeIcon
           fontSize="medium"
-          className="text-white group-hover:text-blue-600"
+          className="text-white group-hover:text-cyan-400"
         />
       ),
     },
     {
-      name: "Key Projects",
-      link: "home#key-projects",
+      name: "Projects",
+      link: "home#projects",
       icon: (
         <PortfolioIcon
           fontSize="medium"
-          className="text-white group-hover:text-blue-600"
+          className="text-white group-hover:text-cyan-400"
         />
       ),
     },
@@ -36,7 +38,7 @@ function NavBar() {
       icon: (
         <ResumeIcon
           fontSize="medium"
-          className="text-white group-hover:text-blue-600"
+          className="text-white group-hover:text-cyan-400"
         />
       ),
     },
@@ -46,14 +48,61 @@ function NavBar() {
       icon: (
         <AboutIcon
           fontSize="medium"
-          className="text-white group-hover:text-blue-600"
+          className="text-white group-hover:text-cyan-400"
+        />
+      ),
+    },
+  ];
+
+  const navBarIcons = [
+    {
+      href: "https://www.linkedin.com/in/aymendps/",
+      icon: (
+        <LinkedInIcon
+          fontSize="large"
+          className="text-white hover:text-cyan-400"
+        />
+      ),
+    },
+    {
+      href: "mailto:hammami.aym@outlook.com",
+      icon: (
+        <EmailIcon
+          fontSize="large"
+          className="text-white hover:text-cyan-400"
+        />
+      ),
+    },
+    {
+      href: "https://github.com/aymendps",
+      icon: (
+        <GithubIcon
+          fontSize="large"
+          className="text-white hover:text-cyan-400"
         />
       ),
     },
   ];
 
   const generateNavBarItems = navBarItems.map((item) => {
-    return (
+    return item.link.includes("#") ? (
+      <HashLink
+        smooth
+        key={item.name + item.link}
+        to={item.link}
+        className="w-1/5 h-full group"
+      >
+        <Button
+          variant="text"
+          className="w-full flex h-full justify-center items-center gap-2 normal-case"
+        >
+          {item.icon}
+          <Typography className="text-center text-white group-hover:text-cyan-400">
+            {item.name}
+          </Typography>
+        </Button>
+      </HashLink>
+    ) : (
       <Link
         key={item.name + item.link}
         to={item.link}
@@ -64,11 +113,19 @@ function NavBar() {
           className="w-full flex h-full justify-center items-center gap-2 normal-case"
         >
           {item.icon}
-          <Typography className="text-center text-white group-hover:text-blue-600">
+          <Typography className="text-center text-white group-hover:text-cyan-400">
             {item.name}
           </Typography>
         </Button>
       </Link>
+    );
+  });
+
+  const generateNavBarIcons = navBarIcons.map((icon) => {
+    return (
+      <a key={icon.href} href={icon.href} target="_blank" rel="noreferrer">
+        {icon.icon}
+      </a>
     );
   });
 
@@ -99,26 +156,7 @@ function NavBar() {
         {generateNavBarItems}
 
         <div className="w-1/5 flex h-full justify-center items-center gap-2">
-          <a
-            href="https://www.linkedin.com/in/aymendps/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LinkedInIcon
-              fontSize="large"
-              className="text-white hover:text-blue-600"
-            />
-          </a>
-          <a
-            href="mailto:hammami.aym@outlook.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <EmailIcon
-              fontSize="large"
-              className="text-white hover:text-blue-600"
-            />
-          </a>
+          {generateNavBarIcons}
         </div>
       </div>
     </div>
