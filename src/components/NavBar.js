@@ -14,7 +14,7 @@ function NavBar() {
   const navBarItems = [
     {
       name: "Home",
-      link: "home",
+      link: "home#t",
       icon: (
         <HomeIcon
           fontSize="medium"

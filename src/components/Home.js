@@ -2,12 +2,14 @@ import { CircularProgress, Typography } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import ProjectThumbnail from "./ProjectThumbnail";
 
 function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
 
   const videoSection = (
     <section className="relative h-[85vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center">
+      <div className="absolute w-full top-[-70px] left-0" id="t"></div>
       <div className="w-[90%] h-[90%] z-10 bg-[rgb(0,20,40)] border border-gray-500">
         <video
           key="small-video"
@@ -127,18 +129,25 @@ function Home() {
   );
 
   const projectsSection = (
-    <section className="w-full bg-white pb-12">
-      <Typography
-        variant="h2"
-        className="text-black text-center py-12"
-        id="projects"
-      >
+    <section className="w-full bg-white pb-12 relative">
+      <div className="absolute top-[-70px] left-0" id="projects"></div>
+      <Typography variant="h2" className="text-black text-center py-12">
         Work & Projects
       </Typography>
       <div className="w-full flex justify-evenly items-center">
-        <div className="bg-red-500 basis-[25%] flex items-start">
-          <div className="basis-[85%] aspect-square bg-black"></div>
-        </div>
+        <ProjectThumbnail
+          title={"Fablab Machines Discovery"}
+          subtitle={"AR Mobile Application"}
+          thumbnail={""}
+          gif={""}
+          solo={false}
+          workDone={[
+            "Aaa sqdqs dqsdqsd qs",
+            "Aaa sqdqs ds fsd fsd fdqsdqsd qs",
+          ]}
+          tags={["Unity", "C++"]}
+          pageURL={"/projects/fablab-machines-discovery"}
+        />
       </div>
     </section>
   );
