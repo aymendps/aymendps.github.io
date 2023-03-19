@@ -242,9 +242,11 @@ function Home() {
       <div className="w-full flex justify-center items-center gap-8">
         {CONTACT_ICONS.map((icon) => {
           return (
-            <div className="flex flex-col items-center justify-center">
+            <div
+              key={"contactSection" + icon.href}
+              className="flex flex-col items-center justify-center"
+            >
               <a
-                key={"contactSection" + icon.href}
                 href={icon.href}
                 target="_blank"
                 rel="noreferrer"
