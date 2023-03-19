@@ -30,6 +30,7 @@ function ProjectThumbnail({
       <Chip
         key={title + tag}
         label={tag}
+        size="small"
         variant="outlined"
         className="bg-darkblue text-white font-bold border-darkblue"
       ></Chip>
@@ -47,7 +48,7 @@ function ProjectThumbnail({
       onMouseLeave={() => {
         setImageSrc(thumbnail);
       }}
-      className="basis-1/4 relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group"
+      className="basis-[25%] relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group mb-[5%]"
     >
       <div className="bg-white p-4">
         <Typography
@@ -62,7 +63,7 @@ function ProjectThumbnail({
       </div>
       <div className="w-full aspect-square bg-cyan-600 relative border-y-2 border-darkblue">
         <img
-          className="w-full h-full object-contain object-center"
+          className="w-full h-full object-center"
           src={imageSrc}
           alt=""
         ></img>

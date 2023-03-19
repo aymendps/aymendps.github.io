@@ -2,7 +2,7 @@ import { CircularProgress, Typography } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import ProjectThumbnail from "./ProjectThumbnail";
+import ProjectList from "./ProjectList";
 
 function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
@@ -133,10 +133,16 @@ function Home() {
   const projectsSection = (
     <section className="w-full bg-white pb-12 relative">
       <div className="absolute top-[-70px] left-0" id="projects"></div>
-      <Typography variant="h2" className="text-black text-center py-12">
+      <Typography variant="h2" className="text-black text-center pt-12">
         Work & Projects
       </Typography>
-      <div className="w-full flex justify-evenly items-center"></div>
+      <Typography
+        variant="subtitle1"
+        className="text-center pb-12 text-cyan-600"
+      >
+        Click on a project to view it with more details
+      </Typography>
+      <ProjectList />
     </section>
   );
 
