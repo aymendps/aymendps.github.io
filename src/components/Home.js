@@ -7,6 +7,8 @@ import ProjectThumbnail from "./ProjectThumbnail";
 function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
 
+  const VIDEO_SRC = "";
+
   const videoSection = (
     <section className="relative h-[85vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center">
       <div className="absolute w-full top-[-70px] left-0" id="t"></div>
@@ -21,7 +23,7 @@ function Home() {
             setIsLoadingVideo(false);
           }}
         >
-          <source src="/test.webm" />
+          <source src={VIDEO_SRC} />
         </video>
       </div>
       <div className="absolute z-0 w-full h-[90%] top-0 left-0">
@@ -32,7 +34,7 @@ function Home() {
           autoPlay
           className="w-full h-full object-cover object-center blur"
         >
-          <source src="/test.webm" />
+          <source src={VIDEO_SRC} />
         </video>
       </div>
       {isLoadingVideo ? (
