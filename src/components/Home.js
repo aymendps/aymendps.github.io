@@ -5,6 +5,9 @@ import AboutIcon from "@mui/icons-material/Person4";
 import { Link, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import ProjectList from "./ProjectList";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
+import GithubIcon from "@mui/icons-material/GitHub";
 
 function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
@@ -12,6 +15,30 @@ function Home() {
   const navigate = useNavigate();
 
   const VIDEO_SRC = "";
+
+  const CONTACT_ICONS = [
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/aymendps/",
+      icon: (
+        <LinkedInIcon className="text-darkblue hover:text-cyan-600 text-7xl" />
+      ),
+    },
+    {
+      name: "Email",
+      href: "mailto:hammami.aym@outlook.com",
+      icon: (
+        <EmailIcon className="text-darkblue hover:text-cyan-600 text-7xl" />
+      ),
+    },
+    {
+      name: "GitHub",
+      href: "https://github.com/aymendps",
+      icon: (
+        <GithubIcon className="text-darkblue hover:text-cyan-600 text-7xl" />
+      ),
+    },
+  ];
 
   const videoSection = (
     <section className="relative h-[85vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center">
@@ -204,10 +231,52 @@ function Home() {
     </section>
   );
 
+  const contactSection = (
+    <section className="w-full bg-white py-12">
+      <Typography variant="h2" className="text-center">
+        Reach out to me
+      </Typography>
+      <Typography className="text-cyan-600 text-center pb-12">
+        Let's talk! Feel free to send me a message through:
+      </Typography>
+      <div className="w-full flex justify-center items-center gap-8">
+        {CONTACT_ICONS.map((icon) => {
+          return (
+            <div className="flex flex-col items-center justify-center">
+              <a
+                key={"contactSection" + icon.href}
+                href={icon.href}
+                target="_blank"
+                rel="noreferrer"
+                className="pb-2 peer"
+              >
+                {icon.icon}
+              </a>
+              <Typography
+                variant="caption"
+                className="peer-hover:text-cyan-600"
+              >
+                {icon.name}
+              </Typography>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+
   const copyrightSection = (
     <section className="bg-black w-full p-2">
       <Typography className="text-white text-center">
-        Copyright © 2023 by Aymen Hammami
+        Copyright © 2023 by Aymen Hammami -{" "}
+        <a
+          href="https://www.linkedin.com/in/aymendps/"
+          target="_blank"
+          rel="noreferrer"
+          className="underline"
+        >
+          Have feedback? Please let me know!
+        </a>
       </Typography>
     </section>
   );
@@ -217,6 +286,7 @@ function Home() {
       {aboutSection}
       {projectsSection}
       {knowMoreSection}
+      {contactSection}
       {copyrightSection}
     </>
   );
