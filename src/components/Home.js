@@ -1,11 +1,15 @@
-import { CircularProgress, Typography } from "@mui/material";
+import { Button, CircularProgress, Typography } from "@mui/material";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import ResumeIcon from "@mui/icons-material/AttachFile";
+import AboutIcon from "@mui/icons-material/Person4";
+import { Link, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import ProjectList from "./ProjectList";
 
 function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
+
+  const navigate = useNavigate();
 
   const VIDEO_SRC = "";
 
@@ -56,9 +60,13 @@ function Home() {
         </Typography>
         <br />
         <Typography className="text-white text-center">
-          <HashLink smooth to="/home#projects" className="text-cyan-400">
-            <b>Below </b>
-          </HashLink>
+          <HashLink
+            smooth
+            to="/home#projects"
+            className="text-cyan-400 hover:underline"
+          >
+            <b>Below</b>
+          </HashLink>{" "}
           you will find some of the projects that I've had the opportunity of
           contributing to, and also some of my personal projects that I worked
           on.
@@ -66,7 +74,7 @@ function Home() {
         <br />
         <Typography className="text-white text-center">
           My name is{" "}
-          <Link to="/about-me" className="text-cyan-400">
+          <Link to="/about-me" className="text-cyan-400 hover:underline">
             <b>Aymen</b>
           </Link>{" "}
           and I am a final year Software Engineering student at{" "}
@@ -74,7 +82,7 @@ function Home() {
             href="https://www.smu.tn/medtech"
             target="_blank"
             rel="noreferrer"
-            className="text-cyan-400"
+            className="text-cyan-400 hover:underline"
           >
             <b>South Mediterranean University, MedTech.</b>
           </a>
@@ -91,10 +99,10 @@ function Home() {
             href="https://github.com/aymendps"
             target="_blank"
             rel="noreferrer"
-            className="text-cyan-400"
+            className="text-cyan-400 hover:underline"
           >
-            <b>programming. </b>
-          </a>
+            <b>programming.</b>
+          </a>{" "}
           I mean, there's just something so satisfying about taking an idea and
           turning it into a reality through code.
         </Typography>
@@ -121,7 +129,7 @@ function Home() {
             href="https://www.linkedin.com/in/aymendps/"
             target="_blank"
             rel="noreferrer"
-            className="text-cyan-400"
+            className="text-cyan-400 hover:underline"
           >
             <b>Let's get in touch!</b>
           </a>
@@ -146,6 +154,56 @@ function Home() {
     </section>
   );
 
+  const knowMoreSection = (
+    <section className="w-full bg-darkblue py-12">
+      <Typography variant="h2" className="text-center text-white pb-12">
+        Know more about me
+      </Typography>
+      <div className="w-[80%] flex justify-evenly m-auto">
+        <div className="basis-[35%]">
+          <Button
+            fullWidth
+            size="large"
+            variant="outlined"
+            className="text-cyan-400 border-cyan-400 hover:border-cyan-300"
+            startIcon={<ResumeIcon />}
+            onClick={() => {
+              navigate("/resume");
+            }}
+          >
+            Resume Section
+          </Button>
+          <Typography
+            variant="caption"
+            className="text-cyan-200 text-center block pt-2"
+          >
+            My skills, projects, education & experience in PDF format
+          </Typography>
+        </div>
+        <div className="basis-[35%]">
+          <Button
+            fullWidth
+            size="large"
+            variant="outlined"
+            className="text-cyan-400 border-cyan-400 hover:border-cyan-300"
+            startIcon={<AboutIcon />}
+            onClick={() => {
+              navigate("/about-me");
+            }}
+          >
+            About me Section
+          </Button>
+          <Typography
+            variant="caption"
+            className="text-cyan-200 text-center block pt-2"
+          >
+            More about who I am, what I enjoy, what I do in my free time
+          </Typography>
+        </div>
+      </div>
+    </section>
+  );
+
   const copyrightSection = (
     <section className="bg-black w-full p-2">
       <Typography className="text-white text-center">
@@ -158,6 +216,7 @@ function Home() {
       {videoSection}
       {aboutSection}
       {projectsSection}
+      {knowMoreSection}
       {copyrightSection}
     </>
   );

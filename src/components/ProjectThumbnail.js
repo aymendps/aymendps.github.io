@@ -32,7 +32,7 @@ function ProjectThumbnail({
         label={tag}
         size="small"
         variant="outlined"
-        className="bg-darkblue text-white font-bold border-darkblue"
+        className="bg-darkblue text-white font-bold border-darkblue cursor-pointer"
       ></Chip>
     );
   });
