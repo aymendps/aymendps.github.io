@@ -1,5 +1,5 @@
 import { Chip, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function ProjectThumbnail({
@@ -14,9 +14,11 @@ function ProjectThumbnail({
 }) {
   const navigate = useNavigate();
 
+  const [imageSrc, setImageSrc] = useState(thumbnail);
+
   const generateWorkDone = workDone.map((wd) => {
     return (
-      <Typography>
+      <Typography key={title + wd}>
         <span className="text-cyan-600 font-bold">{wd[0]}</span>
         {wd.substring(1)}
       </Typography>
@@ -26,6 +28,7 @@ function ProjectThumbnail({
   const generateTags = tags.map((tag) => {
     return (
       <Chip
+        key={title + tag}
         label={tag}
         variant="outlined"
         className="bg-darkblue text-white font-bold border-darkblue"
@@ -34,30 +37,33 @@ function ProjectThumbnail({
   });
 
   return (
-    <div className="basis-1/4 relative rounded-xl overflow-hidden border-2 border-darkblue">
+    <div
+      onClick={() => {
+        navigate(pageURL);
+      }}
+      onMouseEnter={() => {
+        if (gif) setImageSrc(gif);
+      }}
+      onMouseLeave={() => {
+        setImageSrc(thumbnail);
+      }}
+      className="basis-1/4 relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group"
+    >
       <div className="bg-white p-4">
-        <Typography variant="h5" className="text-center text-darkblue">
+        <Typography
+          variant="h5"
+          className="text-center text-darkblue group-hover:underline"
+        >
           {title}
         </Typography>
-        <Typography className="text-center text-cyan-600">
+        <Typography className="text-center text-cyan-600 group-hover:underline">
           {subtitle}
         </Typography>
       </div>
-      <div
-        className="w-full aspect-square bg-cyan-600 cursor-pointer relative"
-        onClick={() => {
-          navigate(pageURL);
-        }}
-      >
+      <div className="w-full aspect-square bg-cyan-600 relative border-y-2 border-darkblue">
         <img
-          className="max-h-full max-w-full"
-          onMouseEnter={(e) => {
-            e.currentTarget.src = gif;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.src = thumbnail;
-          }}
-          src={thumbnail}
+          className="w-full h-full object-contain object-center"
+          src={imageSrc}
           alt=""
         ></img>
         <div className="absolute bottom-0 left-0 w-full">

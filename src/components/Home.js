@@ -134,21 +134,7 @@ function Home() {
       <Typography variant="h2" className="text-black text-center py-12">
         Work & Projects
       </Typography>
-      <div className="w-full flex justify-evenly items-center">
-        <ProjectThumbnail
-          title={"Fablab Machines Discovery"}
-          subtitle={"AR Mobile Application"}
-          thumbnail={""}
-          gif={""}
-          solo={false}
-          workDone={[
-            "Aaa sqdqs dqsdqsd qs",
-            "Aaa sqdqs ds fsd fsd fdqsdqsd qs",
-          ]}
-          tags={["Unity", "C++"]}
-          pageURL={"/projects/fablab-machines-discovery"}
-        />
-      </div>
+      <div className="w-full flex justify-evenly items-center"></div>
     </section>
   );
 
