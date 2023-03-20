@@ -57,7 +57,7 @@ function ProjectThumbnail({
         >
           {title}
         </Typography>
-        <Typography className="text-center text-cyan-600 group-hover:underline">
+        <Typography className="text-center text-cyan-600">
           {subtitle}
         </Typography>
       </div>

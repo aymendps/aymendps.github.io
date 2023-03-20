@@ -8,6 +8,7 @@ import ProjectList from "./ProjectList";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GithubIcon from "@mui/icons-material/GitHub";
+import Footer from "./Footer";
 
 function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
@@ -21,21 +22,21 @@ function Home() {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/aymendps/",
       icon: (
-        <LinkedInIcon className="text-darkblue hover:text-cyan-600 text-7xl" />
+        <LinkedInIcon className="text-darkblue text-7xl group-hover:text-cyan-600" />
       ),
     },
     {
       name: "Email",
       href: "mailto:hammami.aym@outlook.com",
       icon: (
-        <EmailIcon className="text-darkblue hover:text-cyan-600 text-7xl" />
+        <EmailIcon className="text-darkblue text-7xl group-hover:text-cyan-600" />
       ),
     },
     {
       name: "GitHub",
       href: "https://github.com/aymendps",
       icon: (
-        <GithubIcon className="text-darkblue hover:text-cyan-600 text-7xl" />
+        <GithubIcon className="text-darkblue text-7xl group-hover:text-cyan-600" />
       ),
     },
   ];
@@ -111,7 +112,16 @@ function Home() {
             rel="noreferrer"
             className="text-cyan-400 hover:underline"
           >
-            <b>South Mediterranean University, MedTech.</b>
+            <b>South Mediterranean University, MedTech</b>
+          </a>
+          , graduating{" "}
+          <a
+            href="https://www.smu.tn/medtech"
+            target="_blank"
+            rel="noreferrer"
+            className="text-cyan-400 hover:underline"
+          >
+            <b>Summer 2024.</b>
           </a>
         </Typography>
         <Typography className="text-white text-center">
@@ -178,13 +188,24 @@ function Home() {
         Click on a project to view it with more details
       </Typography>
       <ProjectList />
+      <Typography variant="subtitle1" className="text-center text-darkblue">
+        Other projects might be found on my{" "}
+        <a
+          href="https://github.com/aymendps"
+          target="_blank"
+          rel="noreferrer"
+          className="text-cyan-600 hover:underline"
+        >
+          GitHub
+        </a>
+      </Typography>
     </section>
   );
 
-  const knowMoreSection = (
+  const findMoreSection = (
     <section className="w-full bg-darkblue py-12">
       <Typography variant="h2" className="text-center text-white pb-12">
-        Know more about me
+        Find more about me
       </Typography>
       <div className="w-[80%] flex justify-evenly m-auto">
         <div className="basis-[35%]">
@@ -192,7 +213,7 @@ function Home() {
             fullWidth
             size="large"
             variant="outlined"
-            className="text-cyan-400 border-cyan-400 hover:border-cyan-300"
+            className="text-cyan-400 border-cyan-400 hover:border-cyan-300 hover:text-cyan-300"
             startIcon={<ResumeIcon />}
             onClick={() => {
               navigate("/resume");
@@ -212,7 +233,7 @@ function Home() {
             fullWidth
             size="large"
             variant="outlined"
-            className="text-cyan-400 border-cyan-400 hover:border-cyan-300"
+            className="text-cyan-400 border-cyan-400 hover:border-cyan-300 hover:text-cyan-300"
             startIcon={<AboutIcon />}
             onClick={() => {
               navigate("/about-me");
@@ -236,7 +257,10 @@ function Home() {
       <Typography variant="h2" className="text-center">
         Reach out to me
       </Typography>
-      <Typography className="text-cyan-600 text-center pb-12">
+      <Typography
+        variant="subtitle1"
+        className="text-cyan-600 text-center pb-12"
+      >
         Let's talk! Feel free to send me a message through:
       </Typography>
       <div className="w-full flex justify-center items-center gap-8">
@@ -244,19 +268,19 @@ function Home() {
           return (
             <div
               key={"contactSection" + icon.href}
-              className="flex flex-col items-center justify-center"
+              className="flex flex-col items-center justify-center group"
             >
               <a
                 href={icon.href}
                 target="_blank"
                 rel="noreferrer"
-                className="pb-2 peer"
+                className="pb-2"
               >
                 {icon.icon}
               </a>
               <Typography
                 variant="caption"
-                className="peer-hover:text-cyan-600"
+                className="group-hover:text-cyan-600"
               >
                 {icon.name}
               </Typography>
@@ -267,29 +291,14 @@ function Home() {
     </section>
   );
 
-  const copyrightSection = (
-    <section className="bg-black w-full p-2">
-      <Typography className="text-white text-center">
-        Copyright © 2023 by Aymen Hammami -{" "}
-        <a
-          href="https://www.linkedin.com/in/aymendps/"
-          target="_blank"
-          rel="noreferrer"
-          className="underline"
-        >
-          Have feedback? Please let me know!
-        </a>
-      </Typography>
-    </section>
-  );
   return (
     <>
       {videoSection}
       {aboutSection}
       {projectsSection}
-      {knowMoreSection}
+      {findMoreSection}
       {contactSection}
-      {copyrightSection}
+      {<Footer />}
     </>
   );
 }
