@@ -1,5 +1,5 @@
 import { Button, CircularProgress, Typography } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ResumeIcon from "@mui/icons-material/AttachFile";
 import AboutIcon from "@mui/icons-material/Person4";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,6 +14,12 @@ function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (window.location.href.includes("#projects")) {
+      document.getElementById("projects").scrollIntoView({ block: "start" });
+    }
+  }, []);
 
   const VIDEO_SRC = "";
 

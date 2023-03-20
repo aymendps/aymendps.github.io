@@ -40,6 +40,7 @@ function ProjectThumbnail({
   return (
     <div
       onClick={() => {
+        window.location.href = "#/home#projects";
         navigate(pageURL);
       }}
       onMouseEnter={() => {
