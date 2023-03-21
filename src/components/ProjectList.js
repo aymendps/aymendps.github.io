@@ -23,7 +23,7 @@ export const CAT_N_QUEST = {
   workDone: [],
   tags: ["Unity", "C#", "Game Dev", "Game Jam"],
   pageURL: "/cat-n-quest",
-  element: <CatNQuest />,
+  element: <></>,
 };
 
 const FOLLOW_THE_LIGHT = {

@@ -184,7 +184,7 @@ function Home() {
   const projectsSection = (
     <section className="w-full bg-white pb-12 relative">
       <div className="absolute top-[-70px] left-0" id="projects"></div>
-      <Typography variant="h2" className="text-black text-center pt-12">
+      <Typography variant="h2" className="text-darkblue text-center pt-12">
         Work & Projects
       </Typography>
       <Typography
