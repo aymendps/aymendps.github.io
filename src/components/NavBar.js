@@ -65,18 +65,30 @@ function NavBar() {
       ),
     },
     {
-      href: "mailto:hammami.aym@outlook.com",
+      href: "https://github.com/aymendps",
+      icon: <GithubIcon className="text-white hover:text-cyan-400 text-3xl" />,
+    },
+    {
+      href: "https://stackoverflow.com/users/18047369/aymendps",
       icon: (
-        <EmailIcon
-          fontSize="large"
-          className="text-white hover:text-cyan-400"
-        />
+        <div className="group">
+          <img
+            src="/stackoverflow-white.png"
+            alt=""
+            className="w-6 group-hover:hidden"
+          ></img>
+          <img
+            src="/stackoverflow-lighterblue.png"
+            alt=""
+            className="w-6 hidden group-hover:block"
+          ></img>
+        </div>
       ),
     },
     {
-      href: "https://github.com/aymendps",
+      href: "mailto:hammami.aym@outlook.com",
       icon: (
-        <GithubIcon
+        <EmailIcon
           fontSize="large"
           className="text-white hover:text-cyan-400"
         />
@@ -90,7 +102,7 @@ function NavBar() {
         smooth
         key={item.name + item.link}
         to={item.link}
-        className="w-1/5 h-full group"
+        className="w-[18%] h-full group"
       >
         <Button
           variant="text"
@@ -154,8 +166,7 @@ function NavBar() {
       </div>
       <div className="w-1/2 flex h-full">
         {generateNavBarItems}
-
-        <div className="w-1/5 flex h-full justify-center items-center gap-2">
+        <div className="w-1/4 flex h-full justify-center items-center gap-2">
           {generateNavBarIcons}
         </div>
       </div>

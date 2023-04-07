@@ -45,6 +45,24 @@ function Home() {
         <GithubIcon className="text-darkblue text-7xl group-hover:text-cyan-600" />
       ),
     },
+    {
+      name: "StackOverflow",
+      href: "https://stackoverflow.com/users/18047369/aymendps",
+      icon: (
+        <div className="pb-2">
+          <img
+            src="/stackoverflow-darkblue.png"
+            alt=""
+            className="w-16 group-hover:hidden"
+          ></img>
+          <img
+            src="/stackoverflow-lightblue.png"
+            alt=""
+            className="w-16 hidden group-hover:block"
+          ></img>
+        </div>
+      ),
+    },
   ];
 
   const videoSection = (
@@ -88,7 +106,7 @@ function Home() {
       <div className="h-[10vh] flex justify-center items-center">
         <div className="w-fit h-fit hover:scale-110 duration-200 relative"></div>
       </div>
-      <div className="m-auto w-[80%] py-4">
+      <div className="m-auto w-[80%] pt-4">
         <Typography variant="h2" className="text-center text-white pb-4">
           Welcome to my portfolio!
         </Typography>
@@ -127,7 +145,7 @@ function Home() {
             rel="noreferrer"
             className="text-cyan-400 hover:underline"
           >
-            <b>Summer 2024.</b>
+            <b>Summer/Fall 2024.</b>
           </a>
         </Typography>
         <Typography className="text-white text-center">
@@ -146,23 +164,9 @@ function Home() {
           >
             <b>programming.</b>
           </a>{" "}
-          I mean, there's just something so satisfying about taking an idea and
-          turning it into a reality through code.
-        </Typography>
-        <br />
-        <Typography className="text-white text-center">
-          When it comes to games, it's a bit of an emotional roller coaster for
-          me. Whether I'm playing alone or with friends, I just get so caught up
-          in the story and the world that's been created. It's like getting lost
-          in a really good book - you just can't put it down.
-        </Typography>
-        <br />
-        <Typography className="text-white text-center">
           I also really enjoy working closely with my teammates to create
           experiences that users will love. I've been fortunate enough to work
-          on some amazing projects both on my own and as part of a team. There's
-          nothing quite like that feeling of pride when you've worked together
-          to create something truly meaningful.
+          on some amazing projects both on my own and as part of a team.
         </Typography>
         <br />
         <Typography className="text-white text-center">
@@ -269,7 +273,7 @@ function Home() {
       >
         Let's talk! Feel free to send me a message through:
       </Typography>
-      <div className="w-full flex justify-center items-center gap-8">
+      <div className="w-full flex justify-center items-center gap-12">
         {CONTACT_ICONS.map((icon) => {
           return (
             <div
