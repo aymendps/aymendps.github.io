@@ -8,8 +8,8 @@ function ProjectThumbnail({
   thumbnail,
   gif,
   solo,
-  workDone,
-  tags,
+  workDone = [],
+  tags = [],
   pageURL,
 }) {
   const navigate = useNavigate();
