@@ -214,6 +214,23 @@ function Home() {
 
   const findMoreSection = (
     <section className="w-full bg-darkblue py-12">
+      <div className="pb-12">
+        <Typography variant="h2" className="text-center text-white pb-12">
+          Project Awards
+        </Typography>
+        <div className="w-full flex justify-evenly">
+          <iframe
+            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7053399476471816192"
+            title="Second Prize at 24H Game Development Hackathon"
+            className="w-1/3 h-[500px]"
+          ></iframe>
+          <iframe
+            src="https://www.linkedin.com/embed/feed/update/urn:li:share:6932755567732006913"
+            title="Best Software Engineering Project, SMU - MedTech"
+            className="w-1/3 h-[500px]"
+          ></iframe>
+        </div>
+      </div>
       <Typography variant="h2" className="text-center text-white pb-12">
         Find more about me
       </Typography>
