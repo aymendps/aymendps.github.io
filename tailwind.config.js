@@ -3,15 +3,15 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
-      "2xl": { max: "1535px" },
+      "screen-2xl": { max: "1535px" },
 
-      xl: { max: "1279px" },
+      "screen-xl": { max: "1279px" },
 
-      lg: { max: "1023px" },
+      "screen-lg": { max: "1023px" },
 
-      md: { max: "767px" },
+      "screen-md": { max: "767px" },
 
-      sm: { max: "639px" },
+      "screen-sm": { max: "426px" },
     },
     extend: {
       colors: {
