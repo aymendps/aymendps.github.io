@@ -66,7 +66,7 @@ function Home() {
   ];
 
   const videoSection = (
-    <section className="relative h-[85vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center">
+    <section className="relative h-[90vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center screen-sm:mt-0 screen-sm:h-[82vh]">
       <div className="absolute w-full top-[-70px] left-0" id="t"></div>
       <div className="w-[90%] h-[90%] z-10 bg-[rgb(0,20,40)] border border-gray-500">
         <video
@@ -102,16 +102,16 @@ function Home() {
   );
 
   const aboutSection = (
-    <section className="w-full bg-darkblue z-10 translate-y-[-10vh] pb-0">
-      <div className="h-[10vh] flex justify-center items-center">
-        <div className="w-fit h-fit hover:scale-110 duration-200 relative"></div>
-      </div>
-      <div className="m-auto w-[80%] pt-4">
-        <Typography variant="h2" className="text-center text-white pb-4">
+    <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px]">
+      <div className="m-auto w-[80%] pt-4 screen-sm:w-[90%]">
+        <Typography
+          variant="h2"
+          className="text-center text-white pb-4 screen-sm:text-4xl screen-sm:font-bold"
+        >
           Welcome to my portfolio!
         </Typography>
         <br />
-        <Typography className="text-white text-center">
+        <Typography className="text-white text-center screen-sm:text-left">
           <HashLink
             smooth
             to="/home#projects"
@@ -124,7 +124,7 @@ function Home() {
           on.
         </Typography>
         <br />
-        <Typography className="text-white text-center">
+        <Typography className="text-white text-center screen-sm:text-left">
           My name is{" "}
           <Link to="/about-me" className="text-cyan-400 hover:underline">
             <b>Aymen</b>
@@ -148,13 +148,14 @@ function Home() {
             <b>Summer/Fall 2024.</b>
           </a>
         </Typography>
-        <Typography className="text-white text-center">
+        <br className="hidden screen-sm:block" />
+        <Typography className="text-white text-center screen-sm:text-left">
           I've always had a passion for games and programming. I've been playing
           them since I was a kid, and I started making my own games and web apps
           in high school.
         </Typography>
         <br />
-        <Typography className="text-white text-center">
+        <Typography className="text-white text-center screen-sm:text-left">
           I absolutely love{" "}
           <a
             href="https://github.com/aymendps"
@@ -169,7 +170,7 @@ function Home() {
           on some amazing projects both on my own and as part of a team.
         </Typography>
         <br />
-        <Typography className="text-white text-center">
+        <Typography className="text-white text-center screen-sm:text-left">
           If you're as passionate as I am for making games, web apps, and
           software projects, then don't hesitate to reach out.{" "}
           <a
@@ -187,8 +188,14 @@ function Home() {
 
   const projectsSection = (
     <section className="w-full bg-white pb-12 relative">
-      <div className="absolute top-[-70px] left-0" id="projects"></div>
-      <Typography variant="h2" className="text-darkblue text-center pt-12">
+      <div
+        className="absolute top-[-70px] left-0 screen-sm:top-0"
+        id="projects"
+      ></div>
+      <Typography
+        variant="h2"
+        className="text-darkblue text-center pt-12 screen-sm:text-4xl screen-sm:font-bold"
+      >
         Work & Projects
       </Typography>
       <Typography
@@ -290,7 +297,7 @@ function Home() {
       >
         Let's talk! Feel free to send me a message through:
       </Typography>
-      <div className="w-full flex justify-center items-center gap-12">
+      <div className="w-full flex justify-center items-center gap-[5%]">
         {CONTACT_ICONS.map((icon) => {
           return (
             <div

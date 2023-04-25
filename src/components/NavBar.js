@@ -1,5 +1,10 @@
-import { Button, Typography } from "@mui/material";
-import React from "react";
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  Button,
+  Typography,
+} from "@mui/material";
+import React, { useState } from "react";
 import AboutIcon from "@mui/icons-material/Person4";
 import PortfolioIcon from "@mui/icons-material/Star";
 import ResumeIcon from "@mui/icons-material/AttachFile";
@@ -11,6 +16,8 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 function NavBar() {
+  const [bottomNavigationValue, setBottomNavigationValue] = useState("Home");
+
   const navBarItems = [
     {
       name: "Home",
@@ -141,36 +148,67 @@ function NavBar() {
     );
   });
 
+  const generateBottomNavigationItems = navBarItems.map((item) => {
+    return (
+      <BottomNavigationAction
+        className="text-white"
+        LinkComponent={item.link.includes("#") ? HashLink : Link}
+        smooth="true"
+        to={item.link}
+        key={"bottom " + item.name + item.link}
+        label={item.name}
+        value={item.name}
+        icon={item.icon}
+      />
+    );
+  });
+
   return (
-    <div className="flex bg-black justify-around items-center  fixed top-0 left-0 w-full h-[70px] z-50">
-      <div className="relative">
-        <Typography
-          variant="h4"
-          className="text-black absolute text-transparent"
-          style={{ WebkitTextStroke: "1px white" }}
-        >
-          Aymen Hammami
-        </Typography>
-        <Typography
-          variant="h4"
-          className="text-white"
-          style={{
-            animationName: "liquid",
-            animationDuration: "3s",
-            animationTimingFunction: "ease-in-out",
-            animationIterationCount: "infinite",
-          }}
-        >
-          Aymen Hammami
-        </Typography>
-      </div>
-      <div className="w-1/2 flex h-full">
-        {generateNavBarItems}
-        <div className="w-1/4 flex h-full justify-center items-center gap-2">
-          {generateNavBarIcons}
+    <>
+      {/* Navbar */}
+      <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-[70px] z-50 screen-sm:hidden">
+        <div className="relative">
+          <Typography
+            variant="h4"
+            className="text-black absolute text-transparent"
+            style={{ WebkitTextStroke: "1px white" }}
+          >
+            Aymen Hammami
+          </Typography>
+          <Typography
+            variant="h4"
+            className="text-white"
+            style={{
+              animationName: "liquid",
+              animationDuration: "3s",
+              animationTimingFunction: "ease-in-out",
+              animationIterationCount: "infinite",
+            }}
+          >
+            Aymen Hammami
+          </Typography>
+        </div>
+        <div className="w-1/2 flex h-full">
+          {generateNavBarItems}
+          <div className="w-1/4 flex h-full justify-center items-center gap-2">
+            {generateNavBarIcons}
+          </div>
         </div>
       </div>
-    </div>
+      {/* Bottom Navigation */}
+      <div className="hidden fixed bottom-0 left-0 right-0 z-[1000] screen-sm:block">
+        <BottomNavigation
+          showLabels
+          className="bg-black h-[70px]"
+          value={bottomNavigationValue}
+          onChange={(event, newValue) => {
+            setBottomNavigationValue(newValue);
+          }}
+        >
+          {generateBottomNavigationItems}
+        </BottomNavigation>
+      </div>
+    </>
   );
 }
 
