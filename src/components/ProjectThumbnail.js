@@ -31,7 +31,7 @@ function ProjectThumbnail({
         key={title + tag}
         label={tag}
         size="small"
-        variant="outlined"
+        variant="filled"
         className="bg-darkblue text-white font-bold border-darkblue cursor-pointer"
       ></Chip>
     );
