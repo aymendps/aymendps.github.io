@@ -9,7 +9,7 @@ module.exports = {
 
       "screen-lg": { max: "1023px" },
 
-      "screen-md": { max: "767px" },
+      "screen-md": { max: "768px" },
 
       "screen-sm": { max: "426px" },
     },

@@ -65,8 +65,19 @@ function Home() {
     },
   ];
 
+  const LINKEDIN_POSTS = [
+    {
+      title: "Second Prize at 24H Game Development Hackathon",
+      url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7053399476471816192",
+    },
+    {
+      title: "Best Software Engineering Project, SMU - MedTech",
+      url: "https://www.linkedin.com/embed/feed/update/urn:li:share:6932755567732006913",
+    },
+  ];
+
   const videoSection = (
-    <section className="relative h-[90vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center screen-sm:mt-0 screen-sm:h-[82vh]">
+    <section className="relative h-[90vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center screen-md:mt-0 screen-md:h-[82vh]">
       <div className="absolute w-full top-[-70px] left-0" id="t"></div>
       <div className="w-[90%] h-[90%] z-10 bg-[rgb(0,20,40)] border border-gray-500">
         <video
@@ -103,15 +114,15 @@ function Home() {
 
   const aboutSection = (
     <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px]">
-      <div className="m-auto w-[80%] pt-4 screen-sm:w-[90%]">
+      <div className="m-auto w-[80%] pt-4 screen-md:w-[90%]">
         <Typography
           variant="h2"
-          className="text-center text-white pb-4 screen-sm:text-4xl screen-sm:font-bold"
+          className="text-center text-white pb-4 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
         >
           Welcome to my portfolio!
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-sm:text-left">
+        <Typography className="text-white text-center screen-md:text-left">
           <HashLink
             smooth
             to="/home#projects"
@@ -124,7 +135,7 @@ function Home() {
           on.
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-sm:text-left">
+        <Typography className="text-white text-center screen-md:text-left">
           My name is{" "}
           <Link to="/about-me" className="text-cyan-400 hover:underline">
             <b>Aymen</b>
@@ -148,14 +159,14 @@ function Home() {
             <b>Summer/Fall 2024.</b>
           </a>
         </Typography>
-        <br className="hidden screen-sm:block" />
-        <Typography className="text-white text-center screen-sm:text-left">
+        <br className="hidden screen-md:block" />
+        <Typography className="text-white text-center screen-md:text-left">
           I've always had a passion for games and programming. I've been playing
           them since I was a kid, and I started making my own games and web apps
           in high school.
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-sm:text-left">
+        <Typography className="text-white text-center screen-md:text-left">
           I absolutely love{" "}
           <a
             href="https://github.com/aymendps"
@@ -170,7 +181,7 @@ function Home() {
           on some amazing projects both on my own and as part of a team.
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-sm:text-left">
+        <Typography className="text-white text-center screen-md:text-left">
           If you're as passionate as I am for making games, web apps, and
           software projects, then don't hesitate to reach out.{" "}
           <a
@@ -189,60 +200,70 @@ function Home() {
   const projectsSection = (
     <section className="w-full bg-white pb-12 relative">
       <div
-        className="absolute top-[-70px] left-0 screen-sm:top-0"
+        className="absolute top-[-70px] left-0 screen-md:top-0"
         id="projects"
       ></div>
-      <Typography
-        variant="h2"
-        className="text-darkblue text-center pt-12 screen-sm:text-4xl screen-sm:font-bold"
-      >
-        Work & Projects
-      </Typography>
-      <Typography
-        variant="subtitle1"
-        className="text-center pb-12 text-cyan-600"
-      >
-        Click on a project to view it with more details
-      </Typography>
-      <ProjectList />
-      <Typography variant="subtitle1" className="text-center text-darkblue">
-        Other projects might be found on my{" "}
-        <a
-          href="https://github.com/aymendps"
-          target="_blank"
-          rel="noreferrer"
-          className="text-cyan-600 hover:underline"
+      <div className="w-[90%] m-auto">
+        <Typography
+          variant="h2"
+          className="text-darkblue text-center pt-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
         >
-          GitHub
-        </a>
-      </Typography>
+          Work & Projects
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          className="text-center pb-12 text-cyan-600"
+        >
+          Click on a project to view it with more details
+        </Typography>
+      </div>
+      <ProjectList />
+      <div className="w-[90%] m-auto">
+        <Typography variant="subtitle1" className="text-center text-darkblue">
+          Other projects might be found on my{" "}
+          <a
+            href="https://github.com/aymendps"
+            target="_blank"
+            rel="noreferrer"
+            className="text-cyan-600 hover:underline"
+          >
+            GitHub
+          </a>
+        </Typography>
+      </div>
     </section>
   );
 
   const findMoreSection = (
     <section className="w-full bg-darkblue py-12">
-      <div className="pb-12">
-        <Typography variant="h2" className="text-center text-white pb-12">
-          Project Awards
-        </Typography>
-        <div className="w-full flex justify-evenly">
-          <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7053399476471816192"
-            title="Second Prize at 24H Game Development Hackathon"
-            className="w-1/3 h-[500px]"
-          ></iframe>
-          <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:share:6932755567732006913"
-            title="Best Software Engineering Project, SMU - MedTech"
-            className="w-1/3 h-[500px]"
-          ></iframe>
-        </div>
-      </div>
-      <Typography variant="h2" className="text-center text-white pb-12">
-        Find more about me
+      <Typography
+        variant="h2"
+        className="text-center text-white pb-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+      >
+        Project Awards
       </Typography>
-      <div className="w-[80%] flex justify-evenly m-auto">
-        <div className="basis-[35%]">
+      <div className="w-full flex justify-evenly flex-wrap">
+        {LINKEDIN_POSTS.map((post) => {
+          return (
+            <iframe
+              key={post.title}
+              src={post.url}
+              title={post.title}
+              className="w-1/3 h-[500px] mb-12 screen-sm:h-[400px] screen-sm:w-[90%] screen-md:w-[80%]"
+            ></iframe>
+          );
+        })}
+      </div>
+      <div className="w-[90%] m-auto">
+        <Typography
+          variant="h2"
+          className="text-center text-white pb-8 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+        >
+          Find more about me
+        </Typography>
+      </div>
+      <div className="w-[80%] flex screen-md:flex-wrap justify-evenly m-auto screen-md:w-full">
+        <div className="basis-[35%] screen-md:basis-[90%] screen-md:mb-6">
           <Button
             fullWidth
             size="large"
@@ -257,12 +278,12 @@ function Home() {
           </Button>
           <Typography
             variant="caption"
-            className="text-cyan-200 text-center block pt-2"
+            className="text-cyan-200 text-center block pt-2 screen-md:hidden"
           >
             My skills, projects, education & experience in PDF format
           </Typography>
         </div>
-        <div className="basis-[35%]">
+        <div className="basis-[35%] screen-md:basis-[90%]">
           <Button
             fullWidth
             size="large"
@@ -277,7 +298,7 @@ function Home() {
           </Button>
           <Typography
             variant="caption"
-            className="text-cyan-200 text-center block pt-2"
+            className="text-cyan-200 text-center block pt-2 screen-md:hidden"
           >
             More about who I am, what I enjoy, what I do in my free time
           </Typography>
@@ -288,21 +309,26 @@ function Home() {
 
   const contactSection = (
     <section className="w-full bg-white py-12">
-      <Typography variant="h2" className="text-center">
-        Reach out to me
-      </Typography>
-      <Typography
-        variant="subtitle1"
-        className="text-cyan-600 text-center pb-12"
-      >
-        Let's talk! Feel free to send me a message through:
-      </Typography>
-      <div className="w-full flex justify-center items-center gap-[5%]">
+      <div className="w-[90%] m-auto">
+        <Typography
+          variant="h2"
+          className="text-center screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+        >
+          Reach out to me
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          className="text-cyan-600 text-center pb-12"
+        >
+          Let's talk! Feel free to send me a message through:
+        </Typography>
+      </div>
+      <div className="w-full flex-wrap flex justify-center items-center gap-[5%] screen-md:gap-0">
         {CONTACT_ICONS.map((icon) => {
           return (
             <div
               key={"contactSection" + icon.href}
-              className="flex flex-col items-center justify-center group"
+              className="flex flex-col items-center justify-center group screen-md:basis-[40%] mb-[5%]"
             >
               <a
                 href={icon.href}

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react";
 import CatNQuest from "./Projects/CatNQuest";
 import ProjectThumbnail from "./ProjectThumbnail";
@@ -23,7 +25,7 @@ export const CAT_N_QUEST = {
   workDone: [],
   tags: ["Unity", "C#", "Game Dev", "Game Jam"],
   pageURL: "/cat-n-quest",
-  element: <></>,
+  element: <CatNQuest />,
 };
 
 const FOLLOW_THE_LIGHT = {

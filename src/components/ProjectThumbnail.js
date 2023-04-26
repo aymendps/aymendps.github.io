@@ -49,7 +49,7 @@ function ProjectThumbnail({
       onMouseLeave={() => {
         setImageSrc(thumbnail);
       }}
-      className="basis-[25%] relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group mb-[5%] hover:bg-cyan-50"
+      className="basis-[25%] screen-sm:basis-[90%] screen-md:basis-[80%] mb-[5%] relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group hover:bg-cyan-50"
     >
       <div className="p-4">
         <Typography
