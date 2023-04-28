@@ -3,15 +3,16 @@
 import React from "react";
 import CatNQuest from "./Projects/CatNQuest";
 import ProjectThumbnail from "./ProjectThumbnail";
+import FabLabMachinesDiscovery from "./Projects/FabLabMachinesDiscovery";
 
-const UNREAL_GAME_1 = {
+export const UNREAL_GAME_1 = {
   title: "Unreal Game 1",
   subtitle: "Work in progress",
   thumbnail: "",
   gif: "",
   solo: true,
   workDone: [],
-  tags: ["Unreal Engine 5", "C++", "Game Dev", "Personal"],
+  tags: ["Game Dev", "Personal", "UE 5", "C++"],
   pageURL: "/unreal-game-1",
   element: <></>,
 };
@@ -23,48 +24,36 @@ export const CAT_N_QUEST = {
   gif: "",
   solo: false,
   workDone: [],
-  tags: ["Unity", "C#", "Game Dev", "Game Jam"],
+  tags: ["Game Dev", "Game Jam", "Unity", "C#"],
   pageURL: "/cat-n-quest",
   element: <CatNQuest />,
 };
 
-const FOLLOW_THE_LIGHT = {
+export const FOLLOW_THE_LIGHT = {
   title: "Follow The Light",
   subtitle: "3D puzzle game",
   thumbnail: "",
   gif: "",
   solo: true,
   workDone: [],
-  tags: ["Unity", "C#", "Game Dev", "Personal"],
+  tags: ["Game Dev", "Personal", "Unity", "C#"],
   pageURL: "/follow-the-light",
   element: <></>,
 };
 
-const UNREAL_GAME_2 = {
-  title: "Unreal Game 2",
-  subtitle: "Work in progress",
-  thumbnail: "",
-  gif: "",
-  solo: true,
-  workDone: [],
-  tags: ["Unreal Engine 5", "C++", "Game Dev", "Personal"],
-  pageURL: "/unreal-game-2",
-  element: <></>,
-};
-
-const FMD = {
+export const FMD = {
   title: "Fablab Machines Discovery",
   subtitle: "AR mobile application",
   thumbnail: "",
   gif: "",
   solo: false,
   workDone: [],
-  tags: ["Unity", "C#", "AR", "Vuforia", "University"],
+  tags: ["Mobile", "University", "Unity", "AR", "C#"],
   pageURL: "/fablab-machines-discovery",
-  element: <></>,
+  element: <FabLabMachinesDiscovery />,
 };
 
-const PATHFINDING = {
+export const PATHFINDING = {
   title: "Pathfinding Adventure",
   subtitle: "Game pathfinding algorithms",
   thumbnail: "",
@@ -76,26 +65,34 @@ const PATHFINDING = {
   element: <></>,
 };
 
-const SSA = {
+export const SSA = {
   title: "Student Speciality Advisor",
   subtitle: "Full-Stack web application",
   thumbnail: "",
   gif: "",
   solo: false,
   workDone: [],
-  tags: ["React", "Express", "MongoDB", "University"],
+  tags: ["Full Stack", "University", "React", "Express", "MongoDB"],
   pageURL: "/student-speciality-advisor",
   element: <></>,
 };
 
-const FILE_MANAGER = {
+export const FILE_MANAGER = {
   title: "File Manager - Cynoia",
   subtitle: "Full-Stack web application",
   thumbnail: "",
   gif: "",
   solo: false,
   workDone: [],
-  tags: ["React", "NestJS", "MySQL", "S3", "Professional"],
+  tags: [
+    "Full Stack",
+    "Professional",
+    "React",
+    "NestJS",
+    "MySQL",
+    "S3",
+    "TypeScript",
+  ],
   pageURL: "/student-speciality-advisor",
   element: <></>,
 };
@@ -103,21 +100,20 @@ const FILE_MANAGER = {
 export const PROJECTS = [
   UNREAL_GAME_1,
   CAT_N_QUEST,
-  FOLLOW_THE_LIGHT,
-  UNREAL_GAME_2,
   FMD,
   PATHFINDING,
+  FOLLOW_THE_LIGHT,
   SSA,
   FILE_MANAGER,
 ];
 
 function ProjectList() {
   const generateProjects = PROJECTS.map((project) => {
-    return <ProjectThumbnail key={project.title} {...project} />;
+    return <ProjectThumbnail key={"thumbnail" + project.title} {...project} />;
   });
 
   return (
-    <div className="w-full flex justify-center items-center flex-wrap gap-[5%]">
+    <div className="w-full flex justify-center items-start flex-wrap gap-[2.4%]">
       {generateProjects}
     </div>
   );

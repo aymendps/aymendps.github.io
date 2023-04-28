@@ -39,7 +39,12 @@ function ProjectIntroduction({
   const generateWorkDone = workDone.map((work) => {
     return (
       <li className="text-white">
-        <HashLink className="underline text-white" smooth to={work.id}>
+        <HashLink
+          className="underline text-white"
+          smooth
+          to={work.id}
+          key={"hashlink" + work.id}
+        >
           {work.title}
         </HashLink>
       </li>
@@ -67,22 +72,24 @@ function ProjectIntroduction({
 
   return (
     <section className="w-full bg-white pt-[70px] screen-md:pt-0">
-      <div className="w-[90%] m-auto">
+      <div className="w-[90%] m-auto pb-4">
         <Typography
           variant="h2"
           className="text-darkblue text-center pt-12 screen-md:pt-6 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
         >
           {title}
         </Typography>
-        <Typography
-          variant="subtitle1"
-          className="text-cyan-600 text-center pb-4"
-        >
-          {subtitle}
-        </Typography>
       </div>
-      <div className="w-full flex justify-center gap-2 flex-wrap pb-12 screen-md:pb-6">
+      <div className="w-[90%] m-auto flex justify-center gap-2 flex-wrap pb-12 screen-md:pb-6">
         {generateTags}
+      </div>
+      <div className="w-[90%] m-auto hidden screen-md:block">
+        <Typography
+          variant="h4"
+          className="text-cyan-600 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
+        >
+          Demo Video
+        </Typography>
       </div>
       <div className="w-[80%] m-auto pb-8 flex justify-between screen-md:w-[90%] screen-md:block screen-md:pb-6">
         <div className="w-[70%] screen-md:w-full aspect-video bg-cyan-600 border-2 border-darkblue relative flex justify-center items-center">

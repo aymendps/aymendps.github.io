@@ -25,10 +25,10 @@ function CatNQuest() {
         subtitle={CAT_N_QUEST.subtitle}
         youtubeURL="https://www.youtube.com/embed/"
         projectType="Game Jam"
-        role="Gameplay Programmer"
+        role="Game Programmer"
         teamSize="3"
         platform="PC - WebGL"
-        softwareUsed="Unity, C#"
+        softwareUsed="Unity - C#"
         when="Oct 2022"
         usefulLinks={usefulLinks}
         workDone={workDone}

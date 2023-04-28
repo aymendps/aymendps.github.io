@@ -220,7 +220,7 @@ function Home() {
       <ProjectList />
       <div className="w-[90%] m-auto">
         <Typography variant="subtitle1" className="text-center text-darkblue">
-          Other projects might be found on my{" "}
+          Other projects may be found on my{" "}
           <a
             href="https://github.com/aymendps"
             target="_blank"
@@ -228,7 +228,16 @@ function Home() {
             className="text-cyan-600 hover:underline"
           >
             GitHub
-          </a>
+          </a>{" "}
+          or{" "}
+          <a
+            href="https://www.youtube.com/@aymendps"
+            target="_blank"
+            rel="noreferrer"
+            className="text-cyan-600 hover:underline"
+          >
+            Youtube
+          </a>{" "}
         </Typography>
       </div>
     </section>
@@ -328,7 +337,7 @@ function Home() {
           return (
             <div
               key={"contactSection" + icon.href}
-              className="flex flex-col items-center justify-center group screen-md:basis-[40%] mb-[5%]"
+              className="flex flex-col items-center justify-center group screen-md:basis-[40%] screen-md:mb-6"
             >
               <a
                 href={icon.href}
