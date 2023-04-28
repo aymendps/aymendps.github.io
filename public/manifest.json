@@ -1,0 +1,14 @@
+{
+  "short_name": "Aymen Hammami",
+  "name": "Aymen Hammami | Games & Apps Portfolio",
+  "icons": [
+    {
+      "src": "me192.jpg",
+      "type": "image/jpeg",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "https://aymendps.github.io/",
+  "display": "standalone",
+  "theme_color": "#001E3C"
+}
