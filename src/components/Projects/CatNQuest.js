@@ -22,7 +22,6 @@ function CatNQuest() {
     <>
       <ProjectIntroduction
         title={CAT_N_QUEST.title}
-        subtitle={CAT_N_QUEST.subtitle}
         youtubeURL="https://www.youtube.com/embed/"
         projectType="Game Jam"
         role="Game Programmer"

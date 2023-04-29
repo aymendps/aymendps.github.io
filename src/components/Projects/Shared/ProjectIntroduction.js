@@ -1,10 +1,8 @@
 import { Chip, CircularProgress, Typography } from "@mui/material";
-import { useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 
 function ProjectIntroduction({
   title,
-  subtitle,
   youtubeURL,
   projectType,
   role,
@@ -16,16 +14,14 @@ function ProjectIntroduction({
   usefulLinks = [],
   workDone = [],
 }) {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const generateUsefulLinks = usefulLinks.map((link) => {
     return (
-      <li className="text-darkblue">
+      <li
+        key={link.href + link.title}
+        className="text-darkblue pt-1 underline-offset-4"
+      >
         <a
           className="underline text-darblue"
-          key={link.href + link.title}
           href={link.href}
           target="_blank"
           rel="noreferrer"
@@ -38,13 +34,11 @@ function ProjectIntroduction({
 
   const generateWorkDone = workDone.map((work) => {
     return (
-      <li className="text-white">
-        <HashLink
-          className="underline text-white"
-          smooth
-          to={work.id}
-          key={"hashlink" + work.id}
-        >
+      <li
+        key={"hashlink" + work.id}
+        className="text-white pt-1 underline-offset-4"
+      >
+        <HashLink className="underline text-white" smooth to={"#" + work.id}>
           {work.title}
         </HashLink>
       </li>
@@ -91,9 +85,9 @@ function ProjectIntroduction({
           Demo Video
         </Typography>
       </div>
-      <div className="w-[80%] m-auto pb-8 flex justify-between screen-md:w-[90%] screen-md:block screen-md:pb-6">
+      <div className="w-[90%] m-auto pb-8 flex justify-between screen-md:block screen-md:pb-6">
         <div className="w-[70%] screen-md:w-full aspect-video bg-cyan-600 border-2 border-darkblue relative flex justify-center items-center">
-          <CircularProgress className="text-darkblue" size={80} thickness={1} />
+          <CircularProgress className="text-darkblue" size={90} thickness={1} />
           <iframe
             className="w-full h-full absolute top-0 left-0"
             title={title}
@@ -108,20 +102,22 @@ function ProjectIntroduction({
           >
             Description
           </Typography>
-          <Typography className="text-darkblue whitespace-pre-line break-words">
+          <Typography className="text-darkblue whitespace-pre-line break-words text-[16px] leading-5">
             {description}
           </Typography>
-          <Typography
-            variant="h4"
-            className="text-cyan-600 pt-4 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
-          >
-            Useful Links
-          </Typography>
-          <ul className="list-disc px-4">{generateUsefulLinks}</ul>
         </div>
       </div>
+      <div className="w-[90%] m-auto pb-6">
+        <Typography
+          variant="h4"
+          className="text-cyan-600 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
+        >
+          Useful Links
+        </Typography>
+        <ul className="list-disc px-4">{generateUsefulLinks}</ul>
+      </div>
       <div className="w-full bg-darkblue">
-        <div className="w-[80%] m-auto py-8 screen-md:w-[90%]">
+        <div className="w-[90%] m-auto py-6">
           <Typography
             variant="h4"
             className="text-cyan-400 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
