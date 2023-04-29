@@ -16,13 +16,8 @@ function ProjectThumbnail({
 
   const [imageSrc, setImageSrc] = useState(thumbnail);
 
-  const generateWorkDone = workDone.map((wd) => {
-    return (
-      <Typography key={title + wd}>
-        <span className="text-cyan-600 font-bold">{wd[0]}</span>
-        {wd.substring(1)}
-      </Typography>
-    );
+  const generateWorkDone = workDone.map((work) => {
+    return <li key={title + work}>{work}</li>;
   });
 
   const generateTags = tags.map((tag) => {
@@ -79,7 +74,7 @@ function ProjectThumbnail({
           <Typography variant="h6" className="text-center text-darkblue pb-2">
             {solo ? "Work Done" : "Contributions"}
           </Typography>
-          {generateWorkDone}
+          <ul className="list-disc px-4">{generateWorkDone}</ul>
         </div>
       </div>
     </div>
