@@ -1,7 +1,10 @@
+import { Typography } from "@mui/material";
 import Footer from "../Footer";
 import { FMD } from "../ProjectList";
 import ProjectContent from "./Shared/ProjectContent";
 import ProjectIntroduction from "./Shared/ProjectIntroduction";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function FabLabMachinesDiscovery() {
   const usefulLinks = [
@@ -18,7 +21,60 @@ function FabLabMachinesDiscovery() {
 
   const scrumSection = <p>Scrum</p>;
 
-  const uiSection = <p>UI</p>;
+  const uiSection = (
+    <>
+      <p>UI</p>
+      <div className="w-[100%]">
+        <SyntaxHighlighter
+          customStyle={{ width: "100%", height: "450px" }}
+          language="csharp"
+          showLineNumbers={true}
+          style={vscDarkPlus}
+        >
+          {`using UnityEngine;
+using DG.Tweening;
+
+namespace Animations
+{
+    public interface IUIAnimation
+    {
+        public void Play();
+    }
+    
+    public abstract class UIAnimation<TDesiredValue> : MonoBehaviour, IUIAnimation
+    {
+        // Properties used for animation
+        public UIAnimationProps<TDesiredValue> animationProps;
+
+        // Used to store the tween for the animation, so you can kill it later
+        protected Tween tween;
+
+        protected virtual void Start()
+        {
+            if(animationProps.autoPlay) Play();
+        }
+
+        /// <summary>
+        /// Starts the animation.
+        /// </summary>
+        public abstract void Play();
+
+        // Kill the tween when the object is disabled or destroyed
+        protected void OnDisable()
+        {
+            tween?.Kill();
+
+        }
+    }
+}`}
+        </SyntaxHighlighter>
+        <Typography variant="caption" className="text-center block">
+          Code Snippet of UIAnimation: a generic class that works as base for
+          all UI Animations
+        </Typography>
+      </div>
+    </>
+  );
 
   const vuforiaSection = <p>Vuforia</p>;
 
