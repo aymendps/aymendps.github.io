@@ -258,7 +258,7 @@ function Home() {
               key={post.title}
               src={post.url}
               title={post.title}
-              className="w-1/3 h-[500px] mb-12 screen-sm:h-[400px] screen-sm:w-[90%] screen-md:w-[80%]"
+              className="w-1/3 h-[500px] mb-12 screen-sm:h-[400px] screen-sm:w-[90%] screen-md:w-[80%] border-cyan-300 border-4"
             ></iframe>
           );
         })}

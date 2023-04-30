@@ -20,9 +20,7 @@ function ProjectContent({ workDone = [] }) {
       <section
         key={"section" + work.id + work.title}
         className={
-          index % 2 === 0
-            ? "w-full bg-white py-6 relative"
-            : "w-full bg-gray-200 py-6 relative"
+          index % 2 === 0 ? "w-full bg-white py-6" : "w-full bg-gray-200 py-6"
         }
       >
         <div

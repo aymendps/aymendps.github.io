@@ -25,6 +25,7 @@ function App() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/about-me" element={<AboutMe />} />
         {generateProjectRoutes}
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </HashRouter>
   );

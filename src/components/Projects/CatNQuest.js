@@ -2,6 +2,7 @@ import React from "react";
 import { CAT_N_QUEST } from "../ProjectList";
 import ProjectIntroduction from "./Shared/ProjectIntroduction";
 import Footer from "../Footer";
+import ProjectContent from "./Shared/ProjectContent";
 
 function CatNQuest() {
   const usefulLinks = [
@@ -13,8 +14,9 @@ function CatNQuest() {
 
   const workDone = [
     {
-      id: "#top",
+      id: "someworkhere",
       title: "some work here",
+      content: <p>some work here</p>,
     },
   ];
 
@@ -40,6 +42,7 @@ function CatNQuest() {
       f
       g`}
       />
+      <ProjectContent workDone={workDone} />
       <Footer />
     </>
   );
