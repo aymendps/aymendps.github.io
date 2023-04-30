@@ -23,10 +23,12 @@ function ProjectContent({ workDone = [] }) {
           index % 2 === 0 ? "w-full bg-white py-6" : "w-full bg-gray-200 py-6"
         }
       >
-        <div
-          className="absolute top-[-70px] left-0 screen-md:top-0"
-          id={work.id}
-        ></div>
+        <div className="w-full relative">
+          <div
+            className="absolute top-[-80px] left-0 screen-md:top-[-10px]"
+            id={work.id}
+          ></div>
+        </div>
         <div className="w-[90%] m-auto">
           <Typography
             variant="h4"

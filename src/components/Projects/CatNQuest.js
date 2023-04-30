@@ -24,7 +24,7 @@ function CatNQuest() {
     <>
       <ProjectIntroduction
         title={CAT_N_QUEST.title}
-        youtubeURL="https://www.youtube.com/embed/"
+        youtubeURL="https://www.youtube-nocookie.com/embed/"
         projectType="Game Jam"
         role="Game Programmer"
         teamSize="3"

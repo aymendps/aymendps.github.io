@@ -1,6 +1,6 @@
 import { Chip, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ProjectThumbnail({
   title,
@@ -12,7 +12,7 @@ function ProjectThumbnail({
   tags = [],
   pageURL,
 }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [imageSrc, setImageSrc] = useState(thumbnail);
 
@@ -33,10 +33,10 @@ function ProjectThumbnail({
   });
 
   return (
-    <div
+    <Link
+      to={pageURL}
       onClick={() => {
         window.location.href = "#/home#projects";
-        navigate(pageURL);
       }}
       onMouseEnter={() => {
         if (gif) setImageSrc(gif);
@@ -77,7 +77,7 @@ function ProjectThumbnail({
           <ul className="list-disc px-4">{generateWorkDone}</ul>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
