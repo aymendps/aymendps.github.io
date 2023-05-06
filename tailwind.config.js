@@ -7,7 +7,7 @@ module.exports = {
 
       "screen-xl": { max: "1279px" },
 
-      "screen-lg": { max: "1023px" },
+      "screen-lg": { max: "1024px" },
 
       "screen-md": { max: "768px" },
 

@@ -59,7 +59,7 @@ function ProjectThumbnail({
       </div>
       <div className="w-full aspect-square bg-cyan-600 relative border-y-2 border-darkblue">
         <img
-          className="w-full h-full object-center"
+          className="w-full object-center object-contain"
           src={imageSrc}
           alt=""
         ></img>

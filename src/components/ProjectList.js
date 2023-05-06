@@ -53,7 +53,6 @@ export const FMD = {
     "Augmented Reality With Vuforia",
     "AR Popup System",
     "3D Machine Simulation",
-    "Many Types Of Testing",
   ],
   tags: ["Mobile", "University", "Unity", "AR", "C#"],
   pageURL: "/fablab-machines-discovery",

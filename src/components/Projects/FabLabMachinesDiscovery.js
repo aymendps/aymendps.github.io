@@ -214,14 +214,12 @@ namespace Animations
 {
     public class TranslationAnimation : UIAnimation<Vector3>
     {
-        [Tooltip("Whether the translation is relative to the object's local position or not" +
-                 "If set to false, it will translate towards the desired value" +
-                 "If set to true, it will add the desired value to the object's local position")]
+        [Tooltip("Whether the translation is relative to the object's local position or not")]
         public bool isRelative = true;
 
         public override void Play()
         {
-            //Change the position to desired value, while applying provided duration and delay
+            // Cache the tween so we can kill it later
             tween = transform.DOLocalMove(animationProps.desiredValue,animationProps.duration)
                 .SetRelative(isRelative)
                 .SetDelay(animationProps.delay);
@@ -247,9 +245,8 @@ namespace Animations
         </div>
       </div>
       <Typography className="leading-5">
-        Since the code is decoupled,{" "}
         <b>
-          multiple animation components can be assigned to the same game object
+          Multiple animation components can be assigned to the same game object
         </b>
         , where the delay defines the execution order.
         <br />
@@ -272,12 +269,12 @@ namespace Animations
       </Typography>
       <Typography className="leading-5 mt-4">
         As you may have noticed in the video, the user can navigate to different
-        pages <b>by sliding in a left or right direction</b>, allowing them to
-        move to the next or previous page respectively. <br />
-        Additionally, you can see that the animations of each page{" "}
-        <b>play once the user slides to that page.</b> At the bottom, there is a{" "}
-        <b>pagination section </b>
-        that shows the currently viewed page.
+        panels <b>by sliding in a left or right direction</b>, allowing them to
+        move to the next or previous panel respectively. <br />
+        Additionally, you can see that the animations of each panel{" "}
+        <b>play once the user swipes to that panel.</b> At the bottom, there is
+        a <b>pagination section </b>
+        that shows the currently viewed panel.
         <br />
         <br />I have implemented the behaviour of all these mentioned features
         by using an <b>Observer pattern.</b> This pattern lets us define a
@@ -287,16 +284,203 @@ namespace Animations
         <br />
         In this case, I have created a class called <b>PanelSwiper</b>, which is
         responsible for handling the user's drag input to determine if a
-        successful slide has occurred. This class has{" "}
+        successful swipe has occurred. This class has{" "}
         <b>an event called OnSwipe</b>, which is invoked by the class once the
-        user swipes to a new page. The classes{" "}
-        <b>PanelSwipeable and PanelPagination both subscribe to OnSwipe</b> to
-        receive information about the currently viewed page.{" "}
-        <b>PanelSwipeable</b>, which represents a single page, uses this
+        user swipes to a new panel. The classes{" "}
+        <b>PanelSwipeable & PanelPagination both subscribe to OnSwipe</b> to
+        receive information about the currently viewed panel.{" "}
+        <b>PanelSwipeable</b>, which represents a single panel, uses this
         information to determine <b>when to play its elements' animations</b>,
         while <b>PanelPagination</b>, which controls the pagination section at
         the bottom, uses it to <b>update its UI accordingly.</b>
       </Typography>
+      <div className="flex justify-between screen-md:flex-col mt-2">
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighter
+            customStyle={{ width: "100%", height: "450px" }}
+            language="csharp"
+            showLineNumbers={true}
+            style={vscDarkPlus}
+          >
+            {`using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using DG.Tweening;
+
+namespace Onboarding_Scene
+{
+    [DefaultExecutionOrder(-1)]
+    public class PanelSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
+    {
+        [Tooltip("At what percentage threshold should I swipe to the next panel automatically")]
+        [Range(0, 1)] [SerializeField] private float swipeThreshold;
+        
+        [Tooltip("Duration it takes to smoothly swipe to another panel")]
+        [Range(0, 1)] [SerializeField] private float swipeDuration;
+        
+        /// <summary>
+        /// Event called when a swipe happens.
+        /// </summary>
+        public event Action<int> OnSwipe;
+
+        // Distance that a single swipe is allowed
+        private readonly float _swipeDistance = Screen.width / 2f;
+        
+        // Start position of this 
+        private Vector3 _startPosition;
+        
+        // Index of the current swipeable panel in the hierarchy
+        private int _currentPanelIndex;
+
+        private void Start()
+        {
+            SetupPanelPositions();
+            InvokeOnSwipe(_currentPanelIndex);
+        }
+        
+        private void InvokeOnSwipe(int panelIndex)
+        {
+            OnSwipe?.Invoke(panelIndex);
+        }
+        
+        /*
+         * Sets up the panels' positions so that they are adjacent to each other with no space in between.
+         * This was necessary because depending on the screen resolution, the panels would sometimes have empty
+         * spaces between them, and that would mess up the design and the swipe logic
+         */
+        private void SetupPanelPositions()
+        {
+            // Get width of the first panel
+            var width = transform.GetChild(0).GetComponent<RectTransform>().rect.width;
+            
+            // Since panels are of the same size, use that width to adjust the positions of the panels
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                var rt = (RectTransform) transform.GetChild(i);
+                Utility.RectTransformExtensions.SetLeft(rt, width * i);
+                Utility.RectTransformExtensions.SetRight(rt, -width * i);
+            }
+            
+            // Set the start position of this, which owns the swipeable panels
+            _startPosition = transform.position;
+        }
+
+        // When the user is dragging, this will be called every time the pointer is moved on the screen
+        public void OnDrag(PointerEventData data)
+        {
+            // Difference in the x value when dragging
+            var movement = data.pressPosition.x - data.position.x;
+            // Only care about updating the x value of the Transform when dragging
+            float xPos;
+            
+            // If it's the first panel, only allow swiping to next panel
+            // If it's the last panel, only allow swiping to previous panel
+            // Otherwise allow swiping both directions
+            if (_currentPanelIndex == 0)
+            {
+                xPos = Mathf.Clamp(_startPosition.x - movement, _startPosition.x - _swipeDistance, _startPosition.x);
+            } else if (_currentPanelIndex == transform.childCount - 1)
+            {
+                xPos = Mathf.Clamp(_startPosition.x - movement, _startPosition.x, _startPosition.x + _swipeDistance);
+            }
+            else
+            {
+                xPos = Mathf.Clamp(_startPosition.x - movement, _startPosition.x - _swipeDistance,
+                    _startPosition.x + _swipeDistance);
+            }
+            
+            // Update the x value of Transform when dragging
+            transform.position = new Vector3(xPos, _startPosition.y, _startPosition.z);
+        }
+
+        // Called when the user stopped dragging
+        public void OnEndDrag(PointerEventData data)
+        {
+            // How much of the screen was dragged
+            var threshold = (data.pressPosition.x - data.position.x) / Screen.width;
+
+            // If it exceeds the swipe threshold and would swipe to a valid panel, then swipe to that panel
+            // and invoke the OnSwipe event
+            if (Mathf.Abs(threshold) >= swipeThreshold)
+            {
+                if (threshold > 0 && _currentPanelIndex < transform.childCount - 1)
+                {
+                    _startPosition.x -= Screen.width;
+                    InvokeOnSwipe(++_currentPanelIndex);
+                }
+                else if (threshold < 0 && _currentPanelIndex > 0)
+                {
+                    _startPosition.x += Screen.width;
+                    InvokeOnSwipe(--_currentPanelIndex);
+                }
+            }
+            
+            // Tween to position
+            transform.DOMoveX(_startPosition.x, swipeDuration);
+        }
+    }
+}`}
+          </SyntaxHighlighter>
+          <Typography variant="caption" className="text-center block">
+            Code snippet of the PanelSwiper class
+          </Typography>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighter
+            customStyle={{ width: "100%", height: "450px" }}
+            language="csharp"
+            showLineNumbers={true}
+            style={vscDarkPlus}
+          >
+            {`using Animations;
+using UnityEngine;
+
+namespace Onboarding_Scene
+{
+    public class PanelSwipeable : MonoBehaviour
+    {
+        [Tooltip("The PanelSwiper component that owns this swipeable panel")]
+        [SerializeField] private PanelSwiper owner;
+
+        // Index of this swipeable panel in the hierarchy
+        private int _index;
+        
+        // The animations this should play when it's swiped to
+        private IUIAnimation[] _animations;
+
+        private void Awake()
+        {
+            Init();
+        }
+
+        // Caches the index of this and list of animations, and subscribes to the OnSwipe event
+        private void Init()
+        {
+            _index = transform.GetSiblingIndex();
+            _animations = GetComponentsInChildren<IUIAnimation>();
+            owner.OnSwipe += PlayAnimations;
+        }
+
+        // Plays the animations when this panel is swiped to, then unsubscribes from the OnSwipe event
+        private void PlayAnimations(int index)
+        {
+            if (_index != index) return;
+            
+            foreach (var uiAnimation in _animations)
+            {
+                uiAnimation.Play();
+            }
+
+            owner.OnSwipe -= PlayAnimations;
+        }
+    }
+}`}
+          </SyntaxHighlighter>
+          <Typography variant="caption" className="text-center block">
+            Code snippet of the PanelSwipeable class
+          </Typography>
+        </div>
+      </div>
     </>
   );
 
