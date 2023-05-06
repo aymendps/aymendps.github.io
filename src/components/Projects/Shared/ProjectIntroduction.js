@@ -124,7 +124,7 @@ function ProjectIntroduction({
           >
             {teamSize === "1" ? "Work Done" : "Contributions"}
           </Typography>
-          <ul className="list-disc px-4">{generateWorkDone}</ul>
+          <ul className="list-disc px-4 pb-2">{generateWorkDone}</ul>
         </div>
       </div>
     </section>
