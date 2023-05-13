@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React from "react";
 import CatNQuest from "./Projects/CatNQuest";
 import ProjectThumbnail from "./ProjectThumbnail";
@@ -24,7 +22,7 @@ export const CAT_N_QUEST = {
   gif: "",
   solo: false,
   workDone: [],
-  tags: ["Game Dev", "Game Jam", "Unity", "C#"],
+  tags: ["Game Jam", "Game Dev", "Unity", "C#"],
   pageURL: "/cat-n-quest",
   element: <CatNQuest />,
 };
@@ -36,7 +34,7 @@ export const FOLLOW_THE_LIGHT = {
   gif: "",
   solo: true,
   workDone: [],
-  tags: ["Game Dev", "Personal", "Unity", "C#"],
+  tags: ["Personal", "Game Dev", "Unity", "C#"],
   pageURL: "/follow-the-light",
   element: <></>,
 };
@@ -54,7 +52,7 @@ export const FMD = {
     "AR Popup System",
     "3D Machine Simulation",
   ],
-  tags: ["Mobile", "University", "Unity", "AR", "C#"],
+  tags: ["University", "Mobile", "Unity", "AR", "C#"],
   pageURL: "/fablab-machines-discovery",
   element: <FabLabMachinesDiscovery />,
 };
@@ -78,7 +76,7 @@ export const SSA = {
   gif: "",
   solo: false,
   workDone: [],
-  tags: ["Full Stack", "University", "React", "Express", "MongoDB"],
+  tags: ["University", "Full Stack", "React", "Express", "MongoDB"],
   pageURL: "/student-speciality-advisor",
   element: <></>,
 };
@@ -91,8 +89,8 @@ export const FILE_MANAGER = {
   solo: false,
   workDone: [],
   tags: [
-    "Full Stack",
     "Professional",
+    "Full Stack",
     "React",
     "NestJS",
     "MySQL",
@@ -103,15 +101,7 @@ export const FILE_MANAGER = {
   element: <></>,
 };
 
-export const PROJECTS = [
-  UNREAL_GAME_1,
-  CAT_N_QUEST,
-  FMD,
-  PATHFINDING,
-  FOLLOW_THE_LIGHT,
-  SSA,
-  FILE_MANAGER,
-];
+export const PROJECTS = [CAT_N_QUEST, FMD, FOLLOW_THE_LIGHT, SSA, FILE_MANAGER];
 
 function ProjectList() {
   const generateProjects = PROJECTS.map((project) => {

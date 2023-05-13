@@ -8,14 +8,27 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function FabLabMachinesDiscovery() {
   const usefulLinks = [
-    { title: "Github: Project Repository", href: "https://aymendps.com" },
     {
-      title: "Final Report: Requirements, Design, Development & Testing",
-      href: "https://aymendps.com",
+      title:
+        "Celebratory Post: Chosen as one of the best software projects of the year",
+      href: "https://www.linkedin.com/feed/update/urn:li:activity:7062807576207360000/",
+    },
+    {
+      title:
+        "Final Report: Requirements, Architecture, Design, Development & Testing",
+      href: "https://github.com/FabLab-Machines-Discovery/FabLab-Machines-Discovery/blob/main/Documentation/ISS%20Report%20-%20FabLab%20Machines%20Discovery%20-%20Aymen%20Youssef%20Aziz%20Mahdi.pdf",
+    },
+    {
+      title: "Project's GitHub Repository",
+      href: "https://github.com/FabLab-Machines-Discovery/FabLab-Machines-Discovery",
     },
     {
       title: "Project's Presentation",
-      href: "https://aymendps.com",
+      href: "https://www.canva.com/design/DAFitmADZRM/F2k0u-lwyUTkKvTi1Vr7QA/view",
+    },
+    {
+      title: "Project's Poster",
+      href: "https://github.com/FabLab-Machines-Discovery/FabLab-Machines-Discovery/blob/main/Documentation/Poster.pdf",
     },
   ];
 
@@ -36,7 +49,7 @@ function FabLabMachinesDiscovery() {
         <li>
           <Typography className="leading-5">
             Working closely with designers to understand their ideas and
-            translating them into tangible code.
+            transform them into code.
           </Typography>
         </li>
         <li>
@@ -47,29 +60,15 @@ function FabLabMachinesDiscovery() {
         </li>
         <li>
           <Typography className="leading-5">
-            Attending daily meetings and contributing with ideas.
+            Offering valuable help with planning sprints and tasks.
           </Typography>
         </li>
         <li>
           <Typography className="leading-5">
-            Offering valuable help with planning sprints and tasks.
+            Attending daily meetings and actively contributing with ideas.
           </Typography>
         </li>
       </ul>
-      <Paper
-        variant="elevation"
-        elevation={3}
-        className="w-[40%] m-auto screen-md:w-full mt-4"
-      >
-        <img
-          alt=""
-          src="/fmd/azure_board.png"
-          className="w-full object-contain"
-        />
-      </Paper>
-      <Typography variant="caption" className="text-center block mt-2">
-        Microsoft Azure: List of features in the product backlog
-      </Typography>
     </>
   );
 
@@ -253,18 +252,12 @@ namespace Animations
         Here is a short video demonstrating how the UI animation components I
         created brought the designers' UI to life.
       </Typography>
-      <Paper variant="elevation" elevation={3} className="w-fit m-auto">
-        <video
-          controls
-          loop
-          muted
-          autoPlay
-          className="h-[450px] m-auto mt-4 mb-2"
-        >
+      <Paper variant="outlined" className="w-fit m-auto mt-4">
+        <video controls loop muted autoPlay className="h-[450px]">
           <source src="/fmd/fmd_ui.mp4" />
         </video>
       </Paper>
-      <Typography variant="caption" className="text-center block">
+      <Typography variant="caption" className="text-center block mt-2">
         The application's first scene animated with my implemented classes.
       </Typography>
       <Typography className="leading-5 mt-4">
@@ -277,9 +270,7 @@ namespace Animations
         that shows the currently viewed panel.
         <br />
         <br />I have implemented the behaviour of all these mentioned features
-        by using an <b>Observer pattern.</b> This pattern lets us define a
-        subscription mechanism to notify multiple objects about any events that
-        happen to the object they're observing.
+        by using an <b>Observer pattern.</b>
         <br />
         <br />
         In this case, I have created a class called <b>PanelSwiper</b>, which is
@@ -334,35 +325,12 @@ namespace Onboarding_Scene
 
         private void Start()
         {
-            SetupPanelPositions();
             InvokeOnSwipe(_currentPanelIndex);
         }
         
         private void InvokeOnSwipe(int panelIndex)
         {
             OnSwipe?.Invoke(panelIndex);
-        }
-        
-        /*
-         * Sets up the panels' positions so that they are adjacent to each other with no space in between.
-         * This was necessary because depending on the screen resolution, the panels would sometimes have empty
-         * spaces between them, and that would mess up the design and the swipe logic
-         */
-        private void SetupPanelPositions()
-        {
-            // Get width of the first panel
-            var width = transform.GetChild(0).GetComponent<RectTransform>().rect.width;
-            
-            // Since panels are of the same size, use that width to adjust the positions of the panels
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                var rt = (RectTransform) transform.GetChild(i);
-                Utility.RectTransformExtensions.SetLeft(rt, width * i);
-                Utility.RectTransformExtensions.SetRight(rt, -width * i);
-            }
-            
-            // Set the start position of this, which owns the swipeable panels
-            _startPosition = transform.position;
         }
 
         // When the user is dragging, this will be called every time the pointer is moved on the screen
@@ -484,7 +452,79 @@ namespace Onboarding_Scene
     </>
   );
 
-  const vuforiaSection = <p>Vuforia</p>;
+  const vuforiaSection = (
+    <>
+      <Typography className="leading-5">
+        Vuforia is an augmented reality SDK that our team used to integrate{" "}
+        <b>
+          advanced computer vision and image recognition & tracking capabilities
+        </b>{" "}
+        within Unity's 3D engine. I drew the following <b>component diagram</b>{" "}
+        to explain to my team and to the stakeholders the way these technologies
+        work together.
+      </Typography>
+      <Paper
+        variant="outlined"
+        className="w-[40%] m-auto screen-md:w-full mt-4 mb-2"
+      >
+        <img
+          alt=""
+          src="/fmd/component_diagram.png"
+          className="w-full object-contain"
+        />
+      </Paper>
+      <Typography variant="caption" className="text-center block mb-4">
+        Component diagram showcasing the integration
+      </Typography>
+      <Typography className="leading-5">
+        At the top right of the diagram, you'll see that the device's{" "}
+        <b>Camera </b>
+        sends the current frame's image to <b>Vuforia's Engine.</b> The engine
+        converts this image into gray-scale pixels, which the{" "}
+        <b>Image Tracker</b> uses to identify machines by comparing it with the
+        data stored in <b>Vuforia Target Database.</b> If a machine is
+        recognized, Vuforia informs <b>Unity</b> about which additional elements
+        should be displayed, such as UI and 3D components. The user can then
+        interact with these elements like they would in any other Unity
+        application.
+      </Typography>
+      <br />
+      <Typography className="leading-5">
+        As part of my contributions to the project, I took several actions to
+        ensure that <b>Vuforia</b> was set up correctly and that the{" "}
+        <b>Augmented Reality experience</b> was of high quality.
+        <br />
+        <b>Specifically:</b>
+      </Typography>
+      <ul className="list-disc px-4">
+        <li>
+          <Typography className="leading-5">
+            Successfully integrated Vuforia within Unity and implemented
+            practical examples to demonstrate image recognition and targeting to
+            my team.
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5">
+            Optimized camera settings for Augmented Reality to minimize
+            jittering and enhance overall user experience.
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5">
+            Developed exception-handling classes, addressing problems like
+            missing camera access
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5">
+            Designed high-quality tags that have excellent image targeting
+            ratings
+          </Typography>
+        </li>
+      </ul>
+    </>
+  );
 
   const popupSection = <p>Popup</p>;
 
@@ -522,13 +562,13 @@ namespace Onboarding_Scene
         when="Feb 2023 - Apr 2023"
         usefulLinks={usefulLinks}
         workDone={workDone}
-        description={`“FabLab Machines Discovery” is an Augmented Reality (AR) application that runs on mobile devices.
+        description={`“FabLab Machines Discovery” is an Augmented Reality (AR) application that runs on mobile devices. The project was chosen as one of the best senior software engineering projects of the year.
 
-        The goal of the project is to allow any visitor or member of the “FabLab Space” to display essential information about machines upon capturing them using the mobile device camera.
+        Its goal is to help any visitor or member of Orange's "FabSpace" learn about machines by scanning them with their camera.
         
         The information is displayed in the form of popups that are positioned around the recognized machine.
 
-        Moreover, there is a special popup that would play the machine's simulation when clicked. This simulation would visually describe the way the machine works using 3D animations. 
+        There is also a special popup that would play the machine's simulation when clicked. This simulation would visually describe the way the machine works using 3D animations. 
         
         "Orange Digital Center" played the role of stakeholders during the development of the project.
         `}
