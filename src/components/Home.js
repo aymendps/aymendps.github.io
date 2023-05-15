@@ -68,11 +68,24 @@ function Home() {
   const LINKEDIN_POSTS = [
     {
       title: "Second Prize at 24H Game Development Hackathon",
-      url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7053399476471816192",
+      image:
+        "https://media.licdn.com/dms/image/D4D22AQH3Sj3vSU1aag/feedshare-shrink_1280/0/1681661480395?e=1686787200&v=beta&t=fVVkePIrAmUxddIQGUJrtGVkrjiTCXA1TtKrW8a6-JQ",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7053399477331591168/",
+      origin: "object-center",
     },
     {
-      title: "Best Software Engineering Project, SMU - MedTech",
-      url: "https://www.linkedin.com/embed/feed/update/urn:li:share:6932755567732006913",
+      title: "Best Senior Software Engineering Project, SMU - MedTech",
+      image:
+        "https://media.licdn.com/dms/image/D5622AQH_isjRRfH4Iw/feedshare-shrink_2048_1536/0/1683904542567?e=1686787200&v=beta&t=SPdNJC383ieUy5pHS-9MO_9exD_1GkPjq6Fqojd3NLw",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7062807576207360000/",
+      origin: "object-right",
+    },
+    {
+      title: "Best Junior Software Engineering Project, SMU - MedTech",
+      image:
+        "https://media.licdn.com/dms/image/C4E22AQF5hcII6r6VYg/feedshare-shrink_2048_1536/0/1652897730602?e=1686787200&v=beta&t=YIeRyWYdrSzuEWtuiXLSDmKlEleRzjXeMAj5iZkFw98",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:6932755568562462721/",
+      origin: "object-center",
     },
   ];
 
@@ -251,22 +264,44 @@ function Home() {
       >
         Project Awards
       </Typography>
+
       <div className="w-full flex justify-evenly flex-wrap">
         {LINKEDIN_POSTS.map((post) => {
           return (
-            <iframe
-              key={post.title}
-              src={post.url}
-              title={post.title}
-              className="w-1/3 h-[500px] mb-12 screen-sm:h-[400px] screen-sm:w-[90%] screen-md:w-[80%] border-cyan-300 border-4"
-            ></iframe>
+            <a
+              key={post.url}
+              href={post.url}
+              className="block w-1/4 screen-md:w-[90%] mb-12"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="w-full overflow-hidden border-2 rounded-xl border-cyan-400 relative group">
+                <img
+                  alt=""
+                  src={post.image}
+                  className={
+                    "w-full object-cover aspect-square hover:scale-110 duration-200 " +
+                    post.origin
+                  }
+                />
+                <div className="absolute w-full h-[22%] bg-black opacity-90 bottom-0 left-0 px-2 py-1">
+                  <Typography
+                    variant="h6"
+                    className="text-cyan-300 underline-offset-4 text-center group-hover:underline font-normal"
+                  >
+                    {post.title + " ↗"}
+                  </Typography>
+                </div>
+              </div>
+            </a>
           );
         })}
       </div>
+
       <div className="w-[90%] m-auto">
         <Typography
           variant="h2"
-          className="text-center text-white pb-8 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+          className="text-center text-white pb-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
         >
           Find more about me
         </Typography>
