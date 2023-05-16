@@ -34,7 +34,7 @@ function FabLabMachinesDiscovery() {
 
   const scrumSection = (
     <>
-      <Typography className="leading-5">
+      <Typography className="leading-5 text-justify">
         Since the project needed to continously adapt to changing circumstances
         and be delivered frequently, our team decided to pick an{" "}
         <b>agile development approach.</b>
@@ -47,25 +47,61 @@ function FabLabMachinesDiscovery() {
       </Typography>
       <ul className="list-disc px-4">
         <li>
-          <Typography className="leading-5">
+          <Typography className="leading-5 text-justify">
             Working closely with designers to understand their ideas and
             transform them into code.
           </Typography>
         </li>
         <li>
-          <Typography className="leading-5">
+          <Typography className="leading-5 text-justify">
             Using Microsoft Azure to access the product's backlong and sprint
             tasks.
           </Typography>
         </li>
         <li>
-          <Typography className="leading-5">
+          <Typography className="leading-5 text-justify">
             Attending daily meetings and actively contributing with ideas.
           </Typography>
         </li>
         <li>
-          <Typography className="leading-5">
+          <Typography className="leading-5 text-justify">
             Offering valuable help with planning sprints and tasks.
+          </Typography>
+        </li>
+      </ul>
+    </>
+  );
+
+  const sourceControlSection = (
+    <>
+      <Typography className="leading-5 text-justify">
+        To keep track of the project's changes and progression, we used{" "}
+        <b>Git</b> as source control and hosted the repository in <b>GitHub.</b>
+        <br />
+        <br />
+        As a <b>Unity Programmer</b>, my responsibilities included:
+      </Typography>
+      <ul className="list-disc px-4">
+        <li>
+          <Typography className="leading-5 text-justify">
+            Communicating with teammates and locking files I'm working on to
+            avoid conflicts within scenes, prefabs, settings..
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Creating pull requests with concise commits to keep the codebase
+            organized, readable, and easily maintainable.
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Solving and merging conflicts that happen in the source code.
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Reviewing my teammates' code and pull requests
           </Typography>
         </li>
       </ul>
@@ -74,7 +110,7 @@ function FabLabMachinesDiscovery() {
 
   const uiSection = (
     <>
-      <Typography className="leading-5">
+      <Typography className="leading-5 text-justify">
         Our designers wanted the UI elements such as text, background, images
         and buttons to have <b>smooth & customizable animations</b>, similar to
         the ones that a designer might find on Canva.
@@ -194,7 +230,7 @@ namespace Animations
           </Typography>
         </div>
       </div>
-      <Typography className="leading-5">
+      <Typography className="leading-5 text-justify">
         This can then be extended by other animation classes, such as the code
         snippet below, which belongs to the <b>Translation animation.</b>
       </Typography>
@@ -235,7 +271,7 @@ namespace Animations
           <img
             alt=""
             src="/fmd/animation_editor.png"
-            className="h-[450px] m-auto my-[0.4em] screen-md:h-auto"
+            className="h-[450px] m-auto my-[0.4em] screen-md:h-auto object-contain"
           />
           <Typography variant="caption" className="text-center block">
             Multiple animation components working together and tweakable from
@@ -243,7 +279,7 @@ namespace Animations
           </Typography>
         </div>
       </div>
-      <Typography className="leading-5">
+      <Typography className="leading-5 text-justify">
         <b>
           Multiple animation components can be assigned to the same game object
         </b>
@@ -260,7 +296,7 @@ namespace Animations
       <Typography variant="caption" className="text-center block mt-2">
         The application's first scene animated with my implemented classes.
       </Typography>
-      <Typography className="leading-5 mt-4">
+      <Typography className="leading-5 text-justify mt-4">
         As you may have noticed in the video, the user can navigate to different
         panels <b>by sliding in a left or right direction</b>, allowing them to
         move to the next or previous panel respectively. <br />
@@ -454,7 +490,7 @@ namespace Onboarding_Scene
 
   const vuforiaSection = (
     <>
-      <Typography className="leading-5">
+      <Typography className="leading-5 text-justify">
         Vuforia is an augmented reality SDK that our team used to integrate{" "}
         <b>
           advanced computer vision and image recognition & tracking capabilities
@@ -476,7 +512,7 @@ namespace Onboarding_Scene
       <Typography variant="caption" className="text-center block mb-4">
         Component diagram showcasing the integration
       </Typography>
-      <Typography className="leading-5">
+      <Typography className="leading-5 text-justify">
         At the top right of the diagram, you'll see that the device's{" "}
         <b>Camera </b>
         sends the current frame's image to <b>Vuforia's Engine.</b> The engine
@@ -489,7 +525,7 @@ namespace Onboarding_Scene
         application.
       </Typography>
       <br />
-      <Typography className="leading-5">
+      <Typography className="leading-5 text-justify">
         As part of my contributions to the project, I took several actions to
         ensure that <b>Vuforia</b> was set up correctly and that the{" "}
         <b>Augmented Reality experience</b> was of high quality:
@@ -497,33 +533,33 @@ namespace Onboarding_Scene
       </Typography>
       <ul className="list-disc px-4">
         <li>
-          <Typography className="leading-5">
+          <Typography className="leading-5 text-justify">
             Successfully integrated Vuforia within Unity and implemented
             practical examples to demonstrate image recognition and targeting to
             my team.
           </Typography>
         </li>
         <li>
-          <Typography className="leading-5">
+          <Typography className="leading-5 text-justify">
             Optimized camera settings for Augmented Reality to minimize
             jittering and enhance overall user experience.
           </Typography>
         </li>
         <li>
-          <Typography className="leading-5">
+          <Typography className="leading-5 text-justify">
             Developed exception-handling classes, addressing problems like
             missing camera access
           </Typography>
         </li>
         <li>
-          <Typography className="leading-5">
+          <Typography className="leading-5 text-justify">
             Designed high-quality tags that have excellent image targeting
             ratings
           </Typography>
         </li>
       </ul>
-      <div className="w-full flex justify-evenly mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="w-full flex justify-between mt-4 screen-md:flex-col">
+        <div className="w-[65%] screen-md:w-full">
           <SyntaxHighlighter
             customStyle={{
               width: "100%",
@@ -602,7 +638,7 @@ namespace Vuforia
             Code snippet of VuforiaPermissionErrorHandler class
           </Typography>
         </div>
-        <div className="screen-md:w-full">
+        <div className="w-[30%] screen-md:w-full">
           <Paper variant="outlined" className="w-fit h-[450px] m-auto mb-2">
             <video controls loop muted autoPlay className="h-[450px]">
               <source src="/fmd/camera_permission.mp4" />
@@ -613,7 +649,7 @@ namespace Vuforia
           </Typography>
         </div>
       </div>
-      <Typography className="leading-5">
+      <Typography className="leading-5 text-justify">
         The code snippet above showcases a class that I wrote to handle the case
         where the application was not granted access to the camera, since it
         can't execute AR functionalities without it.
@@ -627,19 +663,524 @@ namespace Vuforia
     </>
   );
 
-  const popupSection = <p>Popup</p>;
+  const popupSection = (
+    <>
+      <Typography className="leading-5 text-justify">
+        When a machine is recognized, <b>a set of popups</b> that contain
+        essential information will be displayed <b>around the machine.</b> They
+        are grouped together in a <b>World Space Canvas.</b>
+        <br />
+        <br />
+        After some discussion, the team agreed to make the popups color-coded,
+        conveying 5 different categories:
+      </Typography>
+      <Paper variant="outlined" className="m-auto w-fit mt-4 mb-2">
+        <img
+          alt=""
+          src="/fmd/popups.png"
+          className="h-[350px] object-contain"
+        />
+      </Paper>
+      <Typography variant="caption" className="text-center block mb-4">
+        All popup types
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        When the user taps/clicks on a popup, its contents are displayed through
+        a specific user interface responsible for presenting that information.
+        <br />
+        The final popup type, called "Play Simulation", not only displays
+        information but also plays a 3D animation showcasing how the machine
+        works.
+        <br />
+        <br />
+        To transform this requirement into executable code that the designers
+        can use to create all kinds of popups, I created the following{" "}
+        <b>Popup class</b>, with a <b>custom editor script</b> that only shows
+        the selected type's relevant variables:
+      </Typography>
+      <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighter
+            customStyle={{ width: "100%", height: "450px" }}
+            language="csharp"
+            showLineNumbers={true}
+            style={vscDarkPlus}
+          >
+            {`using UnityEngine;
 
-  const machineSimulationSection = <p>Machine</p>;
+namespace Popups
+{
+    public enum PopupType
+    {
+        General, UseInstruction, Technical, SafetyRisk, Simulation
+    }
+    public class Popup : MonoBehaviour
+    {
+        [Tooltip("Reference to the localized string that holds this popup's information")]
+        [SerializeField] private string informationReference = "Missing Reference";
+        [Tooltip("Type of the popup")]
+        [SerializeField] private PopupType type;
+        [Tooltip("Script that plays the machine's simulation. It requires an Animator component attached to it")]
+        [SerializeField] private MachineSimulation simulation;
 
-  const testingSection = <p>Testing</p>;
+        /// <summary>
+        /// Updates the UI of <see cref="PopupInfoUI"/> using this popup's information reference and type.
+        /// If the popup type is "Simulation", it will also play the machine's simulation.
+        /// </summary>
+        public void ShowContents()
+        {
+            PopupInfoUI.Instance.UpdateUI(informationReference, type);
+            
+            if (type == PopupType.Simulation)
+            {
+                simulation.Play(this);
+            }
+        }
+    }
+}`}
+          </SyntaxHighlighter>
+          <Typography variant="caption" className="text-center block">
+            Code snippet of the Popup class
+          </Typography>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighter
+            customStyle={{ width: "100%", height: "450px" }}
+            language="csharp"
+            showLineNumbers={true}
+            style={vscDarkPlus}
+          >
+            {`using UnityEditor;
+using Popups;
+
+namespace Editor.Animations
+{
+    [CustomEditor(typeof(Popup))]
+    public class PopupCustomEditor : UnityEditor.Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            // Draw all properties except "simulation"
+            serializedObject.Update();
+            DrawPropertiesExcluding(serializedObject,"simulation");
+            
+            // Draw simulation if the popup type is "Simulation"
+            var typeProp = serializedObject.FindProperty("type");
+            var type = (PopupType)typeProp.enumValueIndex;
+            if (type == PopupType.Simulation)
+            {
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("simulation"));
+            }
+            
+            // Apply modified properties
+            serializedObject.ApplyModifiedProperties();
+        }
+    }
+}`}
+          </SyntaxHighlighter>
+          <Typography variant="caption" className="text-center block">
+            Custom Editor for the Popup class
+          </Typography>
+        </div>
+      </div>
+      <Typography className="leading-5 text-justify">
+        <b className="text-red-600">The problem with this approach:</b>
+        <br />
+        At first, the application only had <b>four popup types</b> (excluding
+        the "Play Simulation" popup). This allowed us to differentiate them
+        easily using a simple <b>enum</b> since all popups executed the same
+        method.
+        <br />
+        However, when we <b>added</b> the "Play Simulation" type, we not only
+        created a <b>custom editor</b>, but also modified the Popup script by
+        adding an <b>if statement</b> to check its type, since the latter
+        executes additional code compared to other types.
+        <br />
+        Even though this works just fine in our case, I now realize that I'm not
+        fond of the <b>anti-pattern</b> approach we took as it goes against{" "}
+        <b>the SOLID principle.</b>
+        <br />
+        <br />
+        <b className="text-green-600">What we should've done instead:</b>
+        <br />
+        We need to refactor this code and rely on <b>OOP's Inheritance:</b> We
+        can create a <b>base abstract Popup class</b>, and then derive from it
+        the different popup classes.
+        <br />
+        Each specific class can implement its <b>own logic</b> and add its{" "}
+        <b>own variables</b>, like the popup color, or the simulation variable
+        in the case of Simulation Popup.
+        <br />
+        This makes the code <b>more organized and less error-prone</b>, and the
+        method no longer relies on if-statements.
+      </Typography>
+      <br />
+      <Typography className="leading-5 text-justify">
+        To display the contents of a popup, the designers wanted a simple text
+        box to appear from the bottom of the screen, showing the machine's title
+        and information.
+        <br />I implemented a <b>Singleton class</b> that handles the animation
+        of this UI, as well as updating its colors and its text components.
+      </Typography>
+      <div className="w-3/4 m-auto screen-md:w-full mt-4">
+        <SyntaxHighlighter
+          customStyle={{ width: "100%", height: "450px" }}
+          language="csharp"
+          showLineNumbers={true}
+          style={vscDarkPlus}
+        >
+          {`using Animations;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.UI;
+
+namespace Popups
+{
+    public class PopupInfoUI : MonoBehaviour
+    {
+        // Instance - Singleton pattern
+        public static PopupInfoUI Instance { get; private set; }
+
+        [Tooltip("Duration of the enter/exit translation animation")]
+        [Range(0, 1)] [SerializeField] private float animationDuration;
+
+        [Tooltip("Container of the title text")]
+        [SerializeField] private Image titleContainer;
+
+        [Tooltip("Title text component")]
+        [SerializeField] private TextMeshProUGUI machineTitle;
+        
+        [Tooltip("Information text component")]
+        [SerializeField] private TextMeshProUGUI information;
+        
+        [Tooltip("Colors applied to text component and title container when a popup is clicked")]
+        [SerializeField] private PopupColors popupColors;
+
+        [Tooltip("Name of the localized string table")]
+        [SerializeField] private string stringTableReference = "Missing Table Reference";
+        
+        [Tooltip("Reference to the localized string that holds the default information text")]
+        [SerializeField] private string defaultInformationReference = "Missing Default Reference";
+        
+        // Used to retrieve the localized popup information using its reference. Example: R3N1 G1
+        private LocalizedString _localizedInformation;
+
+        // Used to retrieve the localized machine title using its reference. Example: 3D Printer
+        private LocalizedString _localizedMachineTitle;
+
+        // Animation played when showing UI
+        private TranslationAnimation _enterAnimation;
+        
+        // Animation played when hiding UI
+        private TranslationAnimation _exitAnimation;
+        
+        // Singleton Pattern
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Initialize();
+                Instance = this;
+            }
+        }
+
+        // Called to initialize some members of this class on Awake
+        private void Initialize()
+        {
+            _localizedInformation = new LocalizedString();
+            _localizedMachineTitle = new LocalizedString();
+            
+            var localPositionY = transform.localPosition.y;
+            var heightOfUI = GetComponent<RectTransform>().rect.height;
+            
+            // Enter animation: translate upwards from initial local position until whole UI is visible
+            _enterAnimation = CreateTranslationAnimation(new Vector3(0, localPositionY + heightOfUI, 0));
+            // Exit animation: translate downwards to initial local position
+            _exitAnimation = CreateTranslationAnimation(new Vector3(0, localPositionY, 0));
+        }
+
+        // Called to create the components needed for enter and exit animations
+        private TranslationAnimation CreateTranslationAnimation(Vector3 desiredPosition)
+        {
+            var translationAnimation = gameObject.AddComponent<TranslationAnimation>();
+
+            // Animation properties
+            translationAnimation.animationProps = new UIAnimationProps<Vector3>
+            {
+                autoPlay = false,
+                desiredValue = desiredPosition,
+                duration = animationDuration,
+                delay = 0
+            };
+            translationAnimation.isRelative = false;
+            
+            return translationAnimation;
+        }
+
+        // Update the title text component using reference to a localized string
+        private void UpdateTitle(string reference)
+        {
+            _localizedMachineTitle.TableReference = stringTableReference;
+            _localizedMachineTitle.TableEntryReference = reference;
+            
+            machineTitle.text = _localizedMachineTitle.GetLocalizedString();
+        }
+
+        // Update the information text component using reference to a localized string
+        private void UpdateInformationText(string reference)
+        {
+            _localizedInformation.TableReference = stringTableReference;
+            _localizedInformation.TableEntryReference = reference;
+            
+            information.text = _localizedInformation.GetLocalizedString();
+        }
+
+        // Update the colors of the text and title component
+        private void UpdateColor(Color color)
+        {
+            titleContainer.color = color;
+            information.color = color;
+        }
+
+        /// <summary>
+        /// Updates the displayed information and the color of the UI using the popup's information reference and type.
+        /// </summary>
+        /// <param name="informationReference">Reference to the localized string that holds the information</param>
+        /// <param name="type">Type of the popup</param>
+        public void UpdatePopupInfo(string informationReference, PopupType type)
+        {
+            UpdateInformationText(informationReference);
+            UpdateColor(popupColors.GetColor(type));
+        }
+        
+        /// <summary>
+        /// Shows the UI by playing an enter animation and setting the machine title using the given reference.
+        /// </summary>
+        /// <param name="titleReference">Reference to the localized string that holds the machine title</param>
+        public void ShowUI(string titleReference)
+        {
+            UpdateTitle(titleReference);
+            
+            // Set information text and color to default
+            UpdateInformationText(defaultInformationReference);
+            UpdateColor(popupColors.DefaultColor);
+
+            _enterAnimation.Play();
+        }
+
+        /// <summary>
+        /// Hides the UI by playing an exit animation.
+        /// </summary>
+        /// <param name="titleReference">Reference to the localized string that holds the machine title</param>
+        public void HideUI(string titleReference)
+        {
+            // If the given reference does not match the currently displayed machine's title reference, do nothing
+            if (titleReference != _localizedMachineTitle.TableEntryReference) return;
+            
+            _exitAnimation.Play();
+        }
+    }
+}`}
+        </SyntaxHighlighter>
+        <Typography variant="caption" className="text-center block">
+          Code snippet of PopupInfoUI, responsible for displaying a popup's
+          content
+        </Typography>
+      </div>
+      <Typography className="leading-5 text-justify mt-4">
+        As you can see in the videos below, the UI <b>translates upwards</b>{" "}
+        when a machine is recognized, showing <b>the default message</b> and{" "}
+        <b>the name of the machine.</b> You can also see the different popups
+        that are present around the machine. When a popup is tapped/clicked, the
+        UI will update its content and theme to comply with the popup's
+        information and color.
+      </Typography>
+      <div className="flex justify-evenly mt-4 screen-md:flex-col">
+        <div>
+          <Paper variant="outlined" className="w-fit m-auto">
+            <video controls loop muted autoPlay className="h-[450px]">
+              <source src="/fmd/fmd_demo1.mp4" />
+            </video>
+          </Paper>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Recognized 3D Printer
+          </Typography>
+        </div>
+        <div>
+          <Paper variant="outlined" className="w-fit m-auto">
+            <video controls loop muted autoPlay className="h-[450px]">
+              <source src="/fmd/fmd_demo2.mp4" />
+            </video>
+          </Paper>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Recognized Laser Cutter
+          </Typography>
+        </div>
+        <div>
+          <Paper variant="outlined" className="w-fit m-auto">
+            <video controls loop muted autoPlay className="h-[450px]">
+              <source src="/fmd/fmd_demo3.mp4" />
+            </video>
+          </Paper>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Recognized CNC 3 Axes
+          </Typography>
+        </div>
+      </div>
+    </>
+  );
+
+  const machineSimulationSection = (
+    <>
+      <Typography className="leading-5 text-justify">
+        In addition to the information a popup would display when
+        tapped/clicked, the "Play Simulation" popup plays a 3D animation that
+        showcases how the machine works.
+      </Typography>
+      <div className="flex justify-evenly mt-4 screen-md:flex-col">
+        <div>
+          <Paper variant="outlined" className="w-fit m-auto">
+            <video controls loop muted autoPlay className="h-[450px]">
+              <source src="/fmd/fmd_demo4.mp4" />
+            </video>
+          </Paper>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Simulation of 3D Printer
+          </Typography>
+        </div>
+        <div>
+          <Paper variant="outlined" className="w-fit m-auto">
+            <video controls loop muted autoPlay className="h-[450px]">
+              <source src="/fmd/fmd_demo5.mp4" />
+            </video>
+          </Paper>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Simulation of Laser Cutter
+          </Typography>
+        </div>
+        <div>
+          <Paper variant="outlined" className="w-fit m-auto">
+            <video controls loop muted autoPlay className="h-[450px]">
+              <source src="/fmd/fmd_demo6.mp4" />
+            </video>
+          </Paper>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Simulation of CNC 3 Axes
+          </Typography>
+        </div>
+      </div>
+      <Typography className="leading-5 text-justify">
+        To achieve what you see in the videos above, I created these simple
+        animations using Unity's built-in <b>Animator component.</b>
+        <br />
+        All the animations have <b>the same state machine structure</b>, and
+        once an animation is finished, it calls a function called{" "}
+        <b>"Exit()"</b> from the <b>MachineSimulation class</b> that I
+        implemented. Having the same structure and calling the same event makes
+        it <b>very easy to play and reset the animation multiple times</b>, as
+        long as the user keeps tapping the "Play Simulation" popup.
+      </Typography>
+      <div className="flex justify-between screen-md:flex-col mt-2 mb-4 items-end">
+        <div className="w-[48%] screen-md:w-full">
+          <img
+            alt=""
+            src="/fmd/animation.png"
+            className="h-auto m-auto my-[0.4em] object-contain"
+          />
+          <Typography variant="caption" className="text-center block">
+            All animations have an Exit event called in the end
+          </Typography>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <img
+            alt=""
+            src="/fmd/animator.png"
+            className="h-auto m-auto my-[0.4em] object-contain"
+          />
+          <Typography variant="caption" className="text-center block">
+            All animators have a playing state and an idle state
+          </Typography>
+        </div>
+      </div>
+      <Typography className="leading-5 text-justify">
+        Below is the code snippet for the <b>MachineSimulation</b> class that
+        handles playing and hiding the simulation once the "Play Simulation"
+        popup is clicked.
+      </Typography>
+      <div className="w-3/4 m-auto screen-md:w-full mt-4">
+        <SyntaxHighlighter
+          customStyle={{ width: "100%", height: "450px" }}
+          language="csharp"
+          showLineNumbers={true}
+          style={vscDarkPlus}
+        >
+          {`using UnityEngine;
+
+namespace Popups
+{
+    [RequireComponent(typeof(Animator))]
+    public class MachineSimulation : MonoBehaviour
+    {
+        // Popup that would play this simulation when clicked
+        private Popup _caller;
+        
+        // Animator component needed to play the simulation
+        private Animator _animator;
+
+        private void Awake()
+        {
+            _animator = GetComponent<Animator>();
+        }
+        
+        /// <summary>
+        /// Plays the simulation if it's not already playing
+        /// </summary>
+        /// <param name="caller">Reference to the simulation popup that calls this when clicked</param>
+        public void Play(Popup caller)
+        {
+            // If the simulation is already playing, return
+            if (gameObject.activeSelf) return;
+            
+            // Hide the caller popup
+            caller.gameObject.SetActive(false);
+            _caller = caller;
+            
+            // Play this simulation
+            gameObject.SetActive(true);
+            _animator.Play("Playing State", -1, 0f);
+        }
+
+        /// <summary>
+        /// Should be called when the simulation is finished
+        /// </summary>
+        public void Exit()
+        {
+            // Show the caller popup and hide this simulation
+            gameObject.SetActive(false);
+            _caller.gameObject.SetActive(true);
+        }
+    }
+}`}
+        </SyntaxHighlighter>
+        <Typography variant="caption" className="text-center block">
+          Code snippet of the MachineSimulation class
+        </Typography>
+      </div>
+    </>
+  );
 
   const contentList = [
     scrumSection,
+    sourceControlSection,
     uiSection,
     vuforiaSection,
     popupSection,
     machineSimulationSection,
-    testingSection,
   ];
 
   const workDone = FMD.workDone.map((work, index) => {

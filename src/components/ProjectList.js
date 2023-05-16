@@ -43,6 +43,7 @@ export const FMD = {
   solo: false,
   workDone: [
     "Scrum Responsibilities",
+    "Source Control Responsibilities",
     "UI Events & Animations",
     "Augmented Reality With Vuforia",
     "AR Popup System",
