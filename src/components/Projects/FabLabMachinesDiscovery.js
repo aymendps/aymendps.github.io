@@ -290,7 +290,7 @@ namespace Animations
       </Typography>
       <Paper variant="outlined" className="w-fit m-auto mt-4">
         <video controls loop muted autoPlay className="h-[450px]">
-          <source src="/fmd/fmd_ui.mp4" />
+          <source src="/fmd/fmd_ui.mp4" type="video/mp4" />
         </video>
       </Paper>
       <Typography variant="caption" className="text-center block mt-2">
@@ -641,7 +641,7 @@ namespace Vuforia
         <div className="w-[30%] screen-md:w-full">
           <Paper variant="outlined" className="w-fit h-[450px] m-auto mb-2">
             <video controls loop muted autoPlay className="h-[450px]">
-              <source src="/fmd/camera_permission.mp4" />
+              <source src="/fmd/camera_permission.mp4" type="video/mp4" />
             </video>
           </Paper>
           <Typography variant="caption" className="text-center block mb-4">
@@ -1004,7 +1004,7 @@ namespace Popups
         <div>
           <Paper variant="outlined" className="w-fit m-auto">
             <video controls loop muted autoPlay className="h-[450px]">
-              <source src="/fmd/fmd_demo1.mp4" />
+              <source src="/fmd/fmd_demo1.mp4" type="video/mp4" />
             </video>
           </Paper>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -1014,7 +1014,7 @@ namespace Popups
         <div>
           <Paper variant="outlined" className="w-fit m-auto">
             <video controls loop muted autoPlay className="h-[450px]">
-              <source src="/fmd/fmd_demo2.mp4" />
+              <source src="/fmd/fmd_demo2.mp4" type="video/mp4" />
             </video>
           </Paper>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -1024,7 +1024,7 @@ namespace Popups
         <div>
           <Paper variant="outlined" className="w-fit m-auto">
             <video controls loop muted autoPlay className="h-[450px]">
-              <source src="/fmd/fmd_demo3.mp4" />
+              <source src="/fmd/fmd_demo3.mp4" type="video/mp4" />
             </video>
           </Paper>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -1046,7 +1046,7 @@ namespace Popups
         <div>
           <Paper variant="outlined" className="w-fit m-auto">
             <video controls loop muted autoPlay className="h-[450px]">
-              <source src="/fmd/fmd_demo4.mp4" />
+              <source src="/fmd/fmd_demo4.mp4" type="video/mp4" />
             </video>
           </Paper>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -1056,7 +1056,7 @@ namespace Popups
         <div>
           <Paper variant="outlined" className="w-fit m-auto">
             <video controls loop muted autoPlay className="h-[450px]">
-              <source src="/fmd/fmd_demo5.mp4" />
+              <source src="/fmd/fmd_demo5.mp4" type="video/mp4" />
             </video>
           </Paper>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -1066,7 +1066,7 @@ namespace Popups
         <div>
           <Paper variant="outlined" className="w-fit m-auto">
             <video controls loop muted autoPlay className="h-[450px]">
-              <source src="/fmd/fmd_demo6.mp4" />
+              <source src="/fmd/fmd_demo6.mp4" type="video/mp4" />
             </video>
           </Paper>
           <Typography variant="caption" className="text-center block mt-2 mb-4">

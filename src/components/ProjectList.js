@@ -39,7 +39,7 @@ export const FOLLOW_THE_LIGHT = {
 export const FMD = {
   title: "Fablab Machines Discovery",
   subtitle: "AR mobile application",
-  thumbnail: "",
+  thumbnail: "/thumbnails/fmd.png",
   solo: false,
   workDone: [
     "Scrum Responsibilities",
