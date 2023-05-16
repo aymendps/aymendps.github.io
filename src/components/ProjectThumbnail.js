@@ -1,21 +1,15 @@
 import { Chip, Typography } from "@mui/material";
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function ProjectThumbnail({
   title,
   subtitle,
   thumbnail,
-  gif,
   solo,
   workDone = [],
   tags = [],
   pageURL,
 }) {
-  // const navigate = useNavigate();
-
-  const [imageSrc, setImageSrc] = useState(thumbnail);
-
   const generateWorkDone = workDone.map((work) => {
     return <li key={title + work}>{work}</li>;
   });
@@ -38,12 +32,6 @@ function ProjectThumbnail({
       onClick={() => {
         window.location.href = "#/home#projects";
       }}
-      onMouseEnter={() => {
-        if (gif) setImageSrc(gif);
-      }}
-      onMouseLeave={() => {
-        setImageSrc(thumbnail);
-      }}
       className="basis-[22%] screen-sm:basis-[90%] screen-md:basis-[80%] mb-[5%] relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group hover:bg-cyan-50"
     >
       <div className="p-4">
@@ -60,7 +48,7 @@ function ProjectThumbnail({
       <div className="w-full aspect-square bg-cyan-600 relative border-y-2 border-darkblue">
         <img
           className="w-full object-center object-contain"
-          src={imageSrc}
+          src={thumbnail}
           alt=""
         ></img>
         <div className="absolute bottom-0 left-0 w-full">
