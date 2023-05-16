@@ -102,7 +102,7 @@ function ProjectIntroduction({
           >
             Description
           </Typography>
-          <Typography className="text-darkblue whitespace-pre-line break-words text-[16px] leading-5">
+          <Typography className="text-darkblue whitespace-pre-line break-words text-[16px] leading-5 text-justify">
             {description}
           </Typography>
         </div>
