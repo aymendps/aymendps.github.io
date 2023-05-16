@@ -60,12 +60,12 @@ function FabLabMachinesDiscovery() {
         </li>
         <li>
           <Typography className="leading-5">
-            Offering valuable help with planning sprints and tasks.
+            Attending daily meetings and actively contributing with ideas.
           </Typography>
         </li>
         <li>
           <Typography className="leading-5">
-            Attending daily meetings and actively contributing with ideas.
+            Offering valuable help with planning sprints and tasks.
           </Typography>
         </li>
       </ul>
@@ -522,14 +522,20 @@ namespace Onboarding_Scene
           </Typography>
         </li>
       </ul>
-      <div className="w-[70%] m-auto mt-4 screen-md:w-full">
-        <SyntaxHighlighter
-          customStyle={{ width: "100%", height: "450px" }}
-          language="csharp"
-          showLineNumbers={true}
-          style={vscDarkPlus}
-        >
-          {`using System.Collections;
+      <div className="w-full flex justify-evenly mt-4 screen-md:flex-col">
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighter
+            customStyle={{
+              width: "100%",
+              height: "450px",
+              marginTop: "0px",
+              marginBottom: "8px",
+            }}
+            language="csharp"
+            showLineNumbers={true}
+            style={vscDarkPlus}
+          >
+            {`using System.Collections;
 using UnityEngine;
 using UnityEngine.Android;
 
@@ -591,11 +597,33 @@ namespace Vuforia
         }
     }
 }`}
-        </SyntaxHighlighter>
-        <Typography variant="caption" className="text-center block">
-          Code snippet of the PanelSwipeable class
-        </Typography>
+          </SyntaxHighlighter>
+          <Typography variant="caption" className="text-center block mb-4">
+            Code snippet of VuforiaPermissionErrorHandler class
+          </Typography>
+        </div>
+        <div className="screen-md:w-full">
+          <Paper variant="outlined" className="w-fit h-[450px] m-auto mb-2">
+            <video controls loop muted autoPlay className="h-[450px]">
+              <source src="/fmd/camera_permission.mp4" />
+            </video>
+          </Paper>
+          <Typography variant="caption" className="text-center block mb-4">
+            VuforiaPermissionErrorHandler in action
+          </Typography>
+        </div>
       </div>
+      <Typography className="leading-5">
+        The code snippet above showcases a class that I wrote to handle the case
+        where the application was not granted access to the camera, since it
+        can't execute AR functionalities without it.
+        <br />
+        The script inherits from two base classes and takes advantage of Unity's
+        support for <b>conditional compilation</b>, providing a streamlined
+        approach to <b>defining distinct methods</b> for Android and iOS. It
+        ensures that only the relevant functions for the currently selected
+        platform are included.
+      </Typography>
     </>
   );
 
