@@ -1,5 +1,6 @@
 import { Chip, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import NoThumbnailIcon from "@mui/icons-material/HideImageOutlined";
 
 function ProjectThumbnail({
   title,
@@ -21,7 +22,7 @@ function ProjectThumbnail({
         label={tag}
         size="small"
         variant="filled"
-        className="bg-darkblue text-white font-bold border-darkblue cursor-pointer"
+        className="bg-blue-900 text-white font-bold cursor-pointer"
       ></Chip>
     );
   });
@@ -52,15 +53,20 @@ function ProjectThumbnail({
           alt=""
         ></img>
         <div className="absolute bottom-0 left-0 w-full">
-          <div className="w-full p-4 flex flex-wrap gap-2 bg-white bg-opacity-70">
+          <div className="w-full p-2 flex flex-wrap gap-2 screen-sm:gap-1 justify-center">
             {generateTags}
           </div>
         </div>
+        {!thumbnail && (
+          <div className="absolute flex w-full h-full top-0 left-0 justify-center items-center">
+            <NoThumbnailIcon className="text-darkblue text-5xl" />
+          </div>
+        )}
       </div>
       <div className="w-full">
         <div className="w-full p-4">
           <Typography variant="h6" className="text-center text-darkblue pb-2">
-            {solo ? "Work Done" : "Contributions"}
+            {solo ? "Highlighted Work" : "Contributions"}
           </Typography>
           <ul className="list-disc px-4">{generateWorkDone}</ul>
         </div>

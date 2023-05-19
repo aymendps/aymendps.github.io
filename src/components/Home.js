@@ -135,7 +135,7 @@ function Home() {
           Welcome to my portfolio!
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-md:text-left">
+        <Typography className="text-white text-center screen-md:text-justify">
           <HashLink
             smooth
             to="/home#projects"
@@ -148,7 +148,7 @@ function Home() {
           on.
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-md:text-left">
+        <Typography className="text-white text-center screen-md:text-justify">
           My name is{" "}
           <Link to="/about-me" className="text-cyan-400 hover:underline">
             <b>Aymen</b>
@@ -173,13 +173,13 @@ function Home() {
           </a>
         </Typography>
         <br className="hidden screen-md:block" />
-        <Typography className="text-white text-center screen-md:text-left">
+        <Typography className="text-white text-center screen-md:text-justify">
           I've always had a passion for games and programming. I've been playing
           them since I was a kid, and I started making my own games and web apps
           in high school.
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-md:text-left">
+        <Typography className="text-white text-center screen-md:text-justify">
           I absolutely love{" "}
           <a
             href="https://github.com/aymendps"
@@ -194,7 +194,7 @@ function Home() {
           on some amazing projects both on my own and as part of a team.
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-md:text-left">
+        <Typography className="text-white text-center screen-md:text-justify">
           If you're as passionate as I am for making games, web apps, and
           software projects, then don't hesitate to reach out.{" "}
           <a

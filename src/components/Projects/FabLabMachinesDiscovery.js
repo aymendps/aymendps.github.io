@@ -1079,11 +1079,10 @@ namespace Popups
         animations using Unity's built-in <b>Animator component.</b>
         <br />
         All the animations have <b>the same state machine structure</b>, and
-        once an animation is finished, it calls a function called{" "}
-        <b>"Exit()"</b> from the <b>MachineSimulation class</b> that I
-        implemented. Having the same structure and calling the same event makes
-        it <b>very easy to play and reset the animation multiple times</b>, as
-        long as the user keeps tapping the "Play Simulation" popup.
+        once an animation is finished, it calls an action called <b>"Exit"</b>{" "}
+        from the <b>MachineSimulation class</b> that I implemented. Having the
+        same structure and calling the same event makes it{" "}
+        <b>very easy to play and reset the animation multiple times</b>.
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2 mb-4 items-end">
         <div className="w-[48%] screen-md:w-full">
@@ -1108,9 +1107,19 @@ namespace Popups
         </div>
       </div>
       <Typography className="leading-5 text-justify">
+        <br />
+        Once the popup is clicked, the <b>"Play"</b> method of the script will
+        be called. This will play the simulation and hide the popup as long as
+        the 3D animation is still ongoing.
+        <br />
+        Once the animation is finished, the <b>"Exit"</b> method of the script
+        will be called, hiding the simulation and showing the popup once more.
+        <br /> With this simple loop setup, users are free to play the
+        simulation as many times as they want.
+        <br />
+        <br />
         Below is the code snippet for the <b>MachineSimulation</b> class that
-        handles playing and hiding the simulation once the "Play Simulation"
-        popup is clicked.
+        handles the points mentioned above.
       </Typography>
       <div className="w-3/4 m-auto screen-md:w-full mt-4">
         <SyntaxHighlighter
@@ -1201,7 +1210,6 @@ namespace Popups
         teamSize="4"
         platform="Android - iOS"
         softwareUsed="Unity - C# - Vuforia"
-        when="Feb 2023 - Apr 2023"
         usefulLinks={usefulLinks}
         workDone={workDone}
         description={`“FabLab Machines Discovery” is an Augmented Reality (AR) application that runs on mobile devices. The project was chosen as one of the best senior software engineering projects of the year.

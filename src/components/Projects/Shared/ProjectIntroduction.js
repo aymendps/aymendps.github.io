@@ -9,7 +9,6 @@ function ProjectIntroduction({
   teamSize,
   platform,
   softwareUsed,
-  when,
   description,
   usefulLinks = [],
   workDone = [],
@@ -51,7 +50,6 @@ function ProjectIntroduction({
     teamSize === "1" ? "Solo" : "Team of " + teamSize,
     platform,
     softwareUsed,
-    when,
   ].map((tag) => {
     return (
       <Chip
@@ -122,7 +120,7 @@ function ProjectIntroduction({
             variant="h4"
             className="text-cyan-400 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
           >
-            {teamSize === "1" ? "Work Done" : "Contributions"}
+            {teamSize === "1" ? "Highlighted Work" : "Contributions"}
           </Typography>
           <ul className="list-disc px-4 pb-2">{generateWorkDone}</ul>
         </div>

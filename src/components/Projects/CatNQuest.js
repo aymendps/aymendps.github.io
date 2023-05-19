@@ -30,7 +30,6 @@ function CatNQuest() {
         teamSize="3"
         platform="PC - WebGL"
         softwareUsed="Unity - C#"
-        when="Oct 2022"
         usefulLinks={usefulLinks}
         workDone={workDone}
         description={`a

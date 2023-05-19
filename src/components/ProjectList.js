@@ -2,6 +2,7 @@ import React from "react";
 import CatNQuest from "./Projects/CatNQuest";
 import ProjectThumbnail from "./ProjectThumbnail";
 import FabLabMachinesDiscovery from "./Projects/FabLabMachinesDiscovery";
+import FollowTheLight from "./Projects/FollowTheLight";
 
 export const UNREAL_GAME_1 = {
   title: "Unreal Game 1",
@@ -28,12 +29,18 @@ export const CAT_N_QUEST = {
 export const FOLLOW_THE_LIGHT = {
   title: "Follow The Light",
   subtitle: "3D puzzle game",
-  thumbnail: "",
+  thumbnail: "/thumbnails/ftl.jpg",
   solo: true,
-  workDone: [],
+  workDone: [
+    "Player Gameplay Mechanics",
+    "Player Finite State Machine",
+    "Player & Camera Controls",
+    "Glowing Walls & Moving Platforms",
+    "Main Menu - Play Transition",
+  ],
   tags: ["Personal", "Game Dev", "Unity", "C#"],
   pageURL: "/follow-the-light",
-  element: <></>,
+  element: <FollowTheLight />,
 };
 
 export const FMD = {
@@ -49,7 +56,7 @@ export const FMD = {
     "AR Popup System",
     "3D Machine Simulation",
   ],
-  tags: ["University", "Mobile", "Unity", "AR", "C#"],
+  tags: ["University", "Won Award", "Mobile", "Unity", "AR", "Vuforia", "C#"],
   pageURL: "/fablab-machines-discovery",
   element: <FabLabMachinesDiscovery />,
 };
@@ -68,10 +75,17 @@ export const PATHFINDING = {
 export const SSA = {
   title: "Student Speciality Advisor",
   subtitle: "Full-Stack web application",
-  thumbnail: "",
+  thumbnail: "/thumbnails/ssa.jpg",
   solo: false,
   workDone: [],
-  tags: ["University", "Full Stack", "React", "Express", "MongoDB"],
+  tags: [
+    "University",
+    "Won Award",
+    "Full Stack",
+    "React",
+    "Express",
+    "MongoDB",
+  ],
   pageURL: "/student-speciality-advisor",
   element: <></>,
 };
@@ -79,7 +93,7 @@ export const SSA = {
 export const FILE_MANAGER = {
   title: "File Manager - Cynoia",
   subtitle: "Full-Stack web application",
-  thumbnail: "",
+  thumbnail: "/thumbnails/fm.png",
   solo: false,
   workDone: [],
   tags: [
