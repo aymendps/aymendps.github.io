@@ -57,7 +57,7 @@ function ProjectIntroduction({
         label={tag}
         size="medium"
         variant="filled"
-        className="bg-darkblue text-white font-bold border-darkblue"
+        className="bg-darkblue text-white font-bold"
       ></Chip>
     );
   });
@@ -72,7 +72,7 @@ function ProjectIntroduction({
           {title}
         </Typography>
       </div>
-      <div className="w-[90%] m-auto flex justify-center gap-2 flex-wrap pb-12 screen-md:pb-6">
+      <div className="w-[90%] m-auto flex justify-center gap-2 flex-wrap pb-12 screen-md:pb-6 screen-sm:w-[98%] screen-sm:gap-1">
         {generateTags}
       </div>
       <div className="w-[90%] m-auto hidden screen-md:block">
