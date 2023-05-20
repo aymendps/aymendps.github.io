@@ -56,6 +56,13 @@ export const FMD = {
     "AR Popup System",
     "3D Machine Simulation",
   ],
+  outcomes: [
+    "Gained valuable experience in teamwork, collaboration, and organization, while effectively translating designer ideas into maintainable code.",
+    "Learned the significance of applying design patterns when creating classes, enhancing the readability and structure of my code.",
+    "Built an engaging mobile experience in Unity, gaining new mobile development skills in the process.",
+    "Learned how to implement flexible UI designs that seamlessly adapt to different screen resolutions.",
+    "Expanded my knowledge of working with Augmented Reality.",
+  ],
   tags: ["University", "Won Award", "Mobile", "Unity", "AR", "Vuforia", "C#"],
   pageURL: "/fablab-machines-discovery",
   element: <FabLabMachinesDiscovery />,

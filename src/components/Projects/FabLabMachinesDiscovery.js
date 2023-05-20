@@ -5,6 +5,7 @@ import ProjectContent from "./Shared/ProjectContent";
 import ProjectIntroduction from "./Shared/ProjectIntroduction";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
 
 function FabLabMachinesDiscovery() {
   const usefulLinks = [
@@ -1224,6 +1225,7 @@ namespace Popups
         `}
       />
       <ProjectContent workDone={workDone} />
+      <ProjectLearningOutcomes outcomes={FMD.outcomes} />
       <Footer />
     </>
   );
