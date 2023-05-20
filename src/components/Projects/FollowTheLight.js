@@ -41,7 +41,21 @@ function FollowTheLight() {
         softwareUsed="Unity - C#"
         usefulLinks={usefulLinks}
         workDone={workDone}
-        description={``}
+        description={`"Follow The Light" is a 3D physics-based puzzle game made with Unity & C#.
+
+        As a glowing ball lost in darkness, your goal is to navigate through challenging environments, using your collisions with walls and objects to illuminate the path ahead.
+
+        By transferring some of your light to the surroundings, you gradually reveal the obstacles and pathways, allowing you to find your way out of the darkness.
+        
+        Move the glowing ball around by applying force!
+        
+        Rotate the camera to change your perspective!
+        
+        Jump in the same spot to bounce higher each time!
+        
+        Quickly hop between walls!
+        
+        Brake to control your momentum!`}
       />
       <ProjectContent workDone={workDone} />
       <Footer />
