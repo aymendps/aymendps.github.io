@@ -33,7 +33,7 @@ function FollowTheLight() {
     <>
       <ProjectIntroduction
         title={FOLLOW_THE_LIGHT.title}
-        youtubeURL="https://www.youtube-nocookie.com/embed/"
+        youtubeURL="https://www.youtube-nocookie.com/embed/6Ob0HM8uoo8"
         projectType="Personal"
         role="Game Developer"
         teamSize="1"
