@@ -1,5 +1,5 @@
 import React from "react";
-import CatNQuest from "./Projects/CatNQuest";
+// import CatNQuest from "./Projects/CatNQuest";
 import ProjectThumbnail from "./ProjectThumbnail";
 import FabLabMachinesDiscovery from "./Projects/FabLabMachinesDiscovery";
 import FollowTheLight from "./Projects/FollowTheLight";

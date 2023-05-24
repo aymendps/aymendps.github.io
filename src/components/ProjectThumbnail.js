@@ -69,7 +69,7 @@ function ProjectThumbnail({
           <Typography variant="h6" className="text-center text-darkblue pb-2">
             {solo ? "Highlighted Work" : "Contributions"}
           </Typography>
-          {accessible || workDone.length != 0 ? (
+          {accessible || workDone.length !== 0 ? (
             <ul className="list-disc px-4">{generateWorkDone}</ul>
           ) : (
             <Typography variant="body2" className="text-center">
