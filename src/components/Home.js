@@ -149,11 +149,11 @@ function Home() {
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
-          My name is{" "}
+          Hi there! I'm{" "}
           <Link to="/about-me" className="text-cyan-400 hover:underline">
             <b>Aymen</b>
-          </Link>{" "}
-          and I am a final year Software Engineering student at{" "}
+          </Link>
+          , a final year Software Engineering student at{" "}
           <a
             href="https://www.smu.tn/medtech"
             target="_blank"
@@ -162,7 +162,7 @@ function Home() {
           >
             <b>South Mediterranean University, MedTech</b>
           </a>
-          , graduating{" "}
+          , set to graduate in{" "}
           <a
             href="https://www.smu.tn/medtech"
             target="_blank"
@@ -180,23 +180,31 @@ function Home() {
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
-          I absolutely love{" "}
-          <a
-            href="https://github.com/aymendps"
-            target="_blank"
-            rel="noreferrer"
+          Throughout my academic journey, I've been fortunate enough to work on
+          some amazing projects both on my own and as part of a team.
+          <br />
+          These experiences have given me valuable insights into the software
+          development lifecycle and helped me hone my technical and soft skills.
+          <br />
+          <br />
+          As a good team player, I understand the significance of teamwork and
+          its vital role in achieving success.
+          <br />I have a proven track record of collaborating effectively with
+          others, as demonstrated by{" "}
+          <HashLink
+            smooth
+            to="/home#awards"
             className="text-cyan-400 hover:underline"
           >
-            <b>programming.</b>
-          </a>{" "}
-          I also really enjoy working closely with my teammates to create
-          experiences that users will love. I've been fortunate enough to work
-          on some amazing projects both on my own and as part of a team.
+            <b>multiple awards</b>
+          </HashLink>{" "}
+          you will find some I have received for my group projects.
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
-          If you're as passionate as I am for making games, web apps, and
-          software projects, then don't hesitate to reach out.{" "}
+          If you're looking for a resourceful software engineer who's constantly
+          eager to learn something new every day is passionate about making
+          games and software projects, then I'd love to connect!{" "}
           <a
             href="https://www.linkedin.com/in/aymendps/"
             target="_blank"
