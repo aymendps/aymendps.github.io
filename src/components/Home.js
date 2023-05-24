@@ -235,7 +235,7 @@ function Home() {
           variant="subtitle1"
           className="text-center pb-12 text-cyan-600"
         >
-          Click on a project to view it with more details
+          <b>Click</b> on a project to view it with more details
         </Typography>
       </div>
       <ProjectList />
@@ -266,13 +266,18 @@ function Home() {
 
   const findMoreSection = (
     <section className="w-full bg-darkblue py-12">
-      <Typography
-        variant="h2"
-        className="text-center text-white pb-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
-      >
-        Project Awards
-      </Typography>
-
+      <div className="relative">
+        <Typography
+          variant="h2"
+          className="text-center text-white pb-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+        >
+          Project Awards
+        </Typography>
+        <div
+          className="absolute top-[-118px] left-0 screen-md:top-0"
+          id="awards"
+        ></div>
+      </div>
       <div className="w-full flex justify-evenly flex-wrap">
         {LINKEDIN_POSTS.map((post) => {
           return (

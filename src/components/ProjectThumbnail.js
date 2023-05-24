@@ -10,6 +10,7 @@ function ProjectThumbnail({
   workDone = [],
   tags = [],
   pageURL,
+  accessible = false,
 }) {
   const generateWorkDone = workDone.map((work) => {
     return <li key={title + work}>{work}</li>;
@@ -29,7 +30,7 @@ function ProjectThumbnail({
 
   return (
     <Link
-      to={pageURL}
+      to={accessible ? pageURL : ""}
       onClick={() => {
         window.location.href = "#/home#projects";
       }}
@@ -68,7 +69,13 @@ function ProjectThumbnail({
           <Typography variant="h6" className="text-center text-darkblue pb-2">
             {solo ? "Highlighted Work" : "Contributions"}
           </Typography>
-          <ul className="list-disc px-4">{generateWorkDone}</ul>
+          {accessible || workDone.length != 0 ? (
+            <ul className="list-disc px-4">{generateWorkDone}</ul>
+          ) : (
+            <Typography variant="body2" className="text-center">
+              Details about this project will be added soon
+            </Typography>
+          )}
         </div>
       </div>
     </Link>
