@@ -2,7 +2,7 @@ import { Button, CircularProgress, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import ResumeIcon from "@mui/icons-material/AttachFile";
 import AboutIcon from "@mui/icons-material/Person4";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import ProjectList from "./ProjectList";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -149,11 +149,8 @@ function Home() {
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
-          Hi there! I'm{" "}
-          <Link to="/about-me" className="text-cyan-400 hover:underline">
-            <b>Aymen</b>
-          </Link>
-          , a final year Software Engineering student at{" "}
+          Hi there! I'm <b>Aymen</b>, a final year Software Engineering student
+          at{" "}
           <a
             href="https://www.smu.tn/medtech"
             target="_blank"
@@ -162,15 +159,7 @@ function Home() {
           >
             <b>South Mediterranean University, MedTech</b>
           </a>
-          , set to graduate in{" "}
-          <a
-            href="https://www.smu.tn/medtech"
-            target="_blank"
-            rel="noreferrer"
-            className="text-cyan-400 hover:underline"
-          >
-            <b>Summer/Fall 2024.</b>
-          </a>
+          , set to graduate in <b>Summer/Fall 2024.</b>
         </Typography>
         <br className="hidden screen-md:block" />
         <Typography className="text-white text-center screen-md:text-justify">
@@ -198,12 +187,12 @@ function Home() {
           >
             <b>multiple awards</b>
           </HashLink>{" "}
-          you will find some I have received for my group projects.
+          I have received for my group projects.
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
           If you're looking for a resourceful software engineer who's constantly
-          eager to learn something new every day is passionate about making
+          eager to learn something new every day and is passionate about making
           games and software projects, then I'd love to connect!{" "}
           <a
             href="https://www.linkedin.com/in/aymendps/"
