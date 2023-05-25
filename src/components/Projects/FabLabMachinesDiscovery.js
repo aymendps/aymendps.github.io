@@ -6,6 +6,7 @@ import ProjectIntroduction from "./Shared/ProjectIntroduction";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
+import SyntaxHighlighterMobileWrapper from "./Shared/SyntaxHighlighterMobileWrapper";
 
 function FabLabMachinesDiscovery() {
   const usefulLinks = [
@@ -151,13 +152,14 @@ function FabLabMachinesDiscovery() {
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighter
-            customStyle={{ width: "100%", height: "450px" }}
-            language="csharp"
-            showLineNumbers={true}
-            style={vscDarkPlus}
-          >
-            {`using UnityEngine;
+          <SyntaxHighlighterMobileWrapper title={"UIAnimation"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using UnityEngine;
 using DG.Tweening;
 
 namespace Animations
@@ -192,19 +194,22 @@ namespace Animations
         }
     }
 }`}
-          </SyntaxHighlighter>
-          <Typography variant="caption" className="text-center block">
-            UIAnimation: a generic abstract class that all UI animations extend
-          </Typography>
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              UIAnimation: a generic abstract class that all UI animations
+              extend
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighter
-            customStyle={{ width: "100%", height: "450px" }}
-            language="csharp"
-            showLineNumbers={true}
-            style={vscDarkPlus}
-          >
-            {`using System;
+          <SyntaxHighlighterMobileWrapper title={"UIAnimationProps"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using System;
 using UnityEngine;
 
 namespace Animations
@@ -225,10 +230,11 @@ namespace Animations
         public float delay;
     }
 }`}
-          </SyntaxHighlighter>
-          <Typography variant="caption" className="text-center block">
-            UIAnimationProps: the variables that the designers can tweak
-          </Typography>
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              UIAnimationProps: the variables that the designers can tweak
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
         </div>
       </div>
       <Typography className="leading-5 text-justify">
@@ -237,13 +243,14 @@ namespace Animations
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighter
-            customStyle={{ width: "100%", height: "450px" }}
-            language="csharp"
-            showLineNumbers={true}
-            style={vscDarkPlus}
-          >
-            {`using UnityEngine;
+          <SyntaxHighlighterMobileWrapper title={"TranslationAnimation"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using UnityEngine;
 using DG.Tweening;
 
 namespace Animations
@@ -263,10 +270,11 @@ namespace Animations
         
     }
 }`}
-          </SyntaxHighlighter>
-          <Typography variant="caption" className="text-center block">
-            TranslationAnimation extending the generic base class
-          </Typography>
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              TranslationAnimation extending the generic base class
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
           <img
@@ -324,13 +332,14 @@ namespace Animations
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighter
-            customStyle={{ width: "100%", height: "450px" }}
-            language="csharp"
-            showLineNumbers={true}
-            style={vscDarkPlus}
-          >
-            {`using System;
+          <SyntaxHighlighterMobileWrapper title={"PanelSwiper"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
@@ -425,19 +434,21 @@ namespace Onboarding_Scene
         }
     }
 }`}
-          </SyntaxHighlighter>
-          <Typography variant="caption" className="text-center block">
-            Code snippet of the PanelSwiper class
-          </Typography>
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Code snippet of the PanelSwiper class
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighter
-            customStyle={{ width: "100%", height: "450px" }}
-            language="csharp"
-            showLineNumbers={true}
-            style={vscDarkPlus}
-          >
-            {`using Animations;
+          <SyntaxHighlighterMobileWrapper title={"PanelSwipeable"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using Animations;
 using UnityEngine;
 
 namespace Onboarding_Scene
@@ -480,10 +491,11 @@ namespace Onboarding_Scene
         }
     }
 }`}
-          </SyntaxHighlighter>
-          <Typography variant="caption" className="text-center block">
-            Code snippet of the PanelSwipeable class
-          </Typography>
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Code snippet of the PanelSwipeable class
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
         </div>
       </div>
     </>
@@ -561,18 +573,21 @@ namespace Onboarding_Scene
       </ul>
       <div className="w-full flex justify-between mt-4 screen-md:flex-col">
         <div className="w-[65%] screen-md:w-full">
-          <SyntaxHighlighter
-            customStyle={{
-              width: "100%",
-              height: "450px",
-              marginTop: "0px",
-              marginBottom: "8px",
-            }}
-            language="csharp"
-            showLineNumbers={true}
-            style={vscDarkPlus}
+          <SyntaxHighlighterMobileWrapper
+            title={"VuforiaPermissionErrorHandler"}
           >
-            {`using System.Collections;
+            <SyntaxHighlighter
+              customStyle={{
+                width: "100%",
+                height: "450px",
+                marginTop: "8px",
+                marginBottom: "8px",
+              }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using System.Collections;
 using UnityEngine;
 using UnityEngine.Android;
 
@@ -634,13 +649,17 @@ namespace Vuforia
         }
     }
 }`}
-          </SyntaxHighlighter>
-          <Typography variant="caption" className="text-center block mb-4">
-            Code snippet of VuforiaPermissionErrorHandler class
-          </Typography>
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block mb-4">
+              Code snippet of VuforiaPermissionErrorHandler class
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
         </div>
         <div className="w-[30%] screen-md:w-full">
-          <Paper variant="outlined" className="w-fit h-[450px] m-auto mb-2">
+          <Paper
+            variant="outlined"
+            className="w-fit h-[450px] m-auto mb-2 mt-2"
+          >
             <video controls loop muted autoPlay className="h-[450px]">
               <source src="/fmd/camera_permission.mp4" type="video/mp4" />
             </video>
@@ -701,13 +720,14 @@ namespace Vuforia
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighter
-            customStyle={{ width: "100%", height: "450px" }}
-            language="csharp"
-            showLineNumbers={true}
-            style={vscDarkPlus}
-          >
-            {`using UnityEngine;
+          <SyntaxHighlighterMobileWrapper title={"Popup"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using UnityEngine;
 
 namespace Popups
 {
@@ -739,19 +759,21 @@ namespace Popups
         }
     }
 }`}
-          </SyntaxHighlighter>
-          <Typography variant="caption" className="text-center block">
-            Code snippet of the Popup class
-          </Typography>
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Code snippet of the Popup class
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighter
-            customStyle={{ width: "100%", height: "450px" }}
-            language="csharp"
-            showLineNumbers={true}
-            style={vscDarkPlus}
-          >
-            {`using UnityEditor;
+          <SyntaxHighlighterMobileWrapper title={"PopupCustomEditor"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using UnityEditor;
 using Popups;
 
 namespace Editor.Animations
@@ -778,10 +800,11 @@ namespace Editor.Animations
         }
     }
 }`}
-          </SyntaxHighlighter>
-          <Typography variant="caption" className="text-center block">
-            Custom Editor for the Popup class
-          </Typography>
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Custom Editor for the Popup class
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
         </div>
       </div>
       <Typography className="leading-5 text-justify">
@@ -824,13 +847,14 @@ namespace Editor.Animations
         of this UI, as well as updating its colors and its text components.
       </Typography>
       <div className="w-3/4 m-auto screen-md:w-full mt-4">
-        <SyntaxHighlighter
-          customStyle={{ width: "100%", height: "450px" }}
-          language="csharp"
-          showLineNumbers={true}
-          style={vscDarkPlus}
-        >
-          {`using Animations;
+        <SyntaxHighlighterMobileWrapper title={"PopupInfoUI"}>
+          <SyntaxHighlighter
+            customStyle={{ width: "100%", height: "450px" }}
+            language="csharp"
+            showLineNumbers={true}
+            style={vscDarkPlus}
+          >
+            {`using Animations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -987,11 +1011,12 @@ namespace Popups
         }
     }
 }`}
-        </SyntaxHighlighter>
-        <Typography variant="caption" className="text-center block">
-          Code snippet of PopupInfoUI, responsible for displaying a popup's
-          content
-        </Typography>
+          </SyntaxHighlighter>
+          <Typography variant="caption" className="text-center block">
+            Code snippet of PopupInfoUI, responsible for displaying a popup's
+            content
+          </Typography>
+        </SyntaxHighlighterMobileWrapper>
       </div>
       <Typography className="leading-5 text-justify mt-4">
         As you can see in the videos below, the UI <b>translates upwards</b>{" "}
@@ -1123,13 +1148,14 @@ namespace Popups
         handles the points mentioned above.
       </Typography>
       <div className="w-3/4 m-auto screen-md:w-full mt-4">
-        <SyntaxHighlighter
-          customStyle={{ width: "100%", height: "450px" }}
-          language="csharp"
-          showLineNumbers={true}
-          style={vscDarkPlus}
-        >
-          {`using UnityEngine;
+        <SyntaxHighlighterMobileWrapper title={"MachineSimulation"}>
+          <SyntaxHighlighter
+            customStyle={{ width: "100%", height: "450px" }}
+            language="csharp"
+            showLineNumbers={true}
+            style={vscDarkPlus}
+          >
+            {`using UnityEngine;
 
 namespace Popups
 {
@@ -1176,10 +1202,11 @@ namespace Popups
         }
     }
 }`}
-        </SyntaxHighlighter>
-        <Typography variant="caption" className="text-center block">
-          Code snippet of the MachineSimulation class
-        </Typography>
+          </SyntaxHighlighter>
+          <Typography variant="caption" className="text-center block">
+            Code snippet of the MachineSimulation class
+          </Typography>
+        </SyntaxHighlighterMobileWrapper>
       </div>
     </>
   );
