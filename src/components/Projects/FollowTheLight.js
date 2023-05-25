@@ -49,15 +49,32 @@ function FollowTheLight() {
       <Typography variant="h6" className="text-justify text-green-600">
         Wall Hopping
       </Typography>
-      <Typography className="leading-5 text-justify"></Typography>
+      <Typography className="leading-5 text-justify">
+        Some <b>specific walls</b> are positioned facing each other and allow
+        the ball to <b>quickly bounce between them</b>, providing a new means of
+        navigation for the player.
+        <br />
+        As long as the ball is clinging to one of the walls, it can either slide
+        down or bounce.
+      </Typography>
       <Typography variant="h6" className="text-justify text-green-600">
         Wall Glowing
       </Typography>
-      <Typography className="leading-5 text-justify"></Typography>
+      <Typography className="leading-5 text-justify">
+        When the ball <b>collides</b> with a wall or surface, it shares some of
+        its light with it. This is the mechanic that the game is based around
+        and allows the player <b>to slowly reveal</b> the surroundings.
+      </Typography>
       <Typography variant="h6" className="text-justify text-green-600">
         Changing Perspective
       </Typography>
-      <Typography className="leading-5 text-justify"></Typography>
+      <Typography className="leading-5 text-justify">
+        The player is able to <b>rotate</b> the camera, changing their
+        perspective either by <b>freely moving</b> it from side to side or by{" "}
+        <b>snapping</b>
+        it to a set of preset angles. This can be helpful when trying to find
+        surfaces to move/bounce towards.
+      </Typography>
     </>
   );
   const playerFSM = <></>;

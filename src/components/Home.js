@@ -18,6 +18,8 @@ function Home() {
   useEffect(() => {
     if (window.location.href.includes("#projects")) {
       document.getElementById("projects").scrollIntoView({ block: "start" });
+    } else if (window.location.href.includes("#awards")) {
+      document.getElementById("awards").scrollIntoView({ block: "start" });
     }
   }, []);
 
