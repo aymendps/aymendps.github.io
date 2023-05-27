@@ -145,9 +145,9 @@ function Home() {
           >
             <b>Below</b>
           </HashLink>{" "}
-          you will find some of the projects that I've had the opportunity of
-          contributing to, and also some of my personal projects that I worked
-          on.
+          you will find <b>some</b> of the projects that I've had the
+          opportunity of contributing to, and also some of my personal projects
+          that I worked on.
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
@@ -220,7 +220,7 @@ function Home() {
           variant="h2"
           className="text-darkblue text-center pt-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
         >
-          Work & Projects
+          Pinned Projects
         </Typography>
         <Typography
           variant="subtitle1"
@@ -284,7 +284,7 @@ function Home() {
                   alt=""
                   src={post.image}
                   className={
-                    "w-full object-cover aspect-square hover:scale-110 duration-200 " +
+                    "w-full object-cover aspect-square group-hover:scale-110 duration-200 " +
                     post.origin
                   }
                 />

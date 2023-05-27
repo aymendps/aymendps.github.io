@@ -3,7 +3,7 @@ import CodeIcon from "@mui/icons-material/Code";
 import CodeOffIcon from "@mui/icons-material/CodeOff";
 import { Button } from "@mui/material";
 
-function SyntaxHighlighterMobileWrapper({ children, title }) {
+function SyntaxHighlighterMobileWrapper({ children, title = "Missing Title" }) {
   const [hidden, setHidden] = useState(true);
 
   return (

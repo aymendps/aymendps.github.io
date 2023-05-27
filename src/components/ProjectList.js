@@ -46,7 +46,7 @@ export const FOLLOW_THE_LIGHT = {
     "Player Gameplay Mechanics",
     "Player Finite State Machine in C#",
     "Camera-Relative Player Movement",
-    "Handling Player Input",
+    "Handling Player Input: PC & Gamepad",
     "Glowing Walls & Platforms",
   ],
   outcomes: [
