@@ -1,4 +1,4 @@
-import { Paper, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import Footer from "../Footer";
 import { FMD } from "../ProjectList";
 import ProjectContent from "./Shared/ProjectContent";
@@ -297,11 +297,11 @@ namespace Animations
         Here is a short video demonstrating how the UI animation components I
         created brought the designers' UI to life.
       </Typography>
-      <Paper variant="outlined" className="w-fit m-auto mt-4">
+      <div className="w-fit m-auto mt-4">
         <video controls loop className="h-[450px]">
           <source src="/fmd/fmd_ui.mp4" type="video/mp4" />
         </video>
-      </Paper>
+      </div>
       <Typography variant="caption" className="text-center block mt-2">
         The application's first scene animated with my implemented classes.
       </Typography>
@@ -512,16 +512,13 @@ namespace Onboarding_Scene
         to explain to my team and to the stakeholders the way these technologies
         work together.
       </Typography>
-      <Paper
-        variant="outlined"
-        className="w-[40%] m-auto screen-md:w-full mt-4 mb-2"
-      >
+      <div className="w-[40%] m-auto screen-md:w-full mt-4 mb-2">
         <img
           alt=""
           src="/fmd/component_diagram.png"
           className="w-full object-contain"
         />
-      </Paper>
+      </div>
       <Typography variant="caption" className="text-center block mb-4">
         Component diagram showcasing the integration
       </Typography>
@@ -571,7 +568,7 @@ namespace Onboarding_Scene
           </Typography>
         </li>
       </ul>
-      <div className="w-full flex justify-between mt-4 screen-md:flex-col">
+      <div className="w-full flex justify-between mt-2 screen-md:flex-col">
         <div className="w-[65%] screen-md:w-full">
           <SyntaxHighlighterMobileWrapper
             title={"VuforiaPermissionErrorHandler"}
@@ -656,14 +653,11 @@ namespace Vuforia
           </SyntaxHighlighterMobileWrapper>
         </div>
         <div className="w-[30%] screen-md:w-full">
-          <Paper
-            variant="outlined"
-            className="w-fit h-[450px] m-auto mb-2 mt-2"
-          >
+          <div className="w-fit h-[450px] m-auto mb-2 mt-2">
             <video controls loop className="h-[450px]">
               <source src="/fmd/camera_permission.mp4" type="video/mp4" />
             </video>
-          </Paper>
+          </div>
           <Typography variant="caption" className="text-center block mb-4">
             VuforiaPermissionErrorHandler in action
           </Typography>
@@ -694,13 +688,13 @@ namespace Vuforia
         After some discussion, the team agreed to make the popups color-coded,
         conveying 5 different categories:
       </Typography>
-      <Paper variant="outlined" className="m-auto w-fit mt-4 mb-2">
+      <div className="m-auto w-fit mt-4 mb-2">
         <img
           alt=""
           src="/fmd/popups.png"
           className="h-[350px] object-contain"
         />
-      </Paper>
+      </div>
       <Typography variant="caption" className="text-center block mb-4">
         All popup types
       </Typography>
@@ -1028,31 +1022,31 @@ namespace Popups
       </Typography>
       <div className="flex justify-evenly mt-4 screen-md:flex-col">
         <div>
-          <Paper variant="outlined" className="w-fit m-auto">
+          <div className="w-fit m-auto">
             <video controls loop className="h-[450px]">
               <source src="/fmd/fmd_demo1.mp4" type="video/mp4" />
             </video>
-          </Paper>
+          </div>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
             Recognized 3D Printer
           </Typography>
         </div>
         <div>
-          <Paper variant="outlined" className="w-fit m-auto">
+          <div className="w-fit m-auto">
             <video controls loop className="h-[450px]">
               <source src="/fmd/fmd_demo2.mp4" type="video/mp4" />
             </video>
-          </Paper>
+          </div>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
             Recognized Laser Cutter
           </Typography>
         </div>
         <div>
-          <Paper variant="outlined" className="w-fit m-auto">
+          <div className="w-fit m-auto">
             <video controls loop className="h-[450px]">
               <source src="/fmd/fmd_demo3.mp4" type="video/mp4" />
             </video>
-          </Paper>
+          </div>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
             Recognized CNC 3 Axes
           </Typography>
@@ -1070,31 +1064,31 @@ namespace Popups
       </Typography>
       <div className="flex justify-evenly mt-4 screen-md:flex-col">
         <div>
-          <Paper variant="outlined" className="w-fit m-auto">
+          <div className="w-fit m-auto">
             <video controls loop className="h-[450px]">
               <source src="/fmd/fmd_demo4.mp4" type="video/mp4" />
             </video>
-          </Paper>
+          </div>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
             Simulation of 3D Printer
           </Typography>
         </div>
         <div>
-          <Paper variant="outlined" className="w-fit m-auto">
+          <div className="w-fit m-auto">
             <video controls loop className="h-[450px]">
               <source src="/fmd/fmd_demo5.mp4" type="video/mp4" />
             </video>
-          </Paper>
+          </div>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
             Simulation of Laser Cutter
           </Typography>
         </div>
         <div>
-          <Paper variant="outlined" className="w-fit m-auto">
+          <div className="w-fit m-auto">
             <video controls loop className="h-[450px]">
               <source src="/fmd/fmd_demo6.mp4" type="video/mp4" />
             </video>
-          </Paper>
+          </div>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
             Simulation of CNC 3 Axes
           </Typography>
