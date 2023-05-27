@@ -20,6 +20,14 @@ function FollowTheLight() {
         obstacles.
       </Typography>
       <Typography variant="h6" className="text-justify text-green-600">
+        Wall Glowing
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        When the ball <b>collides</b> with a wall or surface, it shares some of
+        its light with it. This is the mechanic that the game is based around
+        and allows the player <b>to slowly reveal</b> the surroundings.
+      </Typography>
+      <Typography variant="h6" className="text-justify text-green-600">
         Moving & Braking
       </Typography>
       <Typography className="leading-5 text-justify">
@@ -28,15 +36,43 @@ function FollowTheLight() {
         made to introduce a level of <b>challenge</b> for the player in
         controlling the position of the ball.
       </Typography>
+      <div className="flex justify-between mt-4 screen-md:flex-col">
+        <div className="w-[48%] screen-md:w-full">
+          <video controls loop className="w-full">
+            <source src="/ftl/moving.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Showcasing movement by exerting force
+          </Typography>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <video controls loop className="w-full">
+            <source src="/ftl/braking.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Showcasing braking by applying opposite force
+          </Typography>
+        </div>
+      </div>
+      <Typography variant="caption" className="text-center block mt-2">
+        Showcasing movement by exerting force
+      </Typography>
       <Typography variant="h6" className="text-justify text-green-600">
         Normal Bouncing
       </Typography>
       <Typography className="leading-5 text-justify">
         The ball can bounce upwards to reach higher platforms or to avoid
         obstacles in its path. The player is still able to move the ball while
-        it's in the air, but with less force and control compared to when it's
-        on the ground. By design, this is due to the presence of{" "}
-        <b>air resistance</b>.
+        it's in the air, with with less control compared to when it's on the
+        ground.
+      </Typography>
+      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+        <video controls loop className="w-full">
+          <source src="/ftl/normal bounce.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <Typography variant="caption" className="text-center block mt-2">
+        Showcasing normal bouncing
       </Typography>
       <Typography variant="h6" className="text-justify text-green-600">
         Repetitive Bouncing in the same spot
@@ -49,6 +85,14 @@ function FollowTheLight() {
         However, there is a limit to how many times it can bounce and how high
         it can go, so the game doesn't break.
       </Typography>
+      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+        <video controls loop className="w-full">
+          <source src="/ftl/rep bounce.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <Typography variant="caption" className="text-center block mt-2">
+        Showcasing repetitive bouncing
+      </Typography>
       <Typography variant="h6" className="text-justify text-green-600">
         Wall Hopping
       </Typography>
@@ -60,13 +104,13 @@ function FollowTheLight() {
         As long as the ball is clinging to one of the walls, it can either slide
         down or bounce.
       </Typography>
-      <Typography variant="h6" className="text-justify text-green-600">
-        Wall Glowing
-      </Typography>
-      <Typography className="leading-5 text-justify">
-        When the ball <b>collides</b> with a wall or surface, it shares some of
-        its light with it. This is the mechanic that the game is based around
-        and allows the player <b>to slowly reveal</b> the surroundings.
+      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+        <video controls loop className="w-full">
+          <source src="/ftl/hopping.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <Typography variant="caption" className="text-center block mt-2">
+        Showcasing wall hopping
       </Typography>
       <Typography variant="h6" className="text-justify text-green-600">
         Changing Perspective
@@ -76,6 +120,14 @@ function FollowTheLight() {
         perspective either by <b>freely moving</b> it from side to side or by{" "}
         <b>snapping</b> it to one of the preset angles. This can be helpful when
         trying to find surfaces to move/bounce towards.
+      </Typography>
+      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+        <video controls loop className="w-full">
+          <source src="/ftl/camera.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <Typography variant="caption" className="text-center block mt-2">
+        Showcasing camera rotation, followed by camera snapping
       </Typography>
     </>
   );
