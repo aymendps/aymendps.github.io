@@ -5,6 +5,9 @@ import ProjectContent from "./Shared/ProjectContent";
 import Footer from "../Footer";
 import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
 import { Typography } from "@mui/material";
+import SyntaxHighlighterMobileWrapper from "./Shared/SyntaxHighlighterMobileWrapper";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function FollowTheLight() {
   const usefulLinks = [];
@@ -71,13 +74,323 @@ function FollowTheLight() {
       <Typography className="leading-5 text-justify">
         The player is able to <b>rotate</b> the camera, changing their
         perspective either by <b>freely moving</b> it from side to side or by{" "}
-        <b>snapping</b>
-        it to a set of preset angles. This can be helpful when trying to find
-        surfaces to move/bounce towards.
+        <b>snapping</b> it to one of the preset angles. This can be helpful when
+        trying to find surfaces to move/bounce towards.
       </Typography>
     </>
   );
-  const playerFSM = <></>;
+  const playerFSM = (
+    <>
+      <Typography className="leading-5 text-justify">
+        When I initially tried to implement all the mechanics that the ball
+        character has, I started to face some problems that can be summarized by
+        the following:
+      </Typography>
+      <ul className="list-disc px-4">
+        <li>
+          <Typography className="leading-5 text-justify">
+            Every time I work on adding a new mechanic, I have to modify old
+            code that I wrote, increasing its complexity
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Every time I finish adding a new mechanic, weird bugs appear like
+            the ball being able to bounce while it's in the air
+          </Typography>
+        </li>
+      </ul>
+      <br />
+      <Typography className="leading-5 text-justify">
+        I realized that something is clearly wrong with my approach, and after
+        some research I decided to adopt the <b>Finite State Machine (FSM)</b>{" "}
+        pattern.
+        <br />I designed the diagram above to describe how the <b>FSM</b> should
+        work for the ball character, using a flowchart that includes states,
+        inputs and transitions.
+      </Typography>
+      <img
+        alt=""
+        src="/ftl/fsm.png"
+        className="w-[40%] m-auto mt-4 mb-2 screen-md:w-full"
+      ></img>
+      <Typography variant="caption" className="text-center block mb-4">
+        Finite State Machine of the Ball Character
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        The essence of this pattern is that:
+      </Typography>
+      <ul className="list-disc px-4">
+        <li>
+          <Typography className="leading-5 text-justify">
+            There is a <b>fixed set of states</b> that the FSM can be in
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            The FSM can only be in <b>one state at a time</b>
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Each state has a <b>set of transitions</b> that point to another
+            state
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            If a condition is met or if an input is pressed, the{" "}
+            <b>state changes</b> according to that transition
+          </Typography>
+        </li>
+      </ul>
+      <br />
+      <Typography className="leading-5 text-justify">
+        When it comes to programming, this is very useful because it not only
+        separates the code into multiple smaller components, thus eliminating
+        complicated statements, but also reduces the potential for bugs. For
+        example, in this case, it is <b>not possible</b> for the ball character
+        to brake while it is falling or bouncing. This limitation arises from
+        the fact that, according to the diagram, the only way to initiate
+        braking is when the ball character is <b>on the ground</b> and is in the{" "}
+        <b>moving state</b>. This is because the moving state is the{" "}
+        <b>only state that has a transition leading to the braking state</b>.
+      </Typography>
+      <br />
+      <Typography className="leading-5 text-justify">
+        To transform this design into executable code, I implemented the{" "}
+        <b>BallFiniteStateMachine</b> class. It holds the collection of the{" "}
+        <b>possible states</b>, and keeps track of the <b>current state</b> of
+        the ball. It also has various methods that can be called from a
+        Monobehaviour class, and a function that allows the current state to{" "}
+        <b>transition</b> to another one.
+      </Typography>
+      <div className="w-[69%] screen-md:w-full m-auto mt-2 mb-2">
+        <SyntaxHighlighterMobileWrapper title="BallFiniteStateMachine">
+          <SyntaxHighlighter
+            customStyle={{ width: "100%", height: "450px" }}
+            language="csharp"
+            showLineNumbers={true}
+            style={vscDarkPlus}
+          >
+            {`using UnityEngine;
+
+namespace Gameplay.Ball_Finite_State_Machine
+{
+    public class BallFiniteStateMachine
+    {
+        // Current State
+        private BallBaseState _currentState;
+        
+        // Reference To Ball Controller
+        private readonly BallController _ballController;
+
+        // List Of States
+        public readonly BallMovingState ballMovingState;
+        public readonly BallBrakingState ballBrakingState;
+        public readonly BallBouncingState ballBouncingState;
+        public readonly BallWallHoppingState ballWallHoppingState;
+        public readonly BallFallingState ballFallingState;
+        public readonly BallDeadState ballDeadState;
+        
+        public BallFiniteStateMachine(BallController ballController)
+        {
+            _ballController = ballController;
+            ballMovingState = new BallMovingState();
+            ballBrakingState = new BallBrakingState();
+            ballBouncingState = new BallBouncingState();
+            ballWallHoppingState = new BallWallHoppingState();
+            ballFallingState = new BallFallingState();
+            ballDeadState = new BallDeadState();
+        }
+
+        public void Start()
+        {
+            ChangeState(ballFallingState);
+        }
+        
+        public void Update()
+        {
+            _currentState.HandleInputAndConditions(_ballController, this);
+        }
+        
+        public void FixedUpdate()
+        {
+            _currentState.FixedUpdate(_ballController, this);
+        }
+        
+        public void OnCollisionEnter(Collision collision)
+        {
+            _currentState.OnCollisionEnter(_ballController, this, collision);
+        }
+        
+        public void ChangeState(BallBaseState newState)
+        {
+            _currentState = newState;
+            _currentState.Enter(_ballController, this);
+        }
+    }
+}`}
+          </SyntaxHighlighter>
+          <Typography variant="caption" className="text-center block mb-4 mt-2">
+            Code snippet of BallFiniteStateMachine class
+          </Typography>
+        </SyntaxHighlighterMobileWrapper>
+      </div>
+      <Typography className="leading-5 text-justify">
+        To represent the ball states, I implemented an abstract class called{" "}
+        <b>BallBaseState</b>, that all the other states would derive from. This
+        ensures that all the states have the same structure.
+      </Typography>
+      <div className="w-[69%] screen-md:w-full m-auto mt-2 mb-2">
+        <SyntaxHighlighterMobileWrapper title="BallBaseState">
+          <SyntaxHighlighter
+            customStyle={{ width: "100%", height: "360px" }}
+            language="csharp"
+            showLineNumbers={true}
+            style={vscDarkPlus}
+          >
+            {`using UnityEngine;
+
+namespace Gameplay.Ball_Finite_State_Machine
+{
+    /// <summary>
+    /// Base State Class For Ball Finite State Machine
+    /// </summary>
+    public abstract class BallBaseState
+    {
+        public abstract void Enter(BallController ballController, BallFiniteStateMachine ballFiniteStateMachine);
+        public abstract void FixedUpdate(BallController ballController, BallFiniteStateMachine ballFiniteStateMachine);
+        public abstract void OnCollisionEnter(BallController ballController,
+            BallFiniteStateMachine ballFiniteStateMachine, Collision collision);
+        public abstract void HandleInputAndConditions(BallController ballController,
+            BallFiniteStateMachine ballFiniteStateMachine);
+    }
+}`}
+          </SyntaxHighlighter>
+          <Typography variant="caption" className="text-center block mb-4 mt-2">
+            Code snippet of the BallFiniteStateMachine class
+          </Typography>
+        </SyntaxHighlighterMobileWrapper>
+      </div>
+      <Typography className="leading-5 text-justify">
+        Below you can find the implementation of two states: The first handles
+        braking and the second handles falling.
+      </Typography>
+      <div className="flex justify-between screen-md:flex-col mt-2">
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighterMobileWrapper title={"BallBrakingState"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using UnityEngine;
+
+namespace Gameplay.Ball_Finite_State_Machine
+{
+    public class BallBrakingState : BallOnGroundState
+    {
+        public override void Enter(BallController ballController, BallFiniteStateMachine ballFiniteStateMachine)
+        {
+            // Debug.Log("Entering Braking State");
+        }
+
+        public override void FixedUpdate(BallController ballController, BallFiniteStateMachine ballFiniteStateMachine)
+        {
+            // Apply braking force opposite to the direction of the ball's velocity
+            ballController.RigidbodyComponent.AddForce(-ballController.RigidbodyComponent.velocity *
+                                                       ballController.brakingForce);
+                
+            // If the ball's velocity is less than 0.1, stop the ball completely
+            if (ballController.RigidbodyComponent.velocity.sqrMagnitude < 0.1f)
+                ballController.RigidbodyComponent.velocity = Vector3.zero;
+        }
+
+        public override void OnCollisionEnter(BallController ballController, BallFiniteStateMachine ballFiniteStateMachine,
+            Collision collision)
+        {
+            
+        }
+
+        public override void HandleInputAndConditions(BallController ballController, BallFiniteStateMachine ballFiniteStateMachine)
+        {
+            if (!ballController.AttemptingToBrake)
+                ballFiniteStateMachine.ChangeState(ballFiniteStateMachine.ballMovingState);
+            else base.HandleInputAndConditions(ballController, ballFiniteStateMachine);
+        }
+    }
+}`}
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Code snippet of the BallBrakingState class
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighterMobileWrapper title={"BallFallingState"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using UnityEngine;
+
+namespace Gameplay.Ball_Finite_State_Machine
+{
+    public class BallFallingState : BallBaseState
+    {
+        public override void Enter(BallController ballController, BallFiniteStateMachine ballFiniteStateMachine)
+        {
+            // Debug.Log("Entering Falling State");
+        }
+        public override void FixedUpdate(BallController ballController, BallFiniteStateMachine ballFiniteStateMachine)
+        {
+            /*
+             * Move the ball in the direction set by the input manager
+             * Since the ball is in the air, the ball will move slower than it would on the ground
+             */
+            ballController.RigidbodyComponent.AddForce(ballController.RotationRelativeToCamera * ballController.Direction *
+                ballController.movementSpeed / ballController.airResistance);
+        }
+
+        public override void OnCollisionEnter(BallController ballController,
+            BallFiniteStateMachine ballFiniteStateMachine,
+            Collision collision)
+        {
+            if (collision.gameObject.layer == ballController.groundLayer)
+            {
+                ballFiniteStateMachine.ChangeState(ballFiniteStateMachine.ballMovingState);
+            } else if (collision.gameObject.layer == ballController.hoppingWallLayer)
+            {
+                ballFiniteStateMachine.ChangeState(ballFiniteStateMachine.ballWallHoppingState);
+            }
+        }
+
+        public override void HandleInputAndConditions(BallController ballController,
+            BallFiniteStateMachine ballFiniteStateMachine)
+        {
+            /*
+             * The ball can only die when it is falling
+             * If the ball is below the dieWhenBelowY threshold, the ball dies
+             */
+            if (!(ballController.transform.position.y < ballController.dieWhenBelowY)) return;
+            
+            ballFiniteStateMachine.ChangeState(ballFiniteStateMachine.ballDeadState);
+        }
+    }
+}`}
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Code snippet of the BallFallingState class
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
+        </div>
+      </div>
+    </>
+  );
   const cameraRelativeMovementSection = <></>;
   const handlingInputSection = <></>;
   const wallsAndPlatforms = <></>;
