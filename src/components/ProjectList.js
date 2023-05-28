@@ -47,13 +47,13 @@ export const FOLLOW_THE_LIGHT = {
     "Player Finite State Machine in C#",
     "Camera-Relative Player Movement",
     "Handling Player Input: PC & Gamepad",
-    "Glowing Walls & Platforms",
+    "Moving Platforms",
   ],
   outcomes: [
     "Learned how to apply the finite state machine pattern to create modular and organized character behavior",
     "Implemented intuitive character navigation by learning how camera-relative movement works",
-    "Developed proficiency in working with concepts like vectors, quaternions and movement",
     "Expanded creative abilities by designing and implementing multiple gameplay mechanics",
+    "Developed proficiency in working with concepts like vectors, quaternions and rotations",
     "Learned how to implement physics-based interactions and respond to player input",
   ],
   tags: ["Personal", "Game Dev", "Unity", "C#"],
@@ -68,7 +68,6 @@ export const FMD = {
   thumbnail: "/thumbnails/fmd.png",
   solo: false,
   workDone: [
-    "Scrum Responsibilities",
     "Source Control Responsibilities",
     "UI Events & Animations in C#",
     "Augmented Reality With Vuforia",
@@ -94,7 +93,6 @@ export const SSA = {
   thumbnail: "/thumbnails/ssa.jpg",
   solo: false,
   workDone: [
-    "Scrum Responsibilities",
     "Responsive Web Design",
     "Community Forum Implementation",
     "Meeting With Advisors System",

@@ -27,6 +27,7 @@ function FollowTheLight() {
         its light with it. This is the mechanic that the game is based around
         and allows the player <b>to slowly reveal</b> the surroundings.
       </Typography>
+      <br />
       <Typography variant="h6" className="text-justify text-green-600">
         Moving & Braking
       </Typography>
@@ -129,6 +130,23 @@ function FollowTheLight() {
       <Typography variant="caption" className="text-center block mt-2">
         Showcasing camera rotation, followed by camera snapping
       </Typography>
+      <Typography variant="h6" className="text-justify text-green-600">
+        Death & Respawning
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        When the ball falls <b>below a specific threshold</b>, this causes the
+        death sequence to start. Shortly after that, the ball would{" "}
+        <b>respawn at the start of the level</b>, where the player will have to
+        try and get out of the maze once more.
+      </Typography>
+      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+        <video controls loop className="w-full">
+          <source src="/ftl/death.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <Typography variant="caption" className="text-center block mt-2">
+        Showcasing the ball's death & respawn sequence
+      </Typography>
     </>
   );
   const playerFSM = (
@@ -217,7 +235,7 @@ function FollowTheLight() {
         Monobehaviour class, and a function that allows the current state to{" "}
         <b>transition</b> to another one.
       </Typography>
-      <div className="w-[69%] screen-md:w-full m-auto mt-2 mb-2">
+      <div className="w-[69%] screen-md:w-full m-auto mt-4 mb-4">
         <SyntaxHighlighterMobileWrapper title="BallFiniteStateMachine">
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "450px" }}
@@ -285,7 +303,7 @@ namespace Gameplay.Ball_Finite_State_Machine
 }`}
           </SyntaxHighlighter>
           <Typography variant="caption" className="text-center block mb-4 mt-2">
-            Code snippet of BallFiniteStateMachine class
+            Code snippet of the BallFiniteStateMachine class
           </Typography>
         </SyntaxHighlighterMobileWrapper>
       </div>
@@ -294,7 +312,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         <b>BallBaseState</b>, that all the other states would derive from. This
         ensures that all the states have the same structure.
       </Typography>
-      <div className="w-[69%] screen-md:w-full m-auto mt-2 mb-2">
+      <div className="w-[69%] screen-md:w-full m-auto mt-4 mb-4">
         <SyntaxHighlighterMobileWrapper title="BallBaseState">
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "360px" }}
@@ -329,7 +347,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         Below you can find the implementation of two states: The first handles
         braking and the second handles falling.
       </Typography>
-      <div className="flex justify-between screen-md:flex-col mt-2">
+      <div className="flex justify-between screen-md:flex-col mt-4">
         <div className="w-[48%] screen-md:w-full">
           <SyntaxHighlighterMobileWrapper title={"BallBrakingState"}>
             <SyntaxHighlighter
@@ -443,16 +461,452 @@ namespace Gameplay.Ball_Finite_State_Machine
       </div>
     </>
   );
-  const cameraRelativeMovementSection = <></>;
-  const handlingInputSection = <></>;
-  const wallsAndPlatforms = <></>;
+  const cameraRelativeMovementSection = (
+    <>
+      <Typography className="leading-5 text-justify">
+        When playtesting the game during development, I noticed that the
+        movement <b>felt odd</b> whenever I rotated the camera. As a fellow
+        gamer, I expected the character to move forward relative to my
+        perspective whenever I pressed the <b>'W'</b> key on the keyboard or
+        moved the gamepad's <b>left stick</b> upwards. However, what actually
+        happened in my game was that the ball moved based on its position and
+        rotation,{" "}
+        <b>completely disregarding the camera's rotation and perspective.</b>
+        <br />
+        <br />
+        Below is a video that shows the <b>initial problem</b> with the ball's
+        movement:
+      </Typography>
+      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+        <video controls loop className="w-full">
+          <source src="/ftl/norelative.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <Typography variant="caption" className="text-center block mt-2 mb-4">
+        Moving forward WITHOUT camera-relative calculations
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        To solve this problem, I had to take into account the rotation of the
+        camera when calculating the direction in which the ball should move.
+        <br />
+        By using the camera's Y-axis rotation, I created a{" "}
+        <b>Quaternion variable</b> that represented the initially missing{" "}
+        <b>rotation relative to the camera</b>.
+        <br />
+        Since the ball's direction is represented by a <b>Vector</b>,{" "}
+        <b>multiplying</b> it with the Quaternion variable would{" "}
+        <b>rotate the vector accordingly</b>, aligning it with the perspective
+        of the player's camera.
+      </Typography>
+      <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighterMobileWrapper title={"Quaternion Rotation"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`public class BallController : Monobehaviour 
+{
+     .
+     .
+     .
+     /// <summary>
+     /// The rotation to apply to the ball's direction to make it relative to the camera
+     /// </summary>
+     public Quaternion RotationRelativeToCamera { get; private set; } 
+     .
+     .
+     .
+     private void UpdateCameraTarget()
+     {
+         // Update the position of the camera target to the position of the ball
+         cameraTarget.transform.position = transform.position;
+            
+         // Rotate the camera target in the direction set by the input manager
+         cameraTarget.transform.Rotate(0f, CameraRotationDirection * cameraRotationSpeed * Time.deltaTime,
+             0f, Space.World);
+            
+         // The camera and the target are always facing each other, so the camera's rotation is the same as the target's
+         RotationRelativeToCamera = Quaternion.Euler(0f, cameraTarget.transform.rotation.eulerAngles.y, 0f);
+     }
+     .
+     .
+     .
+}`}
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Rotating the camera and calculating the Quaternion rotation
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighterMobileWrapper title={"Ball Movement"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using UnityEngine;
+
+namespace Gameplay.Ball_Finite_State_Machine
+{
+    public class BallMovingState : BallOnGroundState
+    {
+        .
+        .
+        .
+        public override void FixedUpdate(BallController ballController, BallFiniteStateMachine ballFiniteStateMachine)
+        { 
+            // Move the ball in the direction set by the input manager
+            ballController.RigidbodyComponent.AddForce(ballController.RotationRelativeToCamera * ballController.Direction *
+                                                     ballController.movementSpeed);
+        }
+        .
+        .
+        .
+    }
+}`}
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Moving the ball using the rotated direction
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
+        </div>
+      </div>
+      <Typography className="leading-5 text-justify">
+        Below is a video that shows the fixed camera-relative player movement:
+      </Typography>
+      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+        <video controls loop className="w-full">
+          <source src="/ftl/relative.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <Typography variant="caption" className="text-center block mt-2">
+        Moving forward WITH camera-relative calculations
+      </Typography>
+    </>
+  );
+  const handlingInputSection = (
+    <>
+      <Typography className="leading-5 text-justify">
+        To efficiently handle input, I decided to use{" "}
+        <b>Unity's new Input System</b>. It's intended to be a replacement for
+        Unity's classic Input Manager and offers a high level of flexibility,
+        enabling players to interact with the user interface and playable
+        characters using <b>various input devices</b>.
+      </Typography>
+      <br />
+      <Typography className="leading-5 text-justify">
+        In the case of <b>"Follow The Light"</b>, I wanted my game to support
+        both <b>keyboard and gamepad</b> (Xbox & PlayStation style) bindings.
+        <br />
+        Thus, I have created two action maps: <b>"Player"</b> and <b>"UI"</b>. I
+        assigned each map a set of <b>actions</b> that can be performed when
+        interacting with either the character or the user interface. Each action
+        contains the various <b>inputs</b> that can activate it and the
+        corresponding <b>control type</b> that it generates.
+        <br />
+        <br />
+        For instance, the <b>"Move"</b> action can be triggered by using the{" "}
+        <b>WASD</b> keys on the keyboard or the <b>Left Stick</b> on the
+        gamepad, and produces a <b>2D Vector</b> that signifies the{" "}
+        <b>desired direction</b> the player wants to move in.
+      </Typography>
+      <img
+        alt=""
+        src="/ftl/input.png"
+        className="w-[45%] m-auto mt-4 mb-2 screen-md:w-full"
+      ></img>
+      <Typography variant="caption" className="text-center block mb-4">
+        Player Input Actions (PC & Gamepad)
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        I have implemented an <b>Input Manager</b> that can listen to messages
+        sent by the actions mentioned above when they are performed. It utilizes
+        the data they generate to:
+      </Typography>
+      <ul className="list-disc px-4">
+        <li>
+          <Typography className="leading-5 text-justify">
+            Update the <b>rotation of the camera</b> by freely moving it from
+            side to side or by snapping it to one of the preset angles
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            It updates the <b>boolean flags</b> such as{" "}
+            <b>"AttemptingToBounce"</b>
+            or <b>"AttemptingToBrake"</b>. These flags inform the ball's{" "}
+            <b>Finite State Machine</b> when the player is attempting a specific
+            action, which is crucial for state transitions & updates.
+          </Typography>
+        </li>
+      </ul>
+      <br />
+      <Typography className="leading-5 text-justify">
+        Below is the code snippet of the aforementioned InputManager class.
+      </Typography>
+      <div className="w-[75%] screen-md:w-full m-auto mt-4 mb-4">
+        <SyntaxHighlighterMobileWrapper title="InputManager">
+          <SyntaxHighlighter
+            customStyle={{ width: "100%", height: "450px" }}
+            language="csharp"
+            showLineNumbers={true}
+            style={vscDarkPlus}
+          >
+            {`using Gameplay;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using Utils;
+
+namespace Managers
+{
+    public class InputManager : MonoBehaviour
+    {
+        [Tooltip("Reference to the ball controller")]
+        [SerializeField] private BallController ballController;
+        [Tooltip("The game object that the camera will follow and rotate around")]
+        [SerializeField] private GameObject cameraTarget;
+        
+        // The last angle that the camera snapped to
+        private float _lastSnappedAngle;
+        // The camera angles that the camera will snap to when the player presses the "Fixed Look" action
+        private static readonly float[] CameraAnglePresets = {0f, 90f, 180f, 270f, 360f};
+
+        /*
+         * All Input Actions are defined in the Input Actions asset.
+         * The actions below will be called when the corresponding action is triggered.
+         */
+        
+        private void OnMove(InputValue value)
+        {
+            var val = value.Get<Vector2>();
+            ballController.Direction =  new Vector3(val.x, 0, val.y);
+        }
+
+        private void OnBounce(InputValue value)
+        {
+            ballController.AttemptingToBounce = value.Get<float>() > 0.1f;
+        }
+
+        private void OnBrake(InputValue value)
+        {
+            ballController.AttemptingToBrake = value.Get<float>() > 0.1f;
+        }
+        
+        private void OnLook(InputValue value)
+        {
+            ballController.CameraRotationDirection = value.Get<float>();
+        }
+        
+        private void OnFixedLook()
+        {
+            // If the camera is already snapped to a preset angle, rotate it 90 degrees
+            if (Mathf.Approximately(_lastSnappedAngle, cameraTarget.transform.rotation.eulerAngles.y))
+            {
+                cameraTarget.transform.Rotate(0f, 90f, 0f, Space.World);
+                _lastSnappedAngle = cameraTarget.transform.rotation.eulerAngles.y;
+            }
+            // Otherwise, snap the camera to the nearest preset angle
+            else
+            {
+                _lastSnappedAngle = Algorithms.FindNearestAngle(CameraAnglePresets, cameraTarget.transform.rotation.eulerAngles.y);
+                cameraTarget.transform.eulerAngles = new Vector3(45f, _lastSnappedAngle, 0f);
+            } 
+        }
+
+    }
+}`}
+          </SyntaxHighlighter>
+          <Typography variant="caption" className="text-center block mb-4 mt-2">
+            Code snippet of the InputManager class
+          </Typography>
+        </SyntaxHighlighterMobileWrapper>
+      </div>
+    </>
+  );
+
+  const movingPlatforms = (
+    <>
+      <Typography className="leading-5 text-justify">
+        When I was designing the level for the game, I wanted to create{" "}
+        <b>moving platforms</b> as an additional challenge for the player. The
+        objective was to create situations where the player needs to
+        appropriately time the ball's movement & bouncing.
+        <br />
+        <br />
+        Due to the nature of the game, I needed the platforms to have the option
+        to <b>wait for the player</b> to be at a specific position before
+        starting to move.
+        <br />I also wanted the ball's movement to feel{" "}
+        <b>natural and realistic</b> when it's on the moving platform.
+        <br />
+        <br />
+        To transform this design idea into gameplay, I have implemented the
+        following two classes: The first class, named <b>"MovingPlatform"</b>,
+        is responsible for moving a platform back and forth between two points,
+        as the name suggests. It also includes methods that ensure the movement
+        of the ball feels natural and realistic by setting or unsetting the
+        platform as the ball's parent in the hierarchy. The second class, called{" "}
+        <b>"BallEnterTriggerEvent"</b>, is used to notify platforms that the
+        ball has entered a specific trigger collider, in other words when the
+        ball is in a particular position.
+      </Typography>
+      <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighterMobileWrapper title={"MovingPlatform"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using UnityEngine;
+
+namespace Gameplay.Platforms
+{
+    public class MovingPlatform : MonoBehaviour
+    {
+        [Tooltip("The distance the platform will move from its initial position")]
+        [SerializeField] private Vector3 moveBy;
+        
+        [Tooltip("How fast the platform will move?")]
+        [SerializeField] private float speed;
+        
+        [Tooltip("If true, the platform will wait for the player to enter the trigger before moving")]
+        [SerializeField] private bool waitForPlayer;
+        
+        [Tooltip("The event that will be called when the ball enters the trigger")]
+        [SerializeField] private BallEnterTriggerEvent ballEnterTriggerEvent;
+
+        private Vector3 _destination;
+        private Vector3 _initialPosition;
+        
+        private void Awake()
+        {
+            _initialPosition = transform.position;
+            _destination = _initialPosition  + moveBy;
+        }
+
+        private void Start()
+        {
+            if (waitForPlayer) 
+                ballEnterTriggerEvent.onBallEnterTrigger += StopWaitingForPlayer;
+        }
+        
+        private void FixedUpdate()
+        {
+            MovePlatform();
+        }
+
+        // This method is called when the ball enters the trigger and we want to start moving the platform
+        private void StopWaitingForPlayer()
+        {
+            waitForPlayer = false;
+            ballEnterTriggerEvent.onBallEnterTrigger -= StopWaitingForPlayer;
+        }
+
+        private void MovePlatform()
+        {
+            // If we are waiting for the player to enter the trigger, we don't want to move the platform yet
+            if (waitForPlayer) return;
+
+            // Returns a value that is always increasing and decreasing between 0 and 1
+            var interpolant = Mathf.PingPong(Time.time * speed, 1);
+            
+            // Use the interpolant to lerp between the initial position and the destination
+            transform.position = Vector3.Lerp(_initialPosition, _destination, interpolant);
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
+            if (other.transform.parent != null) return;
+            
+            // Set the player as a child of the platform so it moves with it
+            other.transform.SetParent(transform);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
+            
+            // Remove the player as a child of the platform so it doesn't move with it anymore
+            other.transform.SetParent(null);
+        }
+
+    }
+}
+`}
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Code snippet of the MovingPlatform class
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <SyntaxHighlighterMobileWrapper title={"BallEnterTriggerEvent"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="csharp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`using UnityEngine;
+
+namespace Gameplay.Platforms
+{
+    /// <summary>
+    /// This class is used to inform platforms that the ball has entered this trigger collider.
+    /// </summary>
+    [RequireComponent(typeof(Collider))]
+    public class BallEnterTriggerEvent : MonoBehaviour
+    { 
+        // delegate to be invoked when the ball enters the trigger collider
+        public delegate void OnBallEnterTrigger();
+        public OnBallEnterTrigger onBallEnterTrigger;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
+            if (onBallEnterTrigger == null) return;
+            
+            onBallEnterTrigger.Invoke();
+            Destroy(gameObject);
+        }
+    }
+}
+`}
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Code snippet of the BallEnterTriggerEvent class
+            </Typography>
+          </SyntaxHighlighterMobileWrapper>
+        </div>
+      </div>
+      <Typography className="leading-5 text-justify">
+        The video below showcases the results of the aforementioned code
+        implementation.
+      </Typography>
+      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+        <video controls loop className="w-full">
+          <source src="/ftl/moving platform.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <Typography variant="caption" className="text-center block mt-2 mb-4">
+        Ball movement on moving platforms
+      </Typography>
+    </>
+  );
 
   const contentList = [
     playerMechanicsSection,
     playerFSM,
     cameraRelativeMovementSection,
     handlingInputSection,
-    wallsAndPlatforms,
+    movingPlatforms,
   ];
 
   const workDone = FOLLOW_THE_LIGHT.workDone.map((work, index) => {

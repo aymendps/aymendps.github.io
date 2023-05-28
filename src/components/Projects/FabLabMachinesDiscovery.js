@@ -314,13 +314,10 @@ namespace Animations
         a <b>pagination section </b>
         that shows the currently viewed panel.
         <br />
-        <br />I have implemented the behaviour of all these mentioned features
-        by using an <b>Observer pattern.</b>
         <br />
-        <br />
-        In this case, I have created a class called <b>PanelSwiper</b>, which is
-        responsible for handling the user's drag input to determine if a
-        successful swipe has occurred. This class has{" "}
+        Given this context, I have created a class called <b>PanelSwiper</b>,
+        which is responsible for handling the user's drag input to determine if
+        a successful swipe has occurred. This class has{" "}
         <b>an event called OnSwipe</b>, which is invoked by the class once the
         user swipes to a new panel. The classes{" "}
         <b>PanelSwipeable & PanelPagination both subscribe to OnSwipe</b> to
