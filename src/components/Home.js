@@ -131,8 +131,8 @@ function Home() {
   );
 
   const aboutSection = (
-    <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px] screen-md:translate-y-0 screen-md:pt-4">
-      <div className="m-auto w-[80%] pt-4 screen-md:w-[90%]">
+    <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px] screen-md:translate-y-0 screen-md:pt-6">
+      <div className="m-auto w-[80%] pt-4 screen-md:w-[90%] screen-md:pb-12">
         <Typography
           variant="h2"
           className="text-center text-white pb-4 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
