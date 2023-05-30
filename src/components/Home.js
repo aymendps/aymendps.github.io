@@ -108,7 +108,7 @@ function Home() {
           <source src={VIDEO_SRC} type="video/mp4" />
         </video>
       </div>
-      <div className="absolute z-0 w-full h-[90%] top-0 left-0">
+      <div className="absolute z-0 w-full h-[90%] top-0 left-0 screen-md:h-full">
         <video
           key="big-video"
           loop
