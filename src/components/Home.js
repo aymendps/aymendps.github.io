@@ -100,6 +100,8 @@ function Home() {
           loop
           muted
           autoPlay
+          preload="none"
+          poster="/MainVideoPoster.jpg"
           className="w-full h-full object-contain object-center screen-md:object-contain"
           onPlay={() => {
             setIsLoadingVideo(false);
@@ -114,6 +116,7 @@ function Home() {
           loop
           muted
           autoPlay
+          preload="none"
           className="w-full h-full object-cover object-center blur-sm"
         >
           <source src={VIDEO_SRC} type="video/mp4" />
@@ -121,7 +124,7 @@ function Home() {
       </div>
       {isLoadingVideo ? (
         <div className="absolute z-20 w-full h-full top-0 left-0 flex justify-center items-center">
-          <CircularProgress size={60} className="text-white" />
+          <CircularProgress size={80} className="text-white" />
         </div>
       ) : null}
     </section>
