@@ -23,7 +23,7 @@ function Home() {
     }
   }, []);
 
-  const VIDEO_SRC = "";
+  const VIDEO_SRC = "/MainVideo.mp4";
 
   const CONTACT_ICONS = [
     {
@@ -92,20 +92,20 @@ function Home() {
   ];
 
   const videoSection = (
-    <section className="relative h-[90vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center screen-md:mt-0 screen-md:h-[82vh]">
+    <section className="relative h-[90vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center screen-md:mt-0 screen-md:h-[50vh]">
       <div className="absolute w-full top-[-70px] left-0" id="t"></div>
-      <div className="w-[90%] h-[90%] z-10 bg-[rgb(0,20,40)] border border-gray-500">
+      <div className="h-[90%] aspect-video z-10 bg-[rgb(0,20,40)] border-2 border-gray-500 screen-md:w-full screen-md:h-auto">
         <video
           key="small-video"
           loop
           muted
           autoPlay
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-contain object-center screen-md:object-contain"
           onPlay={() => {
             setIsLoadingVideo(false);
           }}
         >
-          <source src={VIDEO_SRC} />
+          <source src={VIDEO_SRC} type="video/mp4" />
         </video>
       </div>
       <div className="absolute z-0 w-full h-[90%] top-0 left-0">
@@ -114,9 +114,9 @@ function Home() {
           loop
           muted
           autoPlay
-          className="w-full h-full object-cover object-center blur"
+          className="w-full h-full object-cover object-center blur-sm"
         >
-          <source src={VIDEO_SRC} />
+          <source src={VIDEO_SRC} type="video/mp4" />
         </video>
       </div>
       {isLoadingVideo ? (
@@ -128,7 +128,7 @@ function Home() {
   );
 
   const aboutSection = (
-    <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px]">
+    <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px] screen-md:translate-y-0 screen-md:pt-4">
       <div className="m-auto w-[80%] pt-4 screen-md:w-[90%]">
         <Typography
           variant="h2"
