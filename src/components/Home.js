@@ -4,7 +4,7 @@ import ResumeIcon from "@mui/icons-material/AttachFile";
 import AboutIcon from "@mui/icons-material/Person4";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import ProjectList from "./ProjectList";
+import ProjectList, { PINNED_PROJECTS } from "./ProjectList";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GithubIcon from "@mui/icons-material/GitHub";
@@ -232,7 +232,7 @@ function Home() {
           <b>Click</b> on a project to view it with more details
         </Typography>
       </div>
-      <ProjectList />
+      <ProjectList projects={PINNED_PROJECTS} />
       <div className="w-[90%] m-auto">
         <Typography variant="subtitle1" className="text-center text-darkblue">
           Other projects may be found on my{" "}

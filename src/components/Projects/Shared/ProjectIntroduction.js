@@ -7,7 +7,8 @@ function ProjectIntroduction({
   youtubeURL,
   projectType,
   role,
-  teamSize,
+  solo,
+  yearAndDuration,
   platform,
   softwareUsed,
   description,
@@ -48,7 +49,8 @@ function ProjectIntroduction({
   const generateTags = [
     projectType,
     role,
-    teamSize === "1" ? "Solo" : "Team of " + teamSize,
+    solo ? "Solo Project" : "Team Project",
+    yearAndDuration,
     platform,
     softwareUsed,
   ].map((tag) => {
@@ -126,7 +128,7 @@ function ProjectIntroduction({
               variant="h4"
               className="text-cyan-400 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
             >
-              {teamSize === "1" ? "Highlighted Work" : "Contributions"}
+              {solo ? "Highlighted Work" : "Contributions"}
             </Typography>
             <ul className="list-disc px-4 pb-2">{generateWorkDone}</ul>
           </div>

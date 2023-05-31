@@ -163,27 +163,29 @@ function NavBar() {
     <>
       {/* Navbar */}
       <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-[70px] z-50 screen-md:hidden">
-        <div className="relative">
-          <Typography
-            variant="h4"
-            className="text-black absolute text-transparent"
-            style={{ WebkitTextStroke: "1px white" }}
-          >
-            Aymen Hammami
-          </Typography>
-          <Typography
-            variant="h4"
-            className="text-white"
-            style={{
-              animationName: "liquid",
-              animationDuration: "3s",
-              animationTimingFunction: "ease-in-out",
-              animationIterationCount: "infinite",
-            }}
-          >
-            Aymen Hammami
-          </Typography>
-        </div>
+        <HashLink to={"home#t"}>
+          <div className="relative">
+            <Typography
+              variant="h4"
+              className="text-black absolute text-transparent"
+              style={{ WebkitTextStroke: "1px white" }}
+            >
+              Aymen Hammami
+            </Typography>
+            <Typography
+              variant="h4"
+              className="text-white"
+              style={{
+                animationName: "liquid",
+                animationDuration: "3s",
+                animationTimingFunction: "ease-in-out",
+                animationIterationCount: "infinite",
+              }}
+            >
+              Aymen Hammami
+            </Typography>
+          </div>
+        </HashLink>
         <div className="w-1/2 flex h-full">
           {generateNavBarItems}
           <div className="w-1/4 flex h-full justify-center items-center gap-2">

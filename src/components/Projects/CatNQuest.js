@@ -27,7 +27,8 @@ function CatNQuest() {
         youtubeURL="https://www.youtube-nocookie.com/embed/"
         projectType="Game Jam"
         role="Game Programmer"
-        teamSize="3"
+        solo={CAT_N_QUEST.solo}
+        yearAndDuration={CAT_N_QUEST.yearAndDuration}
         platform="PC - WebGL"
         softwareUsed="Unity - C#"
         usefulLinks={usefulLinks}

@@ -924,7 +924,8 @@ namespace Gameplay.Platforms
         youtubeURL="https://www.youtube-nocookie.com/embed/6Ob0HM8uoo8"
         projectType="Personal"
         role="Game Developer"
-        teamSize="1"
+        solo={FOLLOW_THE_LIGHT.solo}
+        yearAndDuration={FOLLOW_THE_LIGHT.yearAndDuration}
         platform="Standalone PC"
         softwareUsed="Unity - C#"
         usefulLinks={usefulLinks}

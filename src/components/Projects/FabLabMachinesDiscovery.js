@@ -1225,7 +1225,8 @@ namespace Popups
         youtubeURL="https://www.youtube-nocookie.com/embed/VfGc1t6Qj3s"
         projectType="University"
         role="Unity Programmer"
-        teamSize="4"
+        solo={FMD.solo}
+        yearAndDuration={FMD.yearAndDuration}
         platform="Android - iOS"
         softwareUsed="Unity - C# - Vuforia"
         usefulLinks={usefulLinks}

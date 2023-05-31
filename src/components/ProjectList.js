@@ -1,5 +1,4 @@
 import React from "react";
-// import CatNQuest from "./Projects/CatNQuest";
 import ProjectThumbnail from "./ProjectThumbnail";
 import FabLabMachinesDiscovery from "./Projects/FabLabMachinesDiscovery";
 import FollowTheLight from "./Projects/FollowTheLight";
@@ -20,6 +19,7 @@ export const CAT_N_QUEST = {
   subtitle: "2D top-down adventure game",
   thumbnail: "/thumbnails/cat.png",
   solo: false,
+  yearAndDuration: "1 Month - 2022",
   workDone: [],
   tags: ["Game Jam", "Game Dev", "Unity", "C#"],
   pageURL: "/cat-n-quest",
@@ -42,6 +42,7 @@ export const FOLLOW_THE_LIGHT = {
   subtitle: "3D physics-based maze game",
   thumbnail: "/thumbnails/ftl.jpg",
   solo: true,
+  yearAndDuration: "2 Months - 2023",
   workDone: [
     "Player Gameplay Mechanics",
     "Player Finite State Machine in C#",
@@ -67,6 +68,7 @@ export const FMD = {
   subtitle: "AR mobile application",
   thumbnail: "/thumbnails/fmd.png",
   solo: false,
+  yearAndDuration: "3 Months - 2023",
   workDone: [
     "Source Control Responsibilities",
     "UI Events & Animations in C#",
@@ -135,7 +137,7 @@ export const FILE_MANAGER = {
   element: <></>,
 };
 
-export const PROJECTS = [
+export const PINNED_PROJECTS = [
   FMD,
   FOLLOW_THE_LIGHT,
   CAT_N_QUEST,
@@ -144,8 +146,8 @@ export const PROJECTS = [
   SSA,
 ];
 
-function ProjectList() {
-  const generateProjects = PROJECTS.map((project) => {
+function ProjectList({ projects }) {
+  const generateProjects = projects.map((project) => {
     return <ProjectThumbnail key={"thumbnail" + project.title} {...project} />;
   });
 
