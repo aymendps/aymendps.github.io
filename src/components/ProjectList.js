@@ -146,9 +146,22 @@ export const PINNED_PROJECTS = [
   SSA,
 ];
 
-function ProjectList({ projects }) {
+function ProjectList({
+  projects,
+  setIsLoadingProjectPage,
+  navigate,
+  isMobile,
+}) {
   const generateProjects = projects.map((project) => {
-    return <ProjectThumbnail key={"thumbnail" + project.title} {...project} />;
+    return (
+      <ProjectThumbnail
+        key={"thumbnail" + project.title}
+        isMobile={isMobile}
+        navigate={navigate}
+        setIsLoadingProjectPage={setIsLoadingProjectPage}
+        {...project}
+      />
+    );
   });
 
   return (

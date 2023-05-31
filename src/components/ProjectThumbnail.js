@@ -1,6 +1,6 @@
 import { Chip, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
 import NoThumbnailIcon from "@mui/icons-material/HideImageOutlined";
+import { useEffect } from "react";
 
 function ProjectThumbnail({
   title,
@@ -10,6 +10,9 @@ function ProjectThumbnail({
   workDone = [],
   tags = [],
   pageURL,
+  navigate,
+  isMobile,
+  setIsLoadingProjectPage,
   accessible = false,
 }) {
   const generateWorkDone = workDone.map((work) => {
@@ -28,13 +31,33 @@ function ProjectThumbnail({
     );
   });
 
+  let projectPageTimeout;
+
+  const handleClick = () => {
+    if (accessible) {
+      window.location.href = "#/home#projects";
+      if (isMobile) {
+        setIsLoadingProjectPage(true);
+        projectPageTimeout = setTimeout(() => {
+          navigate(pageURL);
+        }, 500);
+      } else {
+        navigate(pageURL);
+      }
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(projectPageTimeout);
+    };
+    // eslint-disable-next-line
+  }, []);
+
   return (
-    <Link
-      to={accessible ? pageURL : ""}
-      onClick={() => {
-        window.location.href = "#/home#projects";
-      }}
+    <div
       className="basis-[22%] screen-sm:basis-[90%] screen-md:basis-[80%] mb-[5%] relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group hover:bg-cyan-50"
+      onClick={handleClick}
     >
       <div className="p-4">
         <Typography
@@ -78,7 +101,7 @@ function ProjectThumbnail({
           )}
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 

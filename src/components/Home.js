@@ -1,4 +1,9 @@
-import { Button, CircularProgress, Typography } from "@mui/material";
+import {
+  Button,
+  CircularProgress,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { useEffect, useState } from "react";
 import ResumeIcon from "@mui/icons-material/AttachFile";
 import AboutIcon from "@mui/icons-material/Person4";
@@ -9,11 +14,14 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GithubIcon from "@mui/icons-material/GitHub";
 import Footer from "./Footer";
+import ProjectLoading from "./ProjectLoading";
 
 function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
+  const [isLoadingProjectPage, setIsLoadingProjectPage] = useState(false);
 
   const navigate = useNavigate();
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   useEffect(() => {
     if (window.location.href.includes("#projects")) {
@@ -232,7 +240,12 @@ function Home() {
           <b>Click</b> on a project to view it with more details
         </Typography>
       </div>
-      <ProjectList projects={PINNED_PROJECTS} />
+      <ProjectList
+        projects={PINNED_PROJECTS}
+        setIsLoadingProjectPage={setIsLoadingProjectPage}
+        navigate={navigate}
+        isMobile={isMobile}
+      />
       <div className="w-[90%] m-auto">
         <Typography variant="subtitle1" className="text-center text-darkblue">
           Other projects may be found on my{" "}
@@ -409,7 +422,8 @@ function Home() {
       {projectsSection}
       {findMoreSection}
       {contactSection}
-      {<Footer />}
+      {isLoadingProjectPage ? <ProjectLoading /> : null}
+      <Footer />
     </>
   );
 }
