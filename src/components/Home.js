@@ -42,13 +42,6 @@ function Home() {
       ),
     },
     {
-      name: "Email",
-      href: "mailto:hammami.aym@outlook.com",
-      icon: (
-        <EmailIcon className="text-darkblue text-7xl group-hover:text-cyan-600" />
-      ),
-    },
-    {
       name: "GitHub",
       href: "https://github.com/aymendps",
       icon: (
@@ -71,6 +64,13 @@ function Home() {
             className="w-16 hidden group-hover:block"
           ></img>
         </div>
+      ),
+    },
+    {
+      name: "Email",
+      href: "mailto:hammami.aym@outlook.com",
+      icon: (
+        <EmailIcon className="text-darkblue text-7xl group-hover:text-cyan-600" />
       ),
     },
   ];
