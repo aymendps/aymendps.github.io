@@ -355,7 +355,7 @@ function Home() {
             className="text-cyan-400 border-cyan-400 hover:border-cyan-300 hover:text-cyan-300"
             startIcon={<AboutIcon />}
             onClick={() => {
-              navigate("/about-me");
+              // navigate("/about-me");
             }}
           >
             About me Section

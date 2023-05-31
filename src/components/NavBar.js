@@ -48,7 +48,7 @@ function NavBar() {
     },
     {
       name: "About Me",
-      link: "about-me",
+      link: "#a", // about-me
       icon: (
         <AboutIcon
           fontSize="medium"
