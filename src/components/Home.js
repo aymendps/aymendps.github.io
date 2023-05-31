@@ -125,6 +125,7 @@ function Home() {
           muted
           autoPlay
           preload="none"
+          poster="/MainVideoPoster.jpg"
           className="w-full h-full object-cover object-center blur-sm"
         >
           <source src={VIDEO_SRC} type="video/mp4" />
