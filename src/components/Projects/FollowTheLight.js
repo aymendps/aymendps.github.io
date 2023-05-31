@@ -10,7 +10,12 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function FollowTheLight() {
-  const usefulLinks = [];
+  const usefulLinks = [
+    {
+      title: "Project's Source Code",
+      href: "https://github.com/aymendps/Follow-The-Light",
+    },
+  ];
 
   const playerMechanicsSection = (
     <>
