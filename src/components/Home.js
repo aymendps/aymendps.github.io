@@ -108,7 +108,7 @@ function Home() {
           loop
           muted
           autoPlay
-          preload="none"
+          // preload="none"
           poster="/MainVideoPoster.jpg"
           className="w-full h-full object-contain object-center screen-md:object-contain"
           onPlay={() => {
@@ -124,7 +124,7 @@ function Home() {
           loop
           muted
           autoPlay
-          preload="none"
+          // preload="none"
           poster="/MainVideoPoster.jpg"
           className="w-full h-full object-cover object-center blur-sm"
         >
