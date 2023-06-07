@@ -34,45 +34,45 @@ function FabLabMachinesDiscovery() {
     },
   ];
 
-  // const scrumSection = (
-  //   <>
-  //     <Typography className="leading-5 text-justify">
-  //       Since the project needed to continously adapt to changing circumstances
-  //       and be delivered frequently, our team decided to pick an{" "}
-  //       <b>agile development approach.</b>
-  //       <br />
-  //       And so, we decided to adopt <b>Scrum</b>, a flexible framework that can
-  //       accomomodate changes and emphasizes collaboration.
-  //       <br />
-  //       <br />
-  //       As a <b>Unity Programmer</b>, my responsibilities included:
-  //     </Typography>
-  //     <ul className="list-disc px-4">
-  //       <li>
-  //         <Typography className="leading-5 text-justify">
-  //           Working closely with designers to understand their ideas and
-  //           transform them into code.
-  //         </Typography>
-  //       </li>
-  //       <li>
-  //         <Typography className="leading-5 text-justify">
-  //           Using Microsoft Azure to access the product's backlong and sprint
-  //           tasks.
-  //         </Typography>
-  //       </li>
-  //       <li>
-  //         <Typography className="leading-5 text-justify">
-  //           Attending daily meetings and actively contributing with ideas.
-  //         </Typography>
-  //       </li>
-  //       <li>
-  //         <Typography className="leading-5 text-justify">
-  //           Offering valuable help with planning sprints and tasks.
-  //         </Typography>
-  //       </li>
-  //     </ul>
-  //   </>
-  // );
+  const scrumSection = (
+    <>
+      <Typography className="leading-5 text-justify">
+        Since the project needed to continously adapt to changing circumstances
+        and be delivered frequently, our team decided to pick an{" "}
+        <b>agile development approach.</b>
+        <br />
+        And so, we decided to adopt <b>Scrum</b>, a flexible framework that can
+        accomomodate changes and emphasizes collaboration.
+        <br />
+        <br />
+        As a <b>Unity Programmer</b>, my responsibilities included:
+      </Typography>
+      <ul className="list-disc px-4">
+        <li>
+          <Typography className="leading-5 text-justify">
+            Working closely with designers to understand their ideas and
+            transform them into code
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Using Microsoft Azure to access the product's backlong and sprint
+            tasks
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Attending daily meetings and actively contributing with ideas
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Offering valuable help with planning sprints and tasks
+          </Typography>
+        </li>
+      </ul>
+    </>
+  );
 
   const sourceControlSection = (
     <>
@@ -86,24 +86,25 @@ function FabLabMachinesDiscovery() {
       <ul className="list-disc px-4">
         <li>
           <Typography className="leading-5 text-justify">
-            Communicating with teammates and locking files I'm working on to
-            avoid conflicts within scenes, prefabs, settings..
-          </Typography>
-        </li>
-        <li>
-          <Typography className="leading-5 text-justify">
             Creating pull requests with concise commits to keep the codebase
-            organized, readable, and easily maintainable.
+            organized, readable, and easily maintainable
           </Typography>
         </li>
         <li>
           <Typography className="leading-5 text-justify">
-            Solving and merging conflicts that happen in the source code.
+            Reviewing my teammates' code and pull requests, and discussing them
+            through online calls
           </Typography>
         </li>
         <li>
           <Typography className="leading-5 text-justify">
-            Reviewing my teammates' code and pull requests
+            Locking files I'm working on to avoid conflicts within scenes,
+            prefabs, settings..
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Solving and merging conflicts that happen in the source code
           </Typography>
         </li>
       </ul>
@@ -1203,6 +1204,7 @@ namespace Popups
   );
 
   const contentList = [
+    scrumSection,
     sourceControlSection,
     uiSection,
     vuforiaSection,

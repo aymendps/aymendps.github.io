@@ -70,6 +70,7 @@ export const FMD = {
   solo: false,
   yearAndDuration: "3 Months - 2023",
   workDone: [
+    "Scrum Duties & Collaboration",
     "Source Control Responsibilities",
     "UI Events & Animations in C#",
     "Augmented Reality With Vuforia",
