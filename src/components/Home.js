@@ -160,7 +160,12 @@ function Home() {
       </div>
       {isLoadingVideo ? (
         <div className="absolute z-20 w-full h-full top-0 left-0 flex justify-center items-center">
-          <CircularProgress size={80} className="text-white" />
+          <CircularProgress
+            variant="indeterminate"
+            size={75}
+            className="text-white"
+            disableShrink
+          />
         </div>
       ) : null}
     </section>
