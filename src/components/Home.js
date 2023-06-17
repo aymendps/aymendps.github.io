@@ -124,11 +124,11 @@ function Home() {
           }}
           onWaiting={() => {
             blurVideoRef.current.pause();
-            setIsLoadingVideo(true);
+            // setIsLoadingVideo(true);
           }}
           onPlaying={() => {
             blurVideoRef.current.play();
-            setIsLoadingVideo(false);
+            // setIsLoadingVideo(false);
           }}
         >
           <source src="/MainVideo.mp4" type="video/mp4" />
@@ -148,11 +148,11 @@ function Home() {
           }}
           onWaiting={() => {
             mainVideoRef.current.pause();
-            setIsLoadingVideo(true);
+            // setIsLoadingVideo(true);
           }}
           onPlaying={() => {
             mainVideoRef.current.play();
-            setIsLoadingVideo(false);
+            // setIsLoadingVideo(false);
           }}
         >
           <source src="/BlurVideo.mp4" type="video/mp4" />
