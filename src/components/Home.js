@@ -4,7 +4,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ResumeIcon from "@mui/icons-material/AttachFile";
 import AboutIcon from "@mui/icons-material/Person4";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +20,19 @@ function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
   const [isLoadingProjectPage, setIsLoadingProjectPage] = useState(false);
 
+  const mainVideoRef = useRef();
+  const blurVideoRef = useRef();
+  const canPlayMainVideo = useRef(false);
+  const canPlayBlurVideo = useRef(false);
+
+  function tryToPlayVideos() {
+    if (canPlayMainVideo.current && canPlayBlurVideo.current) {
+      setIsLoadingVideo(false);
+      mainVideoRef.current.play();
+      blurVideoRef.current.play();
+    }
+  }
+
   const navigate = useNavigate();
   const isMobile = useMediaQuery("(max-width:768px)");
 
@@ -30,8 +43,6 @@ function Home() {
       document.getElementById("awards").scrollIntoView({ block: "start" });
     }
   }, []);
-
-  const VIDEO_SRC = "/MainVideo.mp4";
 
   const CONTACT_ICONS = [
     {
@@ -78,24 +89,21 @@ function Home() {
   const LINKEDIN_POSTS = [
     {
       title: "Second Prize at 24H Game Development Hackathon",
-      image:
-        "https://media.licdn.com/dms/image/D4D22AQH3Sj3vSU1aag/feedshare-shrink_1280/0/1681661480395?e=1686787200&v=beta&t=fVVkePIrAmUxddIQGUJrtGVkrjiTCXA1TtKrW8a6-JQ",
+      image: "/awards/gamehack.jpg",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7053399477331591168/",
       origin: "object-center",
     },
     {
       title: "Best Senior Software Engineering Project, SMU - MedTech",
-      image:
-        "https://media.licdn.com/dms/image/D5622AQH_isjRRfH4Iw/feedshare-shrink_2048_1536/0/1683904542567?e=1686787200&v=beta&t=SPdNJC383ieUy5pHS-9MO_9exD_1GkPjq6Fqojd3NLw",
+      image: "/awards/senior.jpg",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7062807576207360000/",
       origin: "object-right",
     },
     {
       title: "Best Junior Software Engineering Project, SMU - MedTech",
-      image:
-        "https://media.licdn.com/dms/image/C4E22AQF5hcII6r6VYg/feedshare-shrink_2048_1536/0/1652897730602?e=1686787200&v=beta&t=YIeRyWYdrSzuEWtuiXLSDmKlEleRzjXeMAj5iZkFw98",
+      image: "/awards/junior.jpg",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:6932755568562462721/",
-      origin: "object-center",
+      origin: "object-left scale-105",
     },
   ];
 
@@ -104,31 +112,50 @@ function Home() {
       <div className="absolute w-full top-[-70px] left-0" id="t"></div>
       <div className="h-[90%] aspect-video z-10 bg-[rgb(0,20,40)] border-2 border-gray-500 screen-md:w-full screen-md:h-auto">
         <video
-          key="small-video"
+          key="main-video"
+          ref={mainVideoRef}
           loop
           muted
-          autoPlay
-          preload="none"
           poster="/MainVideoPoster.jpg"
           className="w-full h-full object-contain object-center screen-md:object-contain"
-          onPlay={() => {
+          onCanPlay={() => {
+            canPlayMainVideo.current = true;
+            tryToPlayVideos();
+          }}
+          onWaiting={() => {
+            blurVideoRef.current.pause();
+            setIsLoadingVideo(true);
+          }}
+          onPlaying={() => {
+            blurVideoRef.current.play();
             setIsLoadingVideo(false);
           }}
         >
-          <source src={VIDEO_SRC} type="video/mp4" />
+          <source src="/MainVideo.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="absolute z-0 w-full h-[90%] top-0 left-0 screen-md:h-full">
         <video
-          key="big-video"
+          key="blur-video"
+          ref={blurVideoRef}
           loop
           muted
-          autoPlay
-          preload="none"
           poster="/MainVideoPoster.jpg"
           className="w-full h-full object-cover object-center blur-sm"
+          onCanPlay={() => {
+            canPlayBlurVideo.current = true;
+            tryToPlayVideos();
+          }}
+          onWaiting={() => {
+            mainVideoRef.current.pause();
+            setIsLoadingVideo(true);
+          }}
+          onPlaying={() => {
+            mainVideoRef.current.play();
+            setIsLoadingVideo(false);
+          }}
         >
-          <source src={VIDEO_SRC} type="video/mp4" />
+          <source src="/BlurVideo.mp4" type="video/mp4" />
         </video>
       </div>
       {isLoadingVideo ? (
