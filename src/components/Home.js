@@ -15,6 +15,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import GithubIcon from "@mui/icons-material/GitHub";
 import Footer from "./Footer";
 import ProjectLoading from "./ProjectLoading";
+import PreloadImages from "./PreloadImages";
 
 function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
@@ -168,6 +169,7 @@ function Home() {
           />
         </div>
       ) : null}
+      <PreloadImages />
     </section>
   );
 
