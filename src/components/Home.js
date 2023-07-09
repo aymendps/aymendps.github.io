@@ -175,25 +175,12 @@ function Home() {
 
   const aboutSection = (
     <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px] screen-md:translate-y-0 screen-md:pt-6">
-      <div className="m-auto w-[80%] pt-4 screen-md:w-[90%] screen-md:pb-12">
+      <div className="m-auto w-[70%] pt-4 screen-md:w-[90%] screen-md:pb-12">
         <Typography
           variant="h2"
           className="text-center text-white pb-4 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
         >
           Welcome to my portfolio!
-        </Typography>
-        <br />
-        <Typography className="text-white text-center screen-md:text-justify">
-          <HashLink
-            smooth
-            to="/home#projects"
-            className="text-cyan-400 hover:underline"
-          >
-            <b>Below</b>
-          </HashLink>{" "}
-          you will find <b>some</b> of the projects that I've had the
-          opportunity of contributing to, and also some of my personal projects
-          that I worked on.
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
@@ -205,29 +192,24 @@ function Home() {
             rel="noreferrer"
             className="text-cyan-400 hover:underline"
           >
-            <b>South Mediterranean University, MedTech</b>
+            <b>SMU, MedTech</b>
           </a>
           , set to graduate in <b>Summer/Fall 2024.</b>
         </Typography>
-        <br className="hidden screen-md:block" />
+        <br />
         <Typography className="text-white text-center screen-md:text-justify">
-          I've always had a passion for games and programming. I've been playing
-          them since I was a kid, and I started making my own games and web apps
-          in high school.
+          I've always had a passion for games and programming. In fact, I pride
+          myself with having a borderline unhealthy amount of experience playing
+          video games. I've been playing them since I was a kid, and I started
+          making my own games and web apps in high school.
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
-          Throughout my academic journey, I've been fortunate enough to work on
-          some amazing projects both on my own and as part of a team.
-          <br />
-          These experiences have given me valuable insights into the software
-          development lifecycle and helped me hone my technical and soft skills.
-          <br />
-          <br />
-          As a good team player, I understand the significance of teamwork and
-          its vital role in achieving success.
-          <br />I have a proven track record of collaborating effectively with
-          others, as demonstrated by{" "}
+          I've been fortunate enough to work on some amazing projects both on my
+          own and as part of a team. As a good team player, I understand the
+          significance of teamwork and its vital role in achieving success. I
+          have a proven track record of collaborating effectively with others,
+          as demonstrated by{" "}
           <HashLink
             smooth
             to="/home#awards"
@@ -239,17 +221,10 @@ function Home() {
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
-          If you're looking for a resourceful software engineer who's constantly
-          eager to learn something new every day and is passionate about making
-          games and software projects, then I'd love to connect!{" "}
-          <a
-            href="https://www.linkedin.com/in/aymendps/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-cyan-400 hover:underline"
-          >
-            <b>Let's get in touch!</b>
-          </a>
+          Now that I approach graduation, I'm eager to embark on a fulfilling
+          career in game development and software engineering.
+          <br />I can't wait to work alongside like-minded professionals and
+          contribute to projects that push the boundaries of what is possible.
         </Typography>
       </div>
     </section>
@@ -307,18 +282,18 @@ function Home() {
   );
 
   const findMoreSection = (
-    <section className="w-full bg-darkblue py-12">
+    <section className="w-full bg-darkblue pb-12">
       <div className="relative">
+        <div
+          className="absolute top-[-70px] left-0 screen-md:top-0"
+          id="awards"
+        ></div>
         <Typography
           variant="h2"
-          className="text-center text-white pb-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+          className="text-center text-white py-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
         >
           Project Awards
         </Typography>
-        <div
-          className="absolute top-[-118px] left-0 screen-md:top-0"
-          id="awards"
-        ></div>
       </div>
       <div className="w-full flex justify-evenly flex-wrap">
         {LINKEDIN_POSTS.map((post) => {

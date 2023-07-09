@@ -4,13 +4,13 @@ import {
   Button,
   Typography,
 } from "@mui/material";
-import AboutIcon from "@mui/icons-material/Person4";
 import PortfolioIcon from "@mui/icons-material/Star";
 import ResumeIcon from "@mui/icons-material/AttachFile";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import HomeIcon from "@mui/icons-material/Home";
 import GithubIcon from "@mui/icons-material/GitHub";
+import AwardsIcon from "@mui/icons-material/EmojiEvents";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
@@ -37,20 +37,20 @@ function NavBar() {
       ),
     },
     {
-      name: "Resume",
-      link: "resume",
+      name: "Awards",
+      link: "home#awards",
       icon: (
-        <ResumeIcon
+        <AwardsIcon
           fontSize="medium"
           className="text-white group-hover:text-cyan-400"
         />
       ),
     },
     {
-      name: "About Me",
-      link: "#a", // about-me
+      name: "Resume",
+      link: "resume",
       icon: (
-        <AboutIcon
+        <ResumeIcon
           fontSize="medium"
           className="text-white group-hover:text-cyan-400"
         />
