@@ -1,9 +1,11 @@
-function BlueprintsHighligher({ src, title }) {
+function BlueprintsHighligher({ src, title, height = "500px", width = "69%" }) {
   return (
     <iframe
       title={title}
-      className="w-[69%] screen-md:w-full border-b-8 border-white h-[500px]"
+      className="screen-md:w-full"
       src={src}
+      style={{ height: height, width: width }}
+      allowFullScreen={true}
     ></iframe>
   );
 }

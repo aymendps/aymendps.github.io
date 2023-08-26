@@ -5,6 +5,8 @@ import ProjectContent from "./Shared/ProjectContent";
 import Footer from "../Footer";
 import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
 import { Typography } from "@mui/material";
+import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
+import BlueprintsHighlighter from "./Shared/BlueprintsHighligher";
 
 function PrinceOfPersiaAtariRemake() {
   const usefulLinks = [
@@ -37,6 +39,91 @@ function PrinceOfPersiaAtariRemake() {
       <Typography variant="h6" className="text-justify text-green-600">
         Fighting Stance
       </Typography>
+      <Typography className="leading-5 text-justify">
+        The player character assumes a fighting stance upon <b>equipping</b>{" "}
+        their sword. Similarly, they can un-equipping the sword to exit the
+        stance. The actions that the player can take change drastically from one
+        stance to another.
+      </Typography>
+      <div className="flex justify-between mt-4 screen-md:flex-col">
+        <div className="w-[48%] screen-md:w-full">
+          <CodeMobileWrapper title="Equipping Sword">
+            <BlueprintsHighlighter
+              title="Equipping Sword"
+              src="https://blueprintue.com/render/n-b3epqu/"
+              width="100%"
+              height="350px"
+            />
+            <Typography
+              variant="caption"
+              className="text-center block mt-2 mb-4"
+            >
+              Programming "Equip Sword"
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <video controls loop className="w-full">
+            <source src="/ppr/equip_unequip.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Equipping & Un-equipping Sword
+          </Typography>
+        </div>
+      </div>
+      <Typography className="leading-5 text-justify">
+        List of actions that can be performed by the player{" "}
+        <b>when not in fighting stance:</b>
+      </Typography>
+      <ul className="list-disc px-4">
+        <li>
+          <Typography className="leading-5 text-justify">
+            Equip sword to enter fight stance
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Jump, hang, climb and drop down
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Interact with objects
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Run and slow walk
+          </Typography>
+        </li>
+      </ul>
+      <br />
+      <Typography className="leading-5 text-justify">
+        List of actions that can be performed by the player{" "}
+        <b>during fighting stance:</b>
+      </Typography>
+      <ul className="list-disc px-4">
+        <li>
+          <Typography className="leading-5 text-justify">
+            Un-equip sword to leave fight stance
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Run, slow walk and turn around
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Perform a "finish it" animation
+          </Typography>
+        </li>
+        <li>
+          <Typography className="leading-5 text-justify">
+            Dash, parry and attack
+          </Typography>
+        </li>
+      </ul>
       <br />
       <Typography variant="h6" className="text-justify text-green-600">
         Locomotion Depending On Stance
