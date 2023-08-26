@@ -6,7 +6,7 @@ import ProjectIntroduction from "./Shared/ProjectIntroduction";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
-import SyntaxHighlighterMobileWrapper from "./Shared/SyntaxHighlighterMobileWrapper";
+import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
 
 function FabLabMachinesDiscovery() {
   const usefulLinks = [
@@ -153,7 +153,7 @@ function FabLabMachinesDiscovery() {
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"UIAnimation"}>
+          <CodeMobileWrapper title={"UIAnimation"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -200,10 +200,10 @@ namespace Animations
               UIAnimation: a generic abstract class that all UI animations
               extend
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"UIAnimationProps"}>
+          <CodeMobileWrapper title={"UIAnimationProps"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -235,7 +235,7 @@ namespace Animations
             <Typography variant="caption" className="text-center block">
               UIAnimationProps: the variables that the designers can tweak
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
       </div>
       <Typography className="leading-5 text-justify">
@@ -244,7 +244,7 @@ namespace Animations
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"TranslationAnimation"}>
+          <CodeMobileWrapper title={"TranslationAnimation"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -275,7 +275,7 @@ namespace Animations
             <Typography variant="caption" className="text-center block">
               TranslationAnimation extending the generic base class
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
           <img
@@ -330,7 +330,7 @@ namespace Animations
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"PanelSwiper"}>
+          <CodeMobileWrapper title={"PanelSwiper"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -436,10 +436,10 @@ namespace Onboarding_Scene
             <Typography variant="caption" className="text-center block">
               Code snippet of the PanelSwiper class
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"PanelSwipeable"}>
+          <CodeMobileWrapper title={"PanelSwipeable"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -493,7 +493,7 @@ namespace Onboarding_Scene
             <Typography variant="caption" className="text-center block">
               Code snippet of the PanelSwipeable class
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
       </div>
     </>
@@ -568,9 +568,7 @@ namespace Onboarding_Scene
       </ul>
       <div className="w-full flex justify-between mt-2 screen-md:flex-col">
         <div className="w-[65%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper
-            title={"VuforiaPermissionErrorHandler"}
-          >
+          <CodeMobileWrapper title={"VuforiaPermissionErrorHandler"}>
             <SyntaxHighlighter
               customStyle={{
                 width: "100%",
@@ -648,7 +646,7 @@ namespace Vuforia
             <Typography variant="caption" className="text-center block mb-4">
               Code snippet of VuforiaPermissionErrorHandler class
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
         <div className="w-[30%] screen-md:w-full">
           <div className="w-fit h-[450px] m-auto mb-2 mt-2">
@@ -712,7 +710,7 @@ namespace Vuforia
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"Popup"}>
+          <CodeMobileWrapper title={"Popup"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -755,10 +753,10 @@ namespace Popups
             <Typography variant="caption" className="text-center block">
               Code snippet of the Popup class
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"PopupCustomEditor"}>
+          <CodeMobileWrapper title={"PopupCustomEditor"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -796,7 +794,7 @@ namespace Editor.Animations
             <Typography variant="caption" className="text-center block">
               Custom Editor for the Popup class
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
       </div>
       <Typography className="leading-5 text-justify">
@@ -839,7 +837,7 @@ namespace Editor.Animations
         of this UI, as well as updating its colors and its text components.
       </Typography>
       <div className="w-3/4 m-auto screen-md:w-full mt-4">
-        <SyntaxHighlighterMobileWrapper title={"PopupInfoUI"}>
+        <CodeMobileWrapper title={"PopupInfoUI"}>
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "450px" }}
             language="csharp"
@@ -1008,7 +1006,7 @@ namespace Popups
             Code snippet of PopupInfoUI, responsible for displaying a popup's
             content
           </Typography>
-        </SyntaxHighlighterMobileWrapper>
+        </CodeMobileWrapper>
       </div>
       <Typography className="leading-5 text-justify mt-4">
         As you can see in the videos below, the UI <b>translates upwards</b>{" "}
@@ -1140,7 +1138,7 @@ namespace Popups
         handles the points mentioned above.
       </Typography>
       <div className="w-3/4 m-auto screen-md:w-full mt-4">
-        <SyntaxHighlighterMobileWrapper title={"MachineSimulation"}>
+        <CodeMobileWrapper title={"MachineSimulation"}>
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "450px" }}
             language="csharp"
@@ -1198,7 +1196,7 @@ namespace Popups
           <Typography variant="caption" className="text-center block">
             Code snippet of the MachineSimulation class
           </Typography>
-        </SyntaxHighlighterMobileWrapper>
+        </CodeMobileWrapper>
       </div>
     </>
   );
@@ -1216,7 +1214,7 @@ namespace Popups
     return {
       id: work.replace(/\s+/g, ""),
       title: work,
-      content: contentList[index],
+      content: contentList[index] || "More details will be added soon!",
     };
   });
 

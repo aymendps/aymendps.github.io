@@ -5,7 +5,7 @@ import ProjectContent from "./Shared/ProjectContent";
 import Footer from "../Footer";
 import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
 import { Typography } from "@mui/material";
-import SyntaxHighlighterMobileWrapper from "./Shared/SyntaxHighlighterMobileWrapper";
+import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -19,11 +19,12 @@ function FollowTheLight() {
 
   const playerMechanicsSection = (
     <>
-      <Typography className="leading-5 text-justify mb-2">
+      <Typography className="leading-5 text-justify">
         I designed and implemented multiple mechanics for the player character
         that allows it to navigate its way through the different puzzles and
         obstacles.
       </Typography>
+      <br />
       <Typography variant="h6" className="text-justify text-green-600">
         Wall Glowing
       </Typography>
@@ -136,7 +137,7 @@ function FollowTheLight() {
         Showcasing camera rotation, followed by camera snapping
       </Typography>
       <Typography variant="h6" className="text-justify text-green-600">
-        Death & Respawning
+        Death & Respawn
       </Typography>
       <Typography className="leading-5 text-justify">
         When the ball falls <b>below a specific threshold</b>, this causes the
@@ -241,7 +242,7 @@ function FollowTheLight() {
         <b>transition</b> to another one.
       </Typography>
       <div className="w-[69%] screen-md:w-full m-auto mt-4 mb-4">
-        <SyntaxHighlighterMobileWrapper title="BallFiniteStateMachine">
+        <CodeMobileWrapper title="BallFiniteStateMachine">
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "450px" }}
             language="csharp"
@@ -310,7 +311,7 @@ namespace Gameplay.Ball_Finite_State_Machine
           <Typography variant="caption" className="text-center block mb-4 mt-2">
             Code snippet of the BallFiniteStateMachine class
           </Typography>
-        </SyntaxHighlighterMobileWrapper>
+        </CodeMobileWrapper>
       </div>
       <Typography className="leading-5 text-justify">
         To represent the ball states, I implemented an abstract class called{" "}
@@ -318,7 +319,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         ensures that all the states have the same structure.
       </Typography>
       <div className="w-[69%] screen-md:w-full m-auto mt-4 mb-4">
-        <SyntaxHighlighterMobileWrapper title="BallBaseState">
+        <CodeMobileWrapper title="BallBaseState">
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "360px" }}
             language="csharp"
@@ -346,7 +347,7 @@ namespace Gameplay.Ball_Finite_State_Machine
           <Typography variant="caption" className="text-center block mb-4 mt-2">
             Code snippet of the BallFiniteStateMachine class
           </Typography>
-        </SyntaxHighlighterMobileWrapper>
+        </CodeMobileWrapper>
       </div>
       <Typography className="leading-5 text-justify">
         Below you can find the implementation of two states: The first handles
@@ -354,7 +355,7 @@ namespace Gameplay.Ball_Finite_State_Machine
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-4">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"BallBrakingState"}>
+          <CodeMobileWrapper title={"BallBrakingState"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -401,10 +402,10 @@ namespace Gameplay.Ball_Finite_State_Machine
             <Typography variant="caption" className="text-center block">
               Code snippet of the BallBrakingState class
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"BallFallingState"}>
+          <CodeMobileWrapper title={"BallFallingState"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -461,7 +462,7 @@ namespace Gameplay.Ball_Finite_State_Machine
             <Typography variant="caption" className="text-center block">
               Code snippet of the BallFallingState class
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
       </div>
     </>
@@ -505,7 +506,7 @@ namespace Gameplay.Ball_Finite_State_Machine
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"Quaternion Rotation"}>
+          <CodeMobileWrapper title={"Quaternion Rotation"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -544,10 +545,10 @@ namespace Gameplay.Ball_Finite_State_Machine
             <Typography variant="caption" className="text-center block">
               Rotating the camera and calculating the Quaternion rotation
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"Ball Movement"}>
+          <CodeMobileWrapper title={"Ball Movement"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -578,7 +579,7 @@ namespace Gameplay.Ball_Finite_State_Machine
             <Typography variant="caption" className="text-center block">
               Moving the ball using the rotated direction
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
       </div>
       <Typography className="leading-5 text-justify">
@@ -655,7 +656,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         Below is the code snippet of the aforementioned InputManager class.
       </Typography>
       <div className="w-[75%] screen-md:w-full m-auto mt-4 mb-4">
-        <SyntaxHighlighterMobileWrapper title="InputManager">
+        <CodeMobileWrapper title="InputManager">
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "450px" }}
             language="csharp"
@@ -729,7 +730,7 @@ namespace Managers
           <Typography variant="caption" className="text-center block mb-4 mt-2">
             Code snippet of the InputManager class
           </Typography>
-        </SyntaxHighlighterMobileWrapper>
+        </CodeMobileWrapper>
       </div>
     </>
   );
@@ -762,7 +763,7 @@ namespace Managers
       </Typography>
       <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"MovingPlatform"}>
+          <CodeMobileWrapper title={"MovingPlatform"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -849,10 +850,10 @@ namespace Gameplay.Platforms
             <Typography variant="caption" className="text-center block">
               Code snippet of the MovingPlatform class
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <SyntaxHighlighterMobileWrapper title={"BallEnterTriggerEvent"}>
+          <CodeMobileWrapper title={"BallEnterTriggerEvent"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
               language="csharp"
@@ -888,7 +889,7 @@ namespace Gameplay.Platforms
             <Typography variant="caption" className="text-center block">
               Code snippet of the BallEnterTriggerEvent class
             </Typography>
-          </SyntaxHighlighterMobileWrapper>
+          </CodeMobileWrapper>
         </div>
       </div>
       <Typography className="leading-5 text-justify">
@@ -918,7 +919,7 @@ namespace Gameplay.Platforms
     return {
       id: work.replace(/\s+/g, ""),
       title: work,
-      content: contentList[index],
+      content: contentList[index] || "More details will be added soon!",
     };
   });
 
@@ -928,7 +929,7 @@ namespace Gameplay.Platforms
         title={FOLLOW_THE_LIGHT.title}
         youtubeURL="https://www.youtube-nocookie.com/embed/6Ob0HM8uoo8"
         projectType="Personal"
-        role="Game Developer"
+        role="Gameplay Programmer"
         solo={FOLLOW_THE_LIGHT.solo}
         yearAndDuration={FOLLOW_THE_LIGHT.yearAndDuration}
         platform="Standalone PC"

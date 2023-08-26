@@ -12,13 +12,13 @@ function CatNQuest() {
     },
   ];
 
-  const workDone = [
-    {
-      id: "someworkhere",
-      title: "some work here",
-      content: <p>some work here</p>,
-    },
-  ];
+  const workDone = CAT_N_QUEST.workDone.map((work, index) => {
+    return {
+      id: work.replace(/\s+/g, ""),
+      title: work,
+      content: contentList[index] || "More details will be added soon!",
+    };
+  });
 
   return (
     <>

@@ -2,16 +2,27 @@ import React from "react";
 import ProjectThumbnail from "./ProjectThumbnail";
 import FabLabMachinesDiscovery from "./Projects/FabLabMachinesDiscovery";
 import FollowTheLight from "./Projects/FollowTheLight";
+import PrinceOfPersiaAtariRemake from "./Projects/PrinceOfPersiaAtariRemake";
 
-export const UNREAL_GAME_1 = {
-  title: "Unreal Game 1",
-  subtitle: "Work in progress",
-  thumbnail: "",
+export const PRINCE_OF_PERSIA_REMAKE = {
+  title: "Prince Of Persia (ATARI ST) Remake",
+  subtitle: "3D difficult platformer",
+  thumbnail: "/thumbnails/ppr.png",
   solo: true,
-  workDone: [],
-  tags: ["Game Dev", "Personal", "UE 5", "C++"],
-  pageURL: "/unreal-game-1",
-  element: <></>,
+  yearAndDuration: "3 Months - 2023",
+  workDone: [
+    "Player Mechanics & Animations",
+    "Enhanced Player Input System",
+    "Game Systems & Components",
+    "Customizable Gameplay Props",
+    "Enemy AI Behaviour & Perception",
+    "UI & Tutorials Using UMG",
+  ],
+  outcomes: [],
+  tags: ["Game Dev", "Internship", "UE 5", "C++"],
+  pageURL: "/prince-of-persia-atari-remake",
+  accessible: true,
+  element: <PrinceOfPersiaAtariRemake />,
 };
 
 export const CAT_N_QUEST = {
@@ -21,7 +32,7 @@ export const CAT_N_QUEST = {
   solo: false,
   yearAndDuration: "1 Month - 2022",
   workDone: [],
-  tags: ["Game Jam", "Game Dev", "Unity", "C#"],
+  tags: ["Game Dev", "Game Jam", "Unity", "C#"],
   pageURL: "/cat-n-quest",
   element: <></>,
 };
@@ -57,7 +68,7 @@ export const FOLLOW_THE_LIGHT = {
     "Developed proficiency in working with concepts like vectors, quaternions and rotations",
     "Learned how to implement physics-based interactions and respond to player input",
   ],
-  tags: ["Personal", "Game Dev", "Unity", "C#"],
+  tags: ["Game Dev", "Personal", "Unity", "C#"],
   pageURL: "/follow-the-light",
   accessible: true,
   element: <FollowTheLight />,
@@ -84,67 +95,17 @@ export const FMD = {
     "Learned how to implement flexible UI designs that seamlessly adapt to different screen resolutions.",
     "Expanded my knowledge of working with Augmented Reality.",
   ],
-  tags: ["University", "Won Award", "AR", "Mobile", "Unity", "Vuforia", "C#"],
+  tags: ["AR", "University", "Won Award", "Mobile", "Unity", "Vuforia", "C#"],
   pageURL: "/fablab-machines-discovery",
   accessible: true,
   element: <FabLabMachinesDiscovery />,
 };
 
-export const SSA = {
-  title: "Student Speciality Advisor",
-  subtitle: "Full-Stack web application",
-  thumbnail: "/thumbnails/ssa.jpg",
-  solo: false,
-  workDone: [
-    "Responsive Web Design",
-    "Community Forum Implementation",
-    "Meeting With Advisors System",
-    "Admin Dashboard & Statistics",
-  ],
-  tags: [
-    "University",
-    "Won Award",
-    "Full Stack",
-    "React",
-    "Express",
-    "MongoDB",
-  ],
-  pageURL: "/student-speciality-advisor",
-  element: <></>,
-};
-
-export const FILE_MANAGER = {
-  title: "File Manager - Cynoia",
-  subtitle: "Full-Stack web application",
-  thumbnail: "/thumbnails/fm.png",
-  solo: false,
-  workDone: [
-    "Design Of The Entire Tech Stack",
-    "Frontend Functionalities",
-    "Backend Micro-services",
-    "Amazon S3 Uploads & Downloads",
-    "Client & Server Caching",
-  ],
-  tags: [
-    "Professional",
-    "Full Stack",
-    "React",
-    "NestJS",
-    "MySQL",
-    "S3",
-    "TypeScript",
-  ],
-  pageURL: "/student-speciality-advisor",
-  element: <></>,
-};
-
 export const PINNED_PROJECTS = [
+  PRINCE_OF_PERSIA_REMAKE,
   FMD,
   FOLLOW_THE_LIGHT,
   CAT_N_QUEST,
-  ROBO_REPAIR,
-  FILE_MANAGER,
-  SSA,
 ];
 
 function ProjectList({
