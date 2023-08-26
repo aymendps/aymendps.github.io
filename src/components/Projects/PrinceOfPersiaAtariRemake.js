@@ -205,7 +205,71 @@ function PrinceOfPersiaAtariRemake() {
       <Typography variant="h6" className="text-justify text-green-600">
         Reworked Player Camera
       </Typography>
-      <br />
+      <Typography className="leading-5 text-justify">
+        The camera of the original game is <b>outdated</b> by today's standards
+        because it doesn't follow the player as they move. Trying to implement
+        the player camera exactly as it was didn't yield satisfactory results
+        since it was designed for a 2D game, whereas this remake is a 3D version
+        of the game.
+        <br />
+        <br />
+        Therefore, I chose to implement my own customized camera{" "}
+        <b>that follows the player with adjustable offset</b>, and is capable of
+        performing cinematic actions like{" "}
+        <b>zooming in/out and fading in/out to black.</b>
+      </Typography>
+      <div className="flex justify-between mt-4 screen-md:flex-col">
+        <div className="w-[48%] screen-md:w-full">
+          <CodeMobileWrapper title="Update Camera Location">
+            <BlueprintsHighlighter
+              title="Update Camera Location"
+              src="https://blueprintue.com/render/its3eaz5/"
+              width="100%"
+              height="350px"
+            />
+            <Typography
+              variant="caption"
+              className="text-center block mt-2 mb-4"
+            >
+              Programming "Update Camera Location"
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <video controls loop className="w-full">
+            <source src="/ppr/camera_offset.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Following player with adjustable offset
+          </Typography>
+        </div>
+      </div>
+      <div className="flex justify-between mt-4 screen-md:flex-col">
+        <div className="w-[48%] screen-md:w-full">
+          <CodeMobileWrapper title="Zoom Camera">
+            <BlueprintsHighlighter
+              title="Zoom Camera"
+              src="https://blueprintue.com/render/xwcgto1r/"
+              width="100%"
+              height="350px"
+            />
+            <Typography
+              variant="caption"
+              className="text-center block mt-2 mb-4"
+            >
+              Programming "Zoom Camera"
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <video controls loop className="w-full">
+            <source src="/ppr/camera_zoom.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Adjustable zoom in and out
+          </Typography>
+        </div>
+      </div>
       <Typography variant="h6" className="text-justify text-green-600">
         Jumping, Hanging & Climbing
       </Typography>

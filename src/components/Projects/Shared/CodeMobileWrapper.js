@@ -17,9 +17,7 @@ function CodeMobileWrapper({ children, title = "Missing Title" }) {
         }}
       >
         <span className="overflow-hidden text-ellipsis whitespace-nowrap">
-          {hidden
-            ? `Show Code Snippet: ${title}`
-            : `Hide Code Snippet: ${title}`}
+          Code Snippet: {title}
         </span>
       </Button>
       <div
