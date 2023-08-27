@@ -52,7 +52,7 @@ function PrinceOfPersiaAtariRemake() {
               title="Equipping Sword"
               src="https://blueprintue.com/render/n-b3epqu/"
               width="100%"
-              height="350px"
+              height="360px"
             />
             <Typography
               variant="caption"
@@ -225,7 +225,7 @@ function PrinceOfPersiaAtariRemake() {
               title="Update Camera Location"
               src="https://blueprintue.com/render/its3eaz5/"
               width="100%"
-              height="350px"
+              height="360px"
             />
             <Typography
               variant="caption"
@@ -251,7 +251,7 @@ function PrinceOfPersiaAtariRemake() {
               title="Zoom Camera"
               src="https://blueprintue.com/render/xwcgto1r/"
               width="100%"
-              height="350px"
+              height="360px"
             />
             <Typography
               variant="caption"
@@ -273,13 +273,115 @@ function PrinceOfPersiaAtariRemake() {
       <Typography variant="h6" className="text-justify text-green-600">
         Jumping, Hanging & Climbing
       </Typography>
-      <br />
-      <Typography variant="h6" className="text-justify text-green-600">
-        Interacting With Objects
+      <Typography className="leading-5 text-justify">
+        Another <b>state machine</b> is used to controls all of the animations
+        that are related to jumping, hanging, climbing up & dropping down, and
+        implements all the transitions between them and the locomotion state
+        machine.
       </Typography>
+      <img
+        alt=""
+        src="/ppr/mainsm.png"
+        className="w-[40%] m-auto mt-4 mb-2 screen-md:w-full"
+      ></img>
+      <Typography variant="caption" className="text-center block mb-4">
+        State Machine for jumping, hanging, climbing up & dropping down
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        To determine whether the player can indeed hang onto an edge, I used{" "}
+        <b>two sphere traces</b> that activate whenever the player is falling
+        down. These two traces are solely concerned with a trace channel named{" "}
+        <b>"ClimbableWall"</b>, which is used to <b>designate</b> level elements
+        as <b>climbable</b>.
+        <br />
+        <br />
+        The first trace is used to determine whether a climbable element{" "}
+        <b>is in front of the player or not.</b> If a climbable element is
+        found, we retrieve its <b>location</b> and the <b>normal vector</b>{" "}
+        resulting from its hit with the trace. These pieces of information will
+        be used to calculate{" "}
+        <b>where the player should be moved to snap on the climbable element</b>{" "}
+        and to ensure the player <b>is facing it directly.</b> Furthermore, this
+        trace predicts whether the player is going to hang <b>in mid-air</b>{" "}
+        (feet in the air) or hang <b>in contact with a wall</b> (feet resting on
+        the climbable element) using actor tags.
+      </Typography>
+      <div className="w-3/4 m-auto screen-md:w-full mt-4">
+        <CodeMobileWrapper title="Climbable Wall Forward Trace">
+          <BlueprintsHighlighter
+            title="Climbable Wall Forward Trace"
+            src="https://blueprintue.com/render/w7xw9qz5/"
+          />
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Programming "Climbable Wall Forward Trace"
+          </Typography>
+        </CodeMobileWrapper>
+      </div>
+      <Typography className="leading-5 text-justify">
+        The second trace is used to determine whether a climbable element's
+        surface <b>is close enough for the player to grip or not.</b> If the
+        element is <b>too tall</b> or its surface <b>is out of reach</b>, then
+        the player shouldn't be able to hold onto it. However, if a valid
+        element's surface is located, then we obtain{" "}
+        <b>the location of that surface</b> to calculate <b>the height</b> at
+        which the player should be <b>positioned</b> when hanging onto it.
+      </Typography>
+      <div className="w-3/4 m-auto screen-md:w-full mt-4">
+        <CodeMobileWrapper title="Climbable Wall Surface Trace">
+          <BlueprintsHighlighter
+            title="Climbable Wall Surface Trace"
+            src="https://blueprintue.com/render/ivbwo0jq/"
+          />
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Programming "Climbable Wall Surface Trace"
+          </Typography>
+        </CodeMobileWrapper>
+      </div>
+      <Typography className="leading-5 text-justify">
+        When both traces successfully hit a climbable element, the player can
+        hold or press the Jump button to hang onto the element. Pressing the
+        Jump button again makes the player climb up.
+        <br /> Below is a video that showcases how the two traces make it
+        possible for the player to hang onto surfaces and climb up, along with
+        the implementation of both these events.
+      </Typography>
+      <div className="flex justify-between mt-4 screen-md:flex-col">
+        <div className="w-[48%] screen-md:w-full">
+          <CodeMobileWrapper title="Hang & Climb Events">
+            <BlueprintsHighlighter
+              title="Hang & Climb Events"
+              src="https://blueprintue.com/render/ibtqx5z5/"
+              width="100%"
+              height="360px"
+            />
+            <Typography
+              variant="caption"
+              className="text-center block mt-2 mb-4"
+            >
+              Programming "Hang & Climb Events"
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <video controls loop className="w-full">
+            <source src="/ppr/traces.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Hang & Climb using sphere traces
+          </Typography>
+        </div>
+      </div>
       <br />
       <Typography variant="h6" className="text-justify text-green-600">
         Dashing, Parrying & Attacking
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        After equipping the sword, the player gets access to new actions related
+        to the fighting stance.
+      </Typography>
+      <br />
+      <Typography variant="h6" className="text-justify text-green-600">
+        Interacting With Objects
       </Typography>
     </>
   );

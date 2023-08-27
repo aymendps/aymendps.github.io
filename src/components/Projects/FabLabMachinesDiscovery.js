@@ -74,43 +74,6 @@ function FabLabMachinesDiscovery() {
     </>
   );
 
-  const sourceControlSection = (
-    <>
-      <Typography className="leading-5 text-justify">
-        To keep track of the project's changes and progression, we used{" "}
-        <b>Git</b> as source control and hosted the repository in <b>GitHub.</b>
-        <br />
-        <br />
-        As a <b>Unity Programmer</b>, my responsibilities included:
-      </Typography>
-      <ul className="list-disc px-4">
-        <li>
-          <Typography className="leading-5 text-justify">
-            Creating pull requests with concise commits to keep the codebase
-            organized, readable, and easily maintainable
-          </Typography>
-        </li>
-        <li>
-          <Typography className="leading-5 text-justify">
-            Reviewing my teammates' code and pull requests, and discussing them
-            through online calls
-          </Typography>
-        </li>
-        <li>
-          <Typography className="leading-5 text-justify">
-            Locking files I'm working on to avoid conflicts within scenes,
-            prefabs, settings..
-          </Typography>
-        </li>
-        <li>
-          <Typography className="leading-5 text-justify">
-            Solving and merging conflicts that happen in the source code
-          </Typography>
-        </li>
-      </ul>
-    </>
-  );
-
   const uiSection = (
     <>
       <Typography className="leading-5 text-justify">
@@ -1203,7 +1166,6 @@ namespace Popups
 
   const contentList = [
     scrumSection,
-    sourceControlSection,
     uiSection,
     vuforiaSection,
     popupSection,

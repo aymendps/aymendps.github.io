@@ -1,4 +1,9 @@
-function BlueprintsHighligher({ src, title, height = "500px", width = "69%" }) {
+function BlueprintsHighligher({
+  src,
+  title,
+  height = "500px",
+  width = "100%",
+}) {
   return (
     <iframe
       title={title}

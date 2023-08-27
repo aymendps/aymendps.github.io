@@ -12,7 +12,6 @@ export const PRINCE_OF_PERSIA_REMAKE = {
   yearAndDuration: "3 Months - 2023",
   workDone: [
     "Player Mechanics & Animations",
-    "Enhanced Player Input System",
     "Game Systems & Components",
     "Customizable Gameplay Props",
     "Enemy AI Behaviour & Perception",
@@ -82,7 +81,6 @@ export const FMD = {
   yearAndDuration: "3 Months - 2023",
   workDone: [
     "Scrum Duties & Collaboration",
-    "Source Control Responsibilities",
     "UI Events & Animations in C#",
     "Augmented Reality With Vuforia",
     "AR Popup System",
