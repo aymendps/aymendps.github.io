@@ -45,14 +45,14 @@ function PrinceOfPersiaAtariRemake() {
         stance. The actions that the player can take change drastically from one
         stance to another.
       </Typography>
-      <div className="flex justify-between mt-4 screen-md:flex-col">
+      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
         <div className="w-[48%] screen-md:w-full">
           <CodeMobileWrapper title="Equipping Sword">
             <BlueprintsHighlighter
               title="Equipping Sword"
               src="https://blueprintue.com/render/n-b3epqu/"
               width="100%"
-              height="360px"
+              height="370px"
             />
             <Typography
               variant="caption"
@@ -218,14 +218,14 @@ function PrinceOfPersiaAtariRemake() {
         performing cinematic actions like{" "}
         <b>zooming in/out and fading in/out to black.</b>
       </Typography>
-      <div className="flex justify-between mt-4 screen-md:flex-col">
+      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
         <div className="w-[48%] screen-md:w-full">
           <CodeMobileWrapper title="Update Camera Location">
             <BlueprintsHighlighter
               title="Update Camera Location"
               src="https://blueprintue.com/render/its3eaz5/"
               width="100%"
-              height="360px"
+              height="370px"
             />
             <Typography
               variant="caption"
@@ -244,14 +244,14 @@ function PrinceOfPersiaAtariRemake() {
           </Typography>
         </div>
       </div>
-      <div className="flex justify-between mt-4 screen-md:flex-col">
+      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
         <div className="w-[48%] screen-md:w-full">
           <CodeMobileWrapper title="Zoom Camera">
             <BlueprintsHighlighter
               title="Zoom Camera"
               src="https://blueprintue.com/render/xwcgto1r/"
               width="100%"
-              height="360px"
+              height="370px"
             />
             <Typography
               variant="caption"
@@ -345,14 +345,14 @@ function PrinceOfPersiaAtariRemake() {
         possible for the player to hang onto surfaces and climb up, along with
         the implementation of both these events.
       </Typography>
-      <div className="flex justify-between mt-4 screen-md:flex-col">
+      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
         <div className="w-[48%] screen-md:w-full">
           <CodeMobileWrapper title="Hang & Climb Events">
             <BlueprintsHighlighter
               title="Hang & Climb Events"
               src="https://blueprintue.com/render/ibtqx5z5/"
               width="100%"
-              height="360px"
+              height="370px"
             />
             <Typography
               variant="caption"
@@ -376,10 +376,110 @@ function PrinceOfPersiaAtariRemake() {
         Dashing, Parrying & Attacking
       </Typography>
       <Typography className="leading-5 text-justify">
-        After equipping the sword, the player gets access to new actions related
-        to the fighting stance.
+        After equipping their sword, the player gets access to new actions
+        related to the fighting stance. Most animations of these actions are
+        managed using <b>animation montages.</b>
+        <br />
+        <br />
+        <b>"Dashing"</b> replaces "Jump" and enhances the player's mobility
+        while fighting an enemy. Depending on the player's{" "}
+        <b>movement direction</b>, they can dash <b>forward or backward</b> to
+        evade attacks or approach the enemy quickly.
       </Typography>
-      <br />
+      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
+        <div className="w-[48%] screen-md:w-full">
+          <CodeMobileWrapper title="Input Action: Dashing">
+            <BlueprintsHighlighter
+              title="Input Action: Dashing"
+              src="https://blueprintue.com/render/mmcj571n/"
+              width="100%"
+              height="370px"
+            />
+            <Typography
+              variant="caption"
+              className="text-center block mt-2 mb-4"
+            >
+              Programming "Input Action: Dashing"
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <video controls loop className="w-full">
+            <source src="/ppr/dashing.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Dashing forward & backward
+          </Typography>
+        </div>
+      </div>
+      <Typography className="leading-5 text-justify">
+        When it comes to <b>attacking</b>, the player can perform a{" "}
+        <b>single</b> slash or unleash a<b> series</b> of successive attacks.
+        The player can also perform attacks quickly <b>after dashing</b> to
+        encourage the dueling aspect of the game.
+      </Typography>
+      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
+        <div className="w-[48%] screen-md:w-full">
+          <CodeMobileWrapper title="Attack Event">
+            <BlueprintsHighlighter
+              title="Attack Event"
+              src="https://blueprintue.com/render/c3zd5fqx/"
+              width="100%"
+              height="370px"
+            />
+            <Typography
+              variant="caption"
+              className="text-center block mt-2 mb-4"
+            >
+              Programming "Attack Event"
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <video controls loop className="w-full">
+            <source src="/ppr/attacks.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Player performing attacks
+          </Typography>
+        </div>
+      </div>
+      <Typography className="leading-5 text-justify">
+        In addition to attacking, the player can <b>parry</b> incoming attacks.
+        The animation montage related to parrying has a <b>notify window</b>{" "}
+        that determines when the parry should be successful. If the attack is
+        landed
+        <b> outside of that window</b>, then the parry does not count, and the
+        player still takes damage. However, if an attack is landed{" "}
+        <b>during the notify window</b>, then the enemy will become staggered,
+        and the player will not take any damage.
+      </Typography>
+      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
+        <div className="w-[48%] screen-md:w-full">
+          <CodeMobileWrapper title="Parry Event">
+            <BlueprintsHighlighter
+              title="Parry Event"
+              src="https://blueprintue.com/render/0umdnp_u/"
+              width="100%"
+              height="370px"
+            />
+            <Typography
+              variant="caption"
+              className="text-center block mt-2 mb-4"
+            >
+              Programming "Parry Event"
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <video controls loop className="w-full">
+            <source src="/ppr/parry.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Player performing parry
+          </Typography>
+        </div>
+      </div>
       <Typography variant="h6" className="text-justify text-green-600">
         Interacting With Objects
       </Typography>
