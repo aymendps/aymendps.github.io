@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 
-function ProjectLearningOutcomes({ outcomes }) {
+function ProjectLearningOutcomes({ outcomes = [] }) {
   const generateOutcomes = outcomes.map((outcome) => {
     return (
       <li
@@ -21,7 +21,13 @@ function ProjectLearningOutcomes({ outcomes }) {
         >
           Learning Outcomes
         </Typography>
-        <ul className="list-disc px-4 pb-2">{generateOutcomes}</ul>
+        {outcomes.length !== 0 ? (
+          <ul className="list-disc px-4 pb-2">{generateOutcomes}</ul>
+        ) : (
+          <Typography className="text-white">
+            More details will be added soon!
+          </Typography>
+        )}
       </div>
     </section>
   );

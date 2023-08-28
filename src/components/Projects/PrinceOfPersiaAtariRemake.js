@@ -7,6 +7,8 @@ import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
 import { Typography } from "@mui/material";
 import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
 import BlueprintsHighlighter from "./Shared/BlueprintsHighligher";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function PrinceOfPersiaAtariRemake() {
   const usefulLinks = [
@@ -483,6 +485,171 @@ function PrinceOfPersiaAtariRemake() {
       <Typography variant="h6" className="text-justify text-green-600">
         Interacting With Objects
       </Typography>
+      <Typography className="leading-5 text-justify">
+        Throughout the levels, the player will encounter objects such as:
+        potions, weapons, stairs.. that can be <b>interacted with.</b>
+        <br />
+        <br />
+        These objects have nothing in common when it comes to their
+        functionalities except being <b>interactable.</b> That's why it made
+        sense to introduce <b>an interface named "Interactable"</b> with methods
+        related to that action. All the other objects would then implement this
+        interface with their <b>individual logic.</b>
+        <br />
+        When the player intends to interact with an object, the game searches
+        for the <b>nearest reachable interactable object</b> and triggers its{" "}
+        <b>"Interact"</b> method.
+        <br />
+        <br />
+        Below is the <b>C++</b> implementation of the{" "}
+        <b>"Interactable" interface</b> and the <b>method</b> that finds the
+        nearest interactable object.
+      </Typography>
+      <div className="flex justify-between screen-md:flex-col mt-4">
+        <div className="w-[48%] screen-md:w-full">
+          <CodeMobileWrapper title={"Interactable Interface"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="cpp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`#pragma once
+
+#include "CoreMinimal.h"
+#include "UObject/Interface.h"
+#include "Interactable.generated.h"
+
+// This class does not need to be modified.
+UINTERFACE(MinimalAPI)
+class UInteractable : public UInterface
+{
+	GENERATED_BODY()
+};
+
+/**
+ * Interface for interactable actors. They execute their own logic when interacted with.
+ */
+class PROJECTPERSIA_API IInteractable
+{
+	GENERATED_BODY()
+
+	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
+public:
+	/**
+	 * Executes the interactable actor's logic
+	 * @param PlayerCharacter The player character that is interacting with the actor
+	 */
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category="Interactable")
+	void Interact(class APlayerCharacter* PlayerCharacter);
+};
+`}
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Code snippet of the Interactable interface
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <CodeMobileWrapper title={"Find Interactable"}>
+            <SyntaxHighlighter
+              customStyle={{ width: "100%", height: "450px" }}
+              language="cpp"
+              showLineNumbers={true}
+              style={vscDarkPlus}
+            >
+              {`	# HEADER FILE #
+  // Iterates through an array of actors and returns the first one that implements the Interactable interface.
+  UFUNCTION()
+  AActor* FindInteractableInArray(TArray<AActor*> &Actors);
+  /**
+	 * Attempts to find the first interactable actor that the player is overlapping with.
+	 * @return The first interactable actor that the player is overlapping with.
+	 */
+	UFUNCTION(BlueprintCallable, Category="Interactable", Meta=(ExpandEnumAsExecs="InteractableFinder"))
+	AActor* FindInteractable(EInteractableFinder& InteractableFinder);
+
+  # SOURCE FILE #
+// Iterates through an array of actors and returns the first one that implements the Interactable interface.
+AActor* APlayerCharacter::FindInteractableInArray(TArray<AActor*> &Actors)
+{
+	// Iterate and return the first one that implements the Interactable interface.
+	for (int i=0; i<Actors.Num(); i++)
+	{
+		if(Actors[i]->GetClass()->ImplementsInterface(UInteractable::StaticClass()))
+		{
+			return Actors[i];
+		}
+	}
+
+	// If we get here, we didn't find any interactable actors.
+	return nullptr;
+}
+
+// Attempts to find the first interactable actor that the player is overlapping with.
+AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFinder)
+{
+	TArray<AActor*> OverlappingActors;
+	GetOverlappingActors(OverlappingActors);
+
+	AActor* Interactable = FindInteractableInArray(OverlappingActors);
+	
+	if (Interactable == nullptr)
+	{
+		InteractableFinder = EInteractableFinder::NotFound;
+	}
+	else
+	{
+		InteractableFinder = EInteractableFinder::Found;
+	}
+	
+	return Interactable;
+
+}`}
+            </SyntaxHighlighter>
+            <Typography variant="caption" className="text-center block">
+              Code snippet of Find Interactable
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+      </div>
+      <br />
+      <Typography className="leading-5 text-justify">
+        When interacting with an object, the player controller{" "}
+        <b>disables input and the game's countdown timer temporarily.</b> It
+        instructs the camera to zoom in, allowing the interaction animation and
+        effects to play smoothly. Once the interaction is complete, the
+        <b> "FinishedInteract" </b>event is called by the interactable class.
+        This event informs the controller that the interaction{" "}
+        <b>has concluded</b>, prompting the camera to zoom out and re-enabling
+        input and the countdown timer.
+      </Typography>
+      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
+        <div className="w-[48%] screen-md:w-full">
+          <CodeMobileWrapper title="Interaction Events">
+            <BlueprintsHighlighter
+              title="Interaction Events"
+              src="https://blueprintue.com/render/4z_b63ue/"
+              width="100%"
+              height="370px"
+            />
+            <Typography
+              variant="caption"
+              className="text-center block mt-2 mb-4"
+            >
+              Programming "Interaction Events"
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-md:w-full">
+          <video controls loop className="w-full">
+            <source src="/ppr/potion.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Example of interacting with potion
+          </Typography>
+        </div>
+      </div>
     </>
   );
 

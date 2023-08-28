@@ -130,7 +130,13 @@ function ProjectIntroduction({
             >
               {solo ? "Highlighted Work" : "Contributions"}
             </Typography>
-            <ul className="list-disc px-4 pb-2">{generateWorkDone}</ul>
+            {workDone.length !== 0 ? (
+              <ul className="list-disc px-4 pb-2">{generateWorkDone}</ul>
+            ) : (
+              <Typography className="text-white">
+                More details will be added soon!
+              </Typography>
+            )}
           </div>
         </div>
       </section>

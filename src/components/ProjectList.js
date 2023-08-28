@@ -3,6 +3,7 @@ import ProjectThumbnail from "./ProjectThumbnail";
 import FabLabMachinesDiscovery from "./Projects/FabLabMachinesDiscovery";
 import FollowTheLight from "./Projects/FollowTheLight";
 import PrinceOfPersiaAtariRemake from "./Projects/PrinceOfPersiaAtariRemake";
+import CatNQuest from "./Projects/CatNQuest";
 
 export const PRINCE_OF_PERSIA_REMAKE = {
   title: "Prince Of Persia (ATARI ST) Remake",
@@ -29,11 +30,13 @@ export const CAT_N_QUEST = {
   subtitle: "2D top-down adventure game",
   thumbnail: "/thumbnails/cat.png",
   solo: false,
-  yearAndDuration: "1 Month - 2022",
+  yearAndDuration: "1 Month",
   workDone: [],
+  outcomes: [],
   tags: ["Game Dev", "Game Jam", "Unity", "C#"],
   pageURL: "/cat-n-quest",
-  element: <></>,
+  accessible: true,
+  element: <CatNQuest />,
 };
 
 export const ROBO_REPAIR = {
