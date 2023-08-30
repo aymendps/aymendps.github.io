@@ -19,9 +19,9 @@ function App() {
     <HashRouter>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
-        {/* <Route path="/resume" element={<Resume />} /> */}
+        <Route path="/resume" element={<Resume />} />
         {generateProjectRoutes}
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>

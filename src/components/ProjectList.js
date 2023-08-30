@@ -6,11 +6,11 @@ import PrinceOfPersiaAtariRemake from "./Projects/PrinceOfPersiaAtariRemake";
 import CatNQuest from "./Projects/CatNQuest";
 
 export const PRINCE_OF_PERSIA_REMAKE = {
-  title: "Prince Of Persia (ATARI ST) Remake",
+  title: "Prince Of Persia Remake",
   subtitle: "3D difficult platformer",
   thumbnail: "/thumbnails/ppr.png",
   solo: true,
-  yearAndDuration: "3 Months - 2023",
+  yearAndDuration: "3 Months",
   workDone: [
     "Player Mechanics & Animations",
     "Game Systems & Components",
@@ -30,8 +30,14 @@ export const CAT_N_QUEST = {
   subtitle: "2D top-down adventure game",
   thumbnail: "/thumbnails/cat.png",
   solo: false,
-  yearAndDuration: "1 Month",
-  workDone: [],
+  yearAndDuration: "2 Months",
+  workDone: [
+    "Dialogue & Quest System",
+    "NPC Customization & Behaviour",
+    "Simple Inventory System",
+    "Interactable Game Objects",
+    "Visual Dialogue Editor (in progress)",
+  ],
   outcomes: [],
   tags: ["Game Dev", "Game Jam", "Unity", "C#"],
   pageURL: "/cat-n-quest",
@@ -55,7 +61,7 @@ export const FOLLOW_THE_LIGHT = {
   subtitle: "3D physics-based maze game",
   thumbnail: "/thumbnails/ftl.jpg",
   solo: true,
-  yearAndDuration: "2 Months - 2023",
+  yearAndDuration: "2 Months",
   workDone: [
     "Player Gameplay Mechanics",
     "Player Finite State Machine in C#",
@@ -81,7 +87,7 @@ export const FMD = {
   subtitle: "AR mobile application",
   thumbnail: "/thumbnails/fmd.png",
   solo: false,
-  yearAndDuration: "3 Months - 2023",
+  yearAndDuration: "3 Months",
   workDone: [
     "Scrum Duties & Collaboration",
     "UI Events & Animations in C#",

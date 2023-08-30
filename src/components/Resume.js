@@ -16,36 +16,21 @@ function Resume() {
           variant="subtitle1"
           className="text-cyan-400 text-center pb-2"
         >
-          Last Update: May 2023
+          Last Update: August 2023
         </Typography>
       </div>
-      <div className="w-[90%] flex justify-center m-auto gap-[5%] pb-12 screen-md:flex-col">
-        <div className="basis-[20%] screen-md:mb-4">
-          <a href={"/resume/Aymen Hammami CV English.pdf"} download={true}>
-            <Button
-              fullWidth
-              size="large"
-              variant="outlined"
-              startIcon={<Download />}
-              className="text-cyan-400 border-cyan-400 hover:border-cyan-300 hover:text-cyan-300"
-            >
-              PDF FILE
-            </Button>
-          </a>
-        </div>
-        <div className="basis-[20%]">
-          <a href={"/resume/Aymen Hammami CV English.png"} download={true}>
-            <Button
-              fullWidth
-              size="large"
-              variant="outlined"
-              startIcon={<Download />}
-              className="text-cyan-400 border-cyan-400 hover:border-cyan-300 hover:text-cyan-300"
-            >
-              PNG FILE
-            </Button>
-          </a>
-        </div>
+      <div className="m-auto w-1/2 screen-md:w-3/4">
+        <a href={"/resume/Aymen_Hammami_CV.pdf"} download={true}>
+          <Button
+            fullWidth
+            size="large"
+            variant="outlined"
+            startIcon={<Download />}
+            className="text-cyan-400 border-cyan-400 hover:border-cyan-300 hover:text-cyan-300"
+          >
+            PDF FILE
+          </Button>
+        </a>
       </div>
     </>
   );
