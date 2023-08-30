@@ -159,6 +159,23 @@ function Home() {
           <source src="/BlurVideo.mp4" type="video/mp4" />
         </video>
       </div>
+      <Button
+        variant="contained"
+        className="absolute z-30 bottom-4"
+        onClick={() => {
+          if (mainVideoRef.current.requestFullscreen) {
+            mainVideoRef.current.requestFullscreen();
+          } else if (mainVideoRef.current.msRequestFullscreen) {
+            mainVideoRef.current.msRequestFullscreen();
+          } else if (mainVideoRef.current.mozRequestFullScreen) {
+            mainVideoRef.current.mozRequestFullScreen();
+          } else if (mainVideoRef.current.webkitRequestFullscreen) {
+            mainVideoRef.current.webkitRequestFullscreen();
+          }
+        }}
+      >
+        Fullscreen
+      </Button>
       {isLoadingVideo ? (
         <div className="absolute z-20 w-full h-full top-0 left-0 flex justify-center items-center">
           <CircularProgress
