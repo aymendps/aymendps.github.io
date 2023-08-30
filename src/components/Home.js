@@ -192,7 +192,7 @@ function Home() {
 
   const aboutSection = (
     <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px] screen-md:translate-y-0 screen-md:pt-6">
-      <div className="m-auto w-[70%] pt-4 screen-md:w-[90%] screen-md:pb-12">
+      <div className="m-auto w-[80%] pt-4 screen-md:w-[90%] screen-md:pb-12">
         <Typography
           variant="h2"
           className="text-center text-white pb-4 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
@@ -201,32 +201,22 @@ function Home() {
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
-          Hi there! I'm <b>Aymen</b>, a final year Software Engineering student
-          at{" "}
-          <a
-            href="https://www.smu.tn/medtech"
-            target="_blank"
-            rel="noreferrer"
-            className="text-cyan-400 hover:underline"
-          >
-            <b>SMU, MedTech</b>
-          </a>
-          , set to graduate in <b>Summer/Fall 2024.</b>
+          Hi there! I'm <b>Aymen</b>, a final year software engineering student
+          with a passion for games & programming, along with strong skills in
+          Unity | C# & Unreal Engine 5 | C++.
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
-          I've always had a passion for games and programming. In fact, I pride
-          myself with having a borderline unhealthy amount of experience playing
-          video games. I've been playing them since I was a kid, and I started
-          making my own games and web apps in high school.
+          I've been fortunate enough to contribute to incredible projects both
+          on my own and as part of a team. I am familiar with the software
+          development life cycle and possess the ability to translate designers'
+          concepts into readable and maintainable code.
         </Typography>
         <br />
         <Typography className="text-white text-center screen-md:text-justify">
-          I've been fortunate enough to work on some amazing projects both on my
-          own and as part of a team. As a good team player, I understand the
-          significance of teamwork and its vital role in achieving success. I
-          have a proven track record of collaborating effectively with others,
-          as demonstrated by{" "}
+          As a good team player, I understand the significance of teamwork and
+          its vital role in achieving success. I have a proven track record of
+          collaborating effectively with others, as demonstrated by{" "}
           <HashLink
             smooth
             to="/home#awards"
