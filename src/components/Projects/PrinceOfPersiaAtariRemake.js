@@ -667,7 +667,6 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
         projectType="Internship"
         role="Gameplay Programmer"
         solo={PRINCE_OF_PERSIA_REMAKE.solo}
-        yearAndDuration={PRINCE_OF_PERSIA_REMAKE.yearAndDuration}
         platform="Standalone PC"
         softwareUsed="Unreal Engine 5 - C++"
         usefulLinks={usefulLinks}

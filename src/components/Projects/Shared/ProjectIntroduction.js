@@ -8,7 +8,6 @@ function ProjectIntroduction({
   projectType,
   role,
   solo,
-  yearAndDuration,
   platform,
   softwareUsed,
   description,
@@ -50,7 +49,6 @@ function ProjectIntroduction({
     projectType,
     role,
     solo ? "Solo Project" : "Team Project",
-    yearAndDuration,
     platform,
     softwareUsed,
   ].map((tag) => {

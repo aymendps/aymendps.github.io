@@ -931,7 +931,6 @@ namespace Gameplay.Platforms
         projectType="Personal"
         role="Gameplay Programmer"
         solo={FOLLOW_THE_LIGHT.solo}
-        yearAndDuration={FOLLOW_THE_LIGHT.yearAndDuration}
         platform="Standalone PC"
         softwareUsed="Unity - C#"
         usefulLinks={usefulLinks}

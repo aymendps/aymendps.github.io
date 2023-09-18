@@ -10,7 +10,6 @@ export const PRINCE_OF_PERSIA_REMAKE = {
   subtitle: "3D difficult platformer",
   thumbnail: "/thumbnails/ppr.png",
   solo: true,
-  yearAndDuration: "3 Months",
   workDone: [
     "Player Mechanics & Animations",
     "Game Systems & Components",
@@ -30,7 +29,6 @@ export const CAT_N_QUEST = {
   subtitle: "2D top-down adventure game",
   thumbnail: "/thumbnails/cat.png",
   solo: false,
-  yearAndDuration: "2 Months",
   workDone: [
     "Dialogue & Quest System",
     "NPC Customization & Behaviour",
@@ -61,7 +59,6 @@ export const FOLLOW_THE_LIGHT = {
   subtitle: "3D physics-based maze game",
   thumbnail: "/thumbnails/ftl.jpg",
   solo: true,
-  yearAndDuration: "2 Months",
   workDone: [
     "Player Gameplay Mechanics",
     "Player Finite State Machine in C#",
@@ -87,7 +84,6 @@ export const FMD = {
   subtitle: "AR mobile application",
   thumbnail: "/thumbnails/fmd.png",
   solo: false,
-  yearAndDuration: "3 Months",
   workDone: [
     "Scrum Duties & Collaboration",
     "UI Events & Animations in C#",

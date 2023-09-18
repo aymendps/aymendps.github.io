@@ -35,7 +35,6 @@ function CatNQuest() {
         projectType="Game Jam"
         role="Gameplay Programmer"
         solo={CAT_N_QUEST.solo}
-        yearAndDuration={CAT_N_QUEST.yearAndDuration}
         platform="PC - WebGL"
         softwareUsed="Unity - C#"
         usefulLinks={usefulLinks}

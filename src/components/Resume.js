@@ -16,7 +16,7 @@ function Resume() {
           variant="subtitle1"
           className="text-cyan-400 text-center pb-2"
         >
-          Last Update: August 2023
+          Last Update: September 2023
         </Typography>
       </div>
       <div className="m-auto w-1/2 screen-md:w-3/4">

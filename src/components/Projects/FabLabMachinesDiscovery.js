@@ -1188,7 +1188,6 @@ namespace Popups
         projectType="University"
         role="Unity Programmer"
         solo={FMD.solo}
-        yearAndDuration={FMD.yearAndDuration}
         platform="Android - iOS"
         softwareUsed="Unity - C# - Vuforia"
         usefulLinks={usefulLinks}
