@@ -12,7 +12,7 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 function PrinceOfPersiaAtariRemake() {
   const usefulLinks = [
     {
-      title: "Play On itch.io: Published Game Page",
+      title: "Play on itch.io: Published Game Page",
       href: "https://aymendps.itch.io/prince-of-persia-atari-st-remake",
     },
     {

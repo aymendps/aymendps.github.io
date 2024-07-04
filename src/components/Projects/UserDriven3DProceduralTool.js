@@ -13,11 +13,11 @@ function UserDriven3DProceduralTool() {
     },
     {
       title: "Capstone Project's Final Report",
-      href: "",
+      href: "https://github.com/aymendps/User-Driven-Procedural-Generation-Of-3D-Environments/blob/main/Aymen%20HAMMAMI%20_%20Capstone%20Project%20Report.pdf",
     },
     {
       title: "Capstone Project's Final Presentation",
-      href: "",
+      href: "https://github.com/aymendps/User-Driven-Procedural-Generation-Of-3D-Environments/blob/main/Aymen%20HAMMAMI%20-%20Capstone%20Project%20Presentation.pptx",
     },
   ];
 

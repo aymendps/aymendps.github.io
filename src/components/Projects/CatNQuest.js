@@ -7,7 +7,7 @@ import ProjectContent from "./Shared/ProjectContent";
 function CatNQuest() {
   const usefulLinks = [
     {
-      title: "Play On itch.io: Published Game Page",
+      title: "Play on itch.io: Published Game Page",
       href: "https://aymendps.itch.io/cat-n-quest",
     },
     {

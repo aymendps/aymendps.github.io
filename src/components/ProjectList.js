@@ -5,6 +5,7 @@ import FollowTheLight from "./Projects/FollowTheLight";
 import PrinceOfPersiaAtariRemake from "./Projects/PrinceOfPersiaAtariRemake";
 import UserDriven3DProceduralTool from "./Projects/UserDriven3DProceduralTool";
 import CatNQuest from "./Projects/CatNQuest";
+import RoboRepair from "./Projects/RoboRepair";
 
 export const PRINCE_OF_PERSIA_REMAKE = {
   title: "Prince Of Persia ATARI ST Remake",
@@ -34,7 +35,7 @@ export const PRINCE_OF_PERSIA_REMAKE = {
 
 export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
   title: "User-Driven Procedural Generation Of 3D Environments",
-  subtitle: "Capstone Project | Procedural Tool",
+  subtitle: "Software Engineering Capstone Project",
   thumbnail: "/thumbnails/udpg3de.jpg",
   solo: true,
   workDone: [
@@ -43,7 +44,6 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
     "User Prompt Interpretation & Integration",
     "Tool's UI/UX Implementation & Design",
   ],
-  // Take into consideration the work done and the tags, so game jam for example requires teamwork
   outcomes: [
     "Learned how to adopt the Design Science Research Methodology to develop a fully functional tool",
     "Learned how to understand and apply feedback from both users and stakeholders to improve the tool",
@@ -64,6 +64,7 @@ export const CAT_N_QUEST = {
   thumbnail: "/thumbnails/cat.png",
   solo: false,
   workDone: [
+    "Collaboration & Task Management",
     "Dialogue & Quest System",
     "NPC Customization & Behaviour",
     "Simple Inventory System",
@@ -87,12 +88,24 @@ export const ROBO_REPAIR = {
   subtitle: "2D Educational Puzzle Game",
   thumbnail: "/thumbnails/rr.png",
   solo: false,
-  workDone: [],
-  outcomes: [],
+  workDone: [
+    "Collaboration & Task Management",
+    "Puzzle Levels & Mechanics",
+    "Physics-Based Interactions",
+    "Interpretation of Programming Commands",
+    "UI & Tutorials of Programming Commands",
+  ],
+  outcomes: [
+    "Gained experience in working within a team, collaborating, and communicating ideas fluently",
+    "Learned how to work efficiently under pressure and time constraints, and how to manage tasks",
+    "Gained knowledge of how to develop educational games that teach programming and physics concepts",
+    "Learned how to implement physics-based interactions and respond to player input and instructions",
+    "Learned how to design and implement levels that are engaging and fun to solve",
+  ],
   tags: ["Game Dev", "24H Hackathon", "Won Award", "Unity", "C#"],
   pageURL: "/robo-repair",
-  accessible: false,
-  element: <></>,
+  accessible: true,
+  element: <RoboRepair />,
 };
 
 export const FOLLOW_THE_LIGHT = {
