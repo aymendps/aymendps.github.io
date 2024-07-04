@@ -10,6 +10,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import HomeIcon from "@mui/icons-material/Home";
 import GithubIcon from "@mui/icons-material/GitHub";
 import AwardsIcon from "@mui/icons-material/EmojiEvents";
+import ReferralsIcon from "@mui/icons-material/Reviews";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
@@ -40,6 +41,16 @@ function NavBar() {
       link: "home#awards",
       icon: (
         <AwardsIcon
+          fontSize="medium"
+          className="text-white group-hover:text-cyan-400"
+        />
+      ),
+    },
+    {
+      name: "Referrals",
+      link: "home#referrals",
+      icon: (
+        <ReferralsIcon
           fontSize="medium"
           className="text-white group-hover:text-cyan-400"
         />

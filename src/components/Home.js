@@ -14,6 +14,7 @@ import GithubIcon from "@mui/icons-material/GitHub";
 import Footer from "./Footer";
 import ProjectLoading from "./ProjectLoading";
 import PreloadImages from "./PreloadImages";
+import Referrals from "./Referrals";
 
 function Home() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
@@ -330,7 +331,7 @@ function Home() {
             <a
               key={post.url}
               href={post.url}
-              className="block w-1/5 screen-md:w-[90%] mb-12"
+              className="block w-1/5 screen-md:w-[90%] mb-12 screen-md:mb-6"
               target="_blank"
               rel="noreferrer"
             >
@@ -343,10 +344,10 @@ function Home() {
                     post.origin
                   }
                 />
-                <div className="absolute w-full bg-black opacity-90 bottom-0 left-0 px-2 py-1">
+                <div className="absolute w-full bg-white opacity-90 bottom-0 left-0 px-2 py-1">
                   <Typography
                     variant="h6"
-                    className="text-cyan-300 underline-offset-4 text-center group-hover:underline font-normal text-[1.1rem]"
+                    className="text-cyan-600 underline-offset-4 text-center group-hover:underline font-normal text-[1rem]"
                   >
                     {post.title + " ↗"}
                   </Typography>
@@ -355,6 +356,19 @@ function Home() {
             </a>
           );
         })}
+      </div>
+      <div className="relative">
+        <div
+          className="absolute top-[-70px] left-0 screen-md:top-0"
+          id="referrals"
+        ></div>
+        <Typography
+          variant="h2"
+          className="text-center text-white pb-12 screen-md:pt-6 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+        >
+          LinkedIn Referrals
+        </Typography>
+        <Referrals />
       </div>
     </section>
   );
