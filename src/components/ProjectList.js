@@ -13,8 +13,8 @@ export const PRINCE_OF_PERSIA_REMAKE = {
   workDone: [
     "Player Mechanics & Animations",
     "Game Systems & Components",
-    "Customizable Gameplay Props",
     "Enemy AI Behaviour & Perception",
+    "Customizable Gameplay Props",
     "UI & Tutorials Using UMG",
   ],
   outcomes: [],
@@ -34,7 +34,6 @@ export const CAT_N_QUEST = {
     "NPC Customization & Behaviour",
     "Simple Inventory System",
     "Interactable Game Objects",
-    "Visual Dialogue Editor (in progress)",
   ],
   outcomes: [],
   tags: ["Game Dev", "Game Jam", "Unity", "C#"],

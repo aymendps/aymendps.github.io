@@ -2,7 +2,6 @@ import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import { PINNED_PROJECTS } from "./components/ProjectList";
-import Resume from "./components/Resume";
 
 function App() {
   const generateProjectRoutes = PINNED_PROJECTS.map((project) => {
@@ -21,7 +20,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/resume" element={<Resume />} />
         {generateProjectRoutes}
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>

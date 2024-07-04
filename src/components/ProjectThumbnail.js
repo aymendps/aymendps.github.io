@@ -56,7 +56,7 @@ function ProjectThumbnail({
 
   return (
     <div
-      className="basis-[22%] screen-sm:basis-[90%] screen-md:basis-[80%] mb-[5%] relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group hover:bg-cyan-50"
+      className="basis-[22%] screen-sm:basis-[90%] screen-md:basis-[80%] mb-[2.5%] screen-sm:mb-[5%] relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group hover:bg-cyan-50"
       onClick={handleClick}
     >
       <div className="p-4">

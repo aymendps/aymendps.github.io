@@ -4,7 +4,7 @@ function Footer() {
   return (
     <section className="bg-black w-full p-2 screen-md:mb-[70px]">
       <Typography className="text-white text-center">
-        Copyright © 2023 by Aymen Hammami
+        Copyright © 2024 by Aymen HAMMAMI
         <br />
         <a
           href="https://www.linkedin.com/in/aymendps/"

@@ -5,8 +5,6 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import ResumeIcon from "@mui/icons-material/AttachFile";
-import AboutIcon from "@mui/icons-material/Person4";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import ProjectList, { PINNED_PROJECTS } from "./ProjectList";
@@ -89,6 +87,13 @@ function Home() {
 
   const LINKEDIN_POSTS = [
     {
+      title:
+        "Graduating with the grade of 'Outstanding', the highest grade for a capstone project",
+      image: "/awards/capstone.jpg",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7212445756081799168/",
+      origin: "object-center",
+    },
+    {
       title: "Second Prize at 24H Game Development Hackathon",
       image: "/awards/gamehack.jpg",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7053399477331591168/",
@@ -104,7 +109,7 @@ function Home() {
       title: "Best Junior Software Engineering Project, SMU - MedTech",
       image: "/awards/junior.jpg",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:6932755568562462721/",
-      origin: "object-left scale-105",
+      origin: "object-left",
     },
   ];
 
@@ -192,7 +197,7 @@ function Home() {
 
   const aboutSection = (
     <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px] screen-md:translate-y-0 screen-md:pt-6">
-      <div className="m-auto w-[80%] pt-4 screen-md:w-[90%] screen-md:pb-12">
+      <div className="m-auto w-[80%] pt-4 screen-md:w-[90%] screen-md:pb-12 text-center">
         <Typography
           variant="h2"
           className="text-center text-white pb-4 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
@@ -200,23 +205,40 @@ function Home() {
           Welcome to my portfolio!
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-md:text-justify">
-          Hi there! I'm <b>Aymen</b>, a final year software engineering student
-          with a passion for games & programming, along with strong skills in
-          Unity | C# & Unreal Engine 5 | C++.
+        <Typography className="text-white  screen-md:text-justify">
+          Hi there! I'm <b>Aymen</b>, a software engineering graduate with a
+          passion for games & programming, along with strong skills in Unreal
+          Engine, C++, Unity and C#.
+          <br />
+          Although recently{" "}
+          <b>
+            <a
+              className="text-cyan-400 hover:underline"
+              href="https://www.linkedin.com/feed/update/urn:li:activity:7212445756081799168/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              graduated
+            </a>
+          </b>
+          , I have 1 year of experience through internships and part-time jobs,
+          which allowed me to sharpen my tech & soft skills and put them into
+          practice!
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-md:text-justify">
+        <Typography className="text-white  screen-md:text-justify">
           I've been fortunate enough to contribute to incredible projects both
-          on my own and as part of a team. I am familiar with the software
-          development life cycle and possess the ability to translate designers'
-          concepts into readable and maintainable code.
+          on my own and as part of a team.
+          <br />I am familiar with the software development life cycle and
+          possess the ability to translate designers' concepts into readable and
+          maintainable code.
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-md:text-justify">
+        <Typography className="text-white  screen-md:text-justify">
           As a good team player, I understand the significance of teamwork and
-          its vital role in achieving success. I have a proven track record of
-          collaborating effectively with others, as demonstrated by{" "}
+          its vital role in achieving success.
+          <br />I have a proven track record of collaborating effectively with
+          others, as demonstrated by{" "}
           <HashLink
             smooth
             to="/home#awards"
@@ -227,9 +249,9 @@ function Home() {
           I have received for my group projects.
         </Typography>
         <br />
-        <Typography className="text-white text-center screen-md:text-justify">
-          Now that I approach graduation, I'm eager to embark on a fulfilling
-          career in game development and software engineering.
+        <Typography className="text-white  screen-md:text-justify">
+          I'm eager to embark on a fulfilling career in game development and
+          software engineering.
           <br />I can't wait to work alongside like-minded professionals and
           contribute to projects that push the boundaries of what is possible.
         </Typography>
@@ -289,7 +311,7 @@ function Home() {
   );
 
   const findMoreSection = (
-    <section className="w-full bg-darkblue pb-12">
+    <section className="w-full bg-darkblue pb-4">
       <div className="relative">
         <div
           className="absolute top-[-70px] left-0 screen-md:top-0"
@@ -308,7 +330,7 @@ function Home() {
             <a
               key={post.url}
               href={post.url}
-              className="block w-1/4 screen-md:w-[90%] mb-12"
+              className="block w-1/5 screen-md:w-[90%] mb-12"
               target="_blank"
               rel="noreferrer"
             >
@@ -321,10 +343,10 @@ function Home() {
                     post.origin
                   }
                 />
-                <div className="absolute w-full h-[22%] bg-black opacity-90 bottom-0 left-0 px-2 py-1">
+                <div className="absolute w-full bg-black opacity-90 bottom-0 left-0 px-2 py-1">
                   <Typography
                     variant="h6"
-                    className="text-cyan-300 underline-offset-4 text-center group-hover:underline font-normal"
+                    className="text-cyan-300 underline-offset-4 text-center group-hover:underline font-normal text-[1.1rem]"
                   >
                     {post.title + " ↗"}
                   </Typography>
@@ -333,57 +355,6 @@ function Home() {
             </a>
           );
         })}
-      </div>
-
-      <div className="w-[90%] m-auto">
-        <Typography
-          variant="h2"
-          className="text-center text-white pb-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
-        >
-          Find more about me
-        </Typography>
-      </div>
-      <div className="w-[80%] flex screen-md:flex-wrap justify-evenly m-auto screen-md:w-full">
-        <div className="basis-[35%] screen-md:basis-[90%] screen-md:mb-6">
-          <Button
-            fullWidth
-            size="large"
-            variant="outlined"
-            className="text-cyan-400 border-cyan-400 hover:border-cyan-300 hover:text-cyan-300"
-            startIcon={<ResumeIcon />}
-            onClick={() => {
-              navigate("/resume");
-            }}
-          >
-            Resume Section
-          </Button>
-          <Typography
-            variant="caption"
-            className="text-cyan-200 text-center block pt-2 screen-md:hidden"
-          >
-            My skills, projects, education & experience in PDF format
-          </Typography>
-        </div>
-        <div className="basis-[35%] screen-md:basis-[90%]">
-          <Button
-            fullWidth
-            size="large"
-            variant="outlined"
-            className="text-cyan-400 border-cyan-400 hover:border-cyan-300 hover:text-cyan-300"
-            startIcon={<AboutIcon />}
-            onClick={() => {
-              // navigate("/about-me");
-            }}
-          >
-            About me Section
-          </Button>
-          <Typography
-            variant="caption"
-            className="text-cyan-200 text-center block pt-2 screen-md:hidden"
-          >
-            More about who I am, what I enjoy, what I do in my free time
-          </Typography>
-        </div>
       </div>
     </section>
   );

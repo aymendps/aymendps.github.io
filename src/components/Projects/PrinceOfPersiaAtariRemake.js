@@ -665,7 +665,7 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
         title={PRINCE_OF_PERSIA_REMAKE.title}
         youtubeURL="https://www.youtube.com/embed/ceDJjWqTJvk"
         projectType="Internship"
-        role="Gameplay Programmer"
+        role="Game Developer"
         solo={PRINCE_OF_PERSIA_REMAKE.solo}
         platform="Standalone PC"
         softwareUsed="Unreal Engine 5 - C++"

@@ -5,7 +5,6 @@ import {
   Typography,
 } from "@mui/material";
 import PortfolioIcon from "@mui/icons-material/Star";
-import ResumeIcon from "@mui/icons-material/AttachFile";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import HomeIcon from "@mui/icons-material/Home";
@@ -41,16 +40,6 @@ function NavBar() {
       link: "home#awards",
       icon: (
         <AwardsIcon
-          fontSize="medium"
-          className="text-white group-hover:text-cyan-400"
-        />
-      ),
-    },
-    {
-      name: "Resume",
-      link: "resume",
-      icon: (
-        <ResumeIcon
           fontSize="medium"
           className="text-white group-hover:text-cyan-400"
         />
@@ -106,7 +95,7 @@ function NavBar() {
         smooth
         key={item.name + item.link}
         to={item.link}
-        className="w-[18%] h-full group"
+        className="h-full group"
       >
         <Button
           variant="text"
@@ -186,7 +175,7 @@ function NavBar() {
             </Typography>
           </div>
         </HashLink>
-        <div className="w-1/2 flex h-full">
+        <div className="w-1/2 flex h-full justify-between">
           {generateNavBarItems}
           <div className="w-1/4 flex h-full justify-center items-center gap-2">
             {generateNavBarIcons}
