@@ -8,7 +8,7 @@ import CatNQuest from "./Projects/CatNQuest";
 import RoboRepair from "./Projects/RoboRepair";
 
 export const PRINCE_OF_PERSIA_REMAKE = {
-  title: "Prince Of Persia ATARI ST Remake",
+  title: "Prince Of Persia Remake",
   subtitle: "3D Difficult Platformer",
   thumbnail: "/thumbnails/ppr.png",
   solo: true,
@@ -186,7 +186,7 @@ function ProjectList({
   });
 
   return (
-    <div className="w-full flex justify-center items-start flex-wrap gap-[2.4%]">
+    <div className="w-full flex justify-center items-start flex-wrap gap-[1.5%]">
       {generateProjects}
     </div>
   );

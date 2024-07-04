@@ -56,13 +56,13 @@ function ProjectThumbnail({
 
   return (
     <div
-      className="basis-[22%] screen-sm:basis-[90%] screen-md:basis-[80%] mb-[2.5%] screen-sm:mb-[5%] relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group hover:bg-cyan-50"
+      className="basis-[23%] screen-sm:basis-[90%] screen-md:basis-[80%] mb-[2.5%] screen-sm:mb-[5%] relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group hover:bg-cyan-50"
       onClick={handleClick}
     >
       <div className="p-4">
         <Typography
           variant="h5"
-          className="text-center text-darkblue group-hover:underline"
+          className="text-center text-darkblue group-hover:underline text-[1.4rem]"
         >
           {title}
         </Typography>
@@ -88,7 +88,7 @@ function ProjectThumbnail({
         )}
       </div>
       <div className="w-full">
-        <div className="w-full p-4">
+        <div className="w-full py-4 px-2">
           <Typography variant="h6" className="text-center text-darkblue pb-2">
             {solo ? "Highlighted Work" : "Contributions"}
           </Typography>
