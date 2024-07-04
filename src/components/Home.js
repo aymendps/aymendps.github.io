@@ -287,7 +287,7 @@ function Home() {
       />
       <div className="w-[90%] m-auto">
         <Typography variant="subtitle1" className="text-center text-darkblue">
-          Other projects may be found on my{" "}
+          Other in-progress or old projects may be found on my{" "}
           <a
             href="https://github.com/aymendps"
             target="_blank"

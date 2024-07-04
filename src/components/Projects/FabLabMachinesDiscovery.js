@@ -5,7 +5,6 @@ import ProjectContent from "./Shared/ProjectContent";
 import ProjectIntroduction from "./Shared/ProjectIntroduction";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
 import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
 
 function FabLabMachinesDiscovery() {
@@ -1184,14 +1183,15 @@ namespace Popups
     <>
       <ProjectIntroduction
         title={FMD.title}
-        youtubeURL="https://www.youtube-nocookie.com/embed/VfGc1t6Qj3s"
+        youtubeURL={["https://www.youtube-nocookie.com/embed/VfGc1t6Qj3s"]}
         projectType="University"
-        role="Unity Programmer"
+        role="Tools Programmer"
         solo={FMD.solo}
-        platform="Android - iOS"
-        softwareUsed="Unity - C# - Vuforia"
+        platform="Android | iOS"
+        softwareUsed="Unity | C# | Vuforia"
         usefulLinks={usefulLinks}
         workDone={workDone}
+        outcomes={FMD.outcomes}
         description={`“FabLab Machines Discovery” is an Augmented Reality (AR) application that runs on mobile devices. The project was chosen as one of the best senior software engineering projects of the year.
 
         Its goal is to help any visitor or member of Orange's "FabSpace" learn about machines by scanning them with their camera.
@@ -1204,7 +1204,6 @@ namespace Popups
         `}
       />
       <ProjectContent workDone={workDone} />
-      <ProjectLearningOutcomes outcomes={FMD.outcomes} />
       <Footer />
     </>
   );

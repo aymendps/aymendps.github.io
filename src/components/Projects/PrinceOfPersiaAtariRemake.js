@@ -3,7 +3,6 @@ import { PRINCE_OF_PERSIA_REMAKE } from "../ProjectList";
 import ProjectIntroduction from "./Shared/ProjectIntroduction";
 import ProjectContent from "./Shared/ProjectContent";
 import Footer from "../Footer";
-import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
 import { Typography } from "@mui/material";
 import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
 import BlueprintsHighlighter from "./Shared/BlueprintsHighligher";
@@ -663,14 +662,15 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
     <>
       <ProjectIntroduction
         title={PRINCE_OF_PERSIA_REMAKE.title}
-        youtubeURL="https://www.youtube.com/embed/ceDJjWqTJvk"
+        youtubeURL={["https://www.youtube.com/embed/ceDJjWqTJvk"]}
         projectType="Internship"
         role="Game Developer"
         solo={PRINCE_OF_PERSIA_REMAKE.solo}
         platform="Standalone PC"
-        softwareUsed="Unreal Engine 5 - C++"
+        softwareUsed="Unreal Engine 5 | Blueprints | C++"
         usefulLinks={usefulLinks}
         workDone={workDone}
+        outcomes={PRINCE_OF_PERSIA_REMAKE.outcomes}
         description={`This project carries significant emotional and nostalgic importance for me, as it brings back memories of watching family members playing the original game two decades ago!
 
         This is a difficult platformer, where you play the role of an imprisoned prince that needs to find his way out of Jaffar's deadly dungeons, in one hour, to save the princess he loves from that tyrant's wrath.
@@ -680,7 +680,6 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
         As part of my internship at Lanterns Studios, I was assigned to work on this project to learn UE5 and to get familiar with C++ Use Cases, Blueprints, AI Behaviour, Animations, Input Handling, Unreal Motion Graphics and the implementation of other important game systems.`}
       />
       <ProjectContent workDone={workDone} />
-      <ProjectLearningOutcomes outcomes={PRINCE_OF_PERSIA_REMAKE.outcomes} />
       <Footer />
     </>
   );

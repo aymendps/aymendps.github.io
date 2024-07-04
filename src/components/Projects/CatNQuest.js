@@ -3,7 +3,6 @@ import { CAT_N_QUEST } from "../ProjectList";
 import ProjectIntroduction from "./Shared/ProjectIntroduction";
 import Footer from "../Footer";
 import ProjectContent from "./Shared/ProjectContent";
-import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
 
 function CatNQuest() {
   const usefulLinks = [
@@ -31,14 +30,15 @@ function CatNQuest() {
     <>
       <ProjectIntroduction
         title={CAT_N_QUEST.title}
-        youtubeURL="https://www.youtube.com/embed/9XD9TwuPIiY"
+        youtubeURL={["https://www.youtube.com/embed/9XD9TwuPIiY"]}
         projectType="Game Jam"
         role="Gameplay Programmer"
         solo={CAT_N_QUEST.solo}
-        platform="PC - WebGL"
-        softwareUsed="Unity - C#"
+        platform="PC | WebGL"
+        softwareUsed="Unity | C#"
         usefulLinks={usefulLinks}
         workDone={workDone}
+        outcomes={CAT_N_QUEST.outcomes}
         description={`Join a grumpy cat in an adventure to support villagers and spread peace in its own way.
 
         This is a 2D top-down open-world game where you need to solve puzzles and connect the dots to fullfil quests that help the inhabitants.
@@ -48,7 +48,6 @@ function CatNQuest() {
         This game was made during the Unidos HISPANIC HERITAGE MONTH Jam 2022, and then I revisited it after a while to refactor the code, improve performance and polish the state of the game.`}
       />
       <ProjectContent workDone={workDone} />
-      <ProjectLearningOutcomes outcomes={CAT_N_QUEST.outcomes} />
       <Footer />
     </>
   );

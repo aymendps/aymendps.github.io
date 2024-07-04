@@ -3,7 +3,6 @@ import { FOLLOW_THE_LIGHT } from "../ProjectList";
 import ProjectIntroduction from "./Shared/ProjectIntroduction";
 import ProjectContent from "./Shared/ProjectContent";
 import Footer from "../Footer";
-import ProjectLearningOutcomes from "./Shared/ProjectLearningOutcomes";
 import { Typography } from "@mui/material";
 import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -927,14 +926,15 @@ namespace Gameplay.Platforms
     <>
       <ProjectIntroduction
         title={FOLLOW_THE_LIGHT.title}
-        youtubeURL="https://www.youtube-nocookie.com/embed/6Ob0HM8uoo8"
+        youtubeURL={["https://www.youtube-nocookie.com/embed/6Ob0HM8uoo8"]}
         projectType="Personal"
         role="Game Developer"
         solo={FOLLOW_THE_LIGHT.solo}
         platform="Standalone PC"
-        softwareUsed="Unity - C#"
+        softwareUsed="Unity | C#"
         usefulLinks={usefulLinks}
         workDone={workDone}
+        outcomes={FOLLOW_THE_LIGHT.outcomes}
         description={`"Follow The Light" is a 3D physics-based puzzle game made with Unity & C#.
 
         As a glowing ball lost in darkness, your goal is to navigate through challenging environments, using your collisions with walls and objects to illuminate the path ahead.
@@ -952,7 +952,6 @@ namespace Gameplay.Platforms
         Brake to control your momentum!`}
       />
       <ProjectContent workDone={workDone} />
-      <ProjectLearningOutcomes outcomes={FOLLOW_THE_LIGHT.outcomes} />
       <Footer />
     </>
   );
