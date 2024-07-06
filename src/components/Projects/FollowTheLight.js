@@ -44,7 +44,7 @@ function FollowTheLight() {
       </Typography>
       <div className="flex justify-between mt-4 screen-md:flex-col">
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ftl/moving.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -52,7 +52,7 @@ function FollowTheLight() {
           </Typography>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ftl/braking.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -73,7 +73,7 @@ function FollowTheLight() {
         ground.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-md:w-full">
-        <video controls loop className="w-full">
+        <video controls className="w-full">
           <source src="/ftl/normal bounce.mp4" type="video/mp4" />
         </video>
       </div>
@@ -92,7 +92,7 @@ function FollowTheLight() {
         it can go, so the game doesn't break.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-md:w-full">
-        <video controls loop className="w-full">
+        <video controls className="w-full">
           <source src="/ftl/rep bounce.mp4" type="video/mp4" />
         </video>
       </div>
@@ -111,7 +111,7 @@ function FollowTheLight() {
         down or bounce.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-md:w-full">
-        <video controls loop className="w-full">
+        <video controls className="w-full">
           <source src="/ftl/hopping.mp4" type="video/mp4" />
         </video>
       </div>
@@ -128,7 +128,7 @@ function FollowTheLight() {
         trying to find surfaces to move/bounce towards.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-md:w-full">
-        <video controls loop className="w-full">
+        <video controls className="w-full">
           <source src="/ftl/camera.mp4" type="video/mp4" />
         </video>
       </div>
@@ -145,7 +145,7 @@ function FollowTheLight() {
         try and get out of the maze once more.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-md:w-full">
-        <video controls loop className="w-full">
+        <video controls className="w-full">
           <source src="/ftl/death.mp4" type="video/mp4" />
         </video>
       </div>
@@ -483,7 +483,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         movement:
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-md:w-full">
-        <video controls loop className="w-full">
+        <video controls className="w-full">
           <source src="/ftl/norelative.mp4" type="video/mp4" />
         </video>
       </div>
@@ -585,7 +585,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         Below is a video that shows the fixed camera-relative player movement:
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-md:w-full">
-        <video controls loop className="w-full">
+        <video controls className="w-full">
           <source src="/ftl/relative.mp4" type="video/mp4" />
         </video>
       </div>
@@ -896,7 +896,7 @@ namespace Gameplay.Platforms
         implementation.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-md:w-full">
-        <video controls loop className="w-full">
+        <video controls className="w-full">
           <source src="/ftl/moving platform.mp4" type="video/mp4" />
         </video>
       </div>

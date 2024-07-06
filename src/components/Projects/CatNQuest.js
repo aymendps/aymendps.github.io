@@ -38,6 +38,7 @@ function CatNQuest() {
         softwareUsed="Unity | C#"
         usefulLinks={usefulLinks}
         workDone={workDone}
+        useLinksForWorkDone={false}
         outcomes={CAT_N_QUEST.outcomes}
         description={`Join a grumpy cat in an adventure to support villagers and spread peace in its own way.
 
@@ -47,7 +48,8 @@ function CatNQuest() {
 
         This game was made during the Unidos HISPANIC HERITAGE MONTH Jam 2022, and then I revisited it after a while to refactor the code, improve performance and polish the state of the game.`}
       />
-      <ProjectContent workDone={workDone} />
+      <ProjectContent // workDone={workDone} this makes it so nothing is rendered but we still benefit from the scrollIntoView effect
+      />
       <Footer />
     </>
   );

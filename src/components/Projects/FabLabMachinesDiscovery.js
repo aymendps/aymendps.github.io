@@ -261,7 +261,7 @@ namespace Animations
         created brought the designers' UI to life.
       </Typography>
       <div className="w-fit m-auto mt-4">
-        <video controls loop className="h-[450px]">
+        <video controls className="h-[450px]">
           <source src="/fmd/fmd_ui.mp4" type="video/mp4" />
         </video>
       </div>
@@ -612,7 +612,7 @@ namespace Vuforia
         </div>
         <div className="w-[30%] screen-md:w-full">
           <div className="w-fit h-[450px] m-auto mb-2 mt-2">
-            <video controls loop className="h-[450px]">
+            <video controls className="h-[450px]">
               <source src="/fmd/camera_permission.mp4" type="video/mp4" />
             </video>
           </div>
@@ -981,7 +981,7 @@ namespace Popups
       <div className="flex justify-evenly mt-4 screen-md:flex-col">
         <div>
           <div className="w-fit m-auto">
-            <video controls loop className="h-[450px]">
+            <video controls className="h-[450px]">
               <source src="/fmd/fmd_demo1.mp4" type="video/mp4" />
             </video>
           </div>
@@ -991,7 +991,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls loop className="h-[450px]">
+            <video controls className="h-[450px]">
               <source src="/fmd/fmd_demo2.mp4" type="video/mp4" />
             </video>
           </div>
@@ -1001,7 +1001,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls loop className="h-[450px]">
+            <video controls className="h-[450px]">
               <source src="/fmd/fmd_demo3.mp4" type="video/mp4" />
             </video>
           </div>
@@ -1023,7 +1023,7 @@ namespace Popups
       <div className="flex justify-evenly mt-4 screen-md:flex-col">
         <div>
           <div className="w-fit m-auto">
-            <video controls loop className="h-[450px]">
+            <video controls className="h-[450px]">
               <source src="/fmd/fmd_demo4.mp4" type="video/mp4" />
             </video>
           </div>
@@ -1033,7 +1033,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls loop className="h-[450px]">
+            <video controls className="h-[450px]">
               <source src="/fmd/fmd_demo5.mp4" type="video/mp4" />
             </video>
           </div>
@@ -1043,7 +1043,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls loop className="h-[450px]">
+            <video controls className="h-[450px]">
               <source src="/fmd/fmd_demo6.mp4" type="video/mp4" />
             </video>
           </div>
@@ -1092,8 +1092,8 @@ namespace Popups
         <br />
         Once the animation is finished, the <b>"Exit"</b> method of the script
         will be called, hiding the simulation and showing the popup once more.
-        <br /> With this simple loop setup, users are free to play the
-        simulation as many times as they want.
+        <br /> With this simple setup, users are free to play the simulation as
+        many times as they want.
         <br />
         <br />
         Below is the code snippet for the <b>MachineSimulation</b> class that

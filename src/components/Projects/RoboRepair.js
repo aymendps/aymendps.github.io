@@ -8,7 +8,7 @@ function RoboRepair() {
   const usefulLinks = [
     {
       title: "Play on itch.io: Published Game Page",
-      href: "https://aymendps.itch.io/",
+      href: "https://aymendps.itch.io/roborepair",
     },
     {
       title: "Celebratory Post: Won 2nd Prize of the 24H Game Dev Hackathon",
@@ -42,6 +42,7 @@ function RoboRepair() {
         softwareUsed="Unity | C#"
         usefulLinks={usefulLinks}
         workDone={workDone}
+        useLinksForWorkDone={false}
         outcomes={ROBO_REPAIR.outcomes}
         description={`RoboRepair is a 2D educational puzzle game developed in 24 hours for a game development hackathon within a team of 3 people. The game was awarded the 2nd prize!
           
@@ -52,7 +53,8 @@ function RoboRepair() {
           Through this, the player needs to reach the destination by avoiding obstacles and solving puzzles.
 `}
       />
-      <ProjectContent workDone={workDone} />
+      <ProjectContent //workDone={workDone} this makes it so nothing is rendered but we still benefit from the scrollIntoView effect
+      />
       <Footer />
     </>
   );

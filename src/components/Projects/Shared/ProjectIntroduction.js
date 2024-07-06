@@ -14,13 +14,14 @@ function ProjectIntroduction({
   description,
   usefulLinks = [],
   workDone = [],
+  useLinksForWorkDone = true,
   outcomes = [],
 }) {
   const generateUsefulLinks = usefulLinks.map((link) => {
     return (
       <li
         key={link.href + link.title}
-        className="text-darkblue pt-1 underline-offset-4"
+        className="text-darkblue pt-1 underline-offset-4 text-justify"
       >
         <a
           className="underline text-darblue"
@@ -38,11 +39,19 @@ function ProjectIntroduction({
     return (
       <li
         key={"hashlink" + work.id}
-        className="text-white pt-1 underline-offset-4"
+        className="text-white pt-1 underline-offset-4 text-justify"
       >
-        <HashLink className="underline text-white" smooth to={"#" + work.id}>
-          {work.title}
-        </HashLink>
+        {useLinksForWorkDone ? (
+          <HashLink
+            className="underline text-white text-justify"
+            smooth
+            to={"#" + work.id}
+          >
+            {work.title}
+          </HashLink>
+        ) : (
+          work.title
+        )}
       </li>
     );
   });

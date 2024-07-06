@@ -60,7 +60,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ppr/equip_unequip.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -167,7 +167,7 @@ function PrinceOfPersiaAtariRemake() {
         avoid traps like deadly spikes.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-md:w-full">
-        <video controls loop className="w-full">
+        <video controls className="w-full">
           <source src="/ppr/locomotion_nofight.mp4" type="video/mp4" />
         </video>
       </div>
@@ -183,7 +183,7 @@ function PrinceOfPersiaAtariRemake() {
       </Typography>
       <div className="flex justify-between mt-4 screen-md:flex-col">
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ppr/locomotion_fight.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -191,7 +191,7 @@ function PrinceOfPersiaAtariRemake() {
           </Typography>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ppr/turnaround.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -233,7 +233,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ppr/camera_offset.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -259,7 +259,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ppr/camera_zoom.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -360,7 +360,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ppr/traces.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -401,7 +401,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ppr/dashing.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -433,7 +433,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ppr/attacks.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -469,7 +469,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ppr/parry.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -637,7 +637,7 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-md:w-full">
-          <video controls loop className="w-full">
+          <video controls className="w-full">
             <source src="/ppr/potion.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
