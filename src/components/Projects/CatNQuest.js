@@ -10,10 +10,10 @@ function CatNQuest() {
       title: "Play on itch.io: Published Game Page",
       href: "https://aymendps.itch.io/cat-n-quest",
     },
-    {
-      title: "Project's GitHub Repository",
-      href: "https://github.com/",
-    },
+    // {
+    //   title: "Project's GitHub Repository",
+    //   href: "https://github.com/",
+    // },
   ];
 
   const contentList = [];
