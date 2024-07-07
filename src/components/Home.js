@@ -210,21 +210,9 @@ function Home() {
           Hi there! I'm <b>Aymen</b>, a software engineering graduate with a
           passion for games & programming, along with strong skills in Unreal
           Engine, C++, Unity and C#.
-          <br />
-          Although recently{" "}
-          <b>
-            <a
-              className="text-cyan-400 hover:underline"
-              href="https://www.linkedin.com/feed/update/urn:li:activity:7212445756081799168/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              graduated
-            </a>
-          </b>
-          , I have 1 year of experience through internships and part-time jobs,
-          which allowed me to sharpen my tech & soft skills and put them into
-          practice!
+          <br />I have 1 year of experience through internships and part-time
+          jobs, which allowed me to sharpen my tech & soft skills and put them
+          into practice!
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify">
