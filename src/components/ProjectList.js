@@ -35,7 +35,7 @@ export const PRINCE_OF_PERSIA_REMAKE = {
 
 export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
   title: "User-Driven Procedural Generation Of 3D Environments",
-  subtitle: "Software Engineering Capstone Project",
+  subtitle: "Tool for 3D Environment Generation",
   thumbnail: "/thumbnails/udpg3de.jpg",
   solo: true,
   workDone: [
@@ -52,7 +52,14 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
     "Learned how to create a UI that is user-friendly, easy to use, responsive and visually consistent",
     "Expanded my knowledge of Unreal Engine 5, Blueprints scripting, and C++ programming",
   ],
-  tags: ["Tool Dev", "Capstone Project", "UE 5", "Blueprints", "C++"],
+  tags: [
+    "Tool Dev",
+    "Capstone Project",
+    "Grade: Outstanding",
+    "UE 5",
+    "Blueprints",
+    "C++",
+  ],
   pageURL: "/user-driven-3d-procedural-tool",
   accessible: true,
   element: <UserDriven3DProceduralTool />,
