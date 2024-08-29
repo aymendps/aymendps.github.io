@@ -36,6 +36,19 @@ function Home({ industry }) {
   const navigate = useNavigate();
   const isMobile = useMediaQuery("(max-width:768px)");
 
+  function industryToName(industry) {
+    switch (industry) {
+      case "gaming":
+        return "Gaming";
+      case "software":
+        return "Software & Web";
+      case "all":
+        return "All";
+      default:
+        return "All";
+    }
+  }
+
   useEffect(() => {
     if (window.location.href.includes("#projects")) {
       document.getElementById("projects").scrollIntoView({ block: "start" });
@@ -267,9 +280,12 @@ function Home({ industry }) {
         >
           Pinned Projects
         </Typography>
+        <Typography className="text-darkblue text-center mb-4 mt-2">
+          Currently viewing projects for: <b>{industryToName(industry)}</b>
+        </Typography>
         <Typography
           variant="subtitle1"
-          className="text-center pb-12 text-cyan-600"
+          className="text-center pb-6 text-cyan-600"
         >
           <b>Click</b> on a project to view it with more details
         </Typography>
