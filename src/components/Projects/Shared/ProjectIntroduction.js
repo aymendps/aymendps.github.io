@@ -2,6 +2,7 @@ import { Chip, CircularProgress, Typography } from "@mui/material";
 import { HashLink } from "react-router-hash-link";
 import ProjectBackToTopButton from "./ProjectBackToTopButton";
 import ProjectLearningOutcomes from "./ProjectLearningOutcomes";
+import React from "react";
 
 function ProjectIntroduction({
   title,
@@ -76,7 +77,7 @@ function ProjectIntroduction({
 
   const generateYoutubeVideos = youtubeURL.map((url, index) => {
     return (
-      <>
+      <React.Fragment key={"video " + url}>
         <div className="w-full aspect-video bg-cyan-600 border-2 border-darkblue relative flex justify-center items-center mb">
           <CircularProgress className="text-darkblue" size={90} thickness={1} />
           <iframe
@@ -87,7 +88,7 @@ function ProjectIntroduction({
           ></iframe>
         </div>
         {index !== youtubeURL.length - 1 && <br />}
-      </>
+      </React.Fragment>
     );
   });
 

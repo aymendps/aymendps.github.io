@@ -1,7 +1,7 @@
 {
   "name": "aymendps.github.io",
   "homepage": "https://aymendps.github.io/",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",

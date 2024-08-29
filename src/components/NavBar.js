@@ -13,12 +13,14 @@ import AwardsIcon from "@mui/icons-material/EmojiEvents";
 import ReferralsIcon from "@mui/icons-material/Reviews";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useLocation } from "react-router-dom";
 
 function NavBar() {
+  const location = useLocation();
   const navBarItems = [
     {
-      name: "Home",
-      link: "home#t",
+      name: "Industries",
+      link: "landing",
       icon: (
         <HomeIcon
           fontSize="medium"
@@ -119,11 +121,7 @@ function NavBar() {
         </Button>
       </HashLink>
     ) : (
-      <Link
-        key={item.name + item.link}
-        to={item.link}
-        className="w-1/5 h-full group"
-      >
+      <Link key={item.name + item.link} to={item.link} className="h-full group">
         <Button
           variant="text"
           className="w-full flex h-full justify-center items-center gap-2 normal-case"
@@ -159,48 +157,50 @@ function NavBar() {
     );
   });
 
-  return (
-    <>
-      {/* Navbar */}
-      <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-[70px] z-50 screen-md:hidden">
-        <HashLink to={"home#t"}>
-          <div className="relative">
-            <Typography
-              variant="h4"
-              className="text-black absolute text-transparent"
-              style={{ WebkitTextStroke: "1px white" }}
-            >
-              Aymen Hammami
-            </Typography>
-            <Typography
-              variant="h4"
-              className="text-white"
-              style={{
-                animationName: "liquid",
-                animationDuration: "3s",
-                animationTimingFunction: "ease-in-out",
-                animationIterationCount: "infinite",
-              }}
-            >
-              Aymen Hammami
-            </Typography>
-          </div>
-        </HashLink>
-        <div className="w-1/2 flex h-full justify-between">
-          {generateNavBarItems}
-          <div className="w-1/4 flex h-full justify-center items-center gap-2">
-            {generateNavBarIcons}
+  if (location.pathname !== "/landing" && location.pathname !== "/") {
+    return (
+      <>
+        {/* Navbar */}
+        <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-[70px] z-50 screen-md:hidden">
+          <HashLink to={"home#t"}>
+            <div className="relative">
+              <Typography
+                variant="h4"
+                className="text-black absolute text-transparent"
+                style={{ WebkitTextStroke: "1px white" }}
+              >
+                Aymen Hammami
+              </Typography>
+              <Typography
+                variant="h4"
+                className="text-white"
+                style={{
+                  animationName: "liquid",
+                  animationDuration: "3s",
+                  animationTimingFunction: "ease-in-out",
+                  animationIterationCount: "infinite",
+                }}
+              >
+                Aymen Hammami
+              </Typography>
+            </div>
+          </HashLink>
+          <div className="w-1/2 flex h-full justify-between">
+            {generateNavBarItems}
+            <div className="w-1/4 flex h-full justify-center items-center gap-2">
+              {generateNavBarIcons}
+            </div>
           </div>
         </div>
-      </div>
-      {/* Bottom Navigation */}
-      <div className="hidden fixed bottom-0 left-0 right-0 z-50 screen-md:block">
-        <BottomNavigation showLabels className="bg-black h-[70px]">
-          {generateBottomNavigationItems}
-        </BottomNavigation>
-      </div>
-    </>
-  );
+        {/* Bottom Navigation */}
+        <div className="hidden fixed bottom-0 left-0 right-0 z-50 screen-md:block">
+          <BottomNavigation showLabels className="bg-black h-[70px]">
+            {generateBottomNavigationItems}
+          </BottomNavigation>
+        </div>
+      </>
+    );
+  } else return <></>;
 }
 
 export default NavBar;

@@ -39,10 +39,10 @@ function ProjectThumbnail({
       if (isMobile) {
         setIsLoadingProjectPage(true);
         projectPageTimeout = setTimeout(() => {
-          navigate(pageURL);
+          navigate("/projects" + pageURL);
         }, 500);
       } else {
-        navigate(pageURL);
+        navigate("/projects" + pageURL);
       }
     }
   };

@@ -16,7 +16,7 @@ import ProjectLoading from "./ProjectLoading";
 import PreloadImages from "./PreloadImages";
 import Referrals from "./Referrals";
 
-function Home() {
+function Home({ industry }) {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
   const [isLoadingProjectPage, setIsLoadingProjectPage] = useState(false);
 
