@@ -12,7 +12,7 @@ function Landing({ setIndustry }) {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center h-[90vh] screen-md:h-auto screen-md:mt-[30%] screen-sm:mt-[45%]">
+    <div className="w-full flex flex-col justify-center items-center h-[95vh] screen-md:h-auto screen-md:mt-[30%] screen-sm:mt-[45%]">
       <div className="relative">
         <Typography
           variant={isMobile ? "h4" : "h2"}
@@ -38,7 +38,7 @@ function Landing({ setIndustry }) {
       </div>
       <Typography
         variant={isMobile ? "body2" : "h5"}
-        className="mt-2 mb-6 text-white font-normal text-center"
+        className="mt-2 mb-8 text-white font-normal text-center"
       >
         Pick which projects you would like to see.
       </Typography>
@@ -85,7 +85,7 @@ function Landing({ setIndustry }) {
             variant={isMobile ? "body1" : "h5"}
             className="text-darkblue font-bold"
           >
-            Show Both
+            Show All
           </Typography>
           <Typography
             variant={isMobile ? "body2" : "h6"}

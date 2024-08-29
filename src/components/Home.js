@@ -7,7 +7,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import ProjectList, { PINNED_PROJECTS } from "./ProjectList";
+import ProjectList, { getPinnedProjectsByIndustry } from "./ProjectList";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GithubIcon from "@mui/icons-material/GitHub";
@@ -207,41 +207,47 @@ function Home({ industry }) {
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify">
-          Hi there! I'm <b>Aymen</b>, a software engineering graduate with a
-          passion for games & programming, along with strong skills in Unreal
-          Engine, C++, Unity and C#.
-          <br />I have 1 year of experience through internships and part-time
-          jobs, which allowed me to sharpen my tech & soft skills and put them
-          into practice!
+          Hi there! I'm <span className="text-cyan-400">Aymen</span>, a software
+          engineer with a passion for programming games, tools, and apps. My
+          technical skills include <span className="text-cyan-400">C++</span>,{" "}
+          <span className="text-cyan-400">C#</span>, and game engines like{" "}
+          <span className="text-cyan-400">Unreal Engine</span> and{" "}
+          <span className="text-cyan-400">Unity</span>. I also have experience
+          in <span className="text-cyan-400">full-stack development</span> with{" "}
+          <span className="text-cyan-400">JavaScript</span>,{" "}
+          <span className="text-cyan-400">TypeScript</span>,{" "}
+          <span className="text-cyan-400">HTML</span>,{" "}
+          <span className="text-cyan-400">CSS</span>,{" "}
+          <span className="text-cyan-400">React</span>,{" "}
+          <span className="text-cyan-400">Express</span>,{" "}
+          <span className="text-cyan-400">NestJS</span>,{" "}
+          <span className="text-cyan-400">MongoDB</span>, and{" "}
+          <span className="text-cyan-400">MySQL</span>.
+          <br />
+          <br />
+          I've contributed to multiple projects both on my own and as part of a
+          team. Internships and part-time jobs have helped me sharpen my
+          technical and soft skills and apply them in real-world scenarios!
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify">
-          I've been fortunate enough to contribute to incredible projects both
-          on my own and as part of a team.
-          <br />I am familiar with the software development life cycle and
-          possess the ability to translate designers' concepts into readable and
-          maintainable code.
-        </Typography>
-        <br />
-        <Typography className="text-white  screen-md:text-justify">
-          As a good team player, I understand the significance of teamwork and
-          its vital role in achieving success.
-          <br />I have a proven track record of collaborating effectively with
-          others, as demonstrated by{" "}
+          I’m familiar with the software and game development life cycles and
+          can translate designers' ideas into readable and maintainable code. As
+          a team player, I understand the importance of teamwork in achieving
+          success and have a proven record of effective collaboration,
+          demonstrated by{" "}
           <HashLink
             smooth
             to="/home#awards"
-            className="text-cyan-400 hover:underline"
+            className="text-cyan-300 hover:underline"
           >
             <b>multiple awards</b>
           </HashLink>{" "}
-          I have received for my group projects.
+          for my group projects.
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify">
-          I'm eager to embark on a fulfilling career in game development and
-          software engineering.
-          <br />I can't wait to work alongside like-minded professionals and
+          I'm eager to work alongside like-minded professionals and to
           contribute to projects that push the boundaries of what is possible.
         </Typography>
       </div>
@@ -269,7 +275,7 @@ function Home({ industry }) {
         </Typography>
       </div>
       <ProjectList
-        projects={PINNED_PROJECTS}
+        projects={getPinnedProjectsByIndustry(industry)}
         setIsLoadingProjectPage={setIsLoadingProjectPage}
         navigate={navigate}
         isMobile={isMobile}

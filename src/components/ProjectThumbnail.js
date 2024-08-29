@@ -23,10 +23,14 @@ function ProjectThumbnail({
     return (
       <Chip
         key={title + tag}
-        label={tag}
+        label={tag.startsWith("$R") ? tag.substring(2) : tag}
         size="small"
         variant="filled"
-        className="bg-blue-900 text-white font-bold cursor-pointer"
+        className={
+          tag.startsWith("$R")
+            ? "bg-red-900 text-white font-bold cursor-pointer"
+            : "bg-blue-900 text-white font-bold cursor-pointer"
+        }
       ></Chip>
     );
   });

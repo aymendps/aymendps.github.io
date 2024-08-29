@@ -27,7 +27,7 @@ export const PRINCE_OF_PERSIA_REMAKE = {
     "Learned how to develop platformer games and adjust movements and mechanics to a 2D plane in a 3D environment",
     "Expanded my knowledge of Unreal Engine 5, Blueprints scripting, and C++ programming",
   ],
-  tags: ["Game Dev", "Internship", "UE 5", "Blueprints", "C++"],
+  tags: ["Game Dev", "Internship", "$R UE 5", "$R Blueprints", "$R C++"],
   pageURL: "/prince-of-persia-atari-remake",
   accessible: true,
   element: <PrinceOfPersiaAtariRemake />,
@@ -56,9 +56,9 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
     "Tool Dev",
     "Capstone Project",
     "Grade: Outstanding",
-    "UE 5",
-    "Blueprints",
-    "C++",
+    "$R UE 5",
+    "$R Blueprints",
+    "$R C++",
   ],
   pageURL: "/user-driven-3d-procedural-tool",
   accessible: true,
@@ -84,7 +84,7 @@ export const CAT_N_QUEST = {
     "Learned how to separate the inventory's system from its UI, and updating it dynamically based on the Observer pattern",
     "Expanded my knowledge of Unity, C#, and 2D open world game development",
   ],
-  tags: ["Game Dev", "Game Jam", "Unity", "C#"],
+  tags: ["Game Dev", "Game Jam", "$R Unity", "$R C#"],
   pageURL: "/cat-n-quest",
   accessible: true,
   element: <CatNQuest />,
@@ -109,7 +109,7 @@ export const ROBO_REPAIR = {
     "Learned how to implement physics-based interactions and respond to player input and instructions",
     "Learned how to design and implement levels that are engaging and fun to solve",
   ],
-  tags: ["Game Dev", "24H Hackathon", "Won Award", "Unity", "C#"],
+  tags: ["Game Dev", "24H Hackathon", "Won Award", "$R Unity", "$R C#"],
   pageURL: "/robo-repair",
   accessible: true,
   element: <RoboRepair />,
@@ -134,7 +134,7 @@ export const FOLLOW_THE_LIGHT = {
     "Developed proficiency in working with concepts like vectors, quaternions and rotations",
     "Learned how to implement physics-based interactions and respond to player input",
   ],
-  tags: ["Game Dev", "Personal", "Unity", "C#"],
+  tags: ["Game Dev", "Personal", "$R Unity", "$R C#"],
   pageURL: "/follow-the-light",
   accessible: true,
   element: <FollowTheLight />,
@@ -159,20 +159,45 @@ export const FMD = {
     "Learned how to implement flexible UI designs that seamlessly adapt to different screen resolutions.",
     "Expanded my knowledge of working with Augmented Reality.",
   ],
-  tags: ["AR", "University", "Mobile", "Unity", "Vuforia", "C#"],
+  tags: [
+    "Mobile Dev",
+    "University",
+    "$R AR",
+    "$R Unity",
+    "$R Vuforia",
+    "$R C#",
+  ],
   pageURL: "/fablab-machines-discovery",
   accessible: true,
   element: <FabLabMachinesDiscovery />,
 };
 
-export const PINNED_PROJECTS = [
+const GAMING_PINNED_PROJECTS = [
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   PRINCE_OF_PERSIA_REMAKE,
   FOLLOW_THE_LIGHT,
-  FMD,
   CAT_N_QUEST,
   ROBO_REPAIR,
 ];
+
+const SOFTWARE_PINNED_PROJECTS = [USER_DRIVEN_3D_PROCEDURAL_TOOL, FMD];
+
+const ALL_PINNED_PROJECTS = Array.from(
+  new Set([...GAMING_PINNED_PROJECTS, ...SOFTWARE_PINNED_PROJECTS])
+);
+
+export function getPinnedProjectsByIndustry(industry) {
+  switch (industry) {
+    case "gaming":
+      return GAMING_PINNED_PROJECTS;
+    case "software":
+      return SOFTWARE_PINNED_PROJECTS;
+    case "all":
+      return ALL_PINNED_PROJECTS;
+    default:
+      return ALL_PINNED_PROJECTS;
+  }
+}
 
 function ProjectList({
   projects,
