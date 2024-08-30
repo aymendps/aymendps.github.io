@@ -19,8 +19,8 @@ function NavBar() {
   const location = useLocation();
   const navBarItems = [
     {
-      name: "Industries",
-      link: "landing",
+      name: "Home",
+      link: "home#t",
       icon: (
         <HomeIcon
           fontSize="medium"
@@ -157,11 +157,11 @@ function NavBar() {
     );
   });
 
-  if (location.pathname !== "/landing" && location.pathname !== "/") {
+  if (location.pathname !== "/") {
     return (
       <>
         {/* Navbar */}
-        <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-[70px] z-50 screen-md:hidden">
+        <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-[70px] z-50 screen-lg:hidden">
           <HashLink to={"home#t"}>
             <div className="relative">
               <Typography
@@ -193,7 +193,7 @@ function NavBar() {
           </div>
         </div>
         {/* Bottom Navigation */}
-        <div className="hidden fixed bottom-0 left-0 right-0 z-50 screen-md:block">
+        <div className="hidden fixed bottom-0 left-0 right-0 z-50 screen-lg:block">
           <BottomNavigation showLabels className="bg-black h-[70px]">
             {generateBottomNavigationItems}
           </BottomNavigation>

@@ -199,6 +199,19 @@ export function getPinnedProjectsByIndustry(industry) {
   }
 }
 
+export function getProjectsNumberByIndustry(industry) {
+  switch (industry) {
+    case "gaming":
+      return GAMING_PINNED_PROJECTS.length;
+    case "software":
+      return SOFTWARE_PINNED_PROJECTS.length;
+    case "all":
+      return ALL_PINNED_PROJECTS.length;
+    default:
+      return ALL_PINNED_PROJECTS.length;
+  }
+}
+
 function ProjectList({
   projects,
   setIsLoadingProjectPage,

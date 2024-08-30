@@ -40,7 +40,7 @@ I am confident that Aymen would be a valuable asset to any development team`,
     return (
       <Card
         key={referral.name}
-        className="w-[30%] screen-md:w-[90%] border-cyan-400 border-2"
+        className="w-[30%] screen-lg:w-[90%] border-cyan-400 border-2"
         variant="outlined"
       >
         <CardHeader
@@ -73,7 +73,7 @@ I am confident that Aymen would be a valuable asset to any development team`,
 
   return (
     <section>
-      <div className="w-full m-auto flex justify-evenly pb-8 screen-md:flex-col screen-md:items-center screen-md:gap-6">
+      <div className="w-full m-auto flex justify-evenly pb-8 screen-lg:flex-col screen-lg:items-center screen-lg:gap-6">
         {generateReferralCards}
       </div>
     </section>

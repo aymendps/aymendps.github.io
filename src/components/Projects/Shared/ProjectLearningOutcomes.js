@@ -17,7 +17,7 @@ function ProjectLearningOutcomes({ outcomes = [] }) {
       <div className="w-[90%] m-auto py-6">
         <Typography
           variant="h4"
-          className="text-cyan-400 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
+          className="text-cyan-400 pb-2 screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
         >
           Learning Outcomes
         </Typography>

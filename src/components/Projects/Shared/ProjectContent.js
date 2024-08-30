@@ -25,14 +25,14 @@ function ProjectContent({ workDone = [] }) {
       >
         <div className="w-full relative">
           <div
-            className="absolute top-[-80px] left-0 screen-md:top-[-10px]"
+            className="absolute top-[-80px] left-0 screen-lg:top-[-10px]"
             id={work.id}
           ></div>
         </div>
         <div className="w-[90%] m-auto">
           <Typography
             variant="h4"
-            className="text-cyan-600 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
+            className="text-cyan-600 pb-2 screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
           >
             {work.title}
           </Typography>

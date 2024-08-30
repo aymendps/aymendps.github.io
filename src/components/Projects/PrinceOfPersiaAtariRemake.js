@@ -42,8 +42,8 @@ function PrinceOfPersiaAtariRemake() {
         stance. The actions that the player can take change drastically from one
         stance to another.
       </Typography>
-      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title="Equipping Sword">
             <BlueprintsHighlighter
               title="Equipping Sword"
@@ -59,7 +59,7 @@ function PrinceOfPersiaAtariRemake() {
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ppr/equip_unequip.mp4" type="video/mp4" />
           </video>
@@ -140,7 +140,7 @@ function PrinceOfPersiaAtariRemake() {
       <img
         alt=""
         src="/ppr/locomotion.png"
-        className="w-[40%] m-auto mt-4 mb-2 screen-md:w-full"
+        className="w-[40%] m-auto mt-4 mb-2 screen-lg:w-full"
       ></img>
       <Typography variant="caption" className="text-center block mb-4">
         Locomotion Animation State Machine
@@ -155,7 +155,7 @@ function PrinceOfPersiaAtariRemake() {
         <img
           alt=""
           src="/ppr/walkrun.png"
-          className="w-[75%] m-auto mt-4 mb-2 screen-md:w-full"
+          className="w-[75%] m-auto mt-4 mb-2 screen-lg:w-full"
         ></img>
         <Typography variant="caption" className="text-center block mb-4">
           Walk/Run Animation State
@@ -166,7 +166,7 @@ function PrinceOfPersiaAtariRemake() {
         the direction of the movement. The player can also <b>slow walk</b> to
         avoid traps like deadly spikes.
       </Typography>
-      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
         <video controls className="w-full">
           <source src="/ppr/locomotion_nofight.mp4" type="video/mp4" />
         </video>
@@ -181,8 +181,8 @@ function PrinceOfPersiaAtariRemake() {
         <b>"lock on"</b> the enemies. The player can decide to face another
         direction using the <b>"turn around"</b> action.
       </Typography>
-      <div className="flex justify-between mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ppr/locomotion_fight.mp4" type="video/mp4" />
           </video>
@@ -190,7 +190,7 @@ function PrinceOfPersiaAtariRemake() {
             Locomotion during fighting stance
           </Typography>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ppr/turnaround.mp4" type="video/mp4" />
           </video>
@@ -215,8 +215,8 @@ function PrinceOfPersiaAtariRemake() {
         performing cinematic actions like{" "}
         <b>zooming in/out and fading in/out to black.</b>
       </Typography>
-      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title="Update Camera Location">
             <BlueprintsHighlighter
               title="Update Camera Location"
@@ -232,7 +232,7 @@ function PrinceOfPersiaAtariRemake() {
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ppr/camera_offset.mp4" type="video/mp4" />
           </video>
@@ -241,8 +241,8 @@ function PrinceOfPersiaAtariRemake() {
           </Typography>
         </div>
       </div>
-      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title="Zoom Camera">
             <BlueprintsHighlighter
               title="Zoom Camera"
@@ -258,7 +258,7 @@ function PrinceOfPersiaAtariRemake() {
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ppr/camera_zoom.mp4" type="video/mp4" />
           </video>
@@ -279,7 +279,7 @@ function PrinceOfPersiaAtariRemake() {
       <img
         alt=""
         src="/ppr/mainsm.png"
-        className="w-[40%] m-auto mt-4 mb-2 screen-md:w-full"
+        className="w-[40%] m-auto mt-4 mb-2 screen-lg:w-full"
       ></img>
       <Typography variant="caption" className="text-center block mb-4">
         State Machine for jumping, hanging, climbing up & dropping down
@@ -303,7 +303,7 @@ function PrinceOfPersiaAtariRemake() {
         (feet in the air) or hang <b>in contact with a wall</b> (feet resting on
         the climbable element) using actor tags.
       </Typography>
-      <div className="w-3/4 m-auto screen-md:w-full mt-4">
+      <div className="w-3/4 m-auto screen-lg:w-full mt-4">
         <CodeMobileWrapper title="Climbable Wall Forward Trace">
           <BlueprintsHighlighter
             title="Climbable Wall Forward Trace"
@@ -323,7 +323,7 @@ function PrinceOfPersiaAtariRemake() {
         <b>the location of that surface</b> to calculate <b>the height</b> at
         which the player should be <b>positioned</b> when hanging onto it.
       </Typography>
-      <div className="w-3/4 m-auto screen-md:w-full mt-4">
+      <div className="w-3/4 m-auto screen-lg:w-full mt-4">
         <CodeMobileWrapper title="Climbable Wall Surface Trace">
           <BlueprintsHighlighter
             title="Climbable Wall Surface Trace"
@@ -342,8 +342,8 @@ function PrinceOfPersiaAtariRemake() {
         possible for the player to hang onto surfaces and climb up, along with
         the implementation of both these events.
       </Typography>
-      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title="Hang & Climb Events">
             <BlueprintsHighlighter
               title="Hang & Climb Events"
@@ -359,7 +359,7 @@ function PrinceOfPersiaAtariRemake() {
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ppr/traces.mp4" type="video/mp4" />
           </video>
@@ -383,8 +383,8 @@ function PrinceOfPersiaAtariRemake() {
         <b>movement direction</b>, they can dash <b>forward or backward</b> to
         evade attacks or approach the enemy quickly.
       </Typography>
-      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title="Input Action: Dashing">
             <BlueprintsHighlighter
               title="Input Action: Dashing"
@@ -400,7 +400,7 @@ function PrinceOfPersiaAtariRemake() {
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ppr/dashing.mp4" type="video/mp4" />
           </video>
@@ -415,8 +415,8 @@ function PrinceOfPersiaAtariRemake() {
         The player can also perform attacks quickly <b>after dashing</b> to
         encourage the dueling aspect of the game.
       </Typography>
-      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title="Attack Event">
             <BlueprintsHighlighter
               title="Attack Event"
@@ -432,7 +432,7 @@ function PrinceOfPersiaAtariRemake() {
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ppr/attacks.mp4" type="video/mp4" />
           </video>
@@ -451,8 +451,8 @@ function PrinceOfPersiaAtariRemake() {
         <b>during the notify window</b>, then the enemy will become staggered,
         and the player will not take any damage.
       </Typography>
-      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title="Parry Event">
             <BlueprintsHighlighter
               title="Parry Event"
@@ -468,7 +468,7 @@ function PrinceOfPersiaAtariRemake() {
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ppr/parry.mp4" type="video/mp4" />
           </video>
@@ -500,8 +500,8 @@ function PrinceOfPersiaAtariRemake() {
         <b>"Interactable" interface</b> and the <b>method</b> that finds the
         nearest interactable object.
       </Typography>
-      <div className="flex justify-between screen-md:flex-col mt-4">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between screen-lg:flex-col mt-4">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"Interactable Interface"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -545,7 +545,7 @@ public:
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"Find Interactable"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -619,8 +619,8 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
         <b>has concluded</b>, prompting the camera to zoom out and re-enabling
         input and the countdown timer.
       </Typography>
-      <div className="flex justify-between items-center mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title="Interaction Events">
             <BlueprintsHighlighter
               title="Interaction Events"
@@ -636,7 +636,7 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ppr/potion.mp4" type="video/mp4" />
           </video>

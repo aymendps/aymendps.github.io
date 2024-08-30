@@ -15,8 +15,11 @@ import Footer from "./Footer";
 import ProjectLoading from "./ProjectLoading";
 import PreloadImages from "./PreloadImages";
 import Referrals from "./Referrals";
+import ProjectSlider from "./Projects/ProjectSlider";
 
-function Home({ industry }) {
+function Home() {
+  const [industry, setIndustry] = useState("all");
+
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
   const [isLoadingProjectPage, setIsLoadingProjectPage] = useState(false);
 
@@ -35,19 +38,6 @@ function Home({ industry }) {
 
   const navigate = useNavigate();
   const isMobile = useMediaQuery("(max-width:768px)");
-
-  function industryToName(industry) {
-    switch (industry) {
-      case "gaming":
-        return "Gaming";
-      case "software":
-        return "Software & Web";
-      case "all":
-        return "All";
-      default:
-        return "All";
-    }
-  }
 
   useEffect(() => {
     if (window.location.href.includes("#projects")) {
@@ -128,9 +118,9 @@ function Home({ industry }) {
   ];
 
   const videoSection = (
-    <section className="relative h-[90vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center screen-md:mt-0 screen-md:h-[50vh]">
+    <section className="relative h-[90vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center screen-lg:mt-0 screen-lg:h-[50vh]">
       <div className="absolute w-full top-[-70px] left-0" id="t"></div>
-      <div className="h-[90%] aspect-video z-10 bg-[rgb(0,20,40)] border-2 border-gray-500 screen-md:w-full screen-md:h-auto">
+      <div className="h-[90%] aspect-video z-10 bg-[rgb(0,20,40)] border-2 border-gray-500 screen-sm:w-full screen-sm:h-auto">
         <video
           key="main-video"
           ref={mainVideoRef}
@@ -210,11 +200,11 @@ function Home({ industry }) {
   );
 
   const aboutSection = (
-    <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px] screen-md:translate-y-0 screen-md:pt-6">
+    <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px] screen-lg:translate-y-0 screen-lg:pt-6">
       <div className="m-auto w-[80%] pt-4 screen-md:w-[90%] screen-md:pb-12 text-center">
         <Typography
           variant="h2"
-          className="text-center text-white pb-4 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+          className="text-center text-white pb-4 screen-sm:text-4xl screen-md:text-5xl"
         >
           Welcome to my portfolio!
         </Typography>
@@ -270,7 +260,7 @@ function Home({ industry }) {
   const projectsSection = (
     <section className="w-full bg-white pb-12 relative">
       <div
-        className="absolute top-[-70px] left-0 screen-md:top-0"
+        className="absolute top-[-70px] left-0 screen-lg:top-0"
         id="projects"
       ></div>
       <div className="w-[90%] m-auto">
@@ -280,15 +270,7 @@ function Home({ industry }) {
         >
           Pinned Projects
         </Typography>
-        <Typography className="text-darkblue text-center mb-4 mt-2">
-          Currently viewing projects for: <b>{industryToName(industry)}</b>
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          className="text-center pb-6 text-cyan-600"
-        >
-          <b>Click</b> on a project to view it with more details
-        </Typography>
+        <ProjectSlider setIndustry={setIndustry} />
       </div>
       <ProjectList
         projects={getPinnedProjectsByIndustry(industry)}
@@ -325,7 +307,7 @@ function Home({ industry }) {
     <section className="w-full bg-darkblue pb-4">
       <div className="relative">
         <div
-          className="absolute top-[-70px] left-0 screen-md:top-0"
+          className="absolute top-[-70px] left-0 screen-lg:top-0"
           id="awards"
         ></div>
         <Typography
@@ -341,7 +323,7 @@ function Home({ industry }) {
             <a
               key={post.url}
               href={post.url}
-              className="block w-1/5 screen-md:w-[90%] mb-12 screen-md:mb-6"
+              className="block w-1/5 screen-lg:w-[40%] screen-sm:w-[90%] mb-12"
               target="_blank"
               rel="noreferrer"
             >
@@ -369,12 +351,12 @@ function Home({ industry }) {
       </div>
       <div className="relative">
         <div
-          className="absolute top-[-70px] left-0 screen-md:top-0"
+          className="absolute top-[-70px] left-0 screen-lg:top-0"
           id="referrals"
         ></div>
         <Typography
           variant="h2"
-          className="text-center text-white pb-12 screen-md:pt-6 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+          className="text-center text-white py-12 screen-md:pt-6 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
         >
           LinkedIn Referrals
         </Typography>

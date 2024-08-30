@@ -113,8 +113,8 @@ function FabLabMachinesDiscovery() {
         animation variables that can be set by the designers from within the
         Unity Editor.
       </Typography>
-      <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between screen-lg:flex-col mt-2 mb-4">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"UIAnimation"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -164,7 +164,7 @@ namespace Animations
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"UIAnimationProps"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -204,8 +204,8 @@ namespace Animations
         This can then be extended by other animation classes, such as the code
         snippet below, which belongs to the <b>Translation animation.</b>
       </Typography>
-      <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between screen-lg:flex-col mt-2 mb-4">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"TranslationAnimation"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -239,11 +239,11 @@ namespace Animations
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <img
             alt=""
             src="/fmd/animation_editor.png"
-            className="h-[450px] m-auto my-[0.4em] screen-md:h-auto object-contain"
+            className="h-[450px] m-auto my-[0.4em] screen-lg:h-auto object-contain"
           />
           <Typography variant="caption" className="text-center block">
             Multiple animation components working together and tweakable from
@@ -290,8 +290,8 @@ namespace Animations
         while <b>PanelPagination</b>, which controls the pagination section at
         the bottom, uses it to <b>update its UI accordingly.</b>
       </Typography>
-      <div className="flex justify-between screen-md:flex-col mt-2">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between screen-lg:flex-col mt-2">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"PanelSwiper"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -400,7 +400,7 @@ namespace Onboarding_Scene
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"PanelSwipeable"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -472,7 +472,7 @@ namespace Onboarding_Scene
         to explain to my team and to the stakeholders the way these technologies
         work together.
       </Typography>
-      <div className="w-[40%] m-auto screen-md:w-full mt-4 mb-2">
+      <div className="w-[40%] m-auto screen-lg:w-full mt-4 mb-2">
         <img
           alt=""
           src="/fmd/component_diagram.png"
@@ -528,8 +528,8 @@ namespace Onboarding_Scene
           </Typography>
         </li>
       </ul>
-      <div className="w-full flex justify-between mt-2 screen-md:flex-col">
-        <div className="w-[65%] screen-md:w-full">
+      <div className="w-full flex justify-between mt-2 screen-lg:flex-col">
+        <div className="w-[65%] screen-lg:w-full">
           <CodeMobileWrapper title={"VuforiaPermissionErrorHandler"}>
             <SyntaxHighlighter
               customStyle={{
@@ -610,7 +610,7 @@ namespace Vuforia
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[30%] screen-md:w-full">
+        <div className="w-[30%] screen-lg:w-full">
           <div className="w-fit h-[450px] m-auto mb-2 mt-2">
             <video controls className="h-[450px]">
               <source src="/fmd/camera_permission.mp4" type="video/mp4" />
@@ -670,8 +670,8 @@ namespace Vuforia
         <b>Popup class</b>, with a <b>custom editor script</b> that only shows
         the selected type's relevant variables:
       </Typography>
-      <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between screen-lg:flex-col mt-2 mb-4">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"Popup"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -717,7 +717,7 @@ namespace Popups
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"PopupCustomEditor"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -798,7 +798,7 @@ namespace Editor.Animations
         <br />I implemented a <b>Singleton class</b> that handles the animation
         of this UI, as well as updating its colors and its text components.
       </Typography>
-      <div className="w-3/4 m-auto screen-md:w-full mt-4">
+      <div className="w-3/4 m-auto screen-lg:w-full mt-4">
         <CodeMobileWrapper title={"PopupInfoUI"}>
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "450px" }}
@@ -978,7 +978,7 @@ namespace Popups
         UI will update its content and theme to comply with the popup's
         information and color.
       </Typography>
-      <div className="flex justify-evenly mt-4 screen-md:flex-col">
+      <div className="flex justify-evenly mt-4 screen-lg:flex-col">
         <div>
           <div className="w-fit m-auto">
             <video controls className="h-[450px]">
@@ -1020,7 +1020,7 @@ namespace Popups
         tapped/clicked, the "Play Simulation" popup plays a 3D animation that
         showcases how the machine works.
       </Typography>
-      <div className="flex justify-evenly mt-4 screen-md:flex-col">
+      <div className="flex justify-evenly mt-4 screen-lg:flex-col">
         <div>
           <div className="w-fit m-auto">
             <video controls className="h-[450px]">
@@ -1062,8 +1062,8 @@ namespace Popups
         same structure and calling the same event makes it{" "}
         <b>very easy to play and reset the animation multiple times</b>.
       </Typography>
-      <div className="flex justify-between screen-md:flex-col mt-2 mb-4 items-end">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between screen-lg:flex-col mt-2 mb-4 items-end">
+        <div className="w-[48%] screen-lg:w-full">
           <img
             alt=""
             src="/fmd/animation.png"
@@ -1073,7 +1073,7 @@ namespace Popups
             All animations have an Exit event called in the end
           </Typography>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <img
             alt=""
             src="/fmd/animator.png"
@@ -1099,7 +1099,7 @@ namespace Popups
         Below is the code snippet for the <b>MachineSimulation</b> class that
         handles the points mentioned above.
       </Typography>
-      <div className="w-3/4 m-auto screen-md:w-full mt-4">
+      <div className="w-3/4 m-auto screen-lg:w-full mt-4">
         <CodeMobileWrapper title={"MachineSimulation"}>
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "450px" }}

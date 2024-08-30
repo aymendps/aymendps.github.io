@@ -11,7 +11,7 @@ function CodeMobileWrapper({ children, title = "Missing Title" }) {
       <Button
         startIcon={hidden ? <CodeIcon /> : <CodeOffIcon />}
         variant="contained"
-        className="hidden max-w-full screen-md:inline-flex normal-case screen-md:mt-2 mb-2"
+        className="hidden max-w-full screen-lg:inline-flex normal-case screen-lg:mt-2 mb-2"
         onClick={() => {
           setHidden(!hidden);
         }}
@@ -22,7 +22,7 @@ function CodeMobileWrapper({ children, title = "Missing Title" }) {
       </Button>
       <div
         className={
-          hidden ? "w-full screen-md:h-0 screen-md:overflow-hidden" : "w-full"
+          hidden ? "w-full screen-lg:h-0 screen-lg:overflow-hidden" : "w-full"
         }
       >
         {children}

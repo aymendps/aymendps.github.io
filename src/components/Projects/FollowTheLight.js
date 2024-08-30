@@ -42,8 +42,8 @@ function FollowTheLight() {
         made to introduce a level of <b>challenge</b> for the player in
         controlling the position of the ball.
       </Typography>
-      <div className="flex justify-between mt-4 screen-md:flex-col">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ftl/moving.mp4" type="video/mp4" />
           </video>
@@ -51,7 +51,7 @@ function FollowTheLight() {
             Showcasing movement by exerting force
           </Typography>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <video controls className="w-full">
             <source src="/ftl/braking.mp4" type="video/mp4" />
           </video>
@@ -72,7 +72,7 @@ function FollowTheLight() {
         it's in the air, with with less control compared to when it's on the
         ground.
       </Typography>
-      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
         <video controls className="w-full">
           <source src="/ftl/normal bounce.mp4" type="video/mp4" />
         </video>
@@ -91,7 +91,7 @@ function FollowTheLight() {
         However, there is a limit to how many times it can bounce and how high
         it can go, so the game doesn't break.
       </Typography>
-      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
         <video controls className="w-full">
           <source src="/ftl/rep bounce.mp4" type="video/mp4" />
         </video>
@@ -110,7 +110,7 @@ function FollowTheLight() {
         As long as the ball is clinging to one of the walls, it can either slide
         down or bounce.
       </Typography>
-      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
         <video controls className="w-full">
           <source src="/ftl/hopping.mp4" type="video/mp4" />
         </video>
@@ -127,7 +127,7 @@ function FollowTheLight() {
         <b>snapping</b> it to one of the preset angles. This can be helpful when
         trying to find surfaces to move/bounce towards.
       </Typography>
-      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
         <video controls className="w-full">
           <source src="/ftl/camera.mp4" type="video/mp4" />
         </video>
@@ -144,7 +144,7 @@ function FollowTheLight() {
         <b>respawn at the start of the level</b>, where the player will have to
         try and get out of the maze once more.
       </Typography>
-      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
         <video controls className="w-full">
           <source src="/ftl/death.mp4" type="video/mp4" />
         </video>
@@ -187,7 +187,7 @@ function FollowTheLight() {
       <img
         alt=""
         src="/ftl/fsm.png"
-        className="w-[40%] m-auto mt-4 mb-2 screen-md:w-full"
+        className="w-[40%] m-auto mt-4 mb-2 screen-lg:w-full"
       ></img>
       <Typography variant="caption" className="text-center block mb-4">
         Finite State Machine of the Ball Character
@@ -240,7 +240,7 @@ function FollowTheLight() {
         Monobehaviour class, and a function that allows the current state to{" "}
         <b>transition</b> to another one.
       </Typography>
-      <div className="w-[69%] screen-md:w-full m-auto mt-4 mb-4">
+      <div className="w-[69%] screen-lg:w-full m-auto mt-4 mb-4">
         <CodeMobileWrapper title="BallFiniteStateMachine">
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "450px" }}
@@ -317,7 +317,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         <b>BallBaseState</b>, that all the other states would derive from. This
         ensures that all the states have the same structure.
       </Typography>
-      <div className="w-[69%] screen-md:w-full m-auto mt-4 mb-4">
+      <div className="w-[69%] screen-lg:w-full m-auto mt-4 mb-4">
         <CodeMobileWrapper title="BallBaseState">
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "360px" }}
@@ -352,8 +352,8 @@ namespace Gameplay.Ball_Finite_State_Machine
         Below you can find the implementation of two states: The first handles
         braking and the second handles falling.
       </Typography>
-      <div className="flex justify-between screen-md:flex-col mt-4">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between screen-lg:flex-col mt-4">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"BallBrakingState"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -403,7 +403,7 @@ namespace Gameplay.Ball_Finite_State_Machine
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"BallFallingState"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -482,7 +482,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         Below is a video that shows the <b>initial problem</b> with the ball's
         movement:
       </Typography>
-      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
         <video controls className="w-full">
           <source src="/ftl/norelative.mp4" type="video/mp4" />
         </video>
@@ -503,8 +503,8 @@ namespace Gameplay.Ball_Finite_State_Machine
         <b>rotate the vector accordingly</b>, aligning it with the perspective
         of the player's camera.
       </Typography>
-      <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between screen-lg:flex-col mt-2 mb-4">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"Quaternion Rotation"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -546,7 +546,7 @@ namespace Gameplay.Ball_Finite_State_Machine
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"Ball Movement"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -584,7 +584,7 @@ namespace Gameplay.Ball_Finite_State_Machine
       <Typography className="leading-5 text-justify">
         Below is a video that shows the fixed camera-relative player movement:
       </Typography>
-      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
         <video controls className="w-full">
           <source src="/ftl/relative.mp4" type="video/mp4" />
         </video>
@@ -623,7 +623,7 @@ namespace Gameplay.Ball_Finite_State_Machine
       <img
         alt=""
         src="/ftl/input.png"
-        className="w-[45%] m-auto mt-4 mb-2 screen-md:w-full"
+        className="w-[45%] m-auto mt-4 mb-2 screen-lg:w-full"
       ></img>
       <Typography variant="caption" className="text-center block mb-4">
         Player Input Actions (PC & Gamepad)
@@ -654,7 +654,7 @@ namespace Gameplay.Ball_Finite_State_Machine
       <Typography className="leading-5 text-justify">
         Below is the code snippet of the aforementioned InputManager class.
       </Typography>
-      <div className="w-[75%] screen-md:w-full m-auto mt-4 mb-4">
+      <div className="w-[75%] screen-lg:w-full m-auto mt-4 mb-4">
         <CodeMobileWrapper title="InputManager">
           <SyntaxHighlighter
             customStyle={{ width: "100%", height: "450px" }}
@@ -760,8 +760,8 @@ namespace Managers
         ball has entered a specific trigger collider, in other words when the
         ball is in a particular position.
       </Typography>
-      <div className="flex justify-between screen-md:flex-col mt-2 mb-4">
-        <div className="w-[48%] screen-md:w-full">
+      <div className="flex justify-between screen-lg:flex-col mt-2 mb-4">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"MovingPlatform"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -851,7 +851,7 @@ namespace Gameplay.Platforms
             </Typography>
           </CodeMobileWrapper>
         </div>
-        <div className="w-[48%] screen-md:w-full">
+        <div className="w-[48%] screen-lg:w-full">
           <CodeMobileWrapper title={"BallEnterTriggerEvent"}>
             <SyntaxHighlighter
               customStyle={{ width: "100%", height: "450px" }}
@@ -895,7 +895,7 @@ namespace Gameplay.Platforms
         The video below showcases the results of the aforementioned code
         implementation.
       </Typography>
-      <div className="w-1/2 m-auto mt-4 screen-md:w-full">
+      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
         <video controls className="w-full">
           <source src="/ftl/moving platform.mp4" type="video/mp4" />
         </video>

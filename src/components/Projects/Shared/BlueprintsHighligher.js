@@ -7,7 +7,7 @@ function BlueprintsHighligher({
   return (
     <iframe
       title={title}
-      className="screen-md:w-full"
+      className="screen-lg:w-full"
       src={src}
       style={{ height: height, width: width }}
       allowFullScreen={true}

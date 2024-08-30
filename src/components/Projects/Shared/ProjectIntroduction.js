@@ -94,34 +94,34 @@ function ProjectIntroduction({
 
   return (
     <>
-      <section className="w-full bg-white pt-[70px] screen-md:pt-0">
+      <section className="w-full bg-white pt-[70px] screen-lg:pt-0">
         <div className="w-[90%] m-auto pb-4">
           <Typography
             variant="h2"
-            className="text-darkblue text-center pt-12 screen-md:pt-6 screen-sm:text-3xl screen-md:font-bold screen-md:text-5xl"
+            className="text-darkblue text-center pt-12 screen-lg:pt-6 screen-sm:text-3xl screen-lg:font-bold screen-lg:text-5xl"
           >
             {title}
           </Typography>
         </div>
-        <div className="w-[90%] m-auto flex justify-center gap-2 flex-wrap pb-12 screen-md:pb-6 screen-sm:w-[98%] screen-sm:gap-1">
+        <div className="w-[90%] m-auto flex justify-center gap-2 flex-wrap pb-12 screen-lg:pb-6 screen-sm:w-[98%] screen-sm:gap-1">
           {generateTags}
         </div>
-        <div className="w-[90%] m-auto hidden screen-md:block">
+        <div className="w-[90%] m-auto hidden screen-lg:block">
           <Typography
             variant="h4"
-            className="text-cyan-600 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
+            className="text-cyan-600 pb-2 screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
           >
             {youtubeURL.length > 1 ? "Demo Videos" : "Demo Video"}
           </Typography>
         </div>
-        <div className="w-[90%] m-auto pb-8 flex justify-between screen-md:block screen-md:pb-6">
-          <div className="w-[70%] screen-md:w-full">
+        <div className="w-[90%] m-auto pb-8 flex justify-between screen-lg:block screen-lg:pb-6">
+          <div className="w-[70%] screen-lg:w-full">
             {generateYoutubeVideos}
           </div>
-          <div className="w-[25%] screen-md:w-full screen-md:pt-4">
+          <div className="w-[25%] screen-lg:w-full screen-lg:pt-4">
             <Typography
               variant="h4"
-              className="text-cyan-600 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
+              className="text-cyan-600 pb-2 screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
             >
               Description
             </Typography>
@@ -133,7 +133,7 @@ function ProjectIntroduction({
         <div className="w-[90%] m-auto pb-6">
           <Typography
             variant="h4"
-            className="text-cyan-600 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
+            className="text-cyan-600 pb-2 screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
           >
             Useful Links
           </Typography>
@@ -143,7 +143,7 @@ function ProjectIntroduction({
           <div className="w-[90%] m-auto pt-6" id="generated-work">
             <Typography
               variant="h4"
-              className="text-cyan-400 pb-2 screen-sm:text-2xl screen-md:text-3xl screen-md:font-bold"
+              className="text-cyan-400 pb-2 screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
             >
               {solo ? "Highlighted Work" : "Contributions"}
             </Typography>
