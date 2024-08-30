@@ -6,6 +6,8 @@ function Footer() {
       <Typography className="text-white text-center">
         Copyright © 2024 by Aymen HAMMAMI
         <br />
+        Made with ❤️ using React
+        <br />
         <a
           href="https://www.linkedin.com/in/aymendps/"
           target="_blank"
