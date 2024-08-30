@@ -3,10 +3,12 @@ import { HashLink } from "react-router-hash-link";
 import ProjectBackToTopButton from "./ProjectBackToTopButton";
 import ProjectLearningOutcomes from "./ProjectLearningOutcomes";
 import React from "react";
+import PicturesViewer from "./PicturesViewer";
 
 function ProjectIntroduction({
   title,
-  youtubeURL,
+  youtubeURL = [],
+  picturesURL = [],
   projectType,
   role,
   solo,
@@ -111,12 +113,20 @@ function ProjectIntroduction({
             variant="h4"
             className="text-cyan-600 pb-2 screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
           >
-            {youtubeURL.length > 1 ? "Demo Videos" : "Demo Video"}
+            {youtubeURL.length > 0
+              ? youtubeURL.length > 1
+                ? "Demo Videos"
+                : "Demo Video"
+              : "Demo Pictures"}
           </Typography>
         </div>
         <div className="w-[90%] m-auto pb-8 flex justify-between screen-lg:block screen-lg:pb-6">
           <div className="w-[70%] screen-lg:w-full">
-            {generateYoutubeVideos}
+            {youtubeURL.length > 0 ? (
+              generateYoutubeVideos
+            ) : (
+              <PicturesViewer picturesURL={picturesURL} />
+            )}
           </div>
           <div className="w-[25%] screen-lg:w-full screen-lg:pt-4">
             <Typography

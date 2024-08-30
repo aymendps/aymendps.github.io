@@ -6,6 +6,7 @@ import PrinceOfPersiaAtariRemake from "./Projects/PrinceOfPersiaAtariRemake";
 import UserDriven3DProceduralTool from "./Projects/UserDriven3DProceduralTool";
 import CatNQuest from "./Projects/CatNQuest";
 import RoboRepair from "./Projects/RoboRepair";
+import FileManagementSystem from "./Projects/FileManagementSystem";
 
 export const PRINCE_OF_PERSIA_REMAKE = {
   title: "Prince Of Persia Remake",
@@ -54,6 +55,7 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
   ],
   tags: [
     "Tool Dev",
+    "Internship",
     "Capstone Project",
     "Grade: Outstanding",
     "$R UE 5",
@@ -99,8 +101,8 @@ export const ROBO_REPAIR = {
     "Collaboration & Task Management",
     "Puzzle Levels & Mechanics",
     "Physics-Based Interactions",
-    "Interpretation of Programming Commands",
-    "UI & Tutorials of Programming Commands",
+    "Interpretation of User Commands",
+    "UI & Tutorials for User Commands",
   ],
   outcomes: [
     "Gained experience in working within a team, collaborating, and communicating ideas fluently",
@@ -148,20 +150,21 @@ export const FMD = {
   workDone: [
     "Scrum Duties & Collaboration",
     "UI Events & Animations in C#",
-    "Augmented Reality With Vuforia",
+    "Augmented Reality with Vuforia",
     "AR Popup System",
     "3D Machine Simulation",
   ],
   outcomes: [
-    "Gained valuable experience in teamwork, collaboration, and organization, while effectively translating designer ideas into maintainable code.",
-    "Learned the significance of applying design patterns when creating classes, enhancing the readability and structure of my code.",
-    "Built an engaging mobile experience in Unity, gaining new mobile development skills in the process.",
-    "Learned how to implement flexible UI designs that seamlessly adapt to different screen resolutions.",
-    "Expanded my knowledge of working with Augmented Reality.",
+    "Gained valuable experience in teamwork, collaboration, and organization, while effectively translating designer ideas into maintainable code",
+    "Learned the significance of applying design patterns when creating classes, enhancing the readability and structure of my code",
+    "Built an engaging mobile experience in Unity, gaining new mobile development skills in the process",
+    "Learned how to implement flexible UI designs that seamlessly adapt to different screen resolutions",
+    "Expanded my knowledge of working with Augmented Reality",
   ],
   tags: [
     "Mobile Dev",
     "University",
+    "Won Award",
     "$R AR",
     "$R Unity",
     "$R Vuforia",
@@ -172,6 +175,55 @@ export const FMD = {
   element: <FabLabMachinesDiscovery />,
 };
 
+export const FILE_MANAGER = {
+  title: "File Management System",
+  subtitle: "Feature of a SAAS Application",
+  thumbnail: "/thumbnails/fm.png",
+  solo: false,
+  workDone: [
+    "Microservices Architecture",
+    "File Upload Based on Queue System",
+    "User Access & Sharing Permissions",
+    "Folder Hierarchies & Customization",
+    "Activity Logs & System Emails",
+  ],
+  outcomes: [
+    "Learned advantages of microservices over monolith, and how to design and implement a scalable system",
+    "Gained experience in working with AWS S3, and how to manage files and folders efficiently",
+    "Learned optimization techniques for file downloads and previews, such as caching and lazy loading",
+    "Gained skills in frontend & backend development, and how to integrate them seamlessly and securely",
+    "Became better at achieving deadlines and collaborating with team members, especially when working in an agile environment",
+  ],
+  tags: [
+    "Full-Stack Dev",
+    "Professional",
+    "$R JS",
+    "$R TS",
+    "$R AWS S3",
+    "$R React",
+    "$R Express",
+    "$R NestJS",
+    "$R MySQL",
+  ],
+  picturesURL: [
+    "/fm/1.png",
+    "/fm/2.png",
+    "/fm/3.png",
+    "/fm/4.png",
+    "/fm/5.png",
+    "/fm/6.png",
+    "/fm/7.png",
+    "/fm/8.png",
+    "/fm/9.png",
+    "/fm/10.png",
+    "/fm/11.png",
+    "/fm/12.png",
+  ],
+  pageURL: "/file-management-system",
+  accessible: true,
+  element: <FileManagementSystem />,
+};
+
 const GAMING_PINNED_PROJECTS = [
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   PRINCE_OF_PERSIA_REMAKE,
@@ -180,7 +232,11 @@ const GAMING_PINNED_PROJECTS = [
   ROBO_REPAIR,
 ];
 
-const SOFTWARE_PINNED_PROJECTS = [USER_DRIVEN_3D_PROCEDURAL_TOOL, FMD];
+const SOFTWARE_PINNED_PROJECTS = [
+  USER_DRIVEN_3D_PROCEDURAL_TOOL,
+  FMD,
+  FILE_MANAGER,
+];
 
 const ALL_PINNED_PROJECTS = Array.from(
   new Set([...GAMING_PINNED_PROJECTS, ...SOFTWARE_PINNED_PROJECTS])
