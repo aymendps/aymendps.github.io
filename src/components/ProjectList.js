@@ -7,6 +7,7 @@ import UserDriven3DProceduralTool from "./Projects/UserDriven3DProceduralTool";
 import CatNQuest from "./Projects/CatNQuest";
 import RoboRepair from "./Projects/RoboRepair";
 import FileManagementSystem from "./Projects/FileManagementSystem";
+import StudentSpecialtyAdvisor from "./Projects/StudentSpecialtyAdvisor";
 
 export const PRINCE_OF_PERSIA_REMAKE = {
   title: "Prince Of Persia Remake",
@@ -224,6 +225,40 @@ export const FILE_MANAGER = {
   element: <FileManagementSystem />,
 };
 
+export const STUDENT_SPECIALTY_ADVISOR = {
+  title: "Student Specialty Advisor",
+  subtitle: "Web Application",
+  thumbnail: "/thumbnails/ssa.jpg",
+  solo: false,
+  workDone: [
+    "Responsive UI on Mobile & Desktop",
+    "Verified Account System & User Roles",
+    "Meeting Scheduler & Email Notifications",
+    "User Achievements & Progress Tracking",
+    "Admin Dashboard & Statistics",
+  ],
+  outcomes: [
+    "Learned how to create a responsive UI that works well on both desktop and mobile devices",
+    "Gained experience with account creation, verification, authentication, and role-based access control",
+    "Learned how to implement a date & time based scheduler and how to automate email notifications for users",
+    "Understood how to keep users engaged by developing features like achievements and progress tracking",
+    "Learned how to create an admin dashboard with multiple CRUD operations and statistics",
+  ],
+  tags: [
+    "Full-Stack Dev",
+    "University",
+    "Won Award",
+    "$R JS",
+    "$R React",
+    "$R Express",
+    "$R MongoDB",
+    "$R Heroku",
+  ],
+  pageURL: "/student-specialty-advisor",
+  accessible: true,
+  element: <StudentSpecialtyAdvisor />,
+};
+
 const GAMING_PINNED_PROJECTS = [
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   PRINCE_OF_PERSIA_REMAKE,
@@ -235,6 +270,7 @@ const GAMING_PINNED_PROJECTS = [
 const SOFTWARE_PINNED_PROJECTS = [
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   FMD,
+  STUDENT_SPECIALTY_ADVISOR,
   FILE_MANAGER,
 ];
 
