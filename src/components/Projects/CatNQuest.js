@@ -32,7 +32,7 @@ function CatNQuest() {
         title={CAT_N_QUEST.title}
         youtubeURL={["https://www.youtube.com/embed/9XD9TwuPIiY"]}
         projectType="Game Jam"
-        role="Gameplay Programmer"
+        role="Game Programmer"
         solo={CAT_N_QUEST.solo}
         platform="PC | WebGL"
         softwareUsed="Unity | C#"

@@ -36,7 +36,7 @@ function RoboRepair() {
         title={ROBO_REPAIR.title}
         youtubeURL={["https://www.youtube.com/embed/YC9Op2Jxoi0"]}
         projectType="24H Game Dev Hackathon"
-        role="Gameplay Programmer"
+        role="Game Programmer"
         solo={ROBO_REPAIR.solo}
         platform="PC | WebGL"
         softwareUsed="Unity | C#"

@@ -1185,14 +1185,14 @@ namespace Popups
         title={FMD.title}
         youtubeURL={["https://www.youtube-nocookie.com/embed/VfGc1t6Qj3s"]}
         projectType="University"
-        role="Tools Programmer"
+        role="Unity Programmer"
         solo={FMD.solo}
         platform="Android | iOS"
         softwareUsed="Unity | C# | Vuforia"
         usefulLinks={usefulLinks}
         workDone={workDone}
         outcomes={FMD.outcomes}
-        description={`“FabLab Machines Discovery” is an Augmented Reality (AR) application that runs on mobile devices. The project was chosen as one of the best senior software engineering projects of the year.
+        description={`“FabLab Machines Discovery” is an Augmented Reality (AR) application that runs on mobile devices. The project was chosen as the best senior software engineering project of the year.
 
         Its goal is to help any visitor or member of Orange's "FabSpace" learn about machines by scanning them with their camera.
         

@@ -31,7 +31,7 @@ function FileManagementSystem() {
         projectType="Professional"
         role="Full-Stack Developer"
         solo={FILE_MANAGER.solo}
-        platform="SAAS | Web Application"
+        platform="Web Application"
         softwareUsed="JS | TS | AWS S3 | React | Express | NestJS | MySQL"
         usefulLinks={usefulLinks}
         workDone={workDone}
