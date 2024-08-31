@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Tabs, Tab, Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import { getProjectsNumberByIndustry } from "../ProjectList";
