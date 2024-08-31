@@ -37,6 +37,7 @@ function PicturesViewer({ picturesURL = [] }) {
       onTouchEnd={handleTouchEnd}
     >
       <img
+        key={"image-" + picturesURL[currentPicture]}
         src={picturesURL[currentPicture]}
         alt=""
         className="w-full h-full object-contain select-none pointer-events-none"
