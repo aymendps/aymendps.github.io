@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tabs, Tab, Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import { getProjectsNumberByIndustry } from "../ProjectList";
@@ -29,8 +29,21 @@ const CustomTab = styled(Tab)(({ theme, selected }) => ({
   zIndex: 1,
 }));
 
-const ProjectSlider = ({ setIndustry }) => {
-  const [value, setValue] = useState(0);
+const industryToIndex = (value) => {
+  switch (value) {
+    case "all":
+      return 0;
+    case "gaming":
+      return 1;
+    case "software":
+      return 2;
+    default:
+      return 0;
+  }
+};
+
+const ProjectSlider = ({ industry, setIndustry }) => {
+  const [value, setValue] = useState(industryToIndex(industry));
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

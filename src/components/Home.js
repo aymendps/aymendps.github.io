@@ -17,9 +17,7 @@ import PreloadImages from "./PreloadImages";
 import Referrals from "./Referrals";
 import ProjectSlider from "./Projects/ProjectSlider";
 
-function Home() {
-  const [industry, setIndustry] = useState("all");
-
+function Home({ industry, setIndustry }) {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
   const [isLoadingProjectPage, setIsLoadingProjectPage] = useState(false);
 
@@ -270,7 +268,7 @@ function Home() {
         >
           Pinned Projects
         </Typography>
-        <ProjectSlider setIndustry={setIndustry} />
+        <ProjectSlider industry={industry} setIndustry={setIndustry} />
       </div>
       <ProjectList
         projects={getPinnedProjectsByIndustry(industry)}
