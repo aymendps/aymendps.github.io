@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tabs, Tab, Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import { getProjectsNumberByIndustry } from "../ProjectList";
+import { useSearchParams } from "react-router-dom";
 
 // Custom styled Tabs component with border, border-radius, and custom styles
 const CustomTabs = styled(Tabs)({
@@ -43,6 +44,9 @@ const industryToIndex = (value) => {
 };
 
 const ProjectSlider = ({ industry, setIndustry }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const projectsPreference = searchParams.get("pref");
+
   const [value, setValue] = useState(industryToIndex(industry));
 
   const handleChange = (event, newValue) => {
@@ -62,6 +66,20 @@ const ProjectSlider = ({ industry, setIndustry }) => {
         break;
     }
   };
+
+  /* eslint-disable */
+  useEffect(() => {
+    if (projectsPreference === "web" || projectsPreference === "software") {
+      handleChange(null, 2);
+    } else if (projectsPreference === "gaming") {
+      handleChange(null, 1);
+    }
+    setSearchParams((params) => {
+      params.delete("pref");
+      return params;
+    });
+  }, []);
+  /* eslint-enable */
 
   return (
     <>
