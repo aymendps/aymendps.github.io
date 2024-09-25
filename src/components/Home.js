@@ -209,13 +209,15 @@ function Home({ industry, setIndustry }) {
         <br />
         <Typography className="text-white  screen-md:text-justify">
           Hi there! I'm <span className="text-cyan-400">Aymen</span>, a software
-          engineer with a passion for programming games, tools, and apps. My
-          technical skills include <span className="text-cyan-400">C++</span>,{" "}
-          <span className="text-cyan-400">C#</span>, and game engines like{" "}
-          <span className="text-cyan-400">Unreal Engine</span> and{" "}
-          <span className="text-cyan-400">Unity</span>. I also have experience
-          in <span className="text-cyan-400">full-stack development</span> with{" "}
-          <span className="text-cyan-400">JavaScript</span>,{" "}
+          engineer with a passion for programming games, tools, and apps. I have
+          experience in programming with{" "}
+          <span className="text-cyan-400">C++</span>,{" "}
+          <span className="text-cyan-400">C#</span>, and working with game
+          engines such as <span className="text-cyan-400">Unreal Engine</span>{" "}
+          and <span className="text-cyan-400">Unity</span>. I also have
+          experience in{" "}
+          <span className="text-cyan-400">full-stack development</span> with
+          technologies like <span className="text-cyan-400">JavaScript</span>,{" "}
           <span className="text-cyan-400">TypeScript</span>,{" "}
           <span className="text-cyan-400">HTML</span>,{" "}
           <span className="text-cyan-400">CSS</span>,{" "}
@@ -227,8 +229,8 @@ function Home({ industry, setIndustry }) {
           <br />
           <br />
           I've contributed to multiple projects both on my own and as part of a
-          team. Internships and part-time jobs have helped me sharpen my
-          technical and soft skills and apply them in real-world scenarios!
+          team. Internships and part-time jobs have also helped me sharpen my
+          technical and soft skills.
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify">
