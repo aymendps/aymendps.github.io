@@ -208,9 +208,12 @@ function Home({ industry, setIndustry }) {
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify">
-          Hi there! I'm <span className="text-cyan-400">Aymen</span>, a software
-          engineer with a passion for programming games, tools, and apps. I have
-          experience in programming with{" "}
+          Hi there! I'm <span className="text-cyan-400">Aymen</span>, and I
+          currently work as a{" "}
+          <span className="text-cyan-400">
+            Junior Unreal Engine and C++ Programmer
+          </span>
+          . I have experience in programming with{" "}
           <span className="text-cyan-400">C++</span>,{" "}
           <span className="text-cyan-400">C#</span>, and working with game
           engines such as <span className="text-cyan-400">Unreal Engine</span>{" "}
@@ -229,8 +232,7 @@ function Home({ industry, setIndustry }) {
           <br />
           <br />
           I've contributed to multiple projects both on my own and as part of a
-          team. Internships and part-time jobs have also helped me sharpen my
-          technical and soft skills.
+          team.
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify">
