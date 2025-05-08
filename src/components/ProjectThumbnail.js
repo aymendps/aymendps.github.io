@@ -1,4 +1,4 @@
-import { Chip, Typography } from "@mui/material";
+import { Card, Chip, Typography } from "@mui/material";
 import NoThumbnailIcon from "@mui/icons-material/HideImageOutlined";
 import { useEffect } from "react";
 
@@ -59,8 +59,8 @@ function ProjectThumbnail({
   }, []);
 
   return (
-    <div
-      className="basis-[23%] screen-lg:basis-[31%] screen-sm:basis-[90%] screen-md:basis-[44%] mb-[2.5%] screen-sm:mb-[5%] relative rounded-xl overflow-hidden border-2 border-darkblue cursor-pointer group hover:bg-cyan-50"
+    <Card
+      className="shining-effect basis-[23%] screen-lg:basis-[31%] screen-sm:basis-[90%] screen-md:basis-[44%] mb-[2%] screen-sm:mb-[5%] relative rounded-xl overflow-hidden cursor-pointer group"
       onClick={handleClick}
     >
       <div className="p-4">
@@ -93,9 +93,6 @@ function ProjectThumbnail({
       </div>
       <div className="w-full">
         <div className="w-full py-4 px-2">
-          <Typography variant="h6" className="text-center text-darkblue pb-2">
-            {solo ? "Highlighted Work" : "Contributions"}
-          </Typography>
           {accessible && workDone.length !== 0 ? (
             <ul className="list-disc px-4">{generateWorkDone}</ul>
           ) : (
@@ -105,7 +102,7 @@ function ProjectThumbnail({
           )}
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
 

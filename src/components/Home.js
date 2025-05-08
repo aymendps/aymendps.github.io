@@ -1,12 +1,12 @@
 import {
   Button,
+  Card,
   CircularProgress,
   Typography,
   useMediaQuery,
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import ProjectList, { getPinnedProjectsByIndustry } from "./ProjectList";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
@@ -16,6 +16,30 @@ import ProjectLoading from "./ProjectLoading";
 import PreloadImages from "./PreloadImages";
 import Referrals from "./Referrals";
 import ProjectSlider from "./Projects/ProjectSlider";
+
+function SetupObserver(classToObserve, classToAdd, threshold = 0.3) {
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the 'visible' class when the element is in view
+          entry.target.classList.add(classToAdd);
+          // Optionally stop observing the element once it has become visible
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: threshold }
+  ); // Element is considered in view when 50% of it is visible
+
+  // Target the elements you want to animate
+  const elementsToAnimate = document.querySelectorAll(classToObserve);
+
+  // Start observing each element
+  elementsToAnimate.forEach((element) => {
+    observer.observe(element);
+  });
+}
 
 function Home({ industry, setIndustry }) {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
@@ -43,7 +67,13 @@ function Home({ industry, setIndustry }) {
     } else if (window.location.href.includes("#awards")) {
       document.getElementById("awards").scrollIntoView({ block: "start" });
     }
+    // Set up the observer
+    SetupObserver(".to-fade-in", "fade-in");
   }, []);
+
+  useEffect(() => {
+    SetupObserver(".to-fade-in-light", "fade-in", 0.1);
+  }, [industry]);
 
   const CONTACT_ICONS = [
     {
@@ -168,7 +198,7 @@ function Home({ industry, setIndustry }) {
       </div>
       <Button
         variant="contained"
-        className="absolute z-30 bottom-4"
+        className="absolute z-30 bottom-4 bouncy-button"
         onClick={() => {
           if (mainVideoRef.current.requestFullscreen) {
             mainVideoRef.current.requestFullscreen();
@@ -202,18 +232,25 @@ function Home({ industry, setIndustry }) {
       <div className="m-auto w-[80%] pt-4 screen-md:w-[90%] screen-md:pb-12 text-center">
         <Typography
           variant="h2"
-          className="text-center text-white pb-4 screen-sm:text-4xl screen-md:text-5xl"
+          className="text-center text-white pb-4 screen-sm:text-4xl screen-md:text-5xl to-fade-in"
         >
           Welcome to my portfolio!
         </Typography>
         <br />
-        <Typography className="text-white  screen-md:text-justify">
+        <Typography className="text-white  screen-md:text-justify to-fade-in">
           Hi there! I'm <span className="text-cyan-400">Aymen</span>, and I
           currently work as a{" "}
           <span className="text-cyan-400">
             Junior Unreal Engine and C++ Programmer
+          </span>{" "}
+          and as a part-time{" "}
+          <span className="text-cyan-400">
+            Software Engineering & Architecture Instructor.
           </span>
-          . I have experience in programming with{" "}
+        </Typography>
+        <br />
+        <Typography className="text-white  screen-md:text-justify to-fade-in">
+          I have experience in programming with{" "}
           <span className="text-cyan-400">C++</span>,{" "}
           <span className="text-cyan-400">C#</span>, and working with game
           engines such as <span className="text-cyan-400">Unreal Engine</span>{" "}
@@ -230,28 +267,23 @@ function Home({ industry, setIndustry }) {
           <span className="text-cyan-400">MongoDB</span>, and{" "}
           <span className="text-cyan-400">MySQL</span>.
           <br />
-          <br />
-          I've contributed to multiple projects both on my own and as part of a
-          team.
+          <br />I have strong{" "}
+          <span className="text-cyan-400">engineering skills</span>, a solid
+          understanding of{" "}
+          <span className="text-cyan-400">UML & the development lifecycle</span>
+          , and I am confortable working with{" "}
+          <span className="text-cyan-400">
+            agile methodologies such as Scrum.
+          </span>
         </Typography>
         <br />
-        <Typography className="text-white  screen-md:text-justify">
-          I’m familiar with the software and game development life cycles and
-          can translate designers' ideas into readable and maintainable code. As
-          a team player, I understand the importance of teamwork in achieving
-          success and have a proven record of effective collaboration,
-          demonstrated by{" "}
-          <HashLink
-            smooth
-            to="/home#awards"
-            className="text-cyan-300 hover:underline"
-          >
-            <b>multiple awards</b>
-          </HashLink>{" "}
-          for my group projects.
+        <Typography className="text-white  screen-md:text-justify to-fade-in">
+          I am a quick learner who excels at turning ideas into clean and
+          maintainable code. I communicate clearly and work well with others to
+          achieve the best user experience.
         </Typography>
         <br />
-        <Typography className="text-white  screen-md:text-justify">
+        <Typography className="text-white  screen-md:text-justify to-fade-in">
           I'm eager to work alongside like-minded professionals and to
           contribute to projects that push the boundaries of what is possible.
         </Typography>
@@ -268,20 +300,24 @@ function Home({ industry, setIndustry }) {
       <div className="w-[90%] m-auto">
         <Typography
           variant="h2"
-          className="text-darkblue text-center pt-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+          className="text-darkblue text-center pt-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl to-fade-in"
         >
           Pinned Projects
         </Typography>
         <ProjectSlider industry={industry} setIndustry={setIndustry} />
       </div>
       <ProjectList
+        industry={industry}
         projects={getPinnedProjectsByIndustry(industry)}
         setIsLoadingProjectPage={setIsLoadingProjectPage}
         navigate={navigate}
         isMobile={isMobile}
       />
       <div className="w-[90%] m-auto">
-        <Typography variant="subtitle1" className="text-center text-darkblue">
+        <Typography
+          variant="subtitle1"
+          className="text-center text-darkblue to-fade-in"
+        >
           Other in-progress or old projects may be found on my{" "}
           <a
             href="https://github.com/aymendps"
@@ -314,7 +350,7 @@ function Home({ industry, setIndustry }) {
         ></div>
         <Typography
           variant="h2"
-          className="text-center text-white py-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+          className="to-fade-in text-center text-white py-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
         >
           Project Awards
         </Typography>
@@ -325,11 +361,11 @@ function Home({ industry, setIndustry }) {
             <a
               key={post.url}
               href={post.url}
-              className="block w-1/5 screen-lg:w-[40%] screen-sm:w-[90%] mb-12"
+              className="block w-1/5 screen-lg:w-[40%] screen-sm:w-[90%] mb-12 to-fade-in"
               target="_blank"
               rel="noreferrer"
             >
-              <div className="w-full overflow-hidden border-2 rounded-xl border-cyan-400 relative group">
+              <Card className="w-full overflow-hidden rounded-xl relative group">
                 <img
                   alt=""
                   src={post.image}
@@ -346,7 +382,7 @@ function Home({ industry, setIndustry }) {
                     {post.title + " ↗"}
                   </Typography>
                 </div>
-              </div>
+              </Card>
             </a>
           );
         })}
@@ -358,7 +394,7 @@ function Home({ industry, setIndustry }) {
         ></div>
         <Typography
           variant="h2"
-          className="text-center text-white py-12 screen-md:pt-6 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+          className="to-fade-in text-center text-white py-12 screen-md:pt-6 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
         >
           LinkedIn Referrals
         </Typography>
@@ -372,13 +408,13 @@ function Home({ industry, setIndustry }) {
       <div className="w-[90%] m-auto">
         <Typography
           variant="h2"
-          className="text-center screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+          className="text-center screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl to-fade-in"
         >
           Reach out to me
         </Typography>
         <Typography
           variant="subtitle1"
-          className="text-cyan-600 text-center pb-12"
+          className="text-cyan-600 text-center pb-12 to-fade-in"
         >
           Let's talk! Feel free to send me a message through:
         </Typography>
@@ -388,7 +424,7 @@ function Home({ industry, setIndustry }) {
           return (
             <div
               key={"contactSection" + icon.href}
-              className="flex flex-col items-center justify-center group screen-md:basis-[40%] screen-md:mb-6"
+              className="flex flex-col items-center justify-center group screen-md:basis-[40%] screen-md:mb-6 to-fade-in"
             >
               <a
                 href={icon.href}

@@ -85,11 +85,11 @@ const ProjectSlider = ({ industry, setIndustry }) => {
     <>
       <Typography
         variant="subtitle1"
-        className="text-center pb-4 text-cyan-600"
+        className="text-center pb-4 text-cyan-600 to-fade-in"
       >
         <b>Click</b> on a project to view it with more details
       </Typography>
-      <Box className="w-3/4 screen-lg:w-full m-auto mb-6">
+      <Box className="w-3/4 screen-lg:w-full m-auto mb-6 to-fade-in">
         <CustomTabs
           variant="fullWidth"
           value={value}

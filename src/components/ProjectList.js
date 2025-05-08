@@ -36,29 +36,30 @@ export const PRINCE_OF_PERSIA_REMAKE = {
 };
 
 export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
-  title: "User-Driven Procedural Generation Of 3D Environments",
+  title: "AI Tool - Procedural Generation Of 3D Environments",
   subtitle: "Tool for 3D Environment Generation",
   thumbnail: "/thumbnails/udpg3de.jpg",
   solo: true,
   workDone: [
-    "Design Science Research Methodology",
     "Procedural 3D Environment Generation",
-    "User Prompt Interpretation & Integration",
-    "Tool's UI/UX Implementation & Design",
+    "Implementation of All Core Features",
+    "Tool's UI/UX Design & UMG Work",
+    "AI Interpretation of Prompts & Feedback",
   ],
   outcomes: [
-    "Learned how to adopt the Design Science Research Methodology to develop a fully functional tool",
-    "Learned how to understand and apply feedback from both users and stakeholders to improve the tool",
     "Gained experience in working with procedural generation and related features in Unreal Engine 5",
     "Learned how to use RESTful APIs and JSON parsing within Unreal Engine 5 to fetch and interpret user prompts",
     "Learned how to create a UI that is user-friendly, easy to use, responsive and visually consistent",
     "Expanded my knowledge of Unreal Engine 5, Blueprints scripting, and C++ programming",
+    "Learned how to adopt the Design Science Research Methodology to develop a fully functional tool",
+    "Learned how to understand and apply feedback from both users and stakeholders to improve the tool",
   ],
   tags: [
     "Tool Dev",
     "Internship",
     "Capstone Project",
-    "Grade: Outstanding",
+    "$R AI",
+    "$R PCG",
     "$R UE 5",
     "$R Blueprints",
     "$R C++",
@@ -74,11 +75,11 @@ export const CAT_N_QUEST = {
   thumbnail: "/thumbnails/cat.png",
   solo: false,
   workDone: [
-    "Collaboration & Task Management",
     "Dialogue & Quest System",
     "NPC Customization & Behaviour",
     "Simple Inventory System",
     "Interactable Game Objects",
+    "Collaboration & Task Management",
   ],
   outcomes: [
     "Gained experience in working within a team, collaborating, and communicating ideas fluently",
@@ -99,11 +100,11 @@ export const ROBO_REPAIR = {
   thumbnail: "/thumbnails/rr.png",
   solo: false,
   workDone: [
-    "Collaboration & Task Management",
     "Puzzle Levels & Mechanics",
     "Physics-Based Interactions",
     "Interpretation of User Commands",
     "UI & Tutorials for User Commands",
+    "Collaboration & Task Management",
   ],
   outcomes: [
     "Gained experience in working within a team, collaborating, and communicating ideas fluently",
@@ -149,11 +150,11 @@ export const FMD = {
   thumbnail: "/thumbnails/fmd.png",
   solo: false,
   workDone: [
-    "Scrum Duties & Collaboration",
     "UI Events & Animations in C#",
     "Augmented Reality with Vuforia",
     "AR Popup System",
     "3D Machine Simulation",
+    "Scrum Duties & Collaboration",
   ],
   outcomes: [
     "Gained valuable experience in teamwork, collaboration, and organization, while effectively translating designer ideas into maintainable code",
@@ -305,6 +306,7 @@ export function getProjectsNumberByIndustry(industry) {
 }
 
 function ProjectList({
+  industry,
   projects,
   setIsLoadingProjectPage,
   navigate,
@@ -323,7 +325,10 @@ function ProjectList({
   });
 
   return (
-    <div className="w-full flex justify-center items-start flex-wrap gap-[1.5%]">
+    <div
+      key={industry}
+      className="w-full flex justify-center items-start flex-wrap gap-[1.5%] to-fade-in-light"
+    >
       {generateProjects}
     </div>
   );

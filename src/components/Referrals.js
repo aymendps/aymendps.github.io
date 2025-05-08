@@ -36,11 +36,11 @@ I am confident that Aymen would be a valuable asset to any development team`,
     },
   ];
 
-  const generateReferralCards = REFERRALS.map((referral) => {
+  const generateReferralCards = REFERRALS.map((referral, index) => {
     return (
       <Card
         key={referral.name}
-        className="w-[30%] screen-lg:w-[90%] border-cyan-400 border-2"
+        className="w-[30%] screen-lg:w-[90%] rounded-xl shining-effect-loop to-fade-in"
         variant="outlined"
       >
         <CardHeader
@@ -61,10 +61,11 @@ I am confident that Aymen would be a valuable asset to any development team`,
             className: "text-cyan-600 text-[1.25rem] hover:underline",
           }}
           subheaderTypographyProps={{ className: "text-[1rem]" }}
+          className="pb-0"
         />
         <CardContent>
-          <Typography variant="body1" className="text-justify">
-            {`“${referral.description}”`}
+          <Typography variant="body1" className="text-justify italic">
+            {`${referral.description}`}
           </Typography>
         </CardContent>
       </Card>

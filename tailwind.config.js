@@ -15,7 +15,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        darkblue: "rgb(0, 30, 60)",
+        darkblue: "rgb(0, 30, 60)", // Light gray for background
       },
     },
   },

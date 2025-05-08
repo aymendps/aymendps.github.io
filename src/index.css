@@ -45,3 +45,128 @@ body {
   background: rgb(0, 30, 60);
   color: black;
 }
+
+.to-fade-in,
+.to-fade-in-light {
+  opacity: 0;
+}
+.to-fade-in.fade-in,
+.to-fade-in-light.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonBounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.025);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bouncy-button {
+  animation: buttonBounce 1.25s ease infinite;
+}
+
+/* Shining effect on hover */
+.shining-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shining-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.3),
+    rgba(0, 30, 60, 0.1),
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%; /* Keeps the element static until the animation restarts */
+  }
+}
+
+@keyframes shine-loop {
+  0% {
+    left: -100%;
+  }
+
+  25% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%; /* Keeps the element static until the animation restarts */
+  }
+}
+
+/* Apply the effect on hover */
+.shining-effect:hover::before {
+  animation: shine 0.5s ease-in-out;
+}
+
+.shining-effect-loop {
+  position: relative;
+  overflow: hidden;
+}
+
+.shining-effect-loop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.3),
+    rgba(0, 30, 60, 0.1),
+    rgba(255, 255, 255, 0.3)
+  );
+  animation: shine-loop 2s linear infinite;
+}
+
+.shining-effect-loop:nth-child(1)::before {
+  animation-delay: 1s;
+}
+.shining-effect-loop:nth-child(2)::before {
+  animation-delay: 1.5s;
+}
+.shining-effect-loop:nth-child(3)::before {
+  animation-delay: 2s;
+}
