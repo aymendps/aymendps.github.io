@@ -28,11 +28,7 @@ function FileManagementSystem() {
       <ProjectIntroduction
         title={FILE_MANAGER.title}
         picturesURL={FILE_MANAGER.picturesURL}
-        projectType="Professional"
-        role="Full-Stack Developer"
-        solo={FILE_MANAGER.solo}
-        platform="Web Application"
-        softwareUsed="JS | TS | AWS S3 | React | Express | NestJS | MySQL"
+        tags={FILE_MANAGER.tags}
         usefulLinks={usefulLinks}
         workDone={workDone}
         useLinksForWorkDone={false}

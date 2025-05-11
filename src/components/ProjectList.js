@@ -1,4 +1,3 @@
-import React from "react";
 import ProjectThumbnail from "./ProjectThumbnail";
 import FabLabMachinesDiscovery from "./Projects/FabLabMachinesDiscovery";
 import FollowTheLight from "./Projects/FollowTheLight";
@@ -13,7 +12,6 @@ export const PRINCE_OF_PERSIA_REMAKE = {
   title: "Prince Of Persia Remake",
   subtitle: "3D Difficult Platformer",
   thumbnail: "/thumbnails/ppr.png",
-  solo: true,
   workDone: [
     "Player Mechanics & Animations",
     "Game Systems & Components",
@@ -22,12 +20,12 @@ export const PRINCE_OF_PERSIA_REMAKE = {
     "UI & Tutorials Using UMG",
   ],
   outcomes: [
-    "Learned how to create complex player mechanics, animations, and interactions",
-    "Learned how to implement systems and components that are essential for gameplay",
-    "Gained experience in balancing gameplay and difficulty, and how to achieve a fun but challenging experience for the player",
-    "Learned how to create enemy AI behaviour, perception and actions randomization",
-    "Learned how to develop platformer games and adjust movements and mechanics to a 2D plane in a 3D environment",
     "Expanded my knowledge of Unreal Engine 5, Blueprints scripting, and C++ programming",
+    "Experience in implementing complex player mechanics, animations, and interactions",
+    "Experience in implementing systems and components that are essential for gameplay",
+    "Experience in balancing gameplay and difficulty, and how to achieve a fun but challenging experience for the player",
+    "Experience in creating enemy AI behaviour, perception and actions randomization",
+    "Learned how to develop platformer games and adjust movements and mechanics to a 2D plane in a 3D environment",
   ],
   tags: ["Game Dev", "Internship", "$R UE 5", "$R Blueprints", "$R C++"],
   pageURL: "/prince-of-persia-atari-remake",
@@ -39,7 +37,6 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
   title: "AI Tool - Procedural Generation Of 3D Environments",
   subtitle: "Tool for 3D Environment Generation",
   thumbnail: "/thumbnails/udpg3de.jpg",
-  solo: true,
   workDone: [
     "Procedural 3D Environment Generation",
     "Implementation of All Core Features",
@@ -47,12 +44,12 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
     "AI Interpretation of Prompts & Feedback",
   ],
   outcomes: [
-    "Gained experience in working with procedural generation and related features in Unreal Engine 5",
-    "Learned how to use RESTful APIs and JSON parsing within Unreal Engine 5 to fetch and interpret user prompts",
-    "Learned how to create a UI that is user-friendly, easy to use, responsive and visually consistent",
     "Expanded my knowledge of Unreal Engine 5, Blueprints scripting, and C++ programming",
-    "Learned how to adopt the Design Science Research Methodology to develop a fully functional tool",
+    "Experience in PCG, procedural generation and related features in Unreal Engine 5",
+    "Learned how to use RESTful APIs and JSON parsing within Unreal Engine 5 to fetch & interpret user prompts",
+    "Experience in creating a UI that is user-friendly, easy to use, responsive and visually consistent",
     "Learned how to understand and apply feedback from both users and stakeholders to improve the tool",
+    "Learned how to adopt the Design Science Research Methodology to develop a fully functional tool",
   ],
   tags: [
     "Tool Dev",
@@ -73,7 +70,6 @@ export const CAT_N_QUEST = {
   title: "Cat n' Quest",
   subtitle: "2D Top-Down Adventure Game",
   thumbnail: "/thumbnails/cat.png",
-  solo: false,
   workDone: [
     "Dialogue & Quest System",
     "NPC Customization & Behaviour",
@@ -82,11 +78,11 @@ export const CAT_N_QUEST = {
     "Collaboration & Task Management",
   ],
   outcomes: [
-    "Gained experience in working within a team, collaborating, and communicating ideas fluently",
+    "Expanded my knowledge of Unity, C#, and 2D open world game development",
     "Learned how to use events and stages to create a quest system that is easy to manage and expand upon",
     "Learned how to implement progressive dialogue based on quest, and how to create engaging and interactive NPC characters",
     "Learned how to separate the inventory's system from its UI, and updating it dynamically based on the Observer pattern",
-    "Expanded my knowledge of Unity, C#, and 2D open world game development",
+    "Experience in working within a team, collaborating, and communicating ideas fluently",
   ],
   tags: ["Game Dev", "Game Jam", "$R Unity", "$R C#"],
   pageURL: "/cat-n-quest",
@@ -98,7 +94,6 @@ export const ROBO_REPAIR = {
   title: "RoboRepair",
   subtitle: "2D Educational Puzzle Game",
   thumbnail: "/thumbnails/rr.png",
-  solo: false,
   workDone: [
     "Puzzle Levels & Mechanics",
     "Physics-Based Interactions",
@@ -107,11 +102,11 @@ export const ROBO_REPAIR = {
     "Collaboration & Task Management",
   ],
   outcomes: [
-    "Gained experience in working within a team, collaborating, and communicating ideas fluently",
+    "Experience in working within a team, collaborating, and communicating ideas fluently",
     "Learned how to work efficiently under pressure and time constraints, and how to manage tasks",
     "Gained knowledge of how to develop educational games that teach programming and physics concepts",
-    "Learned how to implement physics-based interactions and respond to player input and instructions",
-    "Learned how to design and implement levels that are engaging and fun to solve",
+    "Experience in implementing physics-based interactions and respond to player input and instructions",
+    "Experience in designing and implementing levels that are engaging and fun to solve",
   ],
   tags: ["Game Dev", "24H Hackathon", "Won Award", "$R Unity", "$R C#"],
   pageURL: "/robo-repair",
@@ -123,7 +118,6 @@ export const FOLLOW_THE_LIGHT = {
   title: "Follow The Light",
   subtitle: "3D Physics-Based Maze Game",
   thumbnail: "/thumbnails/ftl.jpg",
-  solo: true,
   workDone: [
     "Player Gameplay Mechanics",
     "Player Finite State Machine in C#",
@@ -133,10 +127,10 @@ export const FOLLOW_THE_LIGHT = {
   ],
   outcomes: [
     "Learned how to apply the finite state machine pattern to create modular and organized character behavior",
-    "Implemented intuitive character navigation by learning how camera-relative movement works",
+    "Experience in implementing intuitive character navigation by learning how camera-relative movement works",
     "Expanded creative abilities by designing and implementing multiple gameplay mechanics",
     "Developed proficiency in working with concepts like vectors, quaternions and rotations",
-    "Learned how to implement physics-based interactions and respond to player input",
+    "Experience in implementing physics-based interactions and respond to player input",
   ],
   tags: ["Game Dev", "Personal", "$R Unity", "$R C#"],
   pageURL: "/follow-the-light",
@@ -148,7 +142,6 @@ export const FMD = {
   title: "Fablab Machines Discovery",
   subtitle: "AR Mobile Application",
   thumbnail: "/thumbnails/fmd.png",
-  solo: false,
   workDone: [
     "UI Events & Animations in C#",
     "Augmented Reality with Vuforia",
@@ -157,11 +150,10 @@ export const FMD = {
     "Scrum Duties & Collaboration",
   ],
   outcomes: [
-    "Gained valuable experience in teamwork, collaboration, and organization, while effectively translating designer ideas into maintainable code",
-    "Learned the significance of applying design patterns when creating classes, enhancing the readability and structure of my code",
-    "Built an engaging mobile experience in Unity, gaining new mobile development skills in the process",
+    "Experience in Augmented Reality (AR) development using Vuforia and Unity",
+    "Experience in building engaging mobile experiences in Unity and mobile development skills",
     "Learned how to implement flexible UI designs that seamlessly adapt to different screen resolutions",
-    "Expanded my knowledge of working with Augmented Reality",
+    "Gained valuable experience in teamwork, collaboration, and organization, while effectively translating designer ideas into maintainable code",
   ],
   tags: [
     "Mobile Dev",
@@ -181,7 +173,6 @@ export const FILE_MANAGER = {
   title: "File Management System",
   subtitle: "Feature of a SAAS Application",
   thumbnail: "/thumbnails/fm.png",
-  solo: false,
   workDone: [
     "Microservices Architecture",
     "File Upload Based on Queue System",
@@ -191,9 +182,10 @@ export const FILE_MANAGER = {
   ],
   outcomes: [
     "Learned advantages of microservices over monolith, and how to design and implement a scalable system",
-    "Gained experience in working with AWS S3, and how to manage files and folders efficiently",
-    "Learned optimization techniques for file downloads and previews, such as caching and lazy loading",
-    "Gained skills in frontend & backend development, and how to integrate them seamlessly and securely",
+    "Experience in frontend & backend development, and how to integrate them seamlessly and securely",
+    "Experience in working with AWS S3, and how to manage files and folders efficiently",
+    "Experience in designing a modern and user-friendly UI that is informative and easy to navigate",
+    "Learned optimization techniques for file downloads/previews, such as compression, caching and lazy loading",
     "Became better at achieving deadlines and collaborating with team members, especially when working in an agile environment",
   ],
   tags: [
@@ -230,7 +222,6 @@ export const STUDENT_SPECIALTY_ADVISOR = {
   title: "Student Specialty Advisor",
   subtitle: "Web Application",
   thumbnail: "/thumbnails/ssa.jpg",
-  solo: false,
   workDone: [
     "Responsive UI on Mobile & Desktop",
     "Verified Account System & User Roles",
@@ -239,10 +230,10 @@ export const STUDENT_SPECIALTY_ADVISOR = {
     "Admin Dashboard & Statistics",
   ],
   outcomes: [
-    "Learned how to create a responsive UI that works well on both desktop and mobile devices",
-    "Gained experience with account creation, verification, authentication, and role-based access control",
+    "Experience in creating a responsive UI that works well on both desktop and mobile devices",
+    "Experience in account creation, verification, authentication, and role-based access control",
     "Learned how to implement a date & time based scheduler and how to automate email notifications for users",
-    "Understood how to keep users engaged by developing features like achievements and progress tracking",
+    "Learned how to keep users engaged by developing features like achievements and progress tracking",
     "Learned how to create an admin dashboard with multiple CRUD operations and statistics",
   ],
   tags: [

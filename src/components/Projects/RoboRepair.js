@@ -35,11 +35,7 @@ function RoboRepair() {
       <ProjectIntroduction
         title={ROBO_REPAIR.title}
         youtubeURL={["https://www.youtube.com/embed/YC9Op2Jxoi0"]}
-        projectType="24H Game Dev Hackathon"
-        role="Game Programmer"
-        solo={ROBO_REPAIR.solo}
-        platform="PC | WebGL"
-        softwareUsed="Unity | C#"
+        tags={ROBO_REPAIR.tags}
         usefulLinks={usefulLinks}
         workDone={workDone}
         useLinksForWorkDone={false}

@@ -43,11 +43,7 @@ function StudentSpecialtyAdvisor() {
       <ProjectIntroduction
         title={STUDENT_SPECIALTY_ADVISOR.title}
         youtubeURL={["https://www.youtube.com/embed/Svc3JQEW03E"]}
-        projectType="University"
-        role="Full-Stack Developer"
-        solo={STUDENT_SPECIALTY_ADVISOR.solo}
-        platform="Web Application"
-        softwareUsed="JS | React | Express | MongoDB | Heroku"
+        tags={STUDENT_SPECIALTY_ADVISOR.tags}
         usefulLinks={usefulLinks}
         workDone={workDone}
         useLinksForWorkDone={false}

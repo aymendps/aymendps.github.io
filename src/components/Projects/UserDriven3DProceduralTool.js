@@ -38,14 +38,10 @@ function UserDriven3DProceduralTool() {
       <ProjectIntroduction
         title={USER_DRIVEN_3D_PROCEDURAL_TOOL.title}
         youtubeURL={[
-          "https://www.youtube.com/embed/NiAo5jXZ7UU",
           "https://www.youtube.com/embed/rcqNS54urFU",
+          "https://www.youtube.com/embed/NiAo5jXZ7UU",
         ]}
-        projectType="Capstone Project"
-        role="Tools Developer"
-        solo={USER_DRIVEN_3D_PROCEDURAL_TOOL.solo}
-        platform="PC - Integrated within Unreal Engine 5"
-        softwareUsed="Unreal Engine 5 | Blueprints | C++"
+        tags={USER_DRIVEN_3D_PROCEDURAL_TOOL.tags}
         usefulLinks={usefulLinks}
         workDone={workDone}
         outcomes={USER_DRIVEN_3D_PROCEDURAL_TOOL.outcomes}

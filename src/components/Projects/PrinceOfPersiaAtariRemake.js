@@ -123,156 +123,11 @@ function PrinceOfPersiaAtariRemake() {
       </ul>
       <br />
       <Typography variant="h6" className="text-justify text-green-600">
-        Locomotion Depending On Stance
-      </Typography>
-      <Typography className="leading-5 text-justify">
-        Locomotion primarily involves <b>"running"</b> and <b>"slow walking"</b>{" "}
-        to avoid obstacles. Character movement is restricted to a single axis,
-        since this game is a platformer and the player is only allowed to move
-        left or right during gameplay.
-        <br />
-        <br />
-        Using an <b>animation state machine</b>, I implemented the locomotion
-        states and the transitions from one state to another. Depending on the{" "}
-        <b>player's input and velocity</b>, the states will transition to one
-        another.
-      </Typography>
-      <img
-        alt=""
-        src="/ppr/locomotion.png"
-        className="w-[40%] m-auto mt-4 mb-2 screen-lg:w-full"
-      ></img>
-      <Typography variant="caption" className="text-center block mb-4">
-        Locomotion Animation State Machine
-      </Typography>
-      <Typography className="leading-5 text-justify">
-        The animation outcome for each state will vary based on whether the
-        player is in the <b>fighting stance</b> or not.
-        <br />
-        Below is the implementation of the <b>"Walk/Run"</b> state, where a
-        boolean that represents whether the player is in fighting stance is used
-        to blend between animations.
-        <img
-          alt=""
-          src="/ppr/walkrun.png"
-          className="w-[75%] m-auto mt-4 mb-2 screen-lg:w-full"
-        ></img>
-        <Typography variant="caption" className="text-center block mb-4">
-          Walk/Run Animation State
-        </Typography>
-        When not in the fighting stance, the player can move freely in either
-        the right or left direction. The player character will also{" "}
-        <b>turn to face </b>
-        the direction of the movement. The player can also <b>slow walk</b> to
-        avoid traps like deadly spikes.
-      </Typography>
-      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
-        <video controls className="w-full">
-          <source src="/ppr/locomotion_nofight.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <Typography variant="caption" className="text-center block mt-2">
-        Locomotion outside of fighting stance
-      </Typography>
-      <br />
-      <Typography className="leading-5 text-justify">
-        When in the fighting stance, the player will{" "}
-        <b>face the same direction</b> when moving to allow the player to{" "}
-        <b>"lock on"</b> the enemies. The player can decide to face another
-        direction using the <b>"turn around"</b> action.
-      </Typography>
-      <div className="flex justify-between mt-4 screen-lg:flex-col">
-        <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
-            <source src="/ppr/locomotion_fight.mp4" type="video/mp4" />
-          </video>
-          <Typography variant="caption" className="text-center block mt-2 mb-4">
-            Locomotion during fighting stance
-          </Typography>
-        </div>
-        <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
-            <source src="/ppr/turnaround.mp4" type="video/mp4" />
-          </video>
-          <Typography variant="caption" className="text-center block mt-2 mb-4">
-            Turn around action during fight
-          </Typography>
-        </div>
-      </div>
-      <Typography variant="h6" className="text-justify text-green-600">
-        Reworked Player Camera
-      </Typography>
-      <Typography className="leading-5 text-justify">
-        The camera of the original game is <b>outdated</b> by today's standards
-        because it doesn't follow the player as they move. Trying to implement
-        the player camera exactly as it was didn't yield satisfactory results
-        since it was designed for a 2D game, whereas this remake is a 3D version
-        of the game.
-        <br />
-        <br />
-        Therefore, I chose to implement my own customized camera{" "}
-        <b>that follows the player with adjustable offset</b>, and is capable of
-        performing cinematic actions like{" "}
-        <b>zooming in/out and fading in/out to black.</b>
-      </Typography>
-      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
-        <div className="w-[48%] screen-lg:w-full">
-          <CodeMobileWrapper title="Update Camera Location">
-            <BlueprintsHighlighter
-              title="Update Camera Location"
-              src="https://blueprintue.com/render/its3eaz5/"
-              width="100%"
-              height="370px"
-            />
-            <Typography
-              variant="caption"
-              className="text-center block mt-2 mb-4"
-            >
-              Programming "Update Camera Location"
-            </Typography>
-          </CodeMobileWrapper>
-        </div>
-        <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
-            <source src="/ppr/camera_offset.mp4" type="video/mp4" />
-          </video>
-          <Typography variant="caption" className="text-center block mt-2 mb-4">
-            Following player with adjustable offset
-          </Typography>
-        </div>
-      </div>
-      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
-        <div className="w-[48%] screen-lg:w-full">
-          <CodeMobileWrapper title="Zoom Camera">
-            <BlueprintsHighlighter
-              title="Zoom Camera"
-              src="https://blueprintue.com/render/xwcgto1r/"
-              width="100%"
-              height="370px"
-            />
-            <Typography
-              variant="caption"
-              className="text-center block mt-2 mb-4"
-            >
-              Programming "Zoom Camera"
-            </Typography>
-          </CodeMobileWrapper>
-        </div>
-        <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
-            <source src="/ppr/camera_zoom.mp4" type="video/mp4" />
-          </video>
-          <Typography variant="caption" className="text-center block mt-2 mb-4">
-            Adjustable zoom in and out
-          </Typography>
-        </div>
-      </div>
-      <Typography variant="h6" className="text-justify text-green-600">
         Jumping, Hanging & Climbing
       </Typography>
       <Typography className="leading-5 text-justify">
-        Another <b>state machine</b> is used to controls all of the animations
-        that are related to jumping, hanging, climbing up & dropping down, and
+        A <b>state machine</b> is used to controls all of the animations that
+        are related to jumping, hanging, climbing up & dropping down, and
         implements all the transitions between them and the locomotion state
         machine.
       </Typography>
@@ -368,7 +223,83 @@ function PrinceOfPersiaAtariRemake() {
           </Typography>
         </div>
       </div>
+      <Typography variant="h6" className="text-justify text-green-600">
+        Locomotion Depending On Stance
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        Locomotion primarily involves <b>"running"</b> and <b>"slow walking"</b>{" "}
+        to avoid obstacles. Character movement is restricted to a single axis,
+        since this game is a platformer and the player is only allowed to move
+        left or right during gameplay.
+        <br />
+        <br />
+        Using another <b>animation state machine</b>, I implemented the
+        locomotion states and the transitions from one state to another.
+        Depending on the <b>player's input and velocity</b>, the states will
+        transition to one another.
+      </Typography>
+      <img
+        alt=""
+        src="/ppr/locomotion.png"
+        className="w-[40%] m-auto mt-4 mb-2 screen-lg:w-full"
+      ></img>
+      <Typography variant="caption" className="text-center block mb-4">
+        Locomotion Animation State Machine
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        The animation outcome for each state will vary based on whether the
+        player is in the <b>fighting stance</b> or not.
+        <br />
+        Below is the implementation of the <b>"Walk/Run"</b> state, where a
+        boolean that represents whether the player is in fighting stance is used
+        to blend between animations.
+        <img
+          alt=""
+          src="/ppr/walkrun.png"
+          className="w-[75%] m-auto mt-4 mb-2 screen-lg:w-full"
+        ></img>
+        <Typography variant="caption" className="text-center block mb-4">
+          Walk/Run Animation State
+        </Typography>
+        When not in the fighting stance, the player can move freely in either
+        the right or left direction. The player character will also{" "}
+        <b>turn to face </b>
+        the direction of the movement. The player can also <b>slow walk</b> to
+        avoid traps like deadly spikes.
+      </Typography>
+      <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
+        <video controls className="w-full">
+          <source src="/ppr/locomotion_nofight.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <Typography variant="caption" className="text-center block mt-2">
+        Locomotion outside of fighting stance
+      </Typography>
       <br />
+      <Typography className="leading-5 text-justify">
+        When in the fighting stance, the player will{" "}
+        <b>face the same direction</b> when moving to allow the player to{" "}
+        <b>"lock on"</b> the enemies. The player can decide to face another
+        direction using the <b>"turn around"</b> action.
+      </Typography>
+      <div className="flex justify-between mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
+          <video controls className="w-full">
+            <source src="/ppr/locomotion_fight.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Locomotion during fighting stance
+          </Typography>
+        </div>
+        <div className="w-[48%] screen-lg:w-full">
+          <video controls className="w-full">
+            <source src="/ppr/turnaround.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Turn around action during fight
+          </Typography>
+        </div>
+      </div>
       <Typography variant="h6" className="text-justify text-green-600">
         Dashing, Parrying & Attacking
       </Typography>
@@ -645,6 +576,75 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
           </Typography>
         </div>
       </div>
+      <Typography variant="h6" className="text-justify text-green-600">
+        Reworked Player Camera
+      </Typography>
+      <Typography className="leading-5 text-justify">
+        The camera of the original game is <b>outdated</b> by today's standards
+        because it doesn't follow the player as they move. Trying to implement
+        the player camera exactly as it was didn't yield satisfactory results
+        since it was designed for a 2D game, whereas this remake is a 3D version
+        of the game.
+        <br />
+        <br />
+        Therefore, I chose to implement my own customized camera{" "}
+        <b>that follows the player with adjustable offset</b>, and is capable of
+        performing cinematic actions like{" "}
+        <b>zooming in/out and fading in/out to black.</b>
+      </Typography>
+      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
+          <CodeMobileWrapper title="Update Camera Location">
+            <BlueprintsHighlighter
+              title="Update Camera Location"
+              src="https://blueprintue.com/render/its3eaz5/"
+              width="100%"
+              height="370px"
+            />
+            <Typography
+              variant="caption"
+              className="text-center block mt-2 mb-4"
+            >
+              Programming "Update Camera Location"
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-lg:w-full">
+          <video controls className="w-full">
+            <source src="/ppr/camera_offset.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Following player with adjustable offset
+          </Typography>
+        </div>
+      </div>
+      <br />
+      <div className="flex justify-between items-center mt-4 screen-lg:flex-col">
+        <div className="w-[48%] screen-lg:w-full">
+          <CodeMobileWrapper title="Zoom Camera">
+            <BlueprintsHighlighter
+              title="Zoom Camera"
+              src="https://blueprintue.com/render/xwcgto1r/"
+              width="100%"
+              height="370px"
+            />
+            <Typography
+              variant="caption"
+              className="text-center block mt-2 mb-4"
+            >
+              Programming "Zoom Camera"
+            </Typography>
+          </CodeMobileWrapper>
+        </div>
+        <div className="w-[48%] screen-lg:w-full">
+          <video controls className="w-full">
+            <source src="/ppr/camera_zoom.mp4" type="video/mp4" />
+          </video>
+          <Typography variant="caption" className="text-center block mt-2 mb-4">
+            Adjustable zoom in and out
+          </Typography>
+        </div>
+      </div>
     </>
   );
 
@@ -663,11 +663,7 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
       <ProjectIntroduction
         title={PRINCE_OF_PERSIA_REMAKE.title}
         youtubeURL={["https://www.youtube.com/embed/ceDJjWqTJvk"]}
-        projectType="Internship"
-        role="Game Developer"
-        solo={PRINCE_OF_PERSIA_REMAKE.solo}
-        platform="Standalone PC"
-        softwareUsed="Unreal Engine 5 | Blueprints | C++"
+        tags={PRINCE_OF_PERSIA_REMAKE.tags}
         usefulLinks={usefulLinks}
         workDone={workDone}
         outcomes={PRINCE_OF_PERSIA_REMAKE.outcomes}

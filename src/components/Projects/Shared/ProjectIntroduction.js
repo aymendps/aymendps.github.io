@@ -9,11 +9,7 @@ function ProjectIntroduction({
   title,
   youtubeURL = [],
   picturesURL = [],
-  projectType,
-  role,
-  solo,
-  platform,
-  softwareUsed,
+  tags = [],
   description,
   usefulLinks = [],
   workDone = [],
@@ -59,20 +55,18 @@ function ProjectIntroduction({
     );
   });
 
-  const generateTags = [
-    projectType,
-    role,
-    solo ? "Solo Project" : "Team Project",
-    platform,
-    softwareUsed,
-  ].map((tag) => {
+  const generateTags = tags.map((tag) => {
     return (
       <Chip
         key={title + tag}
-        label={tag}
+        label={tag.startsWith("$R") ? tag.substring(2) : tag}
         size="medium"
         variant="filled"
-        className="bg-darkblue text-white font-bold"
+        className={
+          tag.startsWith("$R")
+            ? "bg-red-900 text-white font-bold"
+            : "bg-blue-900 text-white font-bold"
+        }
       ></Chip>
     );
   });
@@ -155,7 +149,7 @@ function ProjectIntroduction({
               variant="h4"
               className="text-cyan-400 pb-2 screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
             >
-              {solo ? "Highlighted Work" : "Contributions"}
+              Highlighted Work
             </Typography>
             {workDone.length !== 0 ? (
               <ul className="list-disc px-4 pb-2">{generateWorkDone}</ul>

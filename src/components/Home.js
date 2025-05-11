@@ -72,7 +72,7 @@ function Home({ industry, setIndustry }) {
   }, []);
 
   useEffect(() => {
-    SetupObserver(".to-fade-in-light", "fade-in", 0.1);
+    SetupObserver(".to-fade-in-light", "fade-in", 0.05);
   }, [industry]);
 
   const CONTACT_ICONS = [
@@ -271,7 +271,7 @@ function Home({ industry, setIndustry }) {
           <span className="text-cyan-400">engineering skills</span>, a solid
           understanding of{" "}
           <span className="text-cyan-400">UML & the development lifecycle</span>
-          , and I am confortable working with{" "}
+          , and I am comfortable working with{" "}
           <span className="text-cyan-400">
             agile methodologies such as Scrum.
           </span>
@@ -424,7 +424,7 @@ function Home({ industry, setIndustry }) {
           return (
             <div
               key={"contactSection" + icon.href}
-              className="flex flex-col items-center justify-center group screen-md:basis-[40%] screen-md:mb-6 to-fade-in"
+              className="flex flex-col items-center justify-center group screen-md:basis-[40%] screen-md:mb-6 to-fade-in hover:scale-105"
             >
               <a
                 href={icon.href}

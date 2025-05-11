@@ -927,11 +927,7 @@ namespace Gameplay.Platforms
       <ProjectIntroduction
         title={FOLLOW_THE_LIGHT.title}
         youtubeURL={["https://www.youtube-nocookie.com/embed/6Ob0HM8uoo8"]}
-        projectType="Personal"
-        role="Game Developer"
-        solo={FOLLOW_THE_LIGHT.solo}
-        platform="Standalone PC"
-        softwareUsed="Unity | C#"
+        tags={FOLLOW_THE_LIGHT.tags}
         usefulLinks={usefulLinks}
         workDone={workDone}
         outcomes={FOLLOW_THE_LIGHT.outcomes}

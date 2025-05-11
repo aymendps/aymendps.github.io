@@ -1184,11 +1184,7 @@ namespace Popups
       <ProjectIntroduction
         title={FMD.title}
         youtubeURL={["https://www.youtube-nocookie.com/embed/VfGc1t6Qj3s"]}
-        projectType="University"
-        role="Unity Programmer"
-        solo={FMD.solo}
-        platform="Android | iOS"
-        softwareUsed="Unity | C# | Vuforia"
+        tags={FMD.tags}
         usefulLinks={usefulLinks}
         workDone={workDone}
         outcomes={FMD.outcomes}

@@ -6,7 +6,6 @@ function ProjectThumbnail({
   title,
   subtitle,
   thumbnail,
-  solo,
   workDone = [],
   tags = [],
   pageURL,
