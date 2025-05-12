@@ -38,10 +38,10 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
   subtitle: "Tool for 3D Environment Generation",
   thumbnail: "/thumbnails/udpg3de.jpg",
   workDone: [
-    "Procedural 3D Environment Generation",
     "Implementation of All Core Features",
-    "Tool's UI/UX Design & UMG Work",
+    "Procedural 3D Environment Generation",
     "AI Interpretation of Prompts & Feedback",
+    "Tool's UI/UX Design & UMG Work",
   ],
   outcomes: [
     "Expanded my knowledge of Unreal Engine 5, Blueprints scripting, and C++ programming",
