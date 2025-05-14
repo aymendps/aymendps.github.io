@@ -7,6 +7,7 @@ import CatNQuest from "./Projects/CatNQuest";
 import RoboRepair from "./Projects/RoboRepair";
 import FileManagementSystem from "./Projects/FileManagementSystem";
 import StudentSpecialtyAdvisor from "./Projects/StudentSpecialtyAdvisor";
+import ModernCppGameEngine from "./Projects/ModernCppGameEngine";
 
 export const PRINCE_OF_PERSIA_REMAKE = {
   title: "Prince Of Persia Remake",
@@ -64,6 +65,37 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
   pageURL: "/user-driven-3d-procedural-tool",
   accessible: true,
   element: <UserDriven3DProceduralTool />,
+};
+
+export const MODERN_CPP_GAME_ENGINE = {
+  title: "Modern C++ Game Engine",
+  subtitle: "2D Game Engine",
+  thumbnail: "/thumbnails/cpp0.png",
+  workDone: [
+    "STL Usage & Template Programming",
+    "Framerate Independent Game Loop",
+    "Entity-Component Framework",
+    "Scene Loading using Threads",
+    "Math and Logging Classes",
+  ],
+  outcomes: [
+    "Experience in modern C++ programming and game engine development",
+    "Experience in programming with concepts, templates, smart pointers, and other features",
+    "Strengthened my knowledge of STL containers, iterators, algorithms and idioms",
+    "Learned how to use multithreading to load scenes and resources in the background",
+    "Learned how Update loops based on delta-time work, and how to implement them",
+  ],
+  tags: ["C++ Dev", "Personal", "$R C++", "$R SDL2"],
+  picturesURL: [
+    "/cpp/cpp1.png",
+    "/cpp/cpp2.png",
+    "/cpp/cpp3.png",
+    "/cpp/cpp4.png",
+    "/cpp/cpp5.png",
+  ],
+  pageURL: "/modern-cpp-game-engine",
+  accessible: true,
+  element: <ModernCppGameEngine />,
 };
 
 export const CAT_N_QUEST = {
@@ -254,6 +286,7 @@ export const STUDENT_SPECIALTY_ADVISOR = {
 const GAMING_PINNED_PROJECTS = [
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   PRINCE_OF_PERSIA_REMAKE,
+  MODERN_CPP_GAME_ENGINE,
   FOLLOW_THE_LIGHT,
   CAT_N_QUEST,
   ROBO_REPAIR,
@@ -261,6 +294,7 @@ const GAMING_PINNED_PROJECTS = [
 
 const SOFTWARE_PINNED_PROJECTS = [
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
+  MODERN_CPP_GAME_ENGINE,
   FMD,
   STUDENT_SPECIALTY_ADVISOR,
   FILE_MANAGER,
