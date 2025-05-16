@@ -15,8 +15,8 @@ export const PRINCE_OF_PERSIA_REMAKE = {
   thumbnail: "/thumbnails/ppr.png",
   workDone: [
     "Player Mechanics & Animations",
-    "Game Systems & Components",
     "Enemy AI Behaviour & Perception",
+    "Core Game Systems & Components",
     "Customizable Gameplay Props",
     "UI & Tutorials Using UMG",
   ],
@@ -72,7 +72,6 @@ export const MODERN_CPP_GAME_ENGINE = {
   subtitle: "2D Game Engine",
   thumbnail: "/thumbnails/cpp0.png",
   workDone: [
-    "STL Usage & Template Programming",
     "Framerate Independent Game Loop",
     "Entity-Component Framework",
     "Scene Loading using Threads",
@@ -107,7 +106,6 @@ export const CAT_N_QUEST = {
     "NPC Customization & Behaviour",
     "Simple Inventory System",
     "Interactable Game Objects",
-    "Collaboration & Task Management",
   ],
   outcomes: [
     "Expanded my knowledge of Unity, C#, and 2D open world game development",
@@ -122,6 +120,29 @@ export const CAT_N_QUEST = {
   element: <CatNQuest />,
 };
 
+export const DISCORD_BUTLER_BOT = {
+  title: "Discord Butler Bot",
+  subtitle: "Discord Bot",
+  thumbnail: "/thumbnails/dbb.png",
+  workDone: [
+    "Advanced Music Playback System",
+    "Favorites & Playlists Management",
+    "Multiple Song Search & Suggestions",
+    "League of Legends API Integration",
+  ],
+  outcomes: [
+    "Expanded my knowledge of Unity, C#, and 2D open world game development",
+    "Learned how to use events and stages to create a quest system that is easy to manage and expand upon",
+    "Learned how to implement progressive dialogue based on quest, and how to create engaging and interactive NPC characters",
+    "Learned how to separate the inventory's system from its UI, and updating it dynamically based on the Observer pattern",
+    "Experience in working within a team, collaborating, and communicating ideas fluently",
+  ],
+  tags: ["Full-Stack Dev", "Personal", "$R Discord API", "$R Node", "$R TS"],
+  pageURL: "/discord-butler-bot",
+  accessible: false,
+  element: <></>,
+};
+
 export const ROBO_REPAIR = {
   title: "RoboRepair",
   subtitle: "2D Educational Puzzle Game",
@@ -130,7 +151,6 @@ export const ROBO_REPAIR = {
     "Puzzle Levels & Mechanics",
     "Physics-Based Interactions",
     "Interpretation of User Commands",
-    "UI & Tutorials for User Commands",
     "Collaboration & Task Management",
   ],
   outcomes: [
@@ -179,7 +199,6 @@ export const FMD = {
     "Augmented Reality with Vuforia",
     "AR Popup System",
     "3D Machine Simulation",
-    "Scrum Duties & Collaboration",
   ],
   outcomes: [
     "Experience in Augmented Reality (AR) development using Vuforia and Unity",
@@ -295,14 +314,24 @@ const GAMING_PINNED_PROJECTS = [
 const SOFTWARE_PINNED_PROJECTS = [
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   MODERN_CPP_GAME_ENGINE,
-  FMD,
-  STUDENT_SPECIALTY_ADVISOR,
   FILE_MANAGER,
+  STUDENT_SPECIALTY_ADVISOR,
+  DISCORD_BUTLER_BOT,
+  FMD,
 ];
 
-const ALL_PINNED_PROJECTS = Array.from(
-  new Set([...GAMING_PINNED_PROJECTS, ...SOFTWARE_PINNED_PROJECTS])
-);
+const ALL_PINNED_PROJECTS = [
+  USER_DRIVEN_3D_PROCEDURAL_TOOL,
+  PRINCE_OF_PERSIA_REMAKE,
+  MODERN_CPP_GAME_ENGINE,
+  FOLLOW_THE_LIGHT,
+  CAT_N_QUEST,
+  ROBO_REPAIR,
+  FMD,
+  FILE_MANAGER,
+  STUDENT_SPECIALTY_ADVISOR,
+  DISCORD_BUTLER_BOT,
+];
 
 export function getPinnedProjectsByIndustry(industry) {
   switch (industry) {
@@ -352,7 +381,7 @@ function ProjectList({
   return (
     <div
       key={industry}
-      className="w-full flex justify-center items-start flex-wrap gap-[1.5%] to-fade-in-light"
+      className="w-full flex justify-center items-stretch flex-wrap gap-[1.5%] to-fade-in-light"
     >
       {generateProjects}
     </div>
