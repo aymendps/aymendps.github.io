@@ -55,18 +55,26 @@ function ProjectIntroduction({
     );
   });
 
+  const getTagsClassName = (tag) => {
+    if (tag.startsWith("$R")) {
+      return "bg-red-900 text-white font-bold";
+    } else if (tag.startsWith("$G")) {
+      return "bg-green-900 text-white font-bold";
+    } else if (tag.startsWith("$Y")) {
+      return "bg-yellow-900 text-white font-bold";
+    } else {
+      return "bg-blue-900 text-white font-bold";
+    }
+  };
+
   const generateTags = tags.map((tag) => {
     return (
       <Chip
         key={title + tag}
-        label={tag.startsWith("$R") ? tag.substring(2) : tag}
+        label={tag.startsWith("$") ? tag.substring(2) : tag}
         size="medium"
         variant="filled"
-        className={
-          tag.startsWith("$R")
-            ? "bg-red-900 text-white font-bold"
-            : "bg-blue-900 text-white font-bold"
-        }
+        className={getTagsClassName(tag)}
       ></Chip>
     );
   });

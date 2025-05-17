@@ -18,18 +18,26 @@ function ProjectThumbnail({
     return <li key={title + work}>{work}</li>;
   });
 
+  const getTagsClassName = (tag) => {
+    if (tag.startsWith("$R")) {
+      return "bg-red-900 text-white font-bold cursor-pointer";
+    } else if (tag.startsWith("$G")) {
+      return "bg-green-900 text-white font-bold cursor-pointer";
+    } else if (tag.startsWith("$Y")) {
+      return "bg-yellow-900 text-white font-bold cursor-pointer";
+    } else {
+      return "bg-blue-900 text-white font-bold cursor-pointer";
+    }
+  };
+
   const generateTags = tags.map((tag) => {
     return (
       <Chip
         key={title + tag}
-        label={tag.startsWith("$R") ? tag.substring(2) : tag}
+        label={tag.startsWith("$") ? tag.substring(2) : tag}
         size="small"
         variant="filled"
-        className={
-          tag.startsWith("$R")
-            ? "bg-red-900 text-white font-bold cursor-pointer"
-            : "bg-blue-900 text-white font-bold cursor-pointer"
-        }
+        className={getTagsClassName(tag)}
       ></Chip>
     );
   });
@@ -92,7 +100,7 @@ function ProjectThumbnail({
       </div>
       <div className="w-full">
         <div className="w-full py-4 px-2">
-          {accessible && workDone.length !== 0 ? (
+          {workDone.length !== 0 ? (
             <ul className="list-disc px-4">{generateWorkDone}</ul>
           ) : (
             <Typography variant="body2" className="text-center">
