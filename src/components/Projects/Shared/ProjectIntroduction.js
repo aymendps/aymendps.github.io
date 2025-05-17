@@ -84,12 +84,14 @@ function ProjectIntroduction({
       <React.Fragment key={"video " + url}>
         <div className="w-full aspect-video bg-cyan-600 border-2 border-darkblue relative flex justify-center items-center mb">
           <CircularProgress className="text-darkblue" size={90} thickness={1} />
-          <iframe
-            className="w-full h-full absolute top-0 left-0"
-            title={title}
-            src={url}
-            allowFullScreen
-          ></iframe>
+          {url && (
+            <iframe
+              className="w-full h-full absolute top-0 left-0"
+              title={title}
+              src={url}
+              allowFullScreen
+            ></iframe>
+          )}
         </div>
         {index !== youtubeURL.length - 1 && <br />}
       </React.Fragment>

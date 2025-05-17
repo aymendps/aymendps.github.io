@@ -7,10 +7,6 @@ import ProjectContent from "./Shared/ProjectContent";
 function StudentSpecialtyAdvisor() {
   const usefulLinks = [
     {
-      title: "My Appearance on Express FM Radio to Talk About the Project",
-      href: "https://www.linkedin.com/feed/update/urn:li:activity:6933406717351219200/",
-    },
-    {
       title: "Project's GitHub Repository",
       href: "https://github.com/aymendps/student-specialty-advisor",
     },

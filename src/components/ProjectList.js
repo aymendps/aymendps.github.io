@@ -8,6 +8,7 @@ import RoboRepair from "./Projects/RoboRepair";
 import FileManagementSystem from "./Projects/FileManagementSystem";
 import StudentSpecialtyAdvisor from "./Projects/StudentSpecialtyAdvisor";
 import ModernCppGameEngine from "./Projects/ModernCppGameEngine";
+import DiscordButlerBot from "./Projects/DiscordButlerBot";
 
 export const PRINCE_OF_PERSIA_REMAKE = {
   title: "Prince Of Persia Remake",
@@ -146,8 +147,8 @@ export const DISCORD_BUTLER_BOT = {
     "$R Ffmpeg",
   ],
   pageURL: "/discord-butler-bot",
-  accessible: false,
-  element: <></>,
+  accessible: true,
+  element: <DiscordButlerBot />,
 };
 
 export const ROBO_REPAIR = {
