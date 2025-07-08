@@ -144,15 +144,17 @@ function ProjectIntroduction({
             </Typography>
           </div>
         </div>
-        <div className="w-[90%] m-auto pb-6">
-          <Typography
-            variant="h4"
-            className="text-cyan-600 pb-2 screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
-          >
-            Useful Links
-          </Typography>
-          <ul className="list-disc px-4">{generateUsefulLinks}</ul>
-        </div>
+        {generateUsefulLinks.length > 0 && (
+          <div className="w-[90%] m-auto pb-6">
+            <Typography
+              variant="h4"
+              className="text-cyan-600 pb-2 screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
+            >
+              Useful Links
+            </Typography>
+            <ul className="list-disc px-4">{generateUsefulLinks}</ul>
+          </div>
+        )}
         <div className="w-full bg-darkblue">
           <div className="w-[90%] m-auto pt-6" id="generated-work">
             <Typography

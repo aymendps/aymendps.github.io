@@ -9,6 +9,7 @@ import FileManagementSystem from "./Projects/FileManagementSystem";
 import StudentSpecialtyAdvisor from "./Projects/StudentSpecialtyAdvisor";
 import ModernCppGameEngine from "./Projects/ModernCppGameEngine";
 import DiscordButlerBot from "./Projects/DiscordButlerBot";
+import AiRealEstateAgent from "./Projects/AiRealEstateAgent";
 
 export const PRINCE_OF_PERSIA_REMAKE = {
   title: "Prince Of Persia Remake",
@@ -29,7 +30,7 @@ export const PRINCE_OF_PERSIA_REMAKE = {
     "Experience in creating enemy AI behaviour, perception and actions randomization",
     "Learned how to develop platformer games and adjust movements and mechanics to a 2D plane in a 3D environment",
   ],
-  tags: ["Game Dev", "$G Internship", "$R UE 5", "$R Blueprints", "$R C++"],
+  tags: ["Game Dev", "$G Internship", "$R UE 5", "$R C++", "$R Blueprints"],
   pageURL: "/prince-of-persia-atari-remake",
   accessible: true,
   element: <PrinceOfPersiaAtariRemake />,
@@ -60,8 +61,8 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
     "$R AI",
     "$R PCG",
     "$R UE 5",
-    "$R Blueprints",
     "$R C++",
+    "$R Blueprints",
   ],
   pageURL: "/user-driven-3d-procedural-tool",
   accessible: true,
@@ -139,7 +140,7 @@ export const DISCORD_BUTLER_BOT = {
     "Learned how to design modular, maintainable bot commands with support for multiple platforms and sources",
   ],
   tags: [
-    "Full-Stack Dev",
+    "Full Stack Dev",
     "$G Personal",
     "$R Discord.js",
     "$R Node.js",
@@ -248,7 +249,7 @@ export const FILE_MANAGER = {
     "Became better at achieving deadlines and collaborating with team members, especially when working in an agile environment",
   ],
   tags: [
-    "Full-Stack Dev",
+    "Full Stack Dev",
     "$G Work Project",
     "$R JavaScript",
     "$R TypeScript",
@@ -296,7 +297,7 @@ export const STUDENT_SPECIALTY_ADVISOR = {
     "Learned how to create an admin dashboard with multiple CRUD operations and statistics",
   ],
   tags: [
-    "Full-Stack Dev",
+    "Full Stack Dev",
     "$G University",
     "$G Won Award",
     "$R JavaScript",
@@ -310,7 +311,43 @@ export const STUDENT_SPECIALTY_ADVISOR = {
   element: <StudentSpecialtyAdvisor />,
 };
 
+export const AI_REAL_ESTATE_AGENT = {
+  title: "AI Real Estate Agent",
+  subtitle: "AR & VR Experience",
+  thumbnail: "",
+  workDone: [
+    "AR/VR Interactions & Optimizations",
+    "Realtime AI Conversation & Tool Execution",
+    "Custom C++ Plugin For AI Integration",
+    "Dynamic Lip Sync, Gestures & Emotions",
+    "Dynamic Blinking, Gazing & Turning",
+  ],
+  outcomes: [
+    "Gained experience developing immersive AR and VR applications and optimizing features",
+    "Gained experience working with complex skeletal meshes, static meshes and materials",
+    "Gained experience in designing multi-agent AI systems that can interact with users in real-time",
+    "Learned how to program a custom Unreal Engine plugin in C++ and how to integrate AI models via WebSockets",
+    "Learned how to implement responsive NPC interactions using gaze tracking, blinking, and body orientation towards the user",
+    "Learned how to implement realistic Metahumans including dynamic lip syncing with NVIDIA ACE, procedural hand gestures, and facial expressions",
+  ],
+  tags: [
+    "$G Work Project",
+    "$R AI",
+    "$R VR",
+    "$R AR",
+    "$R Meta Quest",
+    "$R UE 5",
+    "$R Nvidia ACE",
+    "$R C++",
+    "$R Blueprints",
+  ],
+  pageURL: "/ai-real-estate-agent",
+  accessible: true,
+  element: <AiRealEstateAgent />,
+};
+
 const GAMING_PINNED_PROJECTS = [
+  AI_REAL_ESTATE_AGENT,
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   PRINCE_OF_PERSIA_REMAKE,
   MODERN_CPP_GAME_ENGINE,
@@ -320,6 +357,7 @@ const GAMING_PINNED_PROJECTS = [
 ];
 
 const SOFTWARE_PINNED_PROJECTS = [
+  AI_REAL_ESTATE_AGENT,
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   MODERN_CPP_GAME_ENGINE,
   FILE_MANAGER,
@@ -329,6 +367,7 @@ const SOFTWARE_PINNED_PROJECTS = [
 ];
 
 const ALL_PINNED_PROJECTS = [
+  AI_REAL_ESTATE_AGENT,
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   PRINCE_OF_PERSIA_REMAKE,
   MODERN_CPP_GAME_ENGINE,
