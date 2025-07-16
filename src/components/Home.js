@@ -238,11 +238,8 @@ function Home({ industry, setIndustry }) {
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify to-fade-in">
-          Hi there! I'm <span className="text-cyan-400">Aymen</span>, and I
-          currently work as a{" "}
-          <span className="text-cyan-400">
-            Junior Unreal Engine and C++ Programmer
-          </span>{" "}
+          I'm <span className="text-cyan-400">Aymen</span>, and I currently work
+          as a <span className="text-cyan-400">Junior Software Engineer</span>{" "}
           and as a part-time{" "}
           <span className="text-cyan-400">
             Software Engineering & Architecture Instructor.
@@ -261,7 +258,9 @@ function Home({ industry, setIndustry }) {
           <span className="text-cyan-400">TypeScript</span>,{" "}
           <span className="text-cyan-400">HTML</span>,{" "}
           <span className="text-cyan-400">CSS</span>,{" "}
+          <span className="text-cyan-400">Tailwind</span>,{" "}
           <span className="text-cyan-400">React</span>,{" "}
+          <span className="text-cyan-400">Node.js</span>,{" "}
           <span className="text-cyan-400">Express</span>,{" "}
           <span className="text-cyan-400">NestJS</span>,{" "}
           <span className="text-cyan-400">MongoDB</span>, and{" "}
