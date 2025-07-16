@@ -20,7 +20,7 @@ function AiRealEstateAgent() {
     <>
       <ProjectIntroduction
         title={AI_REAL_ESTATE_AGENT.title}
-        youtubeURL={[""]}
+        youtubeURL={["https://www.youtube.com/embed/bpqh79CaRNo"]}
         tags={AI_REAL_ESTATE_AGENT.tags}
         usefulLinks={usefulLinks}
         workDone={workDone}
