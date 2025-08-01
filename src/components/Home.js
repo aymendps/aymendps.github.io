@@ -238,12 +238,8 @@ function Home({ industry, setIndustry }) {
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify to-fade-in">
-          I'm <span className="text-cyan-400">Aymen</span>, and I currently work
-          as a <span className="text-cyan-400">Junior Software Engineer</span>{" "}
-          and as a part-time{" "}
-          <span className="text-cyan-400">
-            Software Engineering & Architecture Instructor.
-          </span>
+          I'm a motivated Junior Software Engineer with ≈ 2 years of experience,
+          and also a part-time Software Engineering Instructor.
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify to-fade-in">
@@ -251,8 +247,7 @@ function Home({ industry, setIndustry }) {
           <span className="text-cyan-400">C++</span>,{" "}
           <span className="text-cyan-400">C#</span>, and working with game
           engines such as <span className="text-cyan-400">Unreal Engine</span>{" "}
-          and <span className="text-cyan-400">Unity</span>. I also have
-          experience in{" "}
+          and <span className="text-cyan-400">Unity</span>. I have experience in{" "}
           <span className="text-cyan-400">full-stack development</span> with
           technologies like <span className="text-cyan-400">JavaScript</span>,{" "}
           <span className="text-cyan-400">TypeScript</span>,{" "}
@@ -263,6 +258,8 @@ function Home({ industry, setIndustry }) {
           <span className="text-cyan-400">Node.js</span>,{" "}
           <span className="text-cyan-400">Express</span>,{" "}
           <span className="text-cyan-400">NestJS</span>,{" "}
+          <span className="text-cyan-400">REST APIs</span>,{" "}
+          <span className="text-cyan-400">WebSockets</span>,{" "}
           <span className="text-cyan-400">MongoDB</span>, and{" "}
           <span className="text-cyan-400">MySQL</span>.
           <br />
