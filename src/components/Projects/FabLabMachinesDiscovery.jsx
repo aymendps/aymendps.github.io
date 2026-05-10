@@ -203,7 +203,7 @@ namespace Animations
           <img
             alt=""
             src="/fmd/animation_editor.png"
-            className="h-[450px] m-auto my-[0.4em] screen-lg:h-auto object-contain"
+            className="h-112.5 m-auto my-[0.4em] screen-lg:h-auto object-contain"
           />
           <Typography variant="caption" className="text-center block">
             Multiple animation components working together and tweakable from
@@ -221,7 +221,7 @@ namespace Animations
         created brought the designers' UI to life.
       </Typography>
       <div className="w-fit m-auto mt-4">
-        <video controls className="h-[450px]">
+        <video controls className="h-112.5">
           <source src="/fmd/fmd_ui.mp4" type="video/mp4" />
         </video>
       </div>
@@ -571,8 +571,8 @@ namespace Vuforia
           </CodeMobileWrapper>
         </div>
         <div className="w-[30%] screen-lg:w-full">
-          <div className="w-fit h-[450px] m-auto mb-2 mt-2">
-            <video controls className="h-[450px]">
+          <div className="w-fit h-112.5 m-auto mb-2 mt-2">
+            <video controls className="h-112.5">
               <source src="/fmd/camera_permission.mp4" type="video/mp4" />
             </video>
           </div>
@@ -607,11 +607,7 @@ namespace Vuforia
         conveying 5 different categories:
       </Typography>
       <div className="m-auto w-fit mt-4 mb-2">
-        <img
-          alt=""
-          src="/fmd/popups.png"
-          className="h-[350px] object-contain"
-        />
+        <img alt="" src="/fmd/popups.png" className="h-87.5 object-contain" />
       </div>
       <Typography variant="caption" className="text-center block mb-4">
         All popup types
@@ -941,7 +937,7 @@ namespace Popups
       <div className="flex justify-evenly mt-4 screen-lg:flex-col">
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-[450px]">
+            <video controls className="h-112.5">
               <source src="/fmd/fmd_demo1.mp4" type="video/mp4" />
             </video>
           </div>
@@ -951,7 +947,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-[450px]">
+            <video controls className="h-112.5">
               <source src="/fmd/fmd_demo2.mp4" type="video/mp4" />
             </video>
           </div>
@@ -961,7 +957,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-[450px]">
+            <video controls className="h-112.5">
               <source src="/fmd/fmd_demo3.mp4" type="video/mp4" />
             </video>
           </div>
@@ -983,7 +979,7 @@ namespace Popups
       <div className="flex justify-evenly mt-4 screen-lg:flex-col">
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-[450px]">
+            <video controls className="h-112.5">
               <source src="/fmd/fmd_demo4.mp4" type="video/mp4" />
             </video>
           </div>
@@ -993,7 +989,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-[450px]">
+            <video controls className="h-112.5">
               <source src="/fmd/fmd_demo5.mp4" type="video/mp4" />
             </video>
           </div>
@@ -1003,7 +999,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-[450px]">
+            <video controls className="h-112.5">
               <source src="/fmd/fmd_demo6.mp4" type="video/mp4" />
             </video>
           </div>

@@ -25,7 +25,7 @@ function ProjectContent({ workDone = [] }) {
       >
         <div className="w-full relative">
           <div
-            className="absolute top-[-80px] left-0 screen-lg:top-[-10px]"
+            className="absolute -top-20 left-0 screen-lg:-top-2.5"
             id={work.id}
           ></div>
         </div>

@@ -160,12 +160,12 @@ function NavBar() {
   return (
     <>
       {/* Navbar */}
-      <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-[70px] z-50 screen-lg:hidden">
+      <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-17.5 z-50 screen-lg:hidden">
         <HashLink to={"home#t"}>
           <div className="relative">
             <Typography
               variant="h4"
-              className="text-black absolute text-transparent"
+              className="absolute text-transparent"
               style={{ WebkitTextStroke: "1px white" }}
             >
               Aymen Hammami
@@ -193,7 +193,7 @@ function NavBar() {
       </div>
       {/* Bottom Navigation */}
       <div className="hidden fixed bottom-0 left-0 right-0 z-50 screen-lg:block">
-        <BottomNavigation showLabels className="bg-black h-[70px]">
+        <BottomNavigation showLabels className="bg-black h-17.5">
           {generateBottomNavigationItems}
         </BottomNavigation>
       </div>

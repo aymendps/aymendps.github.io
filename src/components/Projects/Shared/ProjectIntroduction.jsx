@@ -100,7 +100,7 @@ function ProjectIntroduction({
 
   return (
     <>
-      <section className="w-full bg-white pt-[70px] screen-lg:pt-0">
+      <section className="w-full bg-white pt-17.5 screen-lg:pt-0">
         <div className="w-[90%] m-auto pb-4">
           <Typography
             variant="h2"
@@ -139,7 +139,7 @@ function ProjectIntroduction({
             >
               Description
             </Typography>
-            <Typography className="text-darkblue whitespace-pre-line break-words text-[16px] leading-5 text-justify">
+            <Typography className="text-darkblue whitespace-pre-line wrap-break-word text-[16px] leading-5 text-justify">
               {description}
             </Typography>
           </div>

@@ -146,8 +146,8 @@ function Home({ industry, setIndustry }) {
   ];
 
   const videoSection = (
-    <section className="relative h-[90vh] w-full mt-[70px] bg-gray-900 flex justify-center items-center screen-lg:mt-0 screen-lg:h-[50vh]">
-      <div className="absolute w-full top-[-70px] left-0" id="t"></div>
+    <section className="relative h-[90vh] w-full mt-17.5 bg-gray-900 flex justify-center items-center screen-lg:mt-0 screen-lg:h-[50vh]">
+      <div className="absolute w-full -top-17.5 left-0" id="t"></div>
       <div className="h-[90%] aspect-video z-10 bg-[rgb(0,20,40)] border-2 border-gray-500 screen-sm:w-full screen-sm:h-auto">
         <video
           key="main-video"
@@ -228,7 +228,7 @@ function Home({ industry, setIndustry }) {
   );
 
   const aboutSection = (
-    <section className="w-full bg-darkblue z-10 translate-y-[-70px] pb-0 pt-[70px] screen-lg:translate-y-0 screen-lg:pt-6">
+    <section className="w-full bg-darkblue z-10 -translate-y-17.5 pb-0 pt-17.5 screen-lg:translate-y-0 screen-lg:pt-6">
       <div className="m-auto w-[80%] pt-4 screen-md:w-[90%] screen-md:pb-12 text-center">
         <Typography
           variant="h2"
@@ -290,7 +290,7 @@ function Home({ industry, setIndustry }) {
   const projectsSection = (
     <section className="w-full bg-white pb-12 relative">
       <div
-        className="absolute top-[-70px] left-0 screen-lg:top-0"
+        className="absolute -top-17.5 left-0 screen-lg:top-0"
         id="projects"
       ></div>
       <div className="w-[90%] m-auto">
@@ -341,7 +341,7 @@ function Home({ industry, setIndustry }) {
     <section className="w-full bg-darkblue pb-4">
       <div className="relative">
         <div
-          className="absolute top-[-70px] left-0 screen-lg:top-0"
+          className="absolute -top-17.5 left-0 screen-lg:top-0"
           id="awards"
         ></div>
         <Typography
@@ -385,7 +385,7 @@ function Home({ industry, setIndustry }) {
       </div>
       <div className="relative">
         <div
-          className="absolute top-[-70px] left-0 screen-lg:top-0"
+          className="absolute -top-17.5 left-0 screen-lg:top-0"
           id="referrals"
         ></div>
         <Typography
