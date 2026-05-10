@@ -115,7 +115,7 @@ function NavBar() {
           className="w-full flex h-full justify-center items-center gap-2 normal-case"
         >
           {item.icon}
-          <Typography className="text-center text-white group-hover:text-cyan-400">
+          <Typography className="text-center text-white group-hover:text-cyan-400 normal-case">
             {item.name}
           </Typography>
         </Button>
@@ -127,7 +127,7 @@ function NavBar() {
           className="w-full flex h-full justify-center items-center gap-2 normal-case"
         >
           {item.icon}
-          <Typography className="text-center text-white group-hover:text-cyan-400">
+          <Typography className="text-center text-white group-hover:text-cyan-400 normal-case">
             {item.name}
           </Typography>
         </Button>

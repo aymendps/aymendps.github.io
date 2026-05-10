@@ -16,7 +16,7 @@ function App() {
           element={project.element}
         />
       );
-    }
+    },
   );
 
   return (

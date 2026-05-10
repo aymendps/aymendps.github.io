@@ -1,8 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+@import "tailwindcss" important;
+
+@theme {
+  --color-darkblue: rgb(0 30 60);
+  --breakpoint-*: initial;
+}
+
+@custom-variant screen-2xl (@media (max-width: 1535px));
+@custom-variant screen-xl (@media (max-width: 1279px));
+@custom-variant screen-lg (@media (max-width: 1024px));
+@custom-variant screen-md (@media (max-width: 768px));
+@custom-variant screen-sm (@media (max-width: 426px));
 
 @keyframes liquid {
   0%,
