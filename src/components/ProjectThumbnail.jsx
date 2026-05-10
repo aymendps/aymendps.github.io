@@ -90,7 +90,7 @@ function ProjectThumbnail({
       </div>
       <div className="w-full aspect-square bg-cyan-600 relative ">
         <img
-          className="w-full object-center object-contain group-hover:scale-99 duration-300"
+          className="w-full object-center object-contain"
           src={thumbnail}
           alt=""
         ></img>

@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[linear-gradient(180deg,rgba(2,6,23,0.98),rgba(2,6,23,1))] px-4 py-6 screen-md:mb-25">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/65 to-transparent"></div>
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/65 to-transparent"></div>
       <div className="mx-auto flex w-[min(1200px,100%)] items-center justify-between gap-6 screen-md:flex-col screen-md:text-center">
         <div>
           <Typography className="text-slate-100 font-semibold tracking-wide">

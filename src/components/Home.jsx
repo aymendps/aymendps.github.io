@@ -238,35 +238,60 @@ function Home({ industry, setIndustry }) {
       <div className="absolute left-[10%] top-[14%] h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl"></div>
       <div className="absolute right-[8%] bottom-[12%] h-48 w-48 rounded-full bg-blue-500/10 blur-3xl"></div>
 
-      <div className="m-auto w-[80%] pb-14 pt-8 text-center screen-md:w-[90%] screen-md:pb-12">
+      <div className="m-auto w-[80%] pb-14 pt-8 screen-md:w-[90%] screen-md:pb-12">
         <Typography
           variant="h2"
-          className="gradient-text pb-4 text-center screen-sm:text-4xl screen-md:text-5xl to-fade-in"
+          className="gradient-text pt-6 pb-12 text-center screen-sm:text-4xl screen-md:text-5xl to-fade-in"
         >
           Welcome to my portfolio!
         </Typography>
 
-        <div className="mx-auto space-y-6 text-center">
-          <Typography className="text-slate-100 leading-8 screen-md:text-justify to-fade-in">
-            Software engineer with experience in full stack development,
-            multi-agent AI, and game development. Also a software engineering
-            instructor at SMU - MedTech.
-          </Typography>
+        <div className="flex flex-col w-full gap-6">
+          <div className="relative group to-fade-in w-full">
+            <div className="absolute -inset-0.5 bg-linear-to-r from-cyan-500/30 to-blue-500/30 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 group-hover:bg-slate-900/70 transition duration-300">
+              <Typography className="text-slate-100 leading-8 text-center screen-md:text-left">
+                Software engineer with experience in full stack development,
+                AI-based systems, and game development. Also a software
+                engineering instructor at SMU - MedTech.
+              </Typography>
+            </div>
+          </div>
 
-          <Typography className="text-slate-100 leading-8 screen-md:text-justify to-fade-in">
-            Skilled in solving complex problems, building scalable systems,
-            developing new features and implementing multi-agent systems.
-            Proficient in multiple front-end and back-end technologies.
-            <br />
-            <br />
-            Excellent team player who thrives in agile environments. Strong
-            communicator with a passion for learning and adapting.
-          </Typography>
+          <div className="relative group to-fade-in w-full">
+            <div className="absolute -inset-0.5 bg-linear-to-r from-cyan-500/30 to-blue-500/30 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 group-hover:bg-slate-900/70 transition duration-300">
+              <Typography className="text-slate-100 leading-8 text-center screen-md:text-left">
+                I enjoy solving complex problems, building scalable systems, and
+                turning ideas into actual features.
+                <br />
+                <br />
+                I'm proficient in multiple technologies, up to date with
+                industry trends, and have a strong foundation in software
+                engineering.
+                <br />
+                <br />
+                Even though I can program by myself from scratch, I know how to
+                use AI efficiently to maximize productivity and creativity. I'm
+                used to reviewing, debugging, and improving generated code.
+              </Typography>
+            </div>
+          </div>
 
-          <Typography className="text-slate-100 leading-8 screen-md:text-justify to-fade-in">
-            I'm eager to work alongside like-minded professionals and to
-            contribute to projects that push the boundaries of what is possible.
-          </Typography>
+          <div className="relative group to-fade-in w-full">
+            <div className="absolute -inset-0.5 bg-linear-to-r from-cyan-500/30 to-blue-500/30 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 group-hover:bg-slate-900/70 transition duration-300">
+              <Typography className="text-slate-100 leading-8 text-center screen-md:text-left">
+                I'm an excellent team player who communicates well with others,
+                and is always eager to keep learning and to adapt.
+                <br />
+                <br />
+                I'm eager to work alongside like-minded professionals and to
+                contribute to projects that push the boundaries of what is
+                possible.
+              </Typography>
+            </div>
+          </div>
         </div>
       </div>
     </section>

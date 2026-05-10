@@ -35,15 +35,15 @@ I am confident that Aymen would be a valuable asset to any development team`,
     return (
       <Card
         key={referral.name}
-        className="w-[30%] screen-lg:w-[90%] rounded-[24px] to-fade-in transition-all duration-300 hover:-translate-y-3 border border-cyan-500/20 shadow-[0_15px_35px_rgba(34,211,238,0.08)] overflow-hidden group relative"
+        className="w-[30%] screen-lg:w-[90%] rounded-3xl to-fade-in transition-all duration-300 hover:-translate-y-3 border border-cyan-500/20 shadow-[0_15px_35px_rgba(34,211,238,0.08)] overflow-hidden group relative"
         sx={{
           background:
             "linear-gradient(135deg, rgba(15,23,42,0.95), rgba(8,47,73,0.92))",
           backdropFilter: "blur(16px)",
         }}
       >
-        <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-500/0 via-cyan-500/60 to-cyan-500/0"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/4 via-transparent to-blue-500/4 pointer-events-none"></div>
+        <div className="absolute top-0 inset-x-0 h-1 bg-linear-to-r from-cyan-500/0 via-cyan-500/60 to-cyan-500/0"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-cyan-500/4 via-transparent to-blue-500/4 pointer-events-none"></div>
 
         <CardContent className="relative z-10 px-6 py-7 flex flex-col h-full">
           <div className="mb-4 flex items-start gap-3">
@@ -54,7 +54,7 @@ I am confident that Aymen would be a valuable asset to any development team`,
 
           <Typography
             variant="body1"
-            className="text-slate-50 leading-relaxed mb-6 italic font-normal text-[1.05rem] flex-grow drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
+            className="text-slate-50 leading-relaxed mb-6 italic font-normal text-[1.05rem] grow drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
           >
             "{referral.description}"
           </Typography>
