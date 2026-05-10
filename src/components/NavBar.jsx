@@ -157,50 +157,48 @@ function NavBar() {
     );
   });
 
-  if (location.pathname !== "/") {
-    return (
-      <>
-        {/* Navbar */}
-        <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-[70px] z-50 screen-lg:hidden">
-          <HashLink to={"home#t"}>
-            <div className="relative">
-              <Typography
-                variant="h4"
-                className="text-black absolute text-transparent"
-                style={{ WebkitTextStroke: "1px white" }}
-              >
-                Aymen Hammami
-              </Typography>
-              <Typography
-                variant="h4"
-                className="text-white"
-                style={{
-                  animationName: "liquid",
-                  animationDuration: "3s",
-                  animationTimingFunction: "ease-in-out",
-                  animationIterationCount: "infinite",
-                }}
-              >
-                Aymen Hammami
-              </Typography>
-            </div>
-          </HashLink>
-          <div className="w-1/2 flex h-full justify-between">
-            {generateNavBarItems}
-            <div className="w-1/4 flex h-full justify-center items-center gap-2">
-              {generateNavBarIcons}
-            </div>
+  return (
+    <>
+      {/* Navbar */}
+      <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-[70px] z-50 screen-lg:hidden">
+        <HashLink to={"home#t"}>
+          <div className="relative">
+            <Typography
+              variant="h4"
+              className="text-black absolute text-transparent"
+              style={{ WebkitTextStroke: "1px white" }}
+            >
+              Aymen Hammami
+            </Typography>
+            <Typography
+              variant="h4"
+              className="text-white"
+              style={{
+                animationName: "liquid",
+                animationDuration: "3s",
+                animationTimingFunction: "ease-in-out",
+                animationIterationCount: "infinite",
+              }}
+            >
+              Aymen Hammami
+            </Typography>
+          </div>
+        </HashLink>
+        <div className="w-1/2 flex h-full justify-between">
+          {generateNavBarItems}
+          <div className="w-1/4 flex h-full justify-center items-center gap-2">
+            {generateNavBarIcons}
           </div>
         </div>
-        {/* Bottom Navigation */}
-        <div className="hidden fixed bottom-0 left-0 right-0 z-50 screen-lg:block">
-          <BottomNavigation showLabels className="bg-black h-[70px]">
-            {generateBottomNavigationItems}
-          </BottomNavigation>
-        </div>
-      </>
-    );
-  } else return <></>;
+      </div>
+      {/* Bottom Navigation */}
+      <div className="hidden fixed bottom-0 left-0 right-0 z-50 screen-lg:block">
+        <BottomNavigation showLabels className="bg-black h-[70px]">
+          {generateBottomNavigationItems}
+        </BottomNavigation>
+      </div>
+    </>
+  );
 }
 
 export default NavBar;

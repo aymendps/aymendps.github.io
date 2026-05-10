@@ -5,10 +5,10 @@ function ProjectContent({ workDone = [] }) {
   /* eslint-disable */
   useEffect(() => {
     const foundID = workDone.find((work) =>
-      window.location.href.includes("#" + work.id)
+      window.location.href.includes("#" + work.id),
     );
     if (foundID) {
-      document.getElementById(foundID.id).scrollIntoView({ block: "start" });
+      // document.getElementById(foundID.id).scrollIntoView({ block: "start" });
     } else {
       window.scrollTo(0, 0);
     }

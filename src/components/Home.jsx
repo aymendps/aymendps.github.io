@@ -29,7 +29,7 @@ function SetupObserver(classToObserve, classToAdd, threshold = 0.3) {
         }
       });
     },
-    { threshold: threshold }
+    { threshold: threshold },
   ); // Element is considered in view when 50% of it is visible
 
   // Target the elements you want to animate
@@ -62,11 +62,11 @@ function Home({ industry, setIndustry }) {
   const isMobile = useMediaQuery("(max-width:768px)");
 
   useEffect(() => {
-    if (window.location.href.includes("#projects")) {
-      document.getElementById("projects").scrollIntoView({ block: "start" });
-    } else if (window.location.href.includes("#awards")) {
-      document.getElementById("awards").scrollIntoView({ block: "start" });
-    }
+    // if (window.location.href.includes("#projects")) {
+    //   document.getElementById("projects").scrollIntoView({ block: "start" });
+    // } else if (window.location.href.includes("#awards")) {
+    //   document.getElementById("awards").scrollIntoView({ block: "start" });
+    // }
     // Set up the observer
     SetupObserver(".to-fade-in", "fade-in");
   }, []);
