@@ -35,7 +35,7 @@ I am confident that Aymen would be a valuable asset to any development team`,
     return (
       <Card
         key={referral.name}
-        className="w-[30%] screen-lg:w-[90%] rounded-3xl to-fade-in transition-all duration-300 hover:-translate-y-3 border border-cyan-500/20 shadow-[0_15px_35px_rgba(34,211,238,0.08)] overflow-hidden group relative"
+        className="w-[30%] screen-lg:w-full rounded-3xl to-fade-in transition-all duration-300 hover:-translate-y-3 border border-cyan-500/20 shadow-[0_15px_35px_rgba(34,211,238,0.08)] overflow-hidden group relative"
         sx={{
           background:
             "linear-gradient(135deg, rgba(15,23,42,0.95), rgba(8,47,73,0.92))",

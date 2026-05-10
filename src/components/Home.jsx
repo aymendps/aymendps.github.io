@@ -45,6 +45,7 @@ function SetupObserver(classToObserve, classToAdd, threshold = 0.3) {
 function Home({ industry, setIndustry }) {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
   const [isLoadingProjectPage, setIsLoadingProjectPage] = useState(false);
+  const [activeAboutIndex, setActiveAboutIndex] = useState(0);
 
   const mainVideoRef = useRef();
   const blurVideoRef = useRef();
@@ -75,6 +76,35 @@ function Home({ industry, setIndustry }) {
   useEffect(() => {
     SetupObserver(".to-fade-in-light", "fade-in", 0.05);
   }, [industry]);
+
+  useEffect(() => {
+    // Choose the about-card whose center is closest to viewport center
+    function updateActiveAbout() {
+      const elems = Array.from(document.querySelectorAll(".about-card"));
+      if (!elems.length) return;
+      const viewportCenter = window.innerHeight / 2;
+      let closestIdx = 0;
+      let closestDist = Infinity;
+      elems.forEach((el, i) => {
+        const rect = el.getBoundingClientRect();
+        const elCenter = rect.top + rect.height / 2;
+        const dist = Math.abs(elCenter - viewportCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIdx = i;
+        }
+      });
+      setActiveAboutIndex(closestIdx);
+    }
+
+    updateActiveAbout();
+    window.addEventListener("scroll", updateActiveAbout, { passive: true });
+    window.addEventListener("resize", updateActiveAbout);
+    return () => {
+      window.removeEventListener("scroll", updateActiveAbout);
+      window.removeEventListener("resize", updateActiveAbout);
+    };
+  }, []);
 
   const CONTACT_ICONS = [
     {
@@ -232,6 +262,61 @@ function Home({ industry, setIndustry }) {
     </section>
   );
 
+  const ABOUT_SECTION_CARDS = [
+    <>
+      Software engineer with experience in full stack development, AI-based
+      systems, and game development. Also a software engineering instructor at
+      SMU - MedTech.
+    </>,
+    <>
+      I enjoy solving complex problems, building scalable systems, and turning
+      ideas into actual features.
+      <br />
+      <br />
+      I'm proficient in multiple technologies, up to date with industry trends,
+      and have a strong foundation in software engineering.
+      <br />
+      <br />
+      Even though I can program by myself from scratch, I know how to use AI
+      efficiently to maximize productivity and creativity. I'm used to
+      reviewing, debugging, and improving generated code.
+    </>,
+    <>
+      I'm an excellent team player who communicates well with others, and is
+      always eager to keep learning and to adapt.
+      <br />
+      <br />
+      I'm eager to work alongside like-minded professionals and to contribute to
+      projects that push the boundaries of what is possible.
+    </>,
+  ];
+
+  const generateAboutSectionCards = ABOUT_SECTION_CARDS.map((content, idx) => {
+    const isActive = activeAboutIndex === idx;
+    return (
+      <div
+        key={`aboutCard-${idx}`}
+        className={"relative group to-fade-in w-full about-card"}
+      >
+        <div
+          className={`absolute -inset-0.5 bg-linear-to-r from-cyan-500/30 to-blue-500/30 rounded-2xl blur transition duration-300 ${isActive ? "opacity-100" : "opacity-0"}`}
+        ></div>
+        <div
+          className={
+            `relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 transition duration-300 ` +
+            (isActive
+              ? "bg-slate-900/70 scale-[1.01] ring-1 ring-white/10"
+              : "group-hover:bg-slate-900/70")
+          }
+        >
+          <Typography className="text-slate-100 leading-8 text-center screen-md:text-left">
+            {content}
+          </Typography>
+        </div>
+      </div>
+    );
+  });
+
   const aboutSection = (
     <section className="relative z-10 w-full overflow-hidden bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_28%),linear-gradient(180deg,rgba(2,6,23,0.98),rgba(15,23,42,0.94))] pb-0">
       <div className="absolute inset-x-0 top-0 h-2 bg-linear-to-r from-transparent via-cyan-300/60 to-transparent"></div>
@@ -247,51 +332,7 @@ function Home({ industry, setIndustry }) {
         </Typography>
 
         <div className="flex flex-col w-full gap-6">
-          <div className="relative group to-fade-in w-full">
-            <div className="absolute -inset-0.5 bg-linear-to-r from-cyan-500/30 to-blue-500/30 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 group-hover:bg-slate-900/70 transition duration-300">
-              <Typography className="text-slate-100 leading-8 text-center screen-md:text-left">
-                Software engineer with experience in full stack development,
-                AI-based systems, and game development. Also a software
-                engineering instructor at SMU - MedTech.
-              </Typography>
-            </div>
-          </div>
-
-          <div className="relative group to-fade-in w-full">
-            <div className="absolute -inset-0.5 bg-linear-to-r from-cyan-500/30 to-blue-500/30 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 group-hover:bg-slate-900/70 transition duration-300">
-              <Typography className="text-slate-100 leading-8 text-center screen-md:text-left">
-                I enjoy solving complex problems, building scalable systems, and
-                turning ideas into actual features.
-                <br />
-                <br />
-                I'm proficient in multiple technologies, up to date with
-                industry trends, and have a strong foundation in software
-                engineering.
-                <br />
-                <br />
-                Even though I can program by myself from scratch, I know how to
-                use AI efficiently to maximize productivity and creativity. I'm
-                used to reviewing, debugging, and improving generated code.
-              </Typography>
-            </div>
-          </div>
-
-          <div className="relative group to-fade-in w-full">
-            <div className="absolute -inset-0.5 bg-linear-to-r from-cyan-500/30 to-blue-500/30 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 group-hover:bg-slate-900/70 transition duration-300">
-              <Typography className="text-slate-100 leading-8 text-center screen-md:text-left">
-                I'm an excellent team player who communicates well with others,
-                and is always eager to keep learning and to adapt.
-                <br />
-                <br />
-                I'm eager to work alongside like-minded professionals and to
-                contribute to projects that push the boundaries of what is
-                possible.
-              </Typography>
-            </div>
-          </div>
+          {generateAboutSectionCards}
         </div>
       </div>
     </section>
@@ -368,7 +409,7 @@ function Home({ industry, setIndustry }) {
             <a
               key={post.url}
               href={post.url}
-              className="block w-1/5 screen-lg:w-[40%] screen-sm:w-[90%] to-fade-in transition-transform duration-200 hover:-translate-y-2"
+              className="block w-1/5 screen-lg:w-[40%] screen-sm:w-full to-fade-in transition-transform duration-200 hover:-translate-y-2"
               target="_blank"
               rel="noreferrer"
             >
