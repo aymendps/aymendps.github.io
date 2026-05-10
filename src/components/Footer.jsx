@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 
 function Footer() {
   return (
-    <section className="bg-black w-full p-2 screen-md:mb-17.5">
+    <section className="bg-black w-full p-2 screen-md:mb-25">
       <Typography className="text-white text-center">
         Copyright 2022-2026 by Aymen HAMMAMI
         <br />

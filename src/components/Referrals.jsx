@@ -13,7 +13,7 @@ function Referrals() {
       name: "Oussama Ben Mariem",
       position: "Chief Technology Officer at Lanterns Studios",
       picture: "/referrals/ref0.jpg",
-      description: `Aymen did an amazing job on his summer internship, by learning unreal engine 5 and making an early prototype of "Prince of Persia", i really admire his way of thinking to solve issues and how he manage to deliver his work in time.`,
+      description: `Aymen did an amazing job ... I really admire his way of thinking to solve issues and how he manages to deliver his work on time.`,
       link: "https://www.linkedin.com/in/oussama-ben-mariem/",
     },
     {

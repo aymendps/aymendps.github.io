@@ -26,7 +26,7 @@ function AiRealEstateAgent() {
         workDone={workDone}
         useLinksForWorkDone={false}
         outcomes={AI_REAL_ESTATE_AGENT.outcomes}
-        description={`One of the projects I was a main contributor to while working at Lanterns Studios is an immersive AI-powered real estate experience in AR and VR for the Meta Quest. It features a lifelike Metahuman & AI agent that guides users through an overview of Dubai in AR, and then takes them on a tour of a luxurious penthouse in VR.
+        description={`One of the projects I was leading while working at Lanterns Studios is an immersive AI-powered real estate experience in AR and VR for the Meta Quest. It features a lifelike Metahuman & AI agent that guides users through an overview of Dubai in AR, and then takes them on a tour of a luxurious penthouse in VR.
           
           The agent engages in real-time conversations with users, listening, interpreting, responding, and even asking questions to enhance the user experience. It's also capable of executing tools such as changing the time of day, adjusting the lighting mood, swapping kitchen/bedroom themes, and teleporting between rooms on demand. I have programmed the logic for all these functionalities.
           

@@ -238,45 +238,19 @@ function Home({ industry, setIndustry }) {
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify to-fade-in">
-          I'm a motivated Junior Software Engineer with ≈ 2 years of experience,
-          and also a part-time Software Engineering Instructor.
+          Software engineer with experience in full stack development,
+          multi-agent AI, and game development. Also a software engineering
+          instructor at SMU - MedTech.
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify to-fade-in">
-          I have experience in programming with{" "}
-          <span className="text-cyan-400">C++</span>,{" "}
-          <span className="text-cyan-400">C#</span>, and working with game
-          engines such as <span className="text-cyan-400">Unreal Engine</span>{" "}
-          and <span className="text-cyan-400">Unity</span>. I have experience in{" "}
-          <span className="text-cyan-400">full-stack development</span> with
-          technologies like <span className="text-cyan-400">JavaScript</span>,{" "}
-          <span className="text-cyan-400">TypeScript</span>,{" "}
-          <span className="text-cyan-400">HTML</span>,{" "}
-          <span className="text-cyan-400">CSS</span>,{" "}
-          <span className="text-cyan-400">Tailwind</span>,{" "}
-          <span className="text-cyan-400">React</span>,{" "}
-          <span className="text-cyan-400">Node.js</span>,{" "}
-          <span className="text-cyan-400">Express</span>,{" "}
-          <span className="text-cyan-400">NestJS</span>,{" "}
-          <span className="text-cyan-400">REST APIs</span>,{" "}
-          <span className="text-cyan-400">WebSockets</span>,{" "}
-          <span className="text-cyan-400">MongoDB</span>, and{" "}
-          <span className="text-cyan-400">MySQL</span>.
+          Skilled in solving complex problems, building scalable systems,
+          developing new features and implementing multi-agent systems.
+          Proficient in multiple front-end and back-end technologies.
           <br />
-          <br />I have strong{" "}
-          <span className="text-cyan-400">engineering skills</span>, a solid
-          understanding of{" "}
-          <span className="text-cyan-400">UML & the development lifecycle</span>
-          , and I am comfortable working with{" "}
-          <span className="text-cyan-400">
-            agile methodologies such as Scrum.
-          </span>
-        </Typography>
-        <br />
-        <Typography className="text-white  screen-md:text-justify to-fade-in">
-          I am a quick learner who excels at turning ideas into clean and
-          maintainable code. I communicate clearly and work well with others to
-          achieve the best user experience.
+          <br />
+          Excellent team player who thrives in agile environments. Strong
+          communicator with a passion for learning and adapting.
         </Typography>
         <br />
         <Typography className="text-white  screen-md:text-justify to-fade-in">

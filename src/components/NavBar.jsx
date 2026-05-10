@@ -3,6 +3,7 @@ import {
   BottomNavigationAction,
   Button,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import PortfolioIcon from "@mui/icons-material/Star";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -59,6 +60,8 @@ function NavBar() {
       ),
     },
   ];
+
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   const navBarIcons = [
     {
@@ -159,44 +162,52 @@ function NavBar() {
 
   return (
     <>
-      {/* Navbar */}
-      <div className="flex bg-black justify-around items-center fixed top-0 left-0 w-full h-17.5 z-50 screen-lg:hidden">
-        <HashLink to={"home#t"}>
-          <div className="relative">
-            <Typography
-              variant="h4"
-              className="absolute text-transparent"
-              style={{ WebkitTextStroke: "1px white" }}
-            >
-              Aymen Hammami
-            </Typography>
-            <Typography
-              variant="h4"
-              className="text-white"
-              style={{
-                animationName: "liquid",
-                animationDuration: "3s",
-                animationTimingFunction: "ease-in-out",
-                animationIterationCount: "infinite",
-              }}
-            >
-              Aymen Hammami
-            </Typography>
+      {!isMobile ? (
+        <div className="fixed top-4 left-1/2 z-50 flex h-17.5 w-[min(1200px,calc(100%-2rem))] -translate-x-1/2 items-center justify-around rounded-full border border-white/10 bg-slate-950/70 px-4 shadow-2xl shadow-cyan-950/30 backdrop-blur-xl screen-lg:hidden">
+          <div className="w-[29%] flex justify-center items-center">
+            <HashLink to={"home#t"}>
+              <div className="relative">
+                <Typography
+                  variant="h4"
+                  className="absolute text-transparent"
+                  style={{ WebkitTextStroke: "1px white" }}
+                >
+                  Aymen Hammami
+                </Typography>
+                <Typography
+                  variant="h4"
+                  className="gradient-text"
+                  style={{
+                    animationName: "liquid",
+                    animationDuration: "3s",
+                    animationTimingFunction: "ease-in-out",
+                    animationIterationCount: "infinite",
+                  }}
+                >
+                  Aymen Hammami
+                </Typography>
+              </div>
+            </HashLink>
           </div>
-        </HashLink>
-        <div className="w-1/2 flex h-full justify-between">
-          {generateNavBarItems}
-          <div className="w-1/4 flex h-full justify-center items-center gap-2">
-            {generateNavBarIcons}
+          <div className="flex h-full grow justify-between">
+            <div className="flex h-full w-3/4 items-center justify-center gap-4">
+              {generateNavBarItems}
+            </div>
+            <div className="flex h-full w-1/4 items-center justify-center gap-2">
+              {generateNavBarIcons}
+            </div>
           </div>
         </div>
-      </div>
-      {/* Bottom Navigation */}
-      <div className="hidden fixed bottom-0 left-0 right-0 z-50 screen-lg:block">
-        <BottomNavigation showLabels className="bg-black h-17.5">
-          {generateBottomNavigationItems}
-        </BottomNavigation>
-      </div>
+      ) : (
+        <div className="hidden fixed bottom-4 left-1/2 z-50 w-[min(760px,calc(100%-1rem))] -translate-x-1/2 screen-lg:block">
+          <BottomNavigation
+            showLabels
+            className="glass-panel h-17.5 rounded-full overflow-hidden border border-white/10 bg-slate-950/75"
+          >
+            {generateBottomNavigationItems}
+          </BottomNavigation>
+        </div>
+      )}
     </>
   );
 }

@@ -29,7 +29,6 @@ function ModernCppGameEngine() {
         tags={MODERN_CPP_GAME_ENGINE.tags}
         usefulLinks={usefulLinks}
         workDone={workDone}
-        useLinksForWorkDone={false}
         outcomes={MODERN_CPP_GAME_ENGINE.outcomes}
         description={`This project is a custom game engine developed using modern C++ and SDL2. 
           
@@ -40,7 +39,7 @@ function ModernCppGameEngine() {
           It also helped me strengthen my understanding of game engine architecture and delta-time based game loops.
           `}
       />
-      <ProjectContent /*workDone={workDone}*/ />
+      <ProjectContent workDone={workDone} />
       <Footer />
     </>
   );
