@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import { getPinnedProjectsByIndustry } from "./components/ProjectList";
@@ -20,7 +20,7 @@ function App() {
   );
 
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter basename={import.meta.env.BASE_URL}>
       <NavBar />
       <Routes>
         {/* <Route path="/" element={<Navigate to="/home" replace />} /> */}
@@ -32,7 +32,7 @@ function App() {
         {generateProjectRoutes}
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

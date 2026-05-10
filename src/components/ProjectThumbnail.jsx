@@ -46,7 +46,7 @@ function ProjectThumbnail({
 
   const handleClick = () => {
     if (accessible) {
-      // window.location.href = "#/home#projects";
+      window.location.href = "#/home#projects";
       if (isMobile) {
         setIsLoadingProjectPage(true);
         projectPageTimeout = setTimeout(() => {

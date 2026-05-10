@@ -8,7 +8,7 @@ function ProjectContent({ workDone = [] }) {
       window.location.href.includes("#" + work.id),
     );
     if (foundID) {
-      // document.getElementById(foundID.id).scrollIntoView({ block: "start" });
+      document.getElementById(foundID.id).scrollIntoView({ block: "start" });
     } else {
       window.scrollTo(0, 0);
     }
