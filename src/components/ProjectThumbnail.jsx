@@ -74,7 +74,7 @@ function ProjectThumbnail({
 
   return (
     <Card
-      className="shining-effect basis-[23%] screen-lg:basis-[31%] screen-sm:basis-[90%] screen-md:basis-[44%] mb-[2%] screen-sm:mb-[5%] relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)] cursor-pointer group transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,23,42,0.12)]"
+      className="shining-effect basis-[23%] screen-lg:basis-[31%] screen-sm:basis-[90%] screen-md:basis-[44%] mb-[2%] screen-sm:mb-[5%] relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)] cursor-pointer group transition-transform duration-200 hover:shadow-[0_24px_60px_rgba(15,23,42,0.12)]"
       onClick={handleClick}
     >
       <div className="p-4 pb-3">
@@ -90,7 +90,7 @@ function ProjectThumbnail({
       </div>
       <div className="w-full aspect-square bg-cyan-600 relative ">
         <img
-          className="w-full object-center object-contain"
+          className="w-full object-center object-contain group-hover:scale-99 duration-300"
           src={thumbnail}
           alt=""
         ></img>

@@ -65,8 +65,8 @@ function Home({ industry, setIndustry }) {
   useEffect(() => {
     if (window.location.href.includes("#projects")) {
       document.getElementById("projects").scrollIntoView({ block: "start" });
-    } else if (window.location.href.includes("#awards")) {
-      document.getElementById("awards").scrollIntoView({ block: "start" });
+    } else if (window.location.href.includes("#highlights")) {
+      document.getElementById("highlights").scrollIntoView({ block: "start" });
     }
     // Set up the observer
     SetupObserver(".to-fade-in", "fade-in");
@@ -122,27 +122,31 @@ function Home({ industry, setIndustry }) {
     {
       title:
         "Graduating with the grade of 'Outstanding', the highest grade for a capstone project",
-      image: "/awards/capstone.jpg",
+      image: "/highlights/capstone.jpg",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7212445756081799168/",
       origin: "object-center",
+      source: "LinkedIn",
     },
     {
       title: "Second Prize at 24H Game Development Hackathon",
-      image: "/awards/gamehack.jpg",
+      image: "/highlights/gamehack.jpg",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7053399477331591168/",
       origin: "object-center",
+      source: "LinkedIn",
     },
     {
       title: "Best Senior Software Engineering Project, SMU - MedTech",
-      image: "/awards/senior.jpg",
+      image: "/highlights/senior.jpg",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7062807576207360000/",
       origin: "object-right",
+      source: "LinkedIn",
     },
     {
       title: "Best Junior Software Engineering Project, SMU - MedTech",
-      image: "/awards/junior.jpg",
+      image: "/highlights/junior.jpg",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:6932755568562462721/",
       origin: "object-left",
+      source: "LinkedIn",
     },
   ];
 
@@ -230,7 +234,7 @@ function Home({ industry, setIndustry }) {
 
   const aboutSection = (
     <section className="relative z-10 w-full overflow-hidden bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_28%),linear-gradient(180deg,rgba(2,6,23,0.98),rgba(15,23,42,0.94))] pb-0">
-      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/60 to-transparent"></div>
+      <div className="absolute inset-x-0 top-0 h-2 bg-linear-to-r from-transparent via-cyan-300/60 to-transparent"></div>
       <div className="absolute left-[10%] top-[14%] h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl"></div>
       <div className="absolute right-[8%] bottom-[12%] h-48 w-48 rounded-full bg-blue-500/10 blur-3xl"></div>
 
@@ -319,59 +323,69 @@ function Home({ industry, setIndustry }) {
   );
 
   const findMoreSection = (
-    <section className="w-full bg-darkblue pb-4">
+    <section className="relative w-full overflow-hidden bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_28%),linear-gradient(180deg,rgba(2,6,23,0.98),rgba(15,23,42,0.94))] pb-6 pt-4">
+      <div className="absolute inset-x-0 top-0 h-2 bg-linear-to-r from-transparent via-cyan-300/60 to-transparent"></div>
       <div className="relative">
         <div
           className="absolute -top-17.5 left-0 screen-lg:top-0"
-          id="awards"
+          id="highlights"
         ></div>
         <Typography
           variant="h2"
-          className="to-fade-in text-center text-white py-12 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+          className="gradient-text to-fade-in text-center py-12 screen-sm:text-4xl screen-md:text-5xl"
         >
-          Project Awards
+          Highlights
         </Typography>
       </div>
-      <div className="w-full flex justify-evenly flex-wrap">
+      <div className="relative z-10 w-full flex justify-center flex-wrap gap-6 px-4 pb-8">
         {LINKEDIN_POSTS.map((post) => {
           return (
             <a
               key={post.url}
               href={post.url}
-              className="block w-1/5 screen-lg:w-[40%] screen-sm:w-[90%] mb-12 to-fade-in"
+              className="block w-1/5 screen-lg:w-[40%] screen-sm:w-[90%] to-fade-in transition-transform duration-200 hover:-translate-y-2"
               target="_blank"
               rel="noreferrer"
             >
-              <Card className="w-full overflow-hidden rounded-xl relative group">
+              <Card className="w-full overflow-hidden rounded-3xl relative group border border-slate-200/30 shadow-[0_18px_40px_rgba(15,23,42,0.12)]">
                 <img
                   alt=""
                   src={post.image}
                   className={
-                    "w-full object-cover aspect-square group-hover:scale-110 duration-200 " +
+                    "w-full object-cover aspect-square brightness-85 group-hover:brightness-100 group-hover:scale-105 duration-300 " +
                     post.origin
                   }
                 />
-                <div className="absolute w-full bg-white opacity-90 bottom-0 left-0 px-2 py-1">
-                  <Typography
-                    variant="h6"
-                    className="text-cyan-600 underline-offset-4 text-center group-hover:underline font-normal text-[1rem]"
-                  >
-                    {post.title + " ↗"}
-                  </Typography>
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute left-4 bottom-4 max-w-[86%] w-auto bg-black/80 backdrop-blur-md rounded-lg px-3 py-2 transform transition-all duration-250 group-hover:-translate-y-1 shadow-2xl border border-white/6 ring-1 ring-white/5 pointer-events-auto">
+                    <Typography
+                      variant="subtitle2"
+                      className="text-white font-semibold text-left leading-tight text-sm md:text-base drop-shadow-[0_6px_18px_rgba(0,0,0,0.85)]"
+                    >
+                      {post.title}
+                    </Typography>
+                    <Typography
+                      variant="caption"
+                      className="text-slate-200 mt-1 block text-xs"
+                    >
+                      View on {post.source} ↗
+                    </Typography>
+                  </div>
                 </div>
               </Card>
             </a>
           );
         })}
       </div>
-      <div className="relative">
+      <div className="relative z-10">
         <div
           className="absolute -top-17.5 left-0 screen-lg:top-0"
           id="referrals"
         ></div>
         <Typography
           variant="h2"
-          className="to-fade-in text-center text-white py-12 screen-md:pt-6 screen-sm:text-4xl screen-md:font-bold screen-md:text-5xl"
+          className="gradient-text to-fade-in text-center py-12 screen-md:pt-6 screen-sm:text-4xl screen-md:text-5xl"
         >
           LinkedIn Referrals
         </Typography>

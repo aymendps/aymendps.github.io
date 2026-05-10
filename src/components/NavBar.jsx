@@ -10,7 +10,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import HomeIcon from "@mui/icons-material/Home";
 import GithubIcon from "@mui/icons-material/GitHub";
-import AwardsIcon from "@mui/icons-material/EmojiEvents";
+import HighlightsIcon from "@mui/icons-material/AutoAwesome";
 import ReferralsIcon from "@mui/icons-material/Reviews";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -40,10 +40,10 @@ function NavBar() {
       ),
     },
     {
-      name: "Awards",
-      link: "home#awards",
+      name: "Highlights",
+      link: "home#highlights",
       icon: (
-        <AwardsIcon
+        <HighlightsIcon
           fontSize="medium"
           className="text-white group-hover:text-cyan-400"
         />
