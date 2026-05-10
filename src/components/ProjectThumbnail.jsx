@@ -15,7 +15,14 @@ function ProjectThumbnail({
   accessible = false,
 }) {
   const generateWorkDone = workDone.map((work) => {
-    return <li key={title + work}>{work}</li>;
+    return (
+      <li
+        key={title + work}
+        className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-[0.92rem] leading-snug text-black"
+      >
+        {work}
+      </li>
+    );
   });
 
   const getTagsClassName = (tag) => {
@@ -67,21 +74,21 @@ function ProjectThumbnail({
 
   return (
     <Card
-      className="shining-effect basis-[23%] screen-lg:basis-[31%] screen-sm:basis-[90%] screen-md:basis-[44%] mb-[2%] screen-sm:mb-[5%] relative rounded-xl overflow-hidden cursor-pointer group"
+      className="shining-effect basis-[23%] screen-lg:basis-[31%] screen-sm:basis-[90%] screen-md:basis-[44%] mb-[2%] screen-sm:mb-[5%] relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)] cursor-pointer group transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,23,42,0.12)]"
       onClick={handleClick}
     >
-      <div className="p-4">
+      <div className="p-4 pb-3">
         <Typography
           variant="h5"
-          className="text-center text-darkblue group-hover:underline text-[1.4rem]"
+          className="text-center text-darkblue group-hover:underline text-[1.35rem] leading-tight"
         >
           {title}
         </Typography>
-        <Typography className="text-center text-cyan-600">
+        <Typography className="text-center text-cyan-600 font-medium">
           {subtitle}
         </Typography>
       </div>
-      <div className="w-full aspect-square bg-cyan-600 relative border-y-2 border-darkblue">
+      <div className="w-full aspect-square bg-cyan-600 relative ">
         <img
           className="w-full object-center object-contain"
           src={thumbnail}
@@ -99,11 +106,13 @@ function ProjectThumbnail({
         )}
       </div>
       <div className="w-full">
-        <div className="w-full py-4 px-2">
+        <div className="w-full px-4 py-4">
           {workDone.length !== 0 ? (
-            <ul className="list-disc px-4">{generateWorkDone}</ul>
+            <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {generateWorkDone}
+            </ul>
           ) : (
-            <Typography variant="body2" className="text-center">
+            <Typography variant="body2" className="text-center text-slate-600">
               Details about this project will be added soon
             </Typography>
           )}

@@ -320,10 +320,10 @@ export const AI_REAL_ESTATE_AGENT = {
   thumbnail: "/thumbnails/estate.png",
   workDone: [
     "AR/VR Interactions & Optimizations",
-    "Realtime AI Conversation & Tool Execution",
+    "Realtime AI Conversation & Tool Calling",
     "Custom C++ Plugin For AI Integration",
-    "Dynamic Lip Sync, Gestures & Emotions",
-    "Dynamic Blinking, Gazing & Turning",
+    "MetaHuman Animation Based On Emotions",
+    "Realtime Lip Sync & Dynamic Gestures",
   ],
   outcomes: [
     "Gained experience developing immersive AR and VR applications and optimizing features",

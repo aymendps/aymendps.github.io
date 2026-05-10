@@ -4,31 +4,40 @@ import { styled } from "@mui/system";
 import { getProjectsNumberByIndustry } from "../ProjectList";
 import { useSearchParams } from "react-router-dom";
 
-// Custom styled Tabs component with border, border-radius, and custom styles
 const CustomTabs = styled(Tabs)({
-  border: "1px solid #ccc",
-  borderRadius: "8px",
-  backgroundColor: "#f9f9f9",
+  borderRadius: "9999px",
+  background:
+    "linear-gradient(180deg, rgba(255,255,255,0.92), rgba(248,250,252,0.86))",
+  border: "1px solid rgba(148, 163, 184, 0.28)",
+  boxShadow: "0 16px 36px rgba(15, 23, 42, 0.08)",
+  padding: "6px",
   minHeight: "unset",
+  gap: "8px",
   "& .MuiTabs-indicator": {
-    height: "100%",
-    borderRadius: "8px",
-    zIndex: -1,
-    transition: "transform 0.3s ease",
+    display: "none",
   },
 });
 
-// Custom styled Tab component with conditional styles for the selected state
-const CustomTab = styled(Tab)(({ theme, selected }) => ({
+const CustomTab = styled(Tab)({
   minHeight: "unset",
-  padding: "8px 16px",
-  borderRadius: "8px",
-  textTransform: "none", // Removes the default uppercase styling
-  fontWeight: 500,
-  color: selected ? "white !important" : "rgb(0 30 60)", // Inverted color for text when selected
-  backgroundColor: selected ? "rgb(0 30 60)" : "transparent", // Background color when selected
+  padding: "12px 18px",
+  borderRadius: "9999px",
+  textTransform: "none",
+  letterSpacing: "0.01em",
+  color: "rgb(15 23 42)",
+  backgroundColor: "transparent",
+  border: "1px solid transparent",
+  transition: "all 180ms ease",
   zIndex: 1,
-}));
+  "&:hover": {
+    backgroundColor: "rgba(15, 23, 42, 0.05)",
+  },
+  "&.Mui-selected": {
+    color: "white",
+    background: "linear-gradient(135deg, rgb(8 47 73), rgb(14 116 144))",
+    boxShadow: "0 12px 24px rgba(8, 47, 73, 0.16)",
+  },
+});
 
 const industryToIndex = (value) => {
   switch (value) {
@@ -85,30 +94,28 @@ const ProjectSlider = ({ industry, setIndustry }) => {
     <>
       <Typography
         variant="subtitle1"
-        className="text-center pb-4 text-cyan-600 to-fade-in"
+        className="text-center pb-4 text-cyan-700 font-medium tracking-wide to-fade-in"
       >
         <b>Click</b> on a project to view it with more details
       </Typography>
-      <Box className="w-3/4 screen-lg:w-full m-auto mb-6 to-fade-in">
+      <Box className="mx-auto mb-8 w-full max-w-4xl px-0 to-fade-in">
         <CustomTabs
           variant="fullWidth"
           value={value}
           onChange={handleChange}
-          TabIndicatorProps={{ style: { display: "none" } }} // Hides the default underline
+          TabIndicatorProps={{ style: { display: "none" } }}
         >
           <CustomTab
             disableRipple
-            label={"All (" + getProjectsNumberByIndustry("all") + ")"}
+            label={`All (${getProjectsNumberByIndustry("all")})`}
           />
           <CustomTab
             disableRipple
-            label={"Gaming (" + getProjectsNumberByIndustry("gaming") + ")"}
+            label={`Gaming (${getProjectsNumberByIndustry("gaming")})`}
           />
           <CustomTab
             disableRipple
-            label={
-              "Software & Web (" + getProjectsNumberByIndustry("software") + ")"
-            }
+            label={`Software & Web (${getProjectsNumberByIndustry("software")})`}
           />
         </CustomTabs>
       </Box>
