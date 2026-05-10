@@ -11,6 +11,7 @@ import ProjectList, { getPinnedProjectsByIndustry } from "./ProjectList";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GithubIcon from "@mui/icons-material/GitHub";
+import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import Footer from "./Footer";
 import ProjectLoading from "./ProjectLoading";
 import PreloadImages from "./PreloadImages";
@@ -148,7 +149,7 @@ function Home({ industry, setIndustry }) {
   const videoSection = (
     <section className="relative h-[90vh] w-full mt-17.5 bg-gray-900 flex justify-center items-center screen-lg:mt-0 screen-lg:h-[50vh]">
       <div className="absolute w-full -top-17.5 left-0" id="t"></div>
-      <div className="h-[90%] aspect-video z-10 bg-[rgb(0,20,40)] border-2 border-gray-500 screen-sm:w-full screen-sm:h-auto">
+      <div className="h-[90%] aspect-video z-10 bg-[rgb(0,20,40)] border-2 border-gray-500 screen-xl:h-[80%] screen-lg:w-full screen-lg:h-auto">
         <video
           key="main-video"
           ref={mainVideoRef}
@@ -197,8 +198,8 @@ function Home({ industry, setIndustry }) {
         </video>
       </div>
       <Button
-        variant="contained"
-        className="absolute z-30 bottom-4 bouncy-button"
+        aria-label="Enter fullscreen"
+        className="absolute z-30 bottom-6 left-1/2 transform -translate-x-1/2 flex items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur-lg ring-1 ring-white/20 border border-white/10 text-white hover:bg-white/30 hover:scale-105 transition-all duration-200 shadow-xl"
         onClick={() => {
           if (mainVideoRef.current.requestFullscreen) {
             mainVideoRef.current.requestFullscreen();
@@ -211,7 +212,7 @@ function Home({ industry, setIndustry }) {
           }
         }}
       >
-        Fullscreen
+        <FullscreenIcon fontSize="medium" />
       </Button>
       {isLoadingVideo ? (
         <div className="absolute z-20 w-full h-full top-0 left-0 flex justify-center items-center">
@@ -228,35 +229,41 @@ function Home({ industry, setIndustry }) {
   );
 
   const aboutSection = (
-    <section className="w-full bg-darkblue z-10 -translate-y-17.5 pb-0 pt-17.5 screen-lg:translate-y-0 screen-lg:pt-6">
-      <div className="m-auto w-[80%] pt-4 screen-md:w-[90%] screen-md:pb-12 text-center">
+    <section className="relative z-10 w-full overflow-hidden bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_28%),linear-gradient(180deg,rgba(2,6,23,0.98),rgba(15,23,42,0.94))] pb-0">
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-300/60 to-transparent"></div>
+      <div className="absolute left-[10%] top-[14%] h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl"></div>
+      <div className="absolute right-[8%] bottom-[12%] h-48 w-48 rounded-full bg-blue-500/10 blur-3xl"></div>
+
+      <div className="m-auto w-[80%] pb-14 pt-8 text-center screen-md:w-[90%] screen-md:pb-12">
         <Typography
           variant="h2"
-          className="text-center text-white pb-4 screen-sm:text-4xl screen-md:text-5xl to-fade-in"
+          className="gradient-text pb-4 text-center screen-sm:text-4xl screen-md:text-5xl to-fade-in"
         >
           Welcome to my portfolio!
         </Typography>
-        <br />
-        <Typography className="text-white  screen-md:text-justify to-fade-in">
-          Software engineer with experience in full stack development,
-          multi-agent AI, and game development. Also a software engineering
-          instructor at SMU - MedTech.
-        </Typography>
-        <br />
-        <Typography className="text-white  screen-md:text-justify to-fade-in">
-          Skilled in solving complex problems, building scalable systems,
-          developing new features and implementing multi-agent systems.
-          Proficient in multiple front-end and back-end technologies.
-          <br />
-          <br />
-          Excellent team player who thrives in agile environments. Strong
-          communicator with a passion for learning and adapting.
-        </Typography>
-        <br />
-        <Typography className="text-white  screen-md:text-justify to-fade-in">
-          I'm eager to work alongside like-minded professionals and to
-          contribute to projects that push the boundaries of what is possible.
-        </Typography>
+
+        <div className="mx-auto space-y-6 text-center">
+          <Typography className="text-slate-100 leading-8 screen-md:text-justify to-fade-in">
+            Software engineer with experience in full stack development,
+            multi-agent AI, and game development. Also a software engineering
+            instructor at SMU - MedTech.
+          </Typography>
+
+          <Typography className="text-slate-100 leading-8 screen-md:text-justify to-fade-in">
+            Skilled in solving complex problems, building scalable systems,
+            developing new features and implementing multi-agent systems.
+            Proficient in multiple front-end and back-end technologies.
+            <br />
+            <br />
+            Excellent team player who thrives in agile environments. Strong
+            communicator with a passion for learning and adapting.
+          </Typography>
+
+          <Typography className="text-slate-100 leading-8 screen-md:text-justify to-fade-in">
+            I'm eager to work alongside like-minded professionals and to
+            contribute to projects that push the boundaries of what is possible.
+          </Typography>
+        </div>
       </div>
     </section>
   );
