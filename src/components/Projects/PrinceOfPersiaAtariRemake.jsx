@@ -6,8 +6,10 @@ import Footer from "../Footer";
 import { Typography } from "@mui/material";
 import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
 import BlueprintsHighlighter from "./Shared/BlueprintsHighligher";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import cpp from "react-syntax-highlighter/dist/esm/languages/prism/cpp";
+SyntaxHighlighter.registerLanguage("cpp", cpp);
 
 function PrinceOfPersiaAtariRemake() {
   const usefulLinks = [

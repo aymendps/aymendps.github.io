@@ -5,8 +5,10 @@ import ProjectContent from "./Shared/ProjectContent";
 import Footer from "../Footer";
 import { Typography } from "@mui/material";
 import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import csharp from "react-syntax-highlighter/dist/esm/languages/prism/csharp";
+SyntaxHighlighter.registerLanguage("csharp", csharp);
 
 function FollowTheLight() {
   const usefulLinks = [
