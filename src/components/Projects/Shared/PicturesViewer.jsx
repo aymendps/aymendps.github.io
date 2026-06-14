@@ -1,10 +1,16 @@
 import { ArrowLeft, ArrowRight, OpenInNew } from "@mui/icons-material";
 import { IconButton, Typography } from "@mui/material";
 import { useState, useRef } from "react";
+import { preload } from "react-dom";
 
 function PicturesViewer({ picturesURL = [] }) {
   const [currentPicture, setCurrentPicture] = useState(0);
   const startX = useRef(null);
+
+  // Multiple calls is same as single call, so this is fine for preloading all images
+  picturesURL.forEach((url) => {
+    preload(url, { as: "image" });
+  });
 
   const handleTouchStart = (e) => {
     const x = e.touches ? e.touches[0].clientX : e.clientX;
