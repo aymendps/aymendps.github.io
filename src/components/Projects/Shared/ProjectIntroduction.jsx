@@ -61,7 +61,7 @@ function ProjectIntroduction({
     } else if (tag.startsWith("$G")) {
       return "bg-green-900 text-white font-bold";
     } else if (tag.startsWith("$Y")) {
-      return "bg-yellow-900 text-white font-bold";
+      return "bg-yellow-500 text-white font-bold";
     } else {
       return "bg-blue-900 text-white font-bold";
     }
@@ -83,14 +83,29 @@ function ProjectIntroduction({
     return (
       <React.Fragment key={"video " + url}>
         <div className="w-full aspect-video bg-cyan-600 border-2 border-darkblue relative flex justify-center items-center mb">
-          <CircularProgress className="text-darkblue" size={90} thickness={1} />
-          {url && (
-            <iframe
-              className="w-full h-full absolute top-0 left-0"
-              title={title}
-              src={url}
-              allowFullScreen
-            ></iframe>
+          {url ? (
+            <>
+              <CircularProgress
+                className="text-darkblue"
+                size={90}
+                thickness={1}
+              />
+              <iframe
+                className="w-full h-full absolute top-0 left-0"
+                title={title}
+                src={url}
+                allowFullScreen
+              ></iframe>
+            </>
+          ) : (
+            <>
+              <Typography
+                variant="h4"
+                className="text-darkblue text-center screen-sm:text-2xl screen-lg:text-3xl screen-lg:font-bold"
+              >
+                Video will be added soon!
+              </Typography>
+            </>
           )}
         </div>
         {index !== youtubeURL.length - 1 && <br />}

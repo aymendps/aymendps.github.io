@@ -29,7 +29,7 @@ function SetupObserver(classToObserve, classToAdd, threshold = 0.3) {
         }
       });
     },
-    { threshold: threshold },
+    { threshold: threshold }
   ); // Element is considered in view when 50% of it is visible
 
   // Target the elements you want to animate
@@ -328,7 +328,7 @@ function Home({ industry, setIndustry }) {
           variant="h2"
           className="gradient-text pt-6 pb-12 text-center screen-sm:text-4xl screen-md:text-5xl to-fade-in"
         >
-          Welcome to my portfolio!
+          Building software & teaching the next generation of engineers
         </Typography>
 
         <div className="flex flex-col w-full gap-6">

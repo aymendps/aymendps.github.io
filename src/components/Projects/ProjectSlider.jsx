@@ -110,7 +110,7 @@ const ProjectSlider = ({ industry, setIndustry }) => {
           />
           <CustomTab
             disableRipple
-            label={`Software & Web (${getProjectsNumberByIndustry("software")})`}
+            label={`AI & Software (${getProjectsNumberByIndustry("software")})`}
           />
         </CustomTabs>
       </Box>

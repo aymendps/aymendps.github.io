@@ -31,7 +31,7 @@ function ProjectThumbnail({
     } else if (tag.startsWith("$G")) {
       return "bg-green-900 text-white font-bold cursor-pointer";
     } else if (tag.startsWith("$Y")) {
-      return "bg-yellow-900 text-white font-bold cursor-pointer";
+      return "bg-yellow-500 text-white font-bold cursor-pointer";
     } else {
       return "bg-blue-900 text-white font-bold cursor-pointer";
     }

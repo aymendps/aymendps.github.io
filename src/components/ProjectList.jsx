@@ -57,9 +57,8 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
   tags: [
     "Full Stack Dev",
     "$G Work Project",
-    "$G Thesis",
-    "$R AI",
-    "$R REST API",
+    "$Y AI",
+    "$Y LLMs",
     "$R PCG",
     "$R UE 5",
     "$R C++",
@@ -129,20 +128,23 @@ export const DISCORD_BUTLER_BOT = {
   thumbnail: "/thumbnails/dbb.png",
   workDone: [
     "Advanced Music Playback System",
+    "AI Conversation with Multiple Users",
+    "AI Tool Calling to Play & Queue Songs",
     "Favorites & Playlists Management",
     "Multiple Song Search & Suggestions",
-    "League of Legends API Integration",
   ],
   outcomes: [
     "Experience in programming a backend with Node.js, TypeScript and Discord.js",
-    "Experience in building a functional music and utility discord bot with advanced features",
+    "Learned how to implement AI conversations with support for group chats and history",
+    "Learned how to enable AI to use tools such as playing music from user conversations",
+    "Learned how to build a discord bot with advanced commands for a community",
     "Experience in working with real-time audio streaming using ffmpeg, yt-dlp and Node.js streams",
-    "Experience in integrating third-party APIs such as the Riot Games / League Of Legends API",
-    "Learned how to design modular, maintainable bot commands with support for multiple platforms and sources",
   ],
   tags: [
     "Full Stack Dev",
     "$G Personal",
+    "$Y AI",
+    "$Y LLMs",
     "$R Discord.js",
     "$R Node.js",
     "$R TypeScript",
@@ -170,7 +172,7 @@ export const ROBO_REPAIR = {
     "Experience in implementing physics-based interactions and respond to player input and instructions",
     "Experience in designing and implementing levels that are engaging and fun to solve",
   ],
-  tags: ["Game Dev", "$G 24H Hackathon", "$G Won Award", "$R Unity", "$R C#"],
+  tags: ["Game Dev", "$G 24H Hackathon", "$Y Won Award", "$R Unity", "$R C#"],
   pageURL: "/robo-repair",
   accessible: true,
   element: <RoboRepair />,
@@ -219,7 +221,7 @@ export const FMD = {
   tags: [
     "Mobile Dev",
     "$G University",
-    "$G Won Award",
+    "$Y Won Award",
     "$R AR",
     "$R Unity",
     "$R Vuforia",
@@ -283,7 +285,7 @@ export const FILE_MANAGER = {
 export const STUDENT_SPECIALTY_ADVISOR = {
   title: "Student Specialty Advisor",
   subtitle: "Web Application",
-  thumbnail: "/thumbnails/ssa.jpg",
+  thumbnail: "/thumbnails/ssa.png",
   workDone: [
     "Responsive UI on Mobile & Desktop",
     "Verified Account System & User Roles",
@@ -301,7 +303,7 @@ export const STUDENT_SPECIALTY_ADVISOR = {
   tags: [
     "Full Stack Dev",
     "$G University",
-    "$G Won Award",
+    "$Y Won Award",
     "$R JavaScript",
     "$R React",
     "$R Node.js",
@@ -335,11 +337,11 @@ export const AI_REAL_ESTATE_AGENT = {
   ],
   tags: [
     "$G Work Project",
-    "$R AI",
+    "$Y AI",
+    "$Y LLMs",
+    "$Y Real-time",
     "$R VR",
     "$R AR",
-    "$R WebSocket",
-    "$R REST API",
     "$R UE 5",
     "$R Nvidia ACE",
     "$R C++",
@@ -364,10 +366,10 @@ const SOFTWARE_PINNED_PROJECTS = [
   AI_REAL_ESTATE_AGENT,
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   MODERN_CPP_GAME_ENGINE,
-  FILE_MANAGER,
-  STUDENT_SPECIALTY_ADVISOR,
-  DISCORD_BUTLER_BOT,
   FMD,
+  FILE_MANAGER,
+  DISCORD_BUTLER_BOT,
+  STUDENT_SPECIALTY_ADVISOR,
 ];
 
 const ALL_PINNED_PROJECTS = [
@@ -375,13 +377,13 @@ const ALL_PINNED_PROJECTS = [
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   PRINCE_OF_PERSIA_REMAKE,
   MODERN_CPP_GAME_ENGINE,
+  FMD,
+  FILE_MANAGER,
+  DISCORD_BUTLER_BOT,
+  STUDENT_SPECIALTY_ADVISOR,
   FOLLOW_THE_LIGHT,
   CAT_N_QUEST,
   ROBO_REPAIR,
-  FMD,
-  FILE_MANAGER,
-  STUDENT_SPECIALTY_ADVISOR,
-  DISCORD_BUTLER_BOT,
 ];
 
 export function getPinnedProjectsByIndustry(industry) {
