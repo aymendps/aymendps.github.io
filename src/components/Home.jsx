@@ -14,7 +14,6 @@ import GithubIcon from "@mui/icons-material/GitHub";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import Footer from "./Footer";
 import ProjectLoading from "./ProjectLoading";
-import PreloadImages from "./PreloadImages";
 import Referrals from "./Referrals";
 import ProjectSlider from "./Projects/ProjectSlider";
 
@@ -258,15 +257,16 @@ function Home({ industry, setIndustry }) {
           />
         </div>
       ) : null}
-      <PreloadImages />
     </section>
   );
 
   const ABOUT_SECTION_CARDS = [
     <>
-      Software engineer with experience in full stack development, AI-based
-      systems, and game development. Also a software engineering instructor at
-      SMU - MedTech.
+      I'm an
+      <span className="text-cyan-400"> experienced software engineer </span>
+      in full stack development, AI-based systems, and game development. Also a
+      <span className="text-cyan-400"> software engineering instructor </span>
+      at South Mediterranean University.
     </>,
     <>
       I enjoy solving complex problems, building scalable systems, and turning
