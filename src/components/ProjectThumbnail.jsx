@@ -95,7 +95,7 @@ function ProjectThumbnail({
           alt=""
         ></img>
         <div className="absolute bottom-0 left-0 w-full">
-          <div className="w-full p-2 flex flex-wrap gap-2 screen-sm:gap-1 justify-center">
+          <div className="w-full p-3 flex flex-wrap gap-2 screen-sm:gap-1 justify-center">
             {generateTags}
           </div>
         </div>

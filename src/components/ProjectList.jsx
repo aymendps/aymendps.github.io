@@ -10,6 +10,7 @@ import StudentSpecialtyAdvisor from "./Projects/StudentSpecialtyAdvisor";
 import ModernCppGameEngine from "./Projects/ModernCppGameEngine";
 import DiscordButlerBot from "./Projects/DiscordButlerBot";
 import AiRealEstateAgent from "./Projects/AiRealEstateAgent";
+import ThePerfectRun from "./Projects/ThePerfectRun";
 
 export const PRINCE_OF_PERSIA_REMAKE = {
   title: "Prince Of Persia Remake",
@@ -30,7 +31,7 @@ export const PRINCE_OF_PERSIA_REMAKE = {
     "Experience in creating enemy AI behaviour, perception and actions randomization",
     "Learned how to develop platformer games and adjust movements and mechanics to a 2D plane in a 3D environment",
   ],
-  tags: ["Game Dev", "$G Internship", "$R UE 5", "$R C++", "$R Blueprints"],
+  tags: ["$G Work Project", "Internship", "$R UE 5", "$R C++", "$R Blueprints"],
   pageURL: "/prince-of-persia-atari-remake",
   accessible: true,
   element: <PrinceOfPersiaAtariRemake />,
@@ -55,8 +56,8 @@ export const USER_DRIVEN_3D_PROCEDURAL_TOOL = {
     "Learned how to adopt the Design Science Research Methodology to develop a fully functional tool",
   ],
   tags: [
-    "Full Stack Dev",
     "$G Work Project",
+    "Thesis",
     "$Y AI",
     "$Y LLMs",
     "$R PCG",
@@ -86,7 +87,7 @@ export const MODERN_CPP_GAME_ENGINE = {
     "Learned how to use multithreading to load scenes and resources in the background",
     "Learned how Update loops based on delta-time work, and how to implement them",
   ],
-  tags: ["C++ Dev", "$G Personal", "$R C++", "$R SDL2"],
+  tags: ["$G Personal", "$R C++", "$R SDL2"],
   picturesURL: [
     "/cpp/cpp1.png",
     "/cpp/cpp2.png",
@@ -116,7 +117,7 @@ export const CAT_N_QUEST = {
     "Learned how to separate the inventory's system from its UI, and updating it dynamically based on the Observer pattern",
     "Experience in working within a team, collaborating, and communicating ideas fluently",
   ],
-  tags: ["Game Dev", "$G Game Jam", "$R Unity", "$R C#"],
+  tags: ["$G Game Jam", "$R Unity", "$R C#"],
   pageURL: "/cat-n-quest",
   accessible: true,
   element: <CatNQuest />,
@@ -130,8 +131,8 @@ export const DISCORD_BUTLER_BOT = {
     "Advanced Music Playback System",
     "AI Conversation with Multiple Users",
     "AI Tool Calling to Play & Queue Songs",
+    "Song Search, Suggestions & Autoplay",
     "Favorites & Playlists Management",
-    "Multiple Song Search & Suggestions",
   ],
   outcomes: [
     "Experience in programming a backend with Node.js, TypeScript and Discord.js",
@@ -141,7 +142,6 @@ export const DISCORD_BUTLER_BOT = {
     "Experience in working with real-time audio streaming using ffmpeg, yt-dlp and Node.js streams",
   ],
   tags: [
-    "Full Stack Dev",
     "$G Personal",
     "$Y AI",
     "$Y LLMs",
@@ -172,7 +172,7 @@ export const ROBO_REPAIR = {
     "Experience in implementing physics-based interactions and respond to player input and instructions",
     "Experience in designing and implementing levels that are engaging and fun to solve",
   ],
-  tags: ["Game Dev", "$G 24H Hackathon", "$Y Won Award", "$R Unity", "$R C#"],
+  tags: ["$G 24H Hackathon", "$Y Won Award", "$R Unity", "$R C#"],
   pageURL: "/robo-repair",
   accessible: true,
   element: <RoboRepair />,
@@ -196,7 +196,7 @@ export const FOLLOW_THE_LIGHT = {
     "Developed proficiency in working with concepts like vectors, quaternions and rotations",
     "Experience in implementing physics-based interactions and respond to player input",
   ],
-  tags: ["Game Dev", "$G Personal", "$R Unity", "$R C#"],
+  tags: ["$G Personal", "$R Unity", "$R C#"],
   pageURL: "/follow-the-light",
   accessible: true,
   element: <FollowTheLight />,
@@ -219,7 +219,6 @@ export const FMD = {
     "Gained valuable experience in teamwork, collaboration, and organization, while effectively translating designer ideas into maintainable code",
   ],
   tags: [
-    "Mobile Dev",
     "$G University",
     "$Y Won Award",
     "$R AR",
@@ -252,7 +251,6 @@ export const FILE_MANAGER = {
     "Became better at achieving deadlines and collaborating with team members, especially when working in an agile environment",
   ],
   tags: [
-    "Full Stack Dev",
     "$G Work Project",
     "$R JavaScript",
     "$R TypeScript",
@@ -301,7 +299,6 @@ export const STUDENT_SPECIALTY_ADVISOR = {
     "Learned how to create an admin dashboard with multiple CRUD operations and statistics",
   ],
   tags: [
-    "Full Stack Dev",
     "$G University",
     "$Y Won Award",
     "$R JavaScript",
@@ -324,13 +321,13 @@ export const AI_REAL_ESTATE_AGENT = {
     "AR/VR Interactions & Optimizations",
     "Realtime AI Conversation & Tool Calling",
     "Custom C++ Plugin For AI Integration",
-    "MetaHuman Animation Based On Emotions",
+    "MetaHuman Emotion-Based Animations",
     "Realtime Lip Sync & Dynamic Gestures",
   ],
   outcomes: [
     "Gained experience developing immersive AR and VR applications and optimizing features",
-    "Gained experience working with complex skeletal meshes, static meshes and materials",
     "Gained experience in designing multi-agent AI systems that can interact with users in real-time",
+    "Learned how to implement tool calling for AI agents",
     "Learned how to program a custom Unreal Engine plugin in C++ and how to integrate AI models via WebSockets and RESTful APIs",
     "Learned how to implement responsive NPC interactions using gaze tracking, blinking, and body orientation towards the user",
     "Learned how to implement realistic Metahumans including dynamic lip syncing with NVIDIA ACE, procedural hand gestures, and facial expressions",
@@ -352,7 +349,26 @@ export const AI_REAL_ESTATE_AGENT = {
   element: <AiRealEstateAgent />,
 };
 
+export const THE_PERFECT_RUN = {
+  title: "The Perfect Run",
+  subtitle: "3D Action-Adventure Game",
+  thumbnail: "/thumbnails/pr.png",
+  picturesURL: [
+    "https://live.staticflickr.com/65535/54732589927_e136f929fa_k.jpg",
+    "https://www.sony.com/en/brand/voicesofcreativity/interviews/mhp2/assets/img/img01.jpg",
+    "https://www.sony.com/en/brand/voicesofcreativity/interviews/mhp2/assets/img/img09.jpg",
+  ],
+  // to change to actual work done and outcomes later
+  workDone: ["To Do", "To Do", "To Do", "To Do", "To Do"],
+  outcomes: ["To Do", "To Do", "To Do", "To Do", "To Do"],
+  tags: ["$G Work Project", "$R UE 5", "$R C++", "$R Blueprints"],
+  pageURL: "/the-perfect-run",
+  accessible: false,
+  element: <ThePerfectRun />,
+};
+
 const GAMING_PINNED_PROJECTS = [
+  THE_PERFECT_RUN,
   AI_REAL_ESTATE_AGENT,
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   PRINCE_OF_PERSIA_REMAKE,
@@ -365,21 +381,22 @@ const GAMING_PINNED_PROJECTS = [
 const SOFTWARE_PINNED_PROJECTS = [
   AI_REAL_ESTATE_AGENT,
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
-  MODERN_CPP_GAME_ENGINE,
-  FMD,
   FILE_MANAGER,
   DISCORD_BUTLER_BOT,
+  MODERN_CPP_GAME_ENGINE,
+  FMD,
   STUDENT_SPECIALTY_ADVISOR,
 ];
 
 const ALL_PINNED_PROJECTS = [
+  THE_PERFECT_RUN,
   AI_REAL_ESTATE_AGENT,
   USER_DRIVEN_3D_PROCEDURAL_TOOL,
   PRINCE_OF_PERSIA_REMAKE,
-  MODERN_CPP_GAME_ENGINE,
-  FMD,
   FILE_MANAGER,
   DISCORD_BUTLER_BOT,
+  MODERN_CPP_GAME_ENGINE,
+  FMD,
   STUDENT_SPECIALTY_ADVISOR,
   FOLLOW_THE_LIGHT,
   CAT_N_QUEST,
@@ -389,26 +406,28 @@ const ALL_PINNED_PROJECTS = [
 export function getPinnedProjectsByIndustry(industry) {
   switch (industry) {
     case "gaming":
-      return GAMING_PINNED_PROJECTS;
+      return GAMING_PINNED_PROJECTS.filter((project) => project.accessible);
     case "software":
-      return SOFTWARE_PINNED_PROJECTS;
+      return SOFTWARE_PINNED_PROJECTS.filter((project) => project.accessible);
     case "all":
-      return ALL_PINNED_PROJECTS;
+      return ALL_PINNED_PROJECTS.filter((project) => project.accessible);
     default:
-      return ALL_PINNED_PROJECTS;
+      return ALL_PINNED_PROJECTS.filter((project) => project.accessible);
   }
 }
 
 export function getProjectsNumberByIndustry(industry) {
   switch (industry) {
     case "gaming":
-      return GAMING_PINNED_PROJECTS.length;
+      return GAMING_PINNED_PROJECTS.filter((project) => project.accessible)
+        .length;
     case "software":
-      return SOFTWARE_PINNED_PROJECTS.length;
+      return SOFTWARE_PINNED_PROJECTS.filter((project) => project.accessible)
+        .length;
     case "all":
-      return ALL_PINNED_PROJECTS.length;
+      return ALL_PINNED_PROJECTS.filter((project) => project.accessible).length;
     default:
-      return ALL_PINNED_PROJECTS.length;
+      return ALL_PINNED_PROJECTS.filter((project) => project.accessible).length;
   }
 }
 
