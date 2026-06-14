@@ -99,12 +99,7 @@ const ProjectSlider = ({ industry, setIndustry }) => {
         <b>Click</b> on a project to view it with more details
       </Typography>
       <Box className="mx-auto mb-8 w-full max-w-4xl px-0 to-fade-in">
-        <CustomTabs
-          variant="fullWidth"
-          value={value}
-          onChange={handleChange}
-          TabIndicatorProps={{ style: { display: "none" } }}
-        >
+        <CustomTabs variant="fullWidth" value={value} onChange={handleChange}>
           <CustomTab
             disableRipple
             label={`All (${getProjectsNumberByIndustry("all")})`}

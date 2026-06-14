@@ -12,7 +12,7 @@ function DesktopVersion() {
       var rect = element.getBoundingClientRect();
       var viewHeight = Math.max(
         document.documentElement.clientHeight,
-        window.innerHeight
+        window.innerHeight,
       );
       return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
     }
@@ -23,12 +23,14 @@ function DesktopVersion() {
       } else {
         setHidden(
           generatedWorkSection.getBoundingClientRect().bottom >
-            window.innerHeight
+            window.innerHeight,
         );
       }
     };
 
-    window.addEventListener("scroll", handleButtonVisibility);
+    window.addEventListener("scroll", handleButtonVisibility, {
+      passive: true,
+    });
 
     return () => {
       window.removeEventListener("scroll", handleButtonVisibility);
@@ -58,7 +60,7 @@ function MobileVersion() {
       var rect = element.getBoundingClientRect();
       var viewHeight = Math.max(
         document.documentElement.clientHeight,
-        window.innerHeight
+        window.innerHeight,
       );
       return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
     }
@@ -75,7 +77,7 @@ function MobileVersion() {
         } else {
           setHidden(
             generatedWorkSection.getBoundingClientRect().bottom >
-              window.innerHeight
+              window.innerHeight,
           );
         }
       }
