@@ -14,10 +14,8 @@ import HighlightsIcon from "@mui/icons-material/AutoAwesome";
 import ReferralsIcon from "@mui/icons-material/Reviews";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { useLocation } from "react-router-dom";
 
 function NavBar() {
-  const location = useLocation();
   const navBarItems = [
     {
       name: "Home",
