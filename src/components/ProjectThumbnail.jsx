@@ -1,6 +1,7 @@
 import { Card, Chip, Typography } from "@mui/material";
 import NoThumbnailIcon from "@mui/icons-material/HideImageOutlined";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function ProjectThumbnail({
   title,
@@ -51,7 +52,9 @@ function ProjectThumbnail({
 
   let projectPageTimeout;
 
-  const handleClick = () => {
+  const handleClick = (event) => {
+    event.preventDefault();
+
     if (accessible) {
       window.location.href = "#/home#projects";
       if (isMobile) {
@@ -74,13 +77,15 @@ function ProjectThumbnail({
 
   return (
     <Card
+      component={Link}
+      to={"/projects" + pageURL}
       className="shining-effect basis-[23%] screen-lg:basis-[31%] screen-sm:basis-[90%] screen-md:basis-[44%] mb-[2%] screen-sm:mb-[5%] relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)] cursor-pointer group transition-transform duration-200 hover:shadow-[0_24px_60px_rgba(15,23,42,0.12)]"
       onClick={handleClick}
     >
       <div className="p-4 pb-3">
         <Typography
           variant="h5"
-          className="text-center text-darkblue group-hover:underline text-[1.35rem] leading-tight"
+          className="text-center text-darkblue group-hover:underline group-active:underline text-[1.3rem] leading-tight"
         >
           {title}
         </Typography>
