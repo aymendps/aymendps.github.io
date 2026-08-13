@@ -76,9 +76,9 @@ const ProjectSlider = ({ industry, setIndustry }) => {
     <>
       <Typography
         variant="subtitle1"
-        className="text-center pb-4 text-cyan-700 font-medium tracking-wide to-fade-in"
+        className="text-center pb-6 text-cyan-700 font-medium tracking-wide text-2xl to-fade-in screen-md:text-xl screen-sm:text-[1rem]"
       >
-        <b>Click</b> on a project to view it with more details
+        <u>Click</u> on a project to view more details
       </Typography>
       <Box className="mx-auto mb-8 w-full max-w-4xl px-0 to-fade-in">
         <CustomTabs variant="fullWidth" value={value} onChange={handleChange}>
