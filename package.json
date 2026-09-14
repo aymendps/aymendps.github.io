@@ -1,6 +1,6 @@
 {
-  "name": "aymendps.github.io",
-  "homepage": "https://aymendps.github.io/",
+  "name": "aymendps.com",
+  "homepage": "https://aymendps.com",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -27,7 +27,7 @@
     "dev": "vite --host",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
     "preview": "vite preview"
   },
   "eslintConfig": {
