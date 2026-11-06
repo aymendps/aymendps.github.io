@@ -1,0 +1,7 @@
+import{n as e,t}from"./ProjectContent-B0sqOlaL.js";import{I as n,N as r,i,n as a}from"./index-ClVEqM_4.js";n();var o=r();function s(){let n=[{title:`Play on itch.io: Published Game Page`,href:`https://aymendps.itch.io/cat-n-quest`}],r=[],s=i.workDone.map((e,t)=>({id:e.replace(/\s+/g,``),title:e,content:r[t]||`More details will be added soon!`}));return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(e,{title:i.title,youtubeURL:[`https://www.youtube.com/embed/9XD9TwuPIiY`],tags:i.tags,usefulLinks:n,workDone:s,useLinksForWorkDone:!1,outcomes:i.outcomes,description:`Join a grumpy cat in an adventure to support villagers and spread peace in its own way.
+
+        This is a 2D top-down open-world game where you need to solve puzzles and connect the dots to fullfil quests that help the inhabitants.
+
+        Interact with the many NPCs you will find in the game and discover the different areas as you support others to create a peaceful world where you can sleep soundly.
+
+        This game was made during the Unidos HISPANIC HERITAGE MONTH Jam 2022, and then I revisited it after a while to refactor the code, improve performance and polish the state of the game.`}),(0,o.jsx)(t,{}),(0,o.jsx)(a,{})]})}export{s as default};

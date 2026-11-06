@@ -1,0 +1,8 @@
+import{n as e,t}from"./ProjectContent-B0sqOlaL.js";import{I as n,N as r,d as i,n as a}from"./index-ClVEqM_4.js";n();var o=r();function s(){let n=[{title:`Play on itch.io: Published Game Page`,href:`https://aymendps.itch.io/roborepair`},{title:`Celebratory Post: Won 2nd Prize of the 24H Game Dev Hackathon`,href:`https://www.linkedin.com/feed/update/urn:li:activity:7053399477331591168/`},{title:`Project's Presentation`,href:`https://www.canva.com/design/DAGJ_-fBFA0/Q67mMp1b_uUAFHwlf3vDsA/edit`}],r=[],s=i.workDone.map((e,t)=>({id:e.replace(/\s+/g,``),title:e,content:r[t]||`More details will be added soon!`}));return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(e,{title:i.title,youtubeURL:[`https://www.youtube.com/embed/YC9Op2Jxoi0`],tags:i.tags,usefulLinks:n,workDone:s,useLinksForWorkDone:!1,outcomes:i.outcomes,description:`RoboRepair is a 2D educational puzzle game developed in 24 hours for a game development hackathon within a team of 3 people. The game was awarded the 2nd prize!
+          
+          It's about a maintenance robot using the combination of programming functions & physics to complete tasks with limited battery. Failing a task or getting hit makes you lose a battery, and the game ends when you run out of batteries.
+
+          The goal of the game is to teach the player the basics of programming functions and how to use them to solve problems. The functions are used to control any object's velocity, gravity or added force.
+          
+          Through this, the player needs to reach the destination by avoiding obstacles and solving puzzles.
+`}),(0,o.jsx)(t,{}),(0,o.jsx)(a,{})]})}export{s as default};

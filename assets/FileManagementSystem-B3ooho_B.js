@@ -1,0 +1,9 @@
+import{n as e,t}from"./ProjectContent-B0sqOlaL.js";import{I as n,N as r,n as i,o as a}from"./index-ClVEqM_4.js";n();var o=r();function s(){let n=[{title:`Website of Cynoia: The company I worked for as a full-stack developer`,href:`https://cynoia.com/`}],r=[],s=a.workDone.map((e,t)=>({id:e.replace(/\s+/g,``),title:e,content:r[t]||`More details will be added soon!`}));return(0,o.jsxs)(o.Fragment,{children:[(0,o.jsx)(e,{title:a.title,picturesURL:a.picturesURL,tags:a.tags,usefulLinks:n,workDone:s,useLinksForWorkDone:!1,outcomes:a.outcomes,description:`After a successful summer internship, I got to keep working at Cynoia as a part-time full stack developer.
+
+I contributed to the development of the file management system. I worked on both front-end and back-end tasks, creating new features and improving the existing ones. I was also responsible for the database's design, as well as the system's performance and optimization.
+
+This task challenged my engineering skills and forced me to think outside the box multiple times to implement a code that is optimized and cost-effective, while also taking into consideration the user experience.
+
+I started working on migrating the back-end of the system from Express and JavaScript to NestJS and TypeScript, since this new stack is more robust, less error-prone, and relies on object oriented principles. It also has built-in features for working with micro-services.
+
+Then I moved on to expanding the file manager's system with these features: uploading single or multiple files, previewing elements, downloading, renaming, deleting, moving, adding to favorites, sharing options, managing access, sending system emails, user activity log and action history.`}),(0,o.jsx)(t,{}),(0,o.jsx)(i,{})]})}export{s as default};
