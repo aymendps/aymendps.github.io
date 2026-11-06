@@ -96,6 +96,8 @@ function ProjectThumbnail({
       <div className="w-full aspect-square bg-cyan-600 relative ">
         <img
           className="w-full object-center object-contain"
+          loading="lazy"
+          decoding="async"
           src={thumbnail}
           alt=""
         ></img>

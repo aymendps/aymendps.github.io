@@ -5,8 +5,8 @@ import ProjectContent from "./Shared/ProjectContent";
 import Footer from "../Footer";
 import { Typography } from "@mui/material";
 import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
-import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/prism-light";
+import vscDarkPlus from "react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus";
 import csharp from "react-syntax-highlighter/dist/esm/languages/prism/csharp";
 SyntaxHighlighter.registerLanguage("csharp", csharp);
 
@@ -46,7 +46,7 @@ function FollowTheLight() {
       </Typography>
       <div className="flex justify-between mt-4 screen-lg:flex-col">
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ftl/moving.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -54,7 +54,7 @@ function FollowTheLight() {
           </Typography>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ftl/braking.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -75,7 +75,7 @@ function FollowTheLight() {
         ground.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
-        <video controls className="w-full">
+        <video controls preload="metadata" className="w-full">
           <source src="/ftl/normal bounce.mp4" type="video/mp4" />
         </video>
       </div>
@@ -94,7 +94,7 @@ function FollowTheLight() {
         it can go, so the game doesn't break.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
-        <video controls className="w-full">
+        <video controls preload="metadata" className="w-full">
           <source src="/ftl/rep bounce.mp4" type="video/mp4" />
         </video>
       </div>
@@ -113,7 +113,7 @@ function FollowTheLight() {
         down or bounce.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
-        <video controls className="w-full">
+        <video controls preload="metadata" className="w-full">
           <source src="/ftl/hopping.mp4" type="video/mp4" />
         </video>
       </div>
@@ -130,7 +130,7 @@ function FollowTheLight() {
         trying to find surfaces to move/bounce towards.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
-        <video controls className="w-full">
+        <video controls preload="metadata" className="w-full">
           <source src="/ftl/camera.mp4" type="video/mp4" />
         </video>
       </div>
@@ -147,7 +147,7 @@ function FollowTheLight() {
         try and get out of the maze once more.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
-        <video controls className="w-full">
+        <video controls preload="metadata" className="w-full">
           <source src="/ftl/death.mp4" type="video/mp4" />
         </video>
       </div>
@@ -186,7 +186,7 @@ function FollowTheLight() {
         work for the ball character, using a flowchart that includes states,
         inputs and transitions.
       </Typography>
-      <img
+      <img decoding="async"
         alt=""
         src="/ftl/fsm.png"
         className="w-[40%] m-auto mt-4 mb-2 screen-lg:w-full"
@@ -485,7 +485,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         movement:
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
-        <video controls className="w-full">
+        <video controls preload="metadata" className="w-full">
           <source src="/ftl/norelative.mp4" type="video/mp4" />
         </video>
       </div>
@@ -587,7 +587,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         Below is a video that shows the fixed camera-relative player movement:
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
-        <video controls className="w-full">
+        <video controls preload="metadata" className="w-full">
           <source src="/ftl/relative.mp4" type="video/mp4" />
         </video>
       </div>
@@ -622,7 +622,7 @@ namespace Gameplay.Ball_Finite_State_Machine
         gamepad, and produces a <b>2D Vector</b> that signifies the{" "}
         <b>desired direction</b> the player wants to move in.
       </Typography>
-      <img
+      <img decoding="async"
         alt=""
         src="/ftl/input.png"
         className="w-[45%] m-auto mt-4 mb-2 screen-lg:w-full"
@@ -898,7 +898,7 @@ namespace Gameplay.Platforms
         implementation.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
-        <video controls className="w-full">
+        <video controls preload="metadata" className="w-full">
           <source src="/ftl/moving platform.mp4" type="video/mp4" />
         </video>
       </div>

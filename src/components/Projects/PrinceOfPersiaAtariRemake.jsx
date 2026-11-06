@@ -6,8 +6,8 @@ import Footer from "../Footer";
 import { Typography } from "@mui/material";
 import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
 import BlueprintsHighlighter from "./Shared/BlueprintsHighligher";
-import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/prism-light";
+import vscDarkPlus from "react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus";
 import cpp from "react-syntax-highlighter/dist/esm/languages/prism/cpp";
 SyntaxHighlighter.registerLanguage("cpp", cpp);
 
@@ -62,7 +62,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ppr/equip_unequip.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -133,7 +133,7 @@ function PrinceOfPersiaAtariRemake() {
         implements all the transitions between them and the locomotion state
         machine.
       </Typography>
-      <img
+      <img decoding="async"
         alt=""
         src="/ppr/mainsm.png"
         className="w-[40%] m-auto mt-4 mb-2 screen-lg:w-full"
@@ -217,7 +217,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ppr/traces.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -240,7 +240,7 @@ function PrinceOfPersiaAtariRemake() {
         Depending on the <b>player's input and velocity</b>, the states will
         transition to one another.
       </Typography>
-      <img
+      <img decoding="async"
         alt=""
         src="/ppr/locomotion.png"
         className="w-[40%] m-auto mt-4 mb-2 screen-lg:w-full"
@@ -255,7 +255,7 @@ function PrinceOfPersiaAtariRemake() {
         Below is the implementation of the <b>"Walk/Run"</b> state, where a
         boolean that represents whether the player is in fighting stance is used
         to blend between animations.
-        <img
+        <img decoding="async"
           alt=""
           src="/ppr/walkrun.png"
           className="w-[75%] m-auto mt-4 mb-2 screen-lg:w-full"
@@ -270,7 +270,7 @@ function PrinceOfPersiaAtariRemake() {
         avoid traps like deadly spikes.
       </Typography>
       <div className="w-1/2 m-auto mt-4 screen-lg:w-full">
-        <video controls className="w-full">
+        <video controls preload="metadata" className="w-full">
           <source src="/ppr/locomotion_nofight.mp4" type="video/mp4" />
         </video>
       </div>
@@ -286,7 +286,7 @@ function PrinceOfPersiaAtariRemake() {
       </Typography>
       <div className="flex justify-between mt-4 screen-lg:flex-col">
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ppr/locomotion_fight.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -294,7 +294,7 @@ function PrinceOfPersiaAtariRemake() {
           </Typography>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ppr/turnaround.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -334,7 +334,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ppr/dashing.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -366,7 +366,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ppr/attacks.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -402,7 +402,7 @@ function PrinceOfPersiaAtariRemake() {
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ppr/parry.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -570,7 +570,7 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ppr/potion.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -612,7 +612,7 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ppr/camera_offset.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">
@@ -639,7 +639,7 @@ AActor* APlayerCharacter::FindInteractable(EInteractableFinder& InteractableFind
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <video controls className="w-full">
+          <video controls preload="metadata" className="w-full">
             <source src="/ppr/camera_zoom.mp4" type="video/mp4" />
           </video>
           <Typography variant="caption" className="text-center block mt-2 mb-4">

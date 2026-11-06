@@ -3,8 +3,8 @@ import Footer from "../Footer";
 import { FMD } from "../ProjectList";
 import ProjectContent from "./Shared/ProjectContent";
 import ProjectIntroduction from "./Shared/ProjectIntroduction";
-import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/prism-light";
+import vscDarkPlus from "react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus";
 import csharp from "react-syntax-highlighter/dist/esm/languages/prism/csharp";
 SyntaxHighlighter.registerLanguage("csharp", csharp);
 import CodeMobileWrapper from "./Shared/CodeMobileWrapper";
@@ -202,7 +202,7 @@ namespace Animations
           </CodeMobileWrapper>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <img
+          <img decoding="async"
             alt=""
             src="/fmd/animation_editor.png"
             className="h-112.5 m-auto my-[0.4em] screen-lg:h-auto object-contain"
@@ -223,7 +223,7 @@ namespace Animations
         created brought the designers' UI to life.
       </Typography>
       <div className="w-fit m-auto mt-4">
-        <video controls className="h-112.5">
+        <video controls preload="metadata" className="h-112.5">
           <source src="/fmd/fmd_ui.mp4" type="video/mp4" />
         </video>
       </div>
@@ -435,7 +435,7 @@ namespace Onboarding_Scene
         work together.
       </Typography>
       <div className="w-[40%] m-auto screen-lg:w-full mt-4 mb-2">
-        <img
+        <img decoding="async"
           alt=""
           src="/fmd/component_diagram.png"
           className="w-full object-contain"
@@ -574,7 +574,7 @@ namespace Vuforia
         </div>
         <div className="w-[30%] screen-lg:w-full">
           <div className="w-fit h-112.5 m-auto mb-2 mt-2">
-            <video controls className="h-112.5">
+            <video controls preload="metadata" className="h-112.5">
               <source src="/fmd/camera_permission.mp4" type="video/mp4" />
             </video>
           </div>
@@ -609,7 +609,7 @@ namespace Vuforia
         conveying 5 different categories:
       </Typography>
       <div className="m-auto w-fit mt-4 mb-2">
-        <img alt="" src="/fmd/popups.png" className="h-87.5 object-contain" />
+        <img decoding="async" alt="" src="/fmd/popups.png" className="h-87.5 object-contain" />
       </div>
       <Typography variant="caption" className="text-center block mb-4">
         All popup types
@@ -939,7 +939,7 @@ namespace Popups
       <div className="flex justify-evenly mt-4 screen-lg:flex-col">
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-112.5">
+            <video controls preload="metadata" className="h-112.5">
               <source src="/fmd/fmd_demo1.mp4" type="video/mp4" />
             </video>
           </div>
@@ -949,7 +949,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-112.5">
+            <video controls preload="metadata" className="h-112.5">
               <source src="/fmd/fmd_demo2.mp4" type="video/mp4" />
             </video>
           </div>
@@ -959,7 +959,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-112.5">
+            <video controls preload="metadata" className="h-112.5">
               <source src="/fmd/fmd_demo3.mp4" type="video/mp4" />
             </video>
           </div>
@@ -981,7 +981,7 @@ namespace Popups
       <div className="flex justify-evenly mt-4 screen-lg:flex-col">
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-112.5">
+            <video controls preload="metadata" className="h-112.5">
               <source src="/fmd/fmd_demo4.mp4" type="video/mp4" />
             </video>
           </div>
@@ -991,7 +991,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-112.5">
+            <video controls preload="metadata" className="h-112.5">
               <source src="/fmd/fmd_demo5.mp4" type="video/mp4" />
             </video>
           </div>
@@ -1001,7 +1001,7 @@ namespace Popups
         </div>
         <div>
           <div className="w-fit m-auto">
-            <video controls className="h-112.5">
+            <video controls preload="metadata" className="h-112.5">
               <source src="/fmd/fmd_demo6.mp4" type="video/mp4" />
             </video>
           </div>
@@ -1022,7 +1022,7 @@ namespace Popups
       </Typography>
       <div className="flex justify-between screen-lg:flex-col mt-2 mb-4 items-end">
         <div className="w-[48%] screen-lg:w-full">
-          <img
+          <img decoding="async"
             alt=""
             src="/fmd/animation.png"
             className="h-auto m-auto my-[0.4em] object-contain"
@@ -1032,7 +1032,7 @@ namespace Popups
           </Typography>
         </div>
         <div className="w-[48%] screen-lg:w-full">
-          <img
+          <img decoding="async"
             alt=""
             src="/fmd/animator.png"
             className="h-auto m-auto my-[0.4em] object-contain"

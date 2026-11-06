@@ -1,16 +1,17 @@
+import { lazy } from "react";
 import ProjectThumbnail from "./ProjectThumbnail";
-import FabLabMachinesDiscovery from "./Projects/FabLabMachinesDiscovery";
-import FollowTheLight from "./Projects/FollowTheLight";
-import PrinceOfPersiaAtariRemake from "./Projects/PrinceOfPersiaAtariRemake";
-import UserDriven3DProceduralTool from "./Projects/UserDriven3DProceduralTool";
-import CatNQuest from "./Projects/CatNQuest";
-import RoboRepair from "./Projects/RoboRepair";
-import FileManagementSystem from "./Projects/FileManagementSystem";
-import StudentSpecialtyAdvisor from "./Projects/StudentSpecialtyAdvisor";
-import ModernCppGameEngine from "./Projects/ModernCppGameEngine";
-import DiscordButlerBot from "./Projects/DiscordButlerBot";
-import AiRealEstateAgent from "./Projects/AiRealEstateAgent";
-import ThePerfectRun from "./Projects/ThePerfectRun";
+const FabLabMachinesDiscovery = lazy(() => import("./Projects/FabLabMachinesDiscovery"));
+const FollowTheLight = lazy(() => import("./Projects/FollowTheLight"));
+const PrinceOfPersiaAtariRemake = lazy(() => import("./Projects/PrinceOfPersiaAtariRemake"));
+const UserDriven3DProceduralTool = lazy(() => import("./Projects/UserDriven3DProceduralTool"));
+const CatNQuest = lazy(() => import("./Projects/CatNQuest"));
+const RoboRepair = lazy(() => import("./Projects/RoboRepair"));
+const FileManagementSystem = lazy(() => import("./Projects/FileManagementSystem"));
+const StudentSpecialtyAdvisor = lazy(() => import("./Projects/StudentSpecialtyAdvisor"));
+const ModernCppGameEngine = lazy(() => import("./Projects/ModernCppGameEngine"));
+const DiscordButlerBot = lazy(() => import("./Projects/DiscordButlerBot"));
+const AiRealEstateAgent = lazy(() => import("./Projects/AiRealEstateAgent"));
+const ThePerfectRun = lazy(() => import("./Projects/ThePerfectRun"));
 
 export const PRINCE_OF_PERSIA_REMAKE = {
   title: "Prince Of Persia Remake",

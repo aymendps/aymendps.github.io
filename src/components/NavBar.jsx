@@ -161,7 +161,7 @@ function NavBar() {
   return (
     <>
       {!isMobile ? (
-        <div className="fixed top-4 left-1/2 z-50 flex h-17.5 w-[min(1200px,calc(100%-2rem))] -translate-x-1/2 items-center justify-around rounded-full border border-white/10 bg-slate-950/70 px-4 shadow-2xl shadow-cyan-950/30 backdrop-blur-xl screen-lg:hidden">
+        <div className="fixed top-4 left-1/2 z-50 flex h-17.5 w-[min(1200px,calc(100%-2rem))] -translate-x-1/2 items-center justify-around rounded-full border border-white/10 bg-slate-950/75 px-4 shadow-2xl shadow-cyan-950/30 backdrop-blur-md screen-lg:hidden">
           <div className="w-[29%] flex justify-center items-center">
             <HashLink to={"home#t"}>
               <div className="relative">

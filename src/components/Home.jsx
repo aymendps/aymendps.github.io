@@ -50,12 +50,15 @@ function Home({ industry, setIndustry }) {
   const blurVideoRef = useRef();
   const canPlayMainVideo = useRef(false);
   const canPlayBlurVideo = useRef(false);
+  const videoSectionRef = useRef();
+  const isVideoSectionVisible = useRef(true);
 
   function tryToPlayVideos() {
     if (canPlayMainVideo.current && canPlayBlurVideo.current) {
       setIsLoadingVideo(false);
-      mainVideoRef.current.play();
-      blurVideoRef.current.play();
+      if (!isVideoSectionVisible.current) return;
+      mainVideoRef.current?.play().catch(() => {});
+      blurVideoRef.current?.play().catch(() => {});
     }
   }
 
@@ -96,13 +99,47 @@ function Home({ industry, setIndustry }) {
       setActiveAboutIndex(closestIdx);
     }
 
+    // Throttle to at most once per frame so scrolling doesn't force
+    // repeated layout reads + React renders between frames.
+    let frame = 0;
+    function onScrollOrResize() {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        updateActiveAbout();
+      });
+    }
+
     updateActiveAbout();
-    window.addEventListener("scroll", updateActiveAbout, { passive: true });
-    window.addEventListener("resize", updateActiveAbout);
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
     return () => {
-      window.removeEventListener("scroll", updateActiveAbout);
-      window.removeEventListener("resize", updateActiveAbout);
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
     };
+  }, []);
+
+  // Pause the hero videos while they're scrolled out of view so the browser
+  // isn't decoding two videos (one of them blurred) while the user scrolls.
+  useEffect(() => {
+    const section = videoSectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVideoSectionVisible.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          tryToPlayVideos();
+        } else {
+          mainVideoRef.current?.pause();
+          blurVideoRef.current?.pause();
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+    // eslint-disable-next-line
   }, []);
 
   const CONTACT_ICONS = [
@@ -180,7 +217,9 @@ function Home({ industry, setIndustry }) {
   ];
 
   const videoSection = (
-    <section className="relative h-[90vh] w-full mt-17.5 bg-gray-900 flex justify-center items-center screen-lg:mt-0 screen-lg:h-[50vh]">
+    <section
+      ref={videoSectionRef}
+      className="relative h-[90vh] w-full mt-17.5 bg-gray-900 flex justify-center items-center screen-lg:mt-0 screen-lg:h-[50vh]">
       <div className="absolute w-full -top-17.5 left-0" id="t"></div>
       <div className="h-[90%] aspect-video z-10 bg-[rgb(0,20,40)] border-2 border-gray-500 screen-xl:h-[80%] screen-lg:w-full screen-lg:h-auto">
         <video
@@ -195,12 +234,10 @@ function Home({ industry, setIndustry }) {
             tryToPlayVideos();
           }}
           onWaiting={() => {
-            blurVideoRef.current.pause();
-            // setIsLoadingVideo(true);
+            blurVideoRef.current?.pause();
           }}
           onPlaying={() => {
-            blurVideoRef.current.play();
-            // setIsLoadingVideo(false);
+            blurVideoRef.current?.play().catch(() => {});
           }}
         >
           <source src="/MainVideo.mp4" type="video/mp4" />
@@ -219,12 +256,10 @@ function Home({ industry, setIndustry }) {
             tryToPlayVideos();
           }}
           onWaiting={() => {
-            mainVideoRef.current.pause();
-            // setIsLoadingVideo(true);
+            mainVideoRef.current?.pause();
           }}
           onPlaying={() => {
-            mainVideoRef.current.play();
-            // setIsLoadingVideo(false);
+            mainVideoRef.current?.play().catch(() => {});
           }}
         >
           <source src="/BlurVideo.mp4" type="video/mp4" />
@@ -303,7 +338,7 @@ function Home({ industry, setIndustry }) {
         ></div>
         <div
           className={
-            `relative bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 transition duration-300 ` +
+            `relative bg-slate-900/60 border border-slate-700/50 rounded-2xl p-6 transition duration-300 ` +
             (isActive
               ? "bg-slate-900/70 scale-[1.01] ring-1 ring-white/10"
               : "group-hover:bg-slate-900/70")
@@ -320,8 +355,8 @@ function Home({ industry, setIndustry }) {
   const aboutSection = (
     <section className="relative z-10 w-full overflow-hidden bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_28%),linear-gradient(180deg,rgba(2,6,23,0.98),rgba(15,23,42,0.94))] pb-0">
       <div className="absolute inset-x-0 top-0 h-2 bg-linear-to-r from-transparent via-cyan-300/60 to-transparent"></div>
-      <div className="absolute left-[10%] top-[14%] h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl"></div>
-      <div className="absolute right-[8%] bottom-[12%] h-48 w-48 rounded-full bg-blue-500/10 blur-3xl"></div>
+      <div className="absolute left-[10%] top-[14%] h-80 w-80 -translate-x-1/4 -translate-y-1/4 rounded-full bg-[radial-gradient(closest-side,rgba(34,211,238,0.1),transparent)]"></div>
+      <div className="absolute right-[8%] bottom-[12%] h-96 w-96 translate-x-1/4 translate-y-1/4 rounded-full bg-[radial-gradient(closest-side,rgba(59,130,246,0.1),transparent)]"></div>
 
       <div className="m-auto w-[80%] pb-14 pt-8 screen-md:w-[90%] screen-md:pb-12">
         <Typography
@@ -416,6 +451,8 @@ function Home({ industry, setIndustry }) {
               <Card className="w-full overflow-hidden rounded-3xl relative group border border-slate-200/30 shadow-[0_18px_40px_rgba(15,23,42,0.12)]">
                 <img
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                   src={post.image}
                   className={
                     "w-full object-cover aspect-square brightness-85 group-hover:brightness-100 group-hover:scale-105 duration-300 " +
@@ -424,7 +461,7 @@ function Home({ industry, setIndustry }) {
                 />
                 <div className="absolute inset-0 pointer-events-none">
                   <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute left-4 bottom-4 max-w-[86%] w-auto bg-black/80 backdrop-blur-md rounded-lg px-3 py-2 transform transition-all duration-250 group-hover:-translate-y-1 shadow-2xl border border-white/6 ring-1 ring-white/5 pointer-events-auto">
+                  <div className="absolute left-4 bottom-4 max-w-[86%] w-auto bg-black/80 rounded-lg px-3 py-2 transform transition-all duration-250 group-hover:-translate-y-1 shadow-2xl border border-white/6 ring-1 ring-white/5 pointer-events-auto">
                     <Typography
                       variant="subtitle2"
                       className="text-white font-semibold text-left leading-tight text-sm md:text-base drop-shadow-[0_6px_18px_rgba(0,0,0,0.85)]"

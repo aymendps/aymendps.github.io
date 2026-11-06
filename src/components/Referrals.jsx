@@ -39,7 +39,6 @@ I am confident that Aymen would be a valuable asset to any development team`,
         sx={{
           background:
             "linear-gradient(135deg, rgba(15,23,42,0.95), rgba(8,47,73,0.92))",
-          backdropFilter: "blur(16px)",
         }}
       >
         <div className="absolute top-0 inset-x-0 h-1 bg-linear-to-r from-cyan-500/0 via-cyan-500/60 to-cyan-500/0"></div>

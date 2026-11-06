@@ -2,8 +2,27 @@ import { Chip, CircularProgress, Typography } from "@mui/material";
 import { HashLink } from "react-router-hash-link";
 import ProjectBackToTopButton from "./ProjectBackToTopButton";
 import ProjectLearningOutcomes from "./ProjectLearningOutcomes";
-import React from "react";
+import React, { useState } from "react";
 import PicturesViewer from "./PicturesViewer";
+
+function YoutubeEmbed({ url, title }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <>
+      {/* Unmount the spinner once loaded: hidden spinners still repaint every frame */}
+      {!loaded && (
+        <CircularProgress className="text-darkblue" size={90} thickness={1} />
+      )}
+      <iframe
+        className="w-full h-full absolute top-0 left-0"
+        title={title}
+        src={url}
+        allowFullScreen
+        onLoad={() => setLoaded(true)}
+      ></iframe>
+    </>
+  );
+}
 
 function ProjectIntroduction({
   title,
@@ -84,19 +103,7 @@ function ProjectIntroduction({
       <React.Fragment key={"video " + url}>
         <div className="w-full aspect-video bg-cyan-600 border-2 border-darkblue relative flex justify-center items-center mb">
           {url ? (
-            <>
-              <CircularProgress
-                className="text-darkblue"
-                size={90}
-                thickness={1}
-              />
-              <iframe
-                className="w-full h-full absolute top-0 left-0"
-                title={title}
-                src={url}
-                allowFullScreen
-              ></iframe>
-            </>
+            <YoutubeEmbed url={url} title={title} />
           ) : (
             <>
               <Typography

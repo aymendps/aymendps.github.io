@@ -5,6 +5,8 @@ import { preload } from "react-dom";
 
 function PicturesViewer({ picturesURL = [] }) {
   const [currentPicture, setCurrentPicture] = useState(0);
+  const [loadedPictures, setLoadedPictures] = useState(() => new Set());
+  const isCurrentLoaded = loadedPictures.has(picturesURL[currentPicture]);
   const startX = useRef(null);
 
   // Multiple calls is same as single call, so this is fine for preloading all images
@@ -42,16 +44,27 @@ function PicturesViewer({ picturesURL = [] }) {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center z-1">
-        <CircularProgress
-          className="text-cyan-600 z-1"
-          size={90}
-          thickness={1}
-        />
-      </div>
+      {/* Only render the spinner while loading: an always-running spinner
+          hidden behind the image still repaints every frame. */}
+      {!isCurrentLoaded && (
+        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center z-1">
+          <CircularProgress
+            className="text-cyan-600 z-1"
+            size={90}
+            thickness={1}
+          />
+        </div>
+      )}
       <img
         key={"image-" + picturesURL[currentPicture]}
         src={picturesURL[currentPicture]}
+        decoding="async"
+        onLoad={() => {
+          const url = picturesURL[currentPicture];
+          setLoadedPictures((prev) =>
+            prev.has(url) ? prev : new Set(prev).add(url),
+          );
+        }}
         alt=""
         className="z-5 w-full h-full object-contain select-none pointer-events-none"
       />

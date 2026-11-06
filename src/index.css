@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
-
 @import "tailwindcss" important;
 
 @theme {
@@ -137,33 +135,35 @@ h6,
   );
 }
 
+/* Animate transform (compositor-only) instead of `left` (forces layout every frame) */
 @keyframes shine {
   0% {
-    left: -100%;
+    transform: translateX(0);
   }
 
   100% {
-    left: 100%; /* Keeps the element static until the animation restarts */
+    transform: translateX(200%);
   }
 }
 
 @keyframes shine-loop {
   0% {
-    left: -100%;
+    transform: translateX(0);
   }
 
   25% {
-    left: 100%;
+    transform: translateX(200%);
   }
 
   100% {
-    left: 100%; /* Keeps the element static until the animation restarts */
+    transform: translateX(200%); /* Keeps the element static until the animation restarts */
   }
 }
 
 /* Apply the effect on hover */
 .shining-effect:hover::before {
   animation: shine-loop 2s ease-in-out infinite;
+  will-change: transform;
 }
 
 .shining-effect-loop {
@@ -214,7 +214,7 @@ h6,
   background: var(--panel);
   border: 1px solid var(--stroke);
   box-shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
-  backdrop-filter: blur(24px);
+  backdrop-filter: blur(12px);
 }
 
 .fancy-outline {
